@@ -46,7 +46,7 @@ export function ContactForm() {
       <div className="bg-surface border border-border rounded-2xl p-8 text-center">
         <h3 className="font-heading font-semibold text-lg text-primary mb-2">Thank you</h3>
         <p className="font-body text-sm text-foreground-muted">
-          Your enquiry has been received. Our leadership desk will be in touch shortly.
+          Your enquiry has been received. Our team will be in touch shortly.
         </p>
       </div>
     );

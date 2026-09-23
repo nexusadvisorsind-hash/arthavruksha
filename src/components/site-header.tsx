@@ -34,7 +34,7 @@ export function SiteHeader() {
             href="/contact"
             className="hidden sm:inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground hover:bg-accent/90 transition-colors font-body"
           >
-            Talk to Us
+            Contact Us
           </Link>
         </div>
       </div>

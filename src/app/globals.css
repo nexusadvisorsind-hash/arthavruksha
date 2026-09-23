@@ -6,13 +6,16 @@
   --foreground: #101A2E;
   --foreground-muted: #4B5670;
 
-  /* Brand palette — corporate navy-led (per template references) */
-  --primary: #0B1E42;      /* Deep Corporate Navy */
+  /* Brand palette — navy-blue led, with green and gold accents */
+  --primary: #0B1E42;      /* Deep Navy */
   --primary-foreground: #FFFFFF;
-  --secondary: #1E3A8A;    /* Corporate Blue */
+  --secondary: #1E5FD9;    /* Vibrant Corporate Blue */
   --secondary-foreground: #FFFFFF;
-  --accent: #D4AF37;       /* Sovereign Gold */
+  --accent: #D4AF37;       /* Gold */
   --accent-foreground: #10241D;
+  --green: #0F8A5F;        /* Growth Green */
+  --green-foreground: #FFFFFF;
+  --green-soft: #E7F5EF;
   --border: #E1E5EC;
 }
 
@@ -27,6 +30,9 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-green: var(--green);
+  --color-green-foreground: var(--green-foreground);
+  --color-green-soft: var(--green-soft);
   --color-border: var(--border);
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "Inter", Arial, Helvetica, sans-serif;

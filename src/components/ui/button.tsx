@@ -11,6 +11,7 @@ const buttonVariants = cva(
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
         gold: "bg-accent text-accent-foreground hover:bg-accent/90",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90",
+        green: "bg-green text-green-foreground hover:bg-green/90",
         outline: "border border-border bg-transparent hover:bg-surface",
         ghost: "hover:bg-surface",
       },

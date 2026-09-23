@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFFFFF;
+  --surface: #F5F7FA;
+  --foreground: #101A2E;
+  --foreground-muted: #4B5670;
+
+  /* Brand palette — corporate navy-led (per template references) */
+  --primary: #0B1E42;      /* Deep Corporate Navy */
+  --primary-foreground: #FFFFFF;
+  --secondary: #1E3A8A;    /* Corporate Blue */
+  --secondary-foreground: #FFFFFF;
+  --accent: #D4AF37;       /* Sovereign Gold */
+  --accent-foreground: #10241D;
+  --border: #E1E5EC;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}

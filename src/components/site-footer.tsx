@@ -27,6 +27,7 @@ export function SiteFooter() {
             <div className="font-heading font-semibold mb-3">Company</div>
             <ul className="space-y-2 font-body text-sm text-primary-foreground/75">
               <li><Link href="/about-us" className="hover:text-accent">About Us</Link></li>
+              <li><Link href="/blog" className="hover:text-accent">Blog</Link></li>
               <li><Link href="/contact" className="hover:text-accent">Contact</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-accent">Privacy Policy</Link></li>
               <li><Link href="/terms-of-use" className="hover:text-accent">Terms of Use</Link></li>

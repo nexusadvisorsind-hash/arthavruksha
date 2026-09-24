@@ -4,7 +4,7 @@ import { Mail, MapPin, BadgeCheck } from "lucide-react";
 export default function Contact() {
   return (
     <>
-      <section className="bg-gradient-to-b from-primary to-secondary text-primary-foreground">
+      <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
             <BadgeCheck className="h-4 w-4 text-accent" />

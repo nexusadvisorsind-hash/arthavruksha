@@ -18,7 +18,17 @@ import {
   Users,
   Sparkles,
   Phone,
+  BookOpen,
 } from "lucide-react";
+import { blogPosts } from "@/lib/blog-posts";
+
+const categoryColors: Record<string, string> = {
+  "Mutual Funds": "bg-secondary/10 text-secondary",
+  "Real Estate": "bg-green-soft text-green",
+  Insurance: "bg-accent/15 text-accent-foreground",
+  Loans: "bg-primary/10 text-primary",
+  "Personal Finance": "bg-secondary/10 text-secondary",
+};
 
 const dimensions = [
   {
@@ -115,8 +125,8 @@ export default function Home() {
   return (
     <>
       {/* Section 1 — Hero */}
-      <section className="bg-gradient-to-b from-primary to-secondary text-primary-foreground">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-20 text-center">
+      <section className="hero-navy text-primary-foreground">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-20 text-center animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/50 bg-accent/15 px-4 py-1.5 mb-8">
             <BadgeCheck className="h-4 w-4 text-accent" />
             <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
@@ -218,7 +228,7 @@ export default function Home() {
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {dimensions.map((d) => (
-              <div key={d.dimension} className="bg-surface border border-border rounded-2xl p-7 flex flex-col hover:shadow-lg transition-shadow">
+              <div key={d.dimension} className="card-lift bg-surface border border-border rounded-2xl p-7 flex flex-col">
                 <div className={`w-12 h-12 rounded-xl ${d.iconBg} flex items-center justify-center mb-5`}>
                   <d.icon className={`h-6 w-6 ${d.iconColor}`} />
                 </div>
@@ -340,8 +350,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section 6.5 — Featured Insights */}
+      <section className="py-20 bg-surface">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 justify-center mb-4">
+            <BookOpen className="h-7 w-7 text-secondary" />
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary">Learn Before You Decide</h2>
+          </div>
+          <p className="font-body text-foreground-muted text-center max-w-2xl mx-auto mb-14">
+            Plain-language guides on funds, property, insurance and loans — written to help you
+            decide, not to sell you anything.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {blogPosts.slice(0, 3).map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="card-lift bg-background border border-border rounded-2xl p-6 flex flex-col group"
+              >
+                <span
+                  className={`inline-flex self-start items-center rounded-full px-3 py-1 text-xs font-semibold font-body mb-3 ${categoryColors[post.category]}`}
+                >
+                  {post.category}
+                </span>
+                <h3 className="font-heading font-semibold text-primary mb-2 leading-snug group-hover:text-secondary transition-colors">
+                  {post.title}
+                </h3>
+                <p className="font-body text-sm text-foreground-muted leading-relaxed mb-4 flex-1">{post.excerpt}</p>
+                <span className="flex items-center gap-1 text-xs text-secondary font-semibold">
+                  Read article <ArrowRight className="h-3.5 w-3.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center">
+            <Button asChild variant="outline" size="lg">
+              <Link href="/blog">View All Articles</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Section 7 — CTA */}
-      <section className="py-20 bg-gradient-to-b from-primary to-secondary text-primary-foreground">
+      <section className="py-20 hero-navy text-primary-foreground">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-6">Let&rsquo;s Talk About Your Goals</h2>
           <p className="font-body text-lg text-primary-foreground/90 leading-relaxed mb-10">

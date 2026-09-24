@@ -54,7 +54,7 @@ const checklist = [
 export default function RealEstate() {
   return (
     <>
-      <section className="bg-gradient-to-b from-primary to-secondary text-primary-foreground">
+      <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
             <BadgeCheck className="h-4 w-4 text-accent" />
@@ -84,7 +84,7 @@ export default function RealEstate() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {howItWorks.map((h, i) => (
-              <div key={h.title} className="relative bg-surface border border-border rounded-2xl p-7">
+              <div key={h.title} className="relative card-lift bg-surface border border-border rounded-2xl p-7">
                 <span className="absolute -top-4 -left-2 w-9 h-9 rounded-full bg-green text-green-foreground font-heading font-bold flex items-center justify-center text-sm">
                   {i + 1}
                 </span>
@@ -107,7 +107,7 @@ export default function RealEstate() {
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((c) => (
-              <div key={c.title} className="bg-surface border border-border rounded-2xl p-7 border-t-4 border-t-secondary">
+              <div key={c.title} className="card-lift bg-surface border border-border rounded-2xl p-7 border-t-4 border-t-secondary">
                 <c.icon className="h-8 w-8 text-secondary mb-4" />
                 <h3 className="font-heading font-semibold text-lg text-primary mb-2">{c.title}</h3>
                 <p className="font-body text-sm text-foreground-muted leading-relaxed">{c.body}</p>
@@ -141,7 +141,7 @@ export default function RealEstate() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-primary to-secondary text-primary-foreground">
+      <section className="py-20 hero-navy text-primary-foreground">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
             Looking to Buy, Sell or Lease?

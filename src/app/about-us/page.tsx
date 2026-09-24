@@ -71,7 +71,7 @@ export default function AboutUs() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-primary to-secondary text-primary-foreground">
+      <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
           <TreePine className="h-10 w-10 text-accent mx-auto mb-6" />
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">About Artha Vruksha</h1>
@@ -116,7 +116,7 @@ export default function AboutUs() {
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {goals.map((g) => (
-              <div key={g.title} className="bg-background border border-border rounded-2xl p-7 border-t-4 border-t-green">
+              <div key={g.title} className="card-lift bg-background border border-border rounded-2xl p-7 border-t-4 border-t-green">
                 <g.icon className="h-8 w-8 text-secondary mb-4" />
                 <h3 className="font-heading font-semibold text-lg text-primary mb-2">{g.title}</h3>
                 <p className="font-body text-sm text-foreground-muted leading-relaxed">{g.body}</p>
@@ -196,7 +196,7 @@ export default function AboutUs() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-b from-primary to-secondary text-primary-foreground">
+      <section className="py-20 hero-navy text-primary-foreground">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
             Want to know more before you get in touch?

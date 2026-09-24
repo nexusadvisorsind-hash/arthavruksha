@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { EmiCalculator } from "@/components/emi-calculator";
+import { LoanEligibilityCalculator } from "@/components/loan-eligibility-calculator";
 import {
   ArrowRight,
   BadgeCheck,
@@ -14,6 +15,22 @@ import {
   ThumbsUp,
   ShieldCheck,
 } from "lucide-react";
+
+export const metadata = {
+  title: "Home Loans, Business Loans & Personal Loans — DSA in Pune & Ahmedabad",
+  description:
+    "Direct Selling Partner comparing home loans, loan against property, business working capital, personal and education loans across partner banks & NBFCs. Free EMI and loan eligibility calculators.",
+  keywords: [
+    "home loan DSA Pune",
+    "home loan DSA Ahmedabad",
+    "loan against property",
+    "business loan India",
+    "personal loan eligibility calculator",
+    "EMI calculator online",
+    "loan eligibility calculator",
+    "education loan India",
+  ],
+};
 
 const secured = [
   { icon: Home, title: "Home Loans", body: "Financing to buy or build a residential property, with tenures up to 30 years and competitive interest rates from our partner banks." },
@@ -121,7 +138,21 @@ export default function Loans() {
         <EmiCalculator />
       </section>
 
-      <section className="py-16 bg-background">
+      {/* Loan eligibility calculator */}
+      <section className="py-20 bg-background">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
+            Check Your Loan Eligibility
+          </h2>
+          <p className="font-body text-foreground-muted leading-relaxed">
+            Not sure how much you could borrow? Enter your income and existing EMIs to get a
+            quick estimate of your loan eligibility.
+          </p>
+        </div>
+        <LoanEligibilityCalculator />
+      </section>
+
+      <section className="py-16 bg-surface">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex items-start gap-3 bg-green-soft border border-green/20 rounded-xl p-6">
           <ShieldCheck className="h-6 w-6 text-green shrink-0 mt-0.5" />
           <p className="font-body text-sm text-foreground leading-relaxed">

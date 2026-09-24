@@ -12,6 +12,23 @@ import {
   Scale as ScaleIcon,
   FileSignature,
 } from "lucide-react";
+import { InsuranceNeedsCalculator } from "@/components/insurance-needs-calculator";
+
+export const metadata = {
+  title: "Life, Health, Motor & Business Insurance — Compared Across Insurers",
+  description:
+    "Authorized Corporate Agent/POSP comparing term life, health, motor and commercial insurance across multiple insurers in Maharashtra & Gujarat. Free life insurance needs calculator.",
+  keywords: [
+    "term insurance plans India",
+    "life insurance calculator",
+    "health insurance advisor Pune",
+    "health insurance advisor Ahmedabad",
+    "motor insurance comparison",
+    "business insurance India",
+    "insurance needs calculator",
+    "how much life insurance do I need",
+  ],
+};
 
 const products = [
   {
@@ -113,6 +130,20 @@ export default function Insurance() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Insurance needs calculator */}
+      <section className="py-20 bg-surface">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
+            How Much Life Insurance Do You Need?
+          </h2>
+          <p className="font-body text-foreground-muted leading-relaxed">
+            Most people guess a round number. This calculator uses a standard income-replacement
+            method to give you a realistic starting point.
+          </p>
+        </div>
+        <InsuranceNeedsCalculator />
       </section>
 
       <section className="py-16 bg-background">

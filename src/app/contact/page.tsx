@@ -1,6 +1,19 @@
 import { ContactForm } from "@/components/contact-form";
 import { Mail, MapPin, BadgeCheck } from "lucide-react";
 
+export const metadata = {
+  title: "Contact Us — Pune & Ahmedabad",
+  description:
+    "Get in touch with Artha Vruksha Services for mutual funds, real estate, insurance or loans in Pune, Maharashtra and Ahmedabad, Gujarat. We usually reply within 24 hours.",
+  keywords: [
+    "contact Artha Vruksha Services",
+    "financial advisor Pune contact",
+    "financial advisor Ahmedabad contact",
+    "mutual fund distributor contact",
+    "real estate broker contact Gujarat",
+  ],
+};
+
 export default function Contact() {
   return (
     <>

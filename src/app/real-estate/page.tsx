@@ -13,6 +13,25 @@ import {
   FileCheck,
   Handshake,
 } from "lucide-react";
+import { PropertyLifecycleChart } from "@/components/property-lifecycle-chart";
+import { HomeLoanEligibilityCalculator } from "@/components/home-loan-eligibility-calculator";
+
+export const metadata = {
+  title: "Real Estate Broker in Maharashtra & Gujarat — MahaRERA & GujRERA Certified",
+  description:
+    "RERA-verified residential, commercial, industrial and agricultural property broking across Pune, Mumbai, Ahmedabad & Surat. Home loan eligibility calculator and 5-point property verification checklist.",
+  keywords: [
+    "real estate broker Maharashtra",
+    "real estate broker Gujarat",
+    "MahaRERA certified property broker",
+    "GujRERA certified property broker",
+    "property for sale Pune",
+    "property for sale Ahmedabad",
+    "home loan eligibility calculator",
+    "RERA verified properties",
+    "commercial property broker",
+  ],
+};
 
 const categories = [
   {
@@ -117,7 +136,35 @@ export default function RealEstate() {
         </div>
       </section>
 
+      {/* Property lifecycle chart */}
+      <section className="pb-20 bg-background">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
+            Understanding the Property Investment Lifecycle
+          </h2>
+          <p className="font-body text-foreground-muted leading-relaxed">
+            Every property moves through predictable stages from launch to maturity. Knowing where
+            a project sits on this curve helps you time a purchase, a rental strategy, or an exit.
+          </p>
+        </div>
+        <PropertyLifecycleChart />
+      </section>
+
+      {/* Home loan eligibility calculator */}
       <section className="py-20 bg-surface">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
+            Check Your Home Loan Eligibility
+          </h2>
+          <p className="font-body text-foreground-muted leading-relaxed">
+            Get a quick estimate of how much home loan you could qualify for, based on your
+            income and existing obligations.
+          </p>
+        </div>
+        <HomeLoanEligibilityCalculator />
+      </section>
+
+      <section className="py-20 bg-background">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4 text-center">
             Our 5-Point Verification Checklist

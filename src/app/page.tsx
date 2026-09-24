@@ -127,12 +127,6 @@ export default function Home() {
       {/* Section 1 — Hero */}
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-20 text-center animate-fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/50 bg-accent/15 px-4 py-1.5 mb-8">
-            <BadgeCheck className="h-4 w-4 text-accent" />
-            <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-              AMFI-Registered Mutual Fund Distributor | MahaRERA &amp; GujRERA Certified
-            </span>
-          </div>
           <h1 className="font-heading font-bold text-4xl md:text-6xl leading-tight mb-8">
             One Trusted Partner for Your Money,
             <br />

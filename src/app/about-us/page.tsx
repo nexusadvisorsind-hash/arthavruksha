@@ -11,6 +11,7 @@ import {
   Scale,
   Heart,
   Handshake,
+  Landmark,
 } from "lucide-react";
 
 const goals = [
@@ -44,24 +45,78 @@ const values = [
   },
 ];
 
-const team = [
+export const metadata = {
+  title: "About Us — Anup Vatyani & Pavan Vatyani, Founders",
+  description:
+    "Meet the founders of Artha Vruksha Services: Anup Vatyani, AMFI-registered Mutual Fund Distributor (ARN 106715) with 24+ years in banking, and Pavan Vatyani, MahaRERA-registered real estate professional (A52100037796) with 22+ years in real estate and digital transformation.",
+  keywords: [
+    "Anup Vatyani mutual fund distributor",
+    "Pavan Vatyani real estate",
+    "AMFI ARN 106715",
+    "MahaRERA A52100037796",
+    "financial services founders Pune Ahmedabad",
+  ],
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: "Anup Vatyani",
+      jobTitle: "Founder — Mutual Funds & Regulatory Affairs, Artha Vruksha Services",
+      description:
+        "AMFI-registered Mutual Fund Distributor (ARN 106715) with 24+ years in banking and financial services.",
+      knowsAbout: ["Mutual Funds", "GIFT City IFSC", "Regulatory Compliance", "Investor Education"],
+    },
+    {
+      "@type": "Person",
+      name: "Pavan Vatyani",
+      jobTitle: "Founder — Real Estate & Digital Strategy, Artha Vruksha Services",
+      description:
+        "MahaRERA-registered real estate professional (A52100037796) with 22+ years in real estate, finance and digital transformation.",
+      knowsAbout: ["Real Estate", "RERA Compliance", "Digital Transformation"],
+    },
+  ],
+};
+
+const founders = [
   {
     initials: "AV",
-    role: "Mutual Funds Desk",
-    note: "Our AMFI-registered team helps you start, manage and review your mutual fund investments, from your first SIP to a full portfolio.",
+    name: "Anup Vatyani",
+    role: "Founder — Mutual Funds & Regulatory Affairs",
+    bio: "Anup Vatyani has over 24 years of experience in the banking and financial services industry. An ex-banker with a decade of experience as a Mutual Fund Distributor, he brings deep domain expertise in financial products, regulatory frameworks, and investor education.",
+    credentials: [
+      "24+ years in banking & financial services",
+      "Ex-banker",
+      "AMFI-Registered Mutual Fund Distributor — ARN 106715",
+      "A decade of dedicated Mutual Fund Distribution (MFD) experience",
+      "Focus area: GIFT City / IFSC fund structures, regulatory frameworks, investor education",
+      "Gujarat RERA Registered — AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529",
+    ],
   },
   {
-    initials: "RE",
-    role: "Real Estate Desk (Maharashtra & Gujarat)",
-    note: "Our MahaRERA and GujRERA certified brokers handle residential, commercial, industrial and agricultural property deals across both states.",
+    initials: "PV",
+    name: "Pavan Vatyani",
+    role: "Founder — Real Estate & Digital Strategy",
+    bio: "Pavan Vatyani brings 22+ years of experience across Real Estate, Finance and Digital Transformation, having worked in leadership roles with organisations including 99acres, AllCheckDeals, Bajaj Finance and DigitalMutation.",
+    credentials: [
+      "22+ years in Real Estate, Finance & Digital Transformation",
+      "Leadership roles at 99acres, AllCheckDeals, Bajaj Finance & DigitalMutation",
+      "MahaRERA Registered Real Estate Agent — A52100037796",
+      "Focus area: property transaction structuring, digital-first client experience",
+    ],
   },
+];
+
+const otherDesks = [
   {
-    initials: "IN",
+    icon: ShieldCheck,
     role: "Insurance Desk",
     note: "Our licensed insurance agents compare life, health, motor and business policies across insurers to find you the right cover.",
   },
   {
-    initials: "CR",
+    icon: Landmark,
     role: "Loans & Credit Desk",
     note: "Our loan specialists work with partner banks and NBFCs to get you competitive rates on home loans, business finance, and personal loans.",
   },
@@ -70,6 +125,10 @@ const team = [
 export default function AboutUs() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       {/* Hero */}
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
@@ -150,25 +209,49 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Founders */}
       <section className="py-20 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4 justify-center">
             <Users className="h-7 w-7 text-secondary" />
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary">Meet Our Desks</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary">Meet the Founders</h2>
           </div>
           <p className="font-body text-foreground-muted text-center max-w-2xl mx-auto mb-14">
-            Each service is run by its own licensed team — so you always know exactly who you&apos;re
-            working with, and under what authority they&apos;re advising you.
+            Artha Vruksha Services is led directly by its founders — so every client works with
+            people who are personally licensed and personally accountable.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((t) => (
-              <div key={t.role} className="bg-background border border-border rounded-2xl p-6 text-center">
-                <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground font-heading font-bold text-lg flex items-center justify-center mx-auto mb-4">
-                  {t.initials}
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            {founders.map((f) => (
+              <div key={f.name} className="card-lift bg-background border border-border rounded-2xl p-7 md:p-8">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground font-heading font-bold text-lg flex items-center justify-center shrink-0">
+                    {f.initials}
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-bold text-xl text-primary">{f.name}</h3>
+                    <p className="font-body text-sm font-semibold text-secondary">{f.role}</p>
+                  </div>
                 </div>
-                <h3 className="font-heading font-semibold text-primary mb-2 text-sm">{t.role}</h3>
-                <p className="font-body text-xs text-foreground-muted leading-relaxed">{t.note}</p>
+                <p className="font-body text-sm text-foreground-muted leading-relaxed mb-5">{f.bio}</p>
+                <ul className="space-y-2">
+                  {f.credentials.map((c) => (
+                    <li key={c} className="flex gap-2 items-start">
+                      <BadgeCheck className="h-4 w-4 text-green shrink-0 mt-0.5" />
+                      <span className="font-body text-xs text-foreground-muted leading-relaxed">{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {otherDesks.map((d) => (
+              <div key={d.role} className="bg-background border border-border rounded-2xl p-6 flex gap-4 items-start">
+                <d.icon className="h-7 w-7 text-secondary shrink-0" />
+                <div>
+                  <h3 className="font-heading font-semibold text-primary mb-1 text-sm">{d.role}</h3>
+                  <p className="font-body text-xs text-foreground-muted leading-relaxed">{d.note}</p>
+                </div>
               </div>
             ))}
           </div>

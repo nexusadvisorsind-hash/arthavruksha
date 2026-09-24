@@ -30,7 +30,12 @@ export async function generateMetadata({ params }: BlogPostParams) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  return { title: `${post.title} | Artha Vruksha`, description: post.excerpt };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    keywords: [post.category, `${post.category} India`, `${post.category} Pune Ahmedabad`, "Artha Vruksha Services"],
+    openGraph: { type: "article", title: post.title, description: post.excerpt },
+  };
 }
 
 export default async function BlogPost({ params }: BlogPostParams) {
@@ -40,8 +45,23 @@ export default async function BlogPost({ params }: BlogPostParams) {
 
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    articleSection: post.category,
+    author: { "@type": "Organization", name: "Artha Vruksha Services" },
+    publisher: { "@type": "Organization", name: "Artha Vruksha Services" },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-20 md:pb-16">
           <Link

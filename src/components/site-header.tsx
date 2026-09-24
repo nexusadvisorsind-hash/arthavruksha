@@ -5,6 +5,7 @@ import Link from "next/link";
 import { TreePine, Menu, X } from "lucide-react";
 
 const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/mutual-funds", label: "Mutual Funds" },
   { href: "/real-estate", label: "Real Estate" },
   { href: "/insurance", label: "Insurance" },

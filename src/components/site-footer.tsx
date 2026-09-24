@@ -47,7 +47,7 @@ export function SiteFooter() {
 
           <div className="space-y-1">
             <p className="font-body text-xs text-primary-foreground/80">
-              <strong className="text-primary-foreground">Mutual Funds:</strong> AMFI Registration Number (ARN): [To be added] | AMFI-Registered Mutual Fund Distributor.
+              <strong className="text-primary-foreground">Mutual Funds:</strong> AMFI Registration Number (ARN): 106715 | AMFI-Registered Mutual Fund Distributor (Anup Vatyani).
             </p>
             <p className="font-body text-xs text-primary-foreground/70">
               Mutual Fund investments are subject to market risks, read all scheme related documents carefully.
@@ -56,7 +56,7 @@ export function SiteFooter() {
 
           <div className="space-y-1">
             <p className="font-body text-xs text-primary-foreground/80">
-              <strong className="text-primary-foreground">Real Estate:</strong> MahaRERA Registration No: [To be added] | GujRERA Registration No: [To be added].
+              <strong className="text-primary-foreground">Real Estate:</strong> MahaRERA Registration No: A52100037796 (Pavan Vatyani) | Gujarat RERA Registration No: AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529 (Anup Vatyani).
             </p>
             <p className="font-body text-xs text-primary-foreground/70">
               Projects presented are restricted to registered entities under respective state authorities.

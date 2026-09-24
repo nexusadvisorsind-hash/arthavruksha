@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SipCalculator } from "@/components/sip-calculator";
+import { SipGoalCalculator } from "@/components/sip-goal-calculator";
 import {
   ArrowRight,
   BadgeCheck,
@@ -37,6 +38,22 @@ const howItWorks = [
   { icon: Calendar, title: "We match you to funds", body: "Based on your goal, timeline and comfort with risk, we shortlist funds that fit — never a one-size-fits-all recommendation." },
   { icon: Repeat, title: "You invest, we monitor", body: "Start a SIP or lump-sum investment. We check in periodically to make sure your funds are still on track for your goal." },
 ];
+
+export const metadata = {
+  title: "Mutual Fund Distributor & SIP Investment in Pune & Ahmedabad",
+  description:
+    "AMFI-registered Mutual Fund Distributor (ARN 106715) helping you start SIPs, ELSS tax-saver funds and liquid funds across Maharashtra & Gujarat. Free SIP calculator and goal-based investment planning.",
+  keywords: [
+    "mutual fund distributor Pune",
+    "mutual fund distributor Ahmedabad",
+    "AMFI registered mutual fund distributor",
+    "SIP calculator",
+    "best SIP plans",
+    "ELSS tax saving mutual funds",
+    "liquid funds India",
+    "goal based SIP calculator",
+  ],
+};
 
 const faqs = [
   { q: "How much money do I need to start?", a: "Most SIPs can be started with as little as ₹500 per month. There's no need for a large lump sum to get going." },
@@ -123,6 +140,20 @@ export default function MutualFunds() {
           </p>
         </div>
         <SipCalculator />
+      </section>
+
+      {/* Goal-based SIP calculator */}
+      <section className="py-20 bg-background">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
+            How Much Should You Invest?
+          </h2>
+          <p className="font-body text-foreground-muted leading-relaxed">
+            Work backwards from your goal — tell us the amount you want to reach and by when, and
+            we&apos;ll estimate the monthly SIP required to get there.
+          </p>
+        </div>
+        <SipGoalCalculator />
       </section>
 
       {/* FAQ */}

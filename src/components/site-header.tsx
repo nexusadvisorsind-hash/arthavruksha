@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { TreePine, Menu, X } from "lucide-react";
+import { TreePine, Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -46,6 +46,13 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <a
+              href="tel:+919022958266"
+              aria-label="Call us"
+              className="hidden lg:inline-flex items-center gap-1.5 text-sm font-medium font-body text-foreground hover:text-secondary transition-colors mr-1"
+            >
+              <Phone className="h-4 w-4" /> +91 90229 58266
+            </a>
             <Link
               href="/contact"
               className="hidden sm:inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground hover:bg-accent/90 transition-colors font-body"

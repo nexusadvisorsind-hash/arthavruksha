@@ -43,13 +43,17 @@ export default function Contact() {
             <div className="bg-surface border border-border rounded-2xl p-6">
               <Mail className="h-6 w-6 text-secondary mb-3" />
               <h3 className="font-heading font-semibold text-primary mb-1">Email Us</h3>
-              <p className="font-body text-sm text-foreground-muted">leadership@arthavruksha.com</p>
+              <p className="font-body text-sm text-foreground-muted">info@arthavruksha.in</p>
             </div>
             <div className="bg-surface border border-border rounded-2xl p-6">
               <MapPin className="h-6 w-6 text-secondary mb-3" />
               <h3 className="font-heading font-semibold text-primary mb-1">Our Offices</h3>
-              <p className="font-body text-sm text-foreground-muted">Pune, Maharashtra</p>
-              <p className="font-body text-sm text-foreground-muted">Ahmedabad, Gujarat</p>
+              <p className="font-body text-sm text-foreground-muted">
+                Amanora Park Town, Pune, Maharashtra 411928
+              </p>
+              <p className="font-body text-sm text-foreground-muted mt-2">
+                4 Tarang Hills Society, Chandlodia, Ahmedabad, Gujarat
+              </p>
             </div>
             <div className="bg-green-soft border border-green/20 rounded-2xl p-6">
               <p className="font-body text-xs text-foreground-muted leading-relaxed">

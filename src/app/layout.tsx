@@ -9,6 +9,7 @@ import "@fontsource/inter/700.css";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 const siteUrl = "https://arthavruksha.vercel.app";
 
@@ -53,12 +54,21 @@ export const metadata: Metadata = {
     title: "Artha Vruksha Services — Mutual Funds, Real Estate, Insurance & Loans",
     description:
       "One licensed team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat — AMFI, MahaRERA & GujRERA registered.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Artha Vruksha Services — Mutual Funds, Real Estate, Insurance & Loans",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Artha Vruksha Services — Mutual Funds, Real Estate, Insurance & Loans",
     description:
       "One licensed team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -74,13 +84,30 @@ const organizationJsonLd = {
     { "@type": "State", name: "Gujarat" },
   ],
   address: [
-    { "@type": "PostalAddress", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" },
-    { "@type": "PostalAddress", addressLocality: "Ahmedabad", addressRegion: "Gujarat", addressCountry: "IN" },
+    {
+      "@type": "PostalAddress",
+      streetAddress: "Amanora Park Town",
+      addressLocality: "Pune",
+      addressRegion: "Maharashtra",
+      postalCode: "411928",
+      addressCountry: "IN",
+    },
+    {
+      "@type": "PostalAddress",
+      streetAddress: "4 Tarang Hills Society, Chandlodia",
+      addressLocality: "Ahmedabad",
+      addressRegion: "Gujarat",
+      addressCountry: "IN",
+    },
   ],
-  email: "leadership@arthavruksha.com",
+  email: "info@arthavruksha.in",
   founder: [
-    { "@type": "Person", name: "Anup Vatyani", jobTitle: "Founder — Mutual Funds & Regulatory Affairs" },
-    { "@type": "Person", name: "Pavan Vatyani", jobTitle: "Founder — Real Estate & Digital Strategy" },
+    { "@type": "Person", name: "Anup Vatyani", jobTitle: "Founder — Mutual Funds & Regulatory Affairs", telephone: "+91-9537433533" },
+    { "@type": "Person", name: "Pavan Vatyani", jobTitle: "Founder — Real Estate & Digital Strategy", telephone: "+91-9022958266" },
+  ],
+  contactPoint: [
+    { "@type": "ContactPoint", telephone: "+91-9022958266", contactType: "customer service", areaServed: "IN", name: "Pavan Vatyani" },
+    { "@type": "ContactPoint", telephone: "+91-9537433533", contactType: "customer service", areaServed: "IN", name: "Anup Vatyani" },
   ],
   knowsAbout: [
     "Mutual Funds",
@@ -100,12 +127,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <WhatsAppFloat />
       </body>
     </html>
   );

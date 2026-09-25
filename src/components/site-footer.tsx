@@ -35,8 +35,26 @@ export function SiteFooter() {
           </div>
           <div className="md:col-span-2">
             <div className="font-heading font-semibold mb-3">Direct Channels</div>
-            <p className="font-body text-sm text-primary-foreground/75">leadership@arthavruksha.com</p>
-            <p className="font-body text-sm text-primary-foreground/75">Dedicated Operational Desks: Pune / Ahmedabad</p>
+            <p className="font-body text-sm text-primary-foreground/75">info@arthavruksha.in</p>
+            <p className="font-body text-sm text-primary-foreground/75">
+              Pavan Vatyani (Real Estate &amp; Digital):{" "}
+              <a href="tel:+919022958266" className="hover:text-accent">+91 90229 58266</a>
+              {" "}·{" "}
+              <a href="mailto:pavan@arthavruksha.in" className="hover:text-accent">pavan@arthavruksha.in</a>
+            </p>
+            <p className="font-body text-sm text-primary-foreground/75">
+              Anup Vatyani (Mutual Funds &amp; Regulatory):{" "}
+              <a href="tel:+919537433533" className="hover:text-accent">+91 95374 33533</a>
+              {" "}·{" "}
+              <a href="mailto:anup@arthavruksha.in" className="hover:text-accent">anup@arthavruksha.in</a>
+            </p>
+            <p className="font-body text-sm text-primary-foreground/75 mt-2">
+              Pune: Amanora Park Town, Pune, Maharashtra 411928
+            </p>
+            <p className="font-body text-sm text-primary-foreground/75">
+              Ahmedabad: 4 Tarang Hills Society, Chandlodia, Ahmedabad, Gujarat
+            </p>
+            <p className="font-body text-sm text-primary-foreground/75 mt-2">Dedicated Operational Desks: Pune / Ahmedabad</p>
           </div>
         </div>
 

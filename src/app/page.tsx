@@ -412,7 +412,7 @@ export default function Home() {
             <Link href="/contact">Contact Us Today <ArrowRight className="ml-2 h-5 w-5" /></Link>
           </Button>
           <p className="font-body text-sm text-primary-foreground/70">
-            leadership@arthavruksha.com &nbsp;|&nbsp; Offices in Pune &amp; Ahmedabad
+            info@arthavruksha.in &nbsp;|&nbsp; Offices in Pune &amp; Ahmedabad
           </p>
         </div>
       </section>

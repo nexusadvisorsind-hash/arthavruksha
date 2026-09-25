@@ -13,6 +13,8 @@ import {
   FileSignature,
 } from "lucide-react";
 import { InsuranceNeedsCalculator } from "@/components/insurance-needs-calculator";
+import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
+import { TiltCard } from "@/components/tilt-card";
 
 export const metadata = {
   title: "Life, Health, Motor & Business Insurance — Compared Across Insurers",
@@ -69,17 +71,19 @@ export default function Insurance() {
     <>
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
-            <BadgeCheck className="h-4 w-4 text-accent" />
-            <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-              Authorized Corporate Agent / POSP
-            </span>
-          </div>
-          <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Protect What Matters Most</h1>
-          <p className="font-body text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            Life, health, motor and business insurance — compared across insurers and explained in
-            plain language, so you know exactly what you&apos;re covered for.
-          </p>
+          <Reveal>
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
+              <BadgeCheck className="h-4 w-4 text-accent" />
+              <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
+                Authorized Corporate Agent / POSP
+              </span>
+            </div>
+            <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Protect What Matters Most</h1>
+            <p className="font-body text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
+              Life, health, motor and business insurance — compared across insurers and explained in
+              plain language, so you know exactly what you&apos;re covered for.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -97,18 +101,20 @@ export default function Insurance() {
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-14 text-center">
             How We Help You Choose
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <RevealGroup className="grid md:grid-cols-3 gap-6">
             {howItWorks.map((h, i) => (
-              <div key={h.title} className="relative card-lift bg-surface border border-border rounded-2xl p-7">
-                <span className="absolute -top-4 -left-2 w-9 h-9 rounded-full bg-green text-green-foreground font-heading font-bold flex items-center justify-center text-sm">
-                  {i + 1}
-                </span>
-                <h.icon className="h-8 w-8 text-secondary mb-4 mt-2" />
-                <h3 className="font-heading font-semibold text-lg text-primary mb-2">{h.title}</h3>
-                <p className="font-body text-sm text-foreground-muted leading-relaxed">{h.body}</p>
-              </div>
+              <RevealItem key={h.title}>
+                <TiltCard className="relative card-lift bg-surface border border-border rounded-2xl p-7 h-full">
+                  <span className="absolute -top-4 -left-2 w-9 h-9 rounded-full bg-green text-green-foreground font-heading font-bold flex items-center justify-center text-sm">
+                    {i + 1}
+                  </span>
+                  <h.icon className="h-8 w-8 text-secondary mb-4 mt-2" />
+                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{h.title}</h3>
+                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{h.body}</p>
+                </TiltCard>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -120,15 +126,17 @@ export default function Insurance() {
           <p className="font-body text-foreground-muted text-center max-w-2xl mx-auto mb-14">
             A look at the types of cover we help clients get, and why each one matters.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p) => (
-              <div key={p.title} className="card-lift bg-surface border border-border rounded-2xl p-7 border-t-4 border-t-accent">
-                <p.icon className="h-8 w-8 text-secondary mb-4" />
-                <h3 className="font-heading font-semibold text-lg text-primary mb-2">{p.title}</h3>
-                <p className="font-body text-sm text-foreground-muted leading-relaxed">{p.body}</p>
-              </div>
+              <RevealItem key={p.title}>
+                <TiltCard className="card-lift bg-surface border border-border rounded-2xl p-7 border-t-4 border-t-accent h-full">
+                  <p.icon className="h-8 w-8 text-secondary mb-4" />
+                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{p.title}</h3>
+                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{p.body}</p>
+                </TiltCard>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 

@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import { PropertyLifecycleChart } from "@/components/property-lifecycle-chart";
 import { HomeLoanEligibilityCalculator } from "@/components/home-loan-eligibility-calculator";
+import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
+import { TiltCard } from "@/components/tilt-card";
 
 export const metadata = {
   title: "Real Estate Broker in Maharashtra & Gujarat — MahaRERA & GujRERA Certified",
@@ -75,17 +77,19 @@ export default function RealEstate() {
     <>
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
-            <BadgeCheck className="h-4 w-4 text-accent" />
-            <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-              MahaRERA &amp; GujRERA Certified Intermediary
-            </span>
-          </div>
-          <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Find Property You Can Trust</h1>
-          <p className="font-body text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            Buying, selling, or leasing residential, commercial, industrial or agricultural
-            property in Maharashtra and Gujarat — with every listing checked before it reaches you.
-          </p>
+          <Reveal>
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
+              <BadgeCheck className="h-4 w-4 text-accent" />
+              <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
+                MahaRERA &amp; GujRERA Certified Intermediary
+              </span>
+            </div>
+            <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Find Property You Can Trust</h1>
+            <p className="font-body text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
+              Buying, selling, or leasing residential, commercial, industrial or agricultural
+              property in Maharashtra and Gujarat — with every listing checked before it reaches you.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -101,18 +105,20 @@ export default function RealEstate() {
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-14 text-center">
             How We Help You Buy, Sell or Lease
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <RevealGroup className="grid md:grid-cols-3 gap-6">
             {howItWorks.map((h, i) => (
-              <div key={h.title} className="relative card-lift bg-surface border border-border rounded-2xl p-7">
-                <span className="absolute -top-4 -left-2 w-9 h-9 rounded-full bg-green text-green-foreground font-heading font-bold flex items-center justify-center text-sm">
-                  {i + 1}
-                </span>
-                <h.icon className="h-8 w-8 text-secondary mb-4 mt-2" />
-                <h3 className="font-heading font-semibold text-lg text-primary mb-2">{h.title}</h3>
-                <p className="font-body text-sm text-foreground-muted leading-relaxed">{h.body}</p>
-              </div>
+              <RevealItem key={h.title}>
+                <TiltCard className="relative card-lift bg-surface border border-border rounded-2xl p-7 h-full">
+                  <span className="absolute -top-4 -left-2 w-9 h-9 rounded-full bg-green text-green-foreground font-heading font-bold flex items-center justify-center text-sm">
+                    {i + 1}
+                  </span>
+                  <h.icon className="h-8 w-8 text-secondary mb-4 mt-2" />
+                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{h.title}</h3>
+                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{h.body}</p>
+                </TiltCard>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -124,15 +130,17 @@ export default function RealEstate() {
           <p className="font-body text-foreground-muted text-center max-w-2xl mx-auto mb-14">
             Whatever kind of property you&apos;re after, we can help.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((c) => (
-              <div key={c.title} className="card-lift bg-surface border border-border rounded-2xl p-7 border-t-4 border-t-secondary">
-                <c.icon className="h-8 w-8 text-secondary mb-4" />
-                <h3 className="font-heading font-semibold text-lg text-primary mb-2">{c.title}</h3>
-                <p className="font-body text-sm text-foreground-muted leading-relaxed">{c.body}</p>
-              </div>
+              <RevealItem key={c.title}>
+                <TiltCard className="card-lift bg-surface border border-border rounded-2xl p-7 border-t-4 border-t-secondary h-full">
+                  <c.icon className="h-8 w-8 text-secondary mb-4" />
+                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{c.title}</h3>
+                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{c.body}</p>
+                </TiltCard>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 

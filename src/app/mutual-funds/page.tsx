@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SipCalculator } from "@/components/sip-calculator";
 import { SipGoalCalculator } from "@/components/sip-goal-calculator";
+import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
+import { TiltCard } from "@/components/tilt-card";
 import {
   ArrowRight,
   BadgeCheck,
@@ -66,17 +68,19 @@ export default function MutualFunds() {
     <>
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
-            <BadgeCheck className="h-4 w-4 text-accent" />
-            <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-              AMFI-Registered Mutual Fund Distributor
-            </span>
-          </div>
-          <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Start Growing Your Money</h1>
-          <p className="font-body text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            We help you choose and start mutual fund investments that actually match your goals —
-            no jargon, no pressure, just funds that make sense for your life stage and timeline.
-          </p>
+          <Reveal>
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
+              <BadgeCheck className="h-4 w-4 text-accent" />
+              <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
+                AMFI-Registered Mutual Fund Distributor
+              </span>
+            </div>
+            <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Start Growing Your Money</h1>
+            <p className="font-body text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
+              We help you choose and start mutual fund investments that actually match your goals —
+              no jargon, no pressure, just funds that make sense for your life stage and timeline.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -94,18 +98,20 @@ export default function MutualFunds() {
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-14 text-center">
             How It Works
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <RevealGroup className="grid md:grid-cols-3 gap-6">
             {howItWorks.map((h, i) => (
-              <div key={h.title} className="relative card-lift bg-surface border border-border rounded-2xl p-7">
-                <span className="absolute -top-4 -left-2 w-9 h-9 rounded-full bg-green text-green-foreground font-heading font-bold flex items-center justify-center text-sm">
-                  {i + 1}
-                </span>
-                <h.icon className="h-8 w-8 text-secondary mb-4 mt-2" />
-                <h3 className="font-heading font-semibold text-lg text-primary mb-2">{h.title}</h3>
-                <p className="font-body text-sm text-foreground-muted leading-relaxed">{h.body}</p>
-              </div>
+              <RevealItem key={h.title}>
+                <TiltCard className="relative card-lift bg-surface border border-border rounded-2xl p-7 h-full">
+                  <span className="absolute -top-4 -left-2 w-9 h-9 rounded-full bg-green text-green-foreground font-heading font-bold flex items-center justify-center text-sm">
+                    {i + 1}
+                  </span>
+                  <h.icon className="h-8 w-8 text-secondary mb-4 mt-2" />
+                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{h.title}</h3>
+                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{h.body}</p>
+                </TiltCard>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -117,15 +123,17 @@ export default function MutualFunds() {
           <p className="font-body text-foreground-muted text-center max-w-2xl mx-auto mb-14">
             A quick look at the main types of funds we help clients invest in.
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <RevealGroup className="grid md:grid-cols-3 gap-6">
             {fundCategories.map((f) => (
-              <div key={f.title} className="card-lift bg-surface border border-border rounded-2xl p-7 border-t-4 border-t-green">
-                <f.icon className="h-8 w-8 text-secondary mb-4" />
-                <h3 className="font-heading font-semibold text-lg text-primary mb-2">{f.title}</h3>
-                <p className="font-body text-sm text-foreground-muted leading-relaxed">{f.body}</p>
-              </div>
+              <RevealItem key={f.title}>
+                <TiltCard className="card-lift bg-surface border border-border rounded-2xl p-7 border-t-4 border-t-green h-full">
+                  <f.icon className="h-8 w-8 text-secondary mb-4" />
+                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{f.title}</h3>
+                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{f.body}</p>
+                </TiltCard>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 

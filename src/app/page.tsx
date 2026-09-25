@@ -21,6 +21,9 @@ import {
   BookOpen,
 } from "lucide-react";
 import { blogPosts } from "@/lib/blog-posts";
+import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
+import { AnimatedCounter } from "@/components/animated-counter";
+import { TiltCard } from "@/components/tilt-card";
 
 const categoryColors: Record<string, string> = {
   "Mutual Funds": "bg-secondary/10 text-secondary",
@@ -115,68 +118,89 @@ const governanceColumns = [
 ];
 
 const stats = [
-  { icon: Users, value: "4", label: "Services under one roof" },
-  { icon: MapPin, value: "2", label: "States: Maharashtra & Gujarat" },
-  { icon: BadgeCheck, value: "100%", label: "Licensed & regulator-compliant" },
-  { icon: Sparkles, value: "1", label: "Point of contact for everything" },
+  { icon: Users, value: 4, suffix: "", label: "Services under one roof" },
+  { icon: MapPin, value: 2, suffix: "", label: "States: Maharashtra & Gujarat" },
+  { icon: BadgeCheck, value: 100, suffix: "%", label: "Licensed & regulator-compliant" },
+  { icon: Sparkles, value: 1, suffix: "", label: "Point of contact for everything" },
 ];
 
 export default function Home() {
   return (
     <>
       {/* Section 1 — Hero */}
-      <section className="hero-navy text-primary-foreground">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-20 text-center animate-fade-up">
-          <h1 className="font-heading font-bold text-4xl md:text-6xl leading-tight mb-8">
-            One Trusted Partner for Your Money,
-            <br />
-            Your Property, and Your Family&rsquo;s Future
-          </h1>
-          <p className="font-body text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Artha Vruksha Services brings mutual funds, real estate, insurance and loans together
-            under one team, so you don&rsquo;t have to run between four different people to manage
-            your finances. We&rsquo;re based in Maharashtra and Gujarat, fully licensed, and we
-            explain everything in plain language — no confusing jargon, no hidden fees.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Button asChild size="lg" variant="gold">
-              <Link href="/contact">Talk to Our Team <Phone className="ml-2 h-4 w-4" /></Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-              <Link href="/about-us">Learn About Us</Link>
-            </Button>
-          </div>
-          <p className="font-body text-xs text-primary-foreground/70 max-w-2xl mx-auto leading-relaxed">
-            Mutual Fund investments are subject to market risks. Please read all scheme-related
-            documents carefully before investing.
-          </p>
+      <section className="hero-navy text-primary-foreground relative overflow-hidden">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-32 -right-32 w-96 h-96 rounded-full bg-accent/20 blur-3xl animate-glow-pulse"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-green/20 blur-3xl animate-glow-pulse"
+          style={{ animationDelay: "1.5s" }}
+        />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-20 text-center relative">
+          <Reveal>
+            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-tight mb-8">
+              One Trusted Partner for Your Money,
+              <br />
+              Your Property, and Your Family&rsquo;s Future
+            </h1>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="font-body text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-10 leading-relaxed">
+              Artha Vruksha Services brings mutual funds, real estate, insurance and loans together
+              under one team, so you don&rsquo;t have to run between four different people to manage
+              your finances. We&rsquo;re based in Maharashtra and Gujarat, fully licensed, and we
+              explain everything in plain language — no confusing jargon, no hidden fees.
+            </p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+              <Button asChild size="lg" variant="gold">
+                <Link href="/contact">Talk to Our Team <Phone className="ml-2 h-4 w-4" /></Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                <Link href="/about-us">Learn About Us</Link>
+              </Button>
+            </div>
+          </Reveal>
+          <Reveal delay={0.3}>
+            <p className="font-body text-xs text-primary-foreground/70 max-w-2xl mx-auto leading-relaxed">
+              Mutual Fund investments are subject to market risks. Please read all scheme-related
+              documents carefully before investing.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       {/* Stat strip */}
       <section className="bg-background border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <RevealGroup className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s) => (
-            <div key={s.label} className="flex items-center gap-3">
+            <RevealItem key={s.label} className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-full bg-green-soft flex items-center justify-center shrink-0">
                 <s.icon className="h-5 w-5 text-green" />
               </div>
               <div>
-                <p className="font-heading font-bold text-xl text-primary leading-none">{s.value}</p>
+                <p className="font-heading font-bold text-xl text-primary leading-none">
+                  <AnimatedCounter value={s.value} suffix={s.suffix} />
+                </p>
                 <p className="font-body text-xs text-foreground-muted mt-1">{s.label}</p>
               </div>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </section>
 
       {/* Section 2 — The Problem We Solve */}
       <section className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8 text-center">
-            Why We Started Artha Vruksha
-          </h2>
-          <div className="font-body text-lg text-foreground-muted leading-relaxed space-y-5">
+          <Reveal>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8 text-center">
+              Why We Started Artha Vruksha
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1} className="font-body text-lg text-foreground-muted leading-relaxed space-y-5">
             <p>
               Most people end up managing their money in pieces. A property agent finds you a
               flat but has no idea about your loan eligibility. A mutual fund agent sells you a
@@ -207,7 +231,7 @@ export default function Home() {
               understands mutual funds, property, insurance and lending together — so the advice
               you get on one actually accounts for the other three.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -220,19 +244,21 @@ export default function Home() {
           <p className="font-body text-foreground-muted text-center max-w-2xl mx-auto mb-14">
             Whatever stage of life or business you&apos;re at, here&apos;s how we can help.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {dimensions.map((d) => (
-              <div key={d.dimension} className="card-lift bg-surface border border-border rounded-2xl p-7 flex flex-col">
-                <div className={`w-12 h-12 rounded-xl ${d.iconBg} flex items-center justify-center mb-5`}>
-                  <d.icon className={`h-6 w-6 ${d.iconColor}`} />
-                </div>
-                <h3 className="font-heading font-semibold text-lg text-primary mb-1">{d.dimension}</h3>
-                <p className="font-body text-sm font-semibold text-secondary mb-3">{d.role}</p>
-                <p className="font-body text-xs uppercase tracking-wide text-accent font-semibold mb-3">{d.alignment}</p>
-                <p className="font-body text-sm text-foreground-muted leading-relaxed flex-1">{d.mandate}</p>
-              </div>
+              <RevealItem key={d.dimension}>
+                <TiltCard className="card-lift bg-surface border border-border rounded-2xl p-7 flex flex-col h-full">
+                  <div className={`w-12 h-12 rounded-xl ${d.iconBg} flex items-center justify-center mb-5`}>
+                    <d.icon className={`h-6 w-6 ${d.iconColor}`} />
+                  </div>
+                  <h3 className="font-heading font-semibold text-lg text-primary mb-1">{d.dimension}</h3>
+                  <p className="font-body text-sm font-semibold text-secondary mb-3">{d.role}</p>
+                  <p className="font-body text-xs uppercase tracking-wide text-accent font-semibold mb-3">{d.alignment}</p>
+                  <p className="font-body text-sm text-foreground-muted leading-relaxed flex-1">{d.mandate}</p>
+                </TiltCard>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -245,9 +271,12 @@ export default function Home() {
           <p className="font-body text-primary-foreground/80 text-center max-w-2xl mx-auto mb-14">
             Four simple commitments that guide every conversation we have with you.
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
+          <RevealGroup className="grid md:grid-cols-2 gap-8">
             {principles.map((p, i) => (
-              <div key={p.title} className="flex gap-5 bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-7">
+              <RevealItem
+                key={p.title}
+                className="flex gap-5 bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-7 transition-colors duration-300 hover:bg-primary-foreground/10 hover:border-accent/40"
+              >
                 <div className="shrink-0 w-10 h-10 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center font-heading font-bold text-accent">
                   {i + 1}
                 </div>
@@ -258,9 +287,9 @@ export default function Home() {
                   </div>
                   <p className="font-body text-sm text-primary-foreground/80 leading-relaxed">{p.body}</p>
                 </div>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -308,21 +337,23 @@ export default function Home() {
           <p className="font-body text-foreground-muted text-center max-w-2xl mx-auto mb-14">
             Trust isn&apos;t a tagline for us — here&apos;s exactly how we earn it.
           </p>
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <RevealGroup className="grid md:grid-cols-3 gap-6 mb-12">
             {governanceColumns.map((g) => (
-              <div key={g.title} className="bg-surface border border-border rounded-2xl p-7">
-                <g.icon className="h-8 w-8 text-secondary mb-4" />
-                <h3 className="font-heading font-semibold text-lg text-primary mb-4">{g.title}</h3>
-                <ul className="space-y-2 font-body text-sm text-foreground-muted">
-                  {g.items.map((it) => (
-                    <li key={it} className="flex gap-2">
-                      <span className="text-green font-bold">✓</span> {it}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <RevealItem key={g.title}>
+                <TiltCard className="bg-surface border border-border rounded-2xl p-7 h-full">
+                  <g.icon className="h-8 w-8 text-secondary mb-4" />
+                  <h3 className="font-heading font-semibold text-lg text-primary mb-4">{g.title}</h3>
+                  <ul className="space-y-2 font-body text-sm text-foreground-muted">
+                    {g.items.map((it) => (
+                      <li key={it} className="flex gap-2">
+                        <span className="text-green font-bold">✓</span> {it}
+                      </li>
+                    ))}
+                  </ul>
+                </TiltCard>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
           <div className="max-w-3xl mx-auto space-y-4">
             <div className="bg-green-soft border border-green/20 rounded-xl p-5">
               <p className="font-body text-sm text-foreground leading-relaxed">
@@ -355,28 +386,31 @@ export default function Home() {
             Plain-language guides on funds, property, insurance and loans — written to help you
             decide, not to sell you anything.
           </p>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <RevealGroup className="grid md:grid-cols-3 gap-6 mb-10">
             {blogPosts.slice(0, 3).map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="card-lift bg-background border border-border rounded-2xl p-6 flex flex-col group"
-              >
-                <span
-                  className={`inline-flex self-start items-center rounded-full px-3 py-1 text-xs font-semibold font-body mb-3 ${categoryColors[post.category]}`}
-                >
-                  {post.category}
-                </span>
-                <h3 className="font-heading font-semibold text-primary mb-2 leading-snug group-hover:text-secondary transition-colors">
-                  {post.title}
-                </h3>
-                <p className="font-body text-sm text-foreground-muted leading-relaxed mb-4 flex-1">{post.excerpt}</p>
-                <span className="flex items-center gap-1 text-xs text-secondary font-semibold">
-                  Read article <ArrowRight className="h-3.5 w-3.5" />
-                </span>
-              </Link>
+              <RevealItem key={post.slug}>
+                <TiltCard className="h-full">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="card-lift bg-background border border-border rounded-2xl p-6 flex flex-col h-full group"
+                  >
+                    <span
+                      className={`inline-flex self-start items-center rounded-full px-3 py-1 text-xs font-semibold font-body mb-3 ${categoryColors[post.category]}`}
+                    >
+                      {post.category}
+                    </span>
+                    <h3 className="font-heading font-semibold text-primary mb-2 leading-snug group-hover:text-secondary transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="font-body text-sm text-foreground-muted leading-relaxed mb-4 flex-1">{post.excerpt}</p>
+                    <span className="flex items-center gap-1 text-xs text-secondary font-semibold">
+                      Read article <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </Link>
+                </TiltCard>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
           <div className="text-center">
             <Button asChild variant="outline" size="lg">
               <Link href="/blog">View All Articles</Link>

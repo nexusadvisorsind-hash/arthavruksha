@@ -148,7 +148,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="font-body text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Artha Vruksha Services brings mutual funds, real estate, insurance and loans together
+              Artha Vriksha Services brings mutual funds, real estate, insurance and loans together
               under one team, so you don&rsquo;t have to run between four different people to manage
               your finances. We&rsquo;re based in Maharashtra and Gujarat, fully licensed, and we
               explain everything in plain language — no confusing jargon, no hidden fees.
@@ -197,7 +197,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8 text-center">
-              Why We Started Artha Vruksha
+              Why We Started Artha Vriksha
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="font-body text-lg text-foreground-muted leading-relaxed space-y-5">
@@ -227,7 +227,7 @@ export default function Home() {
               opportunities, avoidable taxes, and risks nobody flagged in time.
             </p>
             <p>
-              Artha Vruksha Services was built to close that gap. We&rsquo;re one team that
+              Artha Vriksha Services was built to close that gap. We&rsquo;re one team that
               understands mutual funds, property, insurance and lending together — so the advice
               you get on one actually accounts for the other three.
             </p>
@@ -446,7 +446,7 @@ export default function Home() {
             <Link href="/contact">Contact Us Today <ArrowRight className="ml-2 h-5 w-5" /></Link>
           </Button>
           <p className="font-body text-sm text-primary-foreground/70">
-            info@arthavruksha.in &nbsp;|&nbsp; Offices in Pune &amp; Ahmedabad
+            info@arthavriksha.in &nbsp;|&nbsp; Offices in Pune &amp; Ahmedabad
           </p>
         </div>
       </section>

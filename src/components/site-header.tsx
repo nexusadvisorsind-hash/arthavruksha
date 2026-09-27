@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { TreePine, Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -22,11 +23,16 @@ export function SiteHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-            <span className="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0">
-              <TreePine className="h-5 w-5 text-accent" />
-            </span>
+            <Image
+              src="/brand/logo-icon-192.png"
+              alt="Artha Vriksha Services logo"
+              width={40}
+              height={40}
+              className="shrink-0 h-10 w-auto"
+              priority
+            />
             <span className="flex flex-col leading-tight">
-              <span className="font-heading font-bold text-xl text-primary">Artha Vruksha</span>
+              <span className="font-heading font-bold text-xl text-primary">Artha Vriksha</span>
               <span className="text-[11px] sm:text-xs font-body font-semibold text-foreground-muted tracking-wide">
                 AMFI-Registered Mutual Fund Distributor
               </span>

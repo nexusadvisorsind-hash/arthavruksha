@@ -4,9 +4,9 @@ import { Mail, MapPin, BadgeCheck } from "lucide-react";
 export const metadata = {
   title: "Contact Us — Pune & Ahmedabad",
   description:
-    "Get in touch with Artha Vruksha Services for mutual funds, real estate, insurance or loans in Pune, Maharashtra and Ahmedabad, Gujarat. We usually reply within 24 hours.",
+    "Get in touch with Artha Vriksha Services for mutual funds, real estate, insurance or loans in Pune, Maharashtra and Ahmedabad, Gujarat. We usually reply within 24 hours.",
   keywords: [
-    "contact Artha Vruksha Services",
+    "contact Artha Vriksha Services",
     "financial advisor Pune contact",
     "financial advisor Ahmedabad contact",
     "mutual fund distributor contact",
@@ -43,7 +43,7 @@ export default function Contact() {
             <div className="bg-surface border border-border rounded-2xl p-6">
               <Mail className="h-6 w-6 text-secondary mb-3" />
               <h3 className="font-heading font-semibold text-primary mb-1">Email Us</h3>
-              <p className="font-body text-sm text-foreground-muted">info@arthavruksha.in</p>
+              <p className="font-body text-sm text-foreground-muted">info@arthavriksha.in</p>
             </div>
             <div className="bg-surface border border-border rounded-2xl p-6">
               <MapPin className="h-6 w-6 text-secondary mb-3" />

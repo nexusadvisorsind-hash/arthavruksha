@@ -1,6 +1,6 @@
 const WHATSAPP_NUMBER = "919022958266"; // Pavan Vatyani
 const DEFAULT_MESSAGE =
-  "Hi Artha Vruksha, I'd like to know more about your Mutual Funds / Real Estate / Insurance / Loans services.";
+  "Hi Artha Vriksha, I'd like to know more about your Mutual Funds / Real Estate / Insurance / Loans services.";
 
 export function WhatsAppFloat() {
   const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;

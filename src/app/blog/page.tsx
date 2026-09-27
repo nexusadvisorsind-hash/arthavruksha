@@ -11,9 +11,9 @@ const categoryColors: Record<string, string> = {
 };
 
 export const metadata = {
-  title: "Insights & Articles | Artha Vruksha",
+  title: "Insights & Articles | Artha Vriksha",
   description:
-    "Plain-language guides on mutual funds, real estate, insurance and loans — from the Artha Vruksha team.",
+    "Plain-language guides on mutual funds, real estate, insurance and loans — from the Artha Vriksha team.",
 };
 
 export default function Blog() {

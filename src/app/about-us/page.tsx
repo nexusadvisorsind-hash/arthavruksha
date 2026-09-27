@@ -1,7 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
-  TreePine,
   Target,
   Compass,
   Users,
@@ -48,7 +48,7 @@ const values = [
 export const metadata = {
   title: "About Us — Anup Vatyani & Pavan Vatyani, Founders",
   description:
-    "Meet the founders of Artha Vruksha Services: Anup Vatyani, AMFI-registered Mutual Fund Distributor (ARN 106715) with 24+ years in banking, and Pavan Vatyani, MahaRERA-registered real estate professional (A52100037796) with 22+ years in real estate and digital transformation.",
+    "Meet the founders of Artha Vriksha Services: Anup Vatyani, AMFI-registered Mutual Fund Distributor (ARN 106715) with 24+ years in banking, and Pavan Vatyani, MahaRERA-registered real estate professional (A52100037796) with 22+ years in real estate and digital transformation.",
   keywords: [
     "Anup Vatyani mutual fund distributor",
     "Pavan Vatyani real estate",
@@ -64,7 +64,7 @@ const personJsonLd = {
     {
       "@type": "Person",
       name: "Anup Vatyani",
-      jobTitle: "Founder — Mutual Funds & Regulatory Affairs, Artha Vruksha Services",
+      jobTitle: "Founder — Mutual Funds & Regulatory Affairs, Artha Vriksha Services",
       description:
         "AMFI-registered Mutual Fund Distributor (ARN 106715) with 24+ years in banking and financial services.",
       knowsAbout: ["Mutual Funds", "GIFT City IFSC", "Regulatory Compliance", "Investor Education"],
@@ -72,7 +72,7 @@ const personJsonLd = {
     {
       "@type": "Person",
       name: "Pavan Vatyani",
-      jobTitle: "Founder — Real Estate & Digital Strategy, Artha Vruksha Services",
+      jobTitle: "Founder — Real Estate & Digital Strategy, Artha Vriksha Services",
       description:
         "MahaRERA-registered real estate professional (A52100037796) with 22+ years in real estate, finance and digital transformation.",
       knowsAbout: ["Real Estate", "RERA Compliance", "Digital Transformation"],
@@ -132,10 +132,16 @@ export default function AboutUs() {
       {/* Hero */}
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
-          <TreePine className="h-10 w-10 text-accent mx-auto mb-6" />
-          <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">About Artha Vruksha</h1>
+          <Image
+            src="/brand/logo-icon-192.png"
+            alt="Artha Vriksha Services"
+            width={72}
+            height={72}
+            className="h-16 w-auto mx-auto mb-6"
+          />
+          <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">About Artha Vriksha</h1>
           <p className="font-body text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            Our name comes from two words — Artha (money, purpose) and Vruksha (tree). Like a
+            Our name comes from two words — Artha (money, purpose) and Vriksha (tree). Like a
             banyan tree, we believe good financial guidance should have deep roots and grow
             steadily over many years, not chase quick wins.
           </p>
@@ -156,7 +162,7 @@ export default function AboutUs() {
             handled by people who are properly licensed and genuinely accountable to you.
           </p>
           <p className="font-body text-base text-foreground-muted leading-relaxed text-center max-w-3xl mx-auto">
-            We started Artha Vruksha because we saw too many people getting fragmented, sometimes
+            We started Artha Vriksha because we saw too many people getting fragmented, sometimes
             conflicting advice from different agents who had no visibility into their full
             financial picture. We wanted to build something better — a single team you can call
             for any of these needs, that actually talks to each other.
@@ -217,7 +223,7 @@ export default function AboutUs() {
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary">Meet the Founders</h2>
           </div>
           <p className="font-body text-foreground-muted text-center max-w-2xl mx-auto mb-14">
-            Artha Vruksha Services is led directly by its founders — so every client works with
+            Artha Vriksha Services is led directly by its founders — so every client works with
             people who are personally licensed and personally accountable.
           </p>
           <div className="grid md:grid-cols-2 gap-8 mb-8">

@@ -11,13 +11,17 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 
+// NOTE: This points at the live Vercel deployment (project name "arthavruksha" was
+// kept as-is on GitHub/Vercel — only the on-page brand name/emails changed to "Vriksha").
+// Once you register arthavriksha.in and connect it as a custom domain in Vercel,
+// update this to "https://arthavriksha.in".
 const siteUrl = "https://arthavruksha.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Artha Vruksha Services — Mutual Funds, Real Estate, Insurance & Loans in Maharashtra & Gujarat",
-    template: "%s | Artha Vruksha Services",
+    default: "Artha Vriksha Services — Mutual Funds, Real Estate, Insurance & Loans in Maharashtra & Gujarat",
+    template: "%s | Artha Vriksha Services",
   },
   description:
     "AMFI-registered Mutual Fund Distributor (ARN 106715), MahaRERA & GujRERA certified Real Estate broker, Insurance facilitation and Loan/DSA services across Pune, Ahmedabad, Maharashtra & Gujarat. SIP, home loan, insurance and loan eligibility calculators.",
@@ -43,15 +47,15 @@ export const metadata: Metadata = {
     "GIFT City IFSC mutual funds",
     "Anup Vatyani AMFI",
     "Pavan Vatyani real estate",
-    "Artha Vruksha Services",
+    "Artha Vriksha Services",
   ],
-  authors: [{ name: "Artha Vruksha Services" }],
+  authors: [{ name: "Artha Vriksha Services" }],
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: siteUrl,
-    siteName: "Artha Vruksha Services",
-    title: "Artha Vruksha Services — Mutual Funds, Real Estate, Insurance & Loans",
+    siteName: "Artha Vriksha Services",
+    title: "Artha Vriksha Services — Mutual Funds, Real Estate, Insurance & Loans",
     description:
       "One licensed team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat — AMFI, MahaRERA & GujRERA registered.",
     images: [
@@ -59,13 +63,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Artha Vruksha Services — Mutual Funds, Real Estate, Insurance & Loans",
+        alt: "Artha Vriksha Services — Mutual Funds, Real Estate, Insurance & Loans",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Artha Vruksha Services — Mutual Funds, Real Estate, Insurance & Loans",
+    title: "Artha Vriksha Services — Mutual Funds, Real Estate, Insurance & Loans",
     description:
       "One licensed team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat.",
     images: ["/og-image.png"],
@@ -75,7 +79,7 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
-  name: "Artha Vruksha Services",
+  name: "Artha Vriksha Services",
   description:
     "AMFI-registered Mutual Fund Distribution, MahaRERA & GujRERA certified Real Estate Broking, Insurance facilitation and Loan/DSA services across Maharashtra & Gujarat, India.",
   url: siteUrl,
@@ -100,7 +104,7 @@ const organizationJsonLd = {
       addressCountry: "IN",
     },
   ],
-  email: "info@arthavruksha.in",
+  email: "info@arthavriksha.in",
   founder: [
     { "@type": "Person", name: "Anup Vatyani", jobTitle: "Founder — Mutual Funds & Regulatory Affairs", telephone: "+91-9537433533" },
     { "@type": "Person", name: "Pavan Vatyani", jobTitle: "Founder — Real Estate & Digital Strategy", telephone: "+91-9022958266" },

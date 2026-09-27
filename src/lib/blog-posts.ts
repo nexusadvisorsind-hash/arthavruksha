@@ -234,9 +234,9 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "That's the whole idea behind Artha Vruksha",
+        heading: "That's the whole idea behind Artha Vriksha",
         body: [
-          "We built Artha Vruksha Services specifically to close this gap — one licensed, accountable team across all four services, so the advice you get on one actually reflects what's happening in the other three.",
+          "We built Artha Vriksha Services specifically to close this gap — one licensed, accountable team across all four services, so the advice you get on one actually reflects what's happening in the other three.",
         ],
       },
     ],

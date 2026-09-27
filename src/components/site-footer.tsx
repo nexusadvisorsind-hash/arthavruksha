@@ -1,12 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function SiteFooter() {
   return (
     <footer className="bg-primary text-primary-foreground mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="text-center mb-10">
+          <Image
+            src="/brand/logo-icon-192.png"
+            alt="Artha Vriksha Services"
+            width={56}
+            height={56}
+            className="mx-auto mb-4 h-14 w-auto opacity-95"
+          />
           <div className="font-heading font-bold text-xl mb-1">
-            ARTHA VRUKSHA SERVICES <span className="text-primary-foreground/60 font-normal">|</span> AMFI-Registered Mutual Fund Distributor
+            ARTHA VRIKSHA SERVICES <span className="text-primary-foreground/60 font-normal">|</span> AMFI-Registered Mutual Fund Distributor
           </div>
           <p className="text-xs font-body text-primary-foreground/70">
             Operating Territories: Maharashtra &amp; Gujarat, India
@@ -35,18 +43,18 @@ export function SiteFooter() {
           </div>
           <div className="md:col-span-2">
             <div className="font-heading font-semibold mb-3">Direct Channels</div>
-            <p className="font-body text-sm text-primary-foreground/75">info@arthavruksha.in</p>
+            <p className="font-body text-sm text-primary-foreground/75">info@arthavriksha.in</p>
             <p className="font-body text-sm text-primary-foreground/75">
               Pavan Vatyani (Real Estate &amp; Digital):{" "}
               <a href="tel:+919022958266" className="hover:text-accent">+91 90229 58266</a>
               {" "}·{" "}
-              <a href="mailto:pavan@arthavruksha.in" className="hover:text-accent">pavan@arthavruksha.in</a>
+              <a href="mailto:pavan@arthavriksha.in" className="hover:text-accent">pavan@arthavriksha.in</a>
             </p>
             <p className="font-body text-sm text-primary-foreground/75">
               Anup Vatyani (Mutual Funds &amp; Regulatory):{" "}
               <a href="tel:+919537433533" className="hover:text-accent">+91 95374 33533</a>
               {" "}·{" "}
-              <a href="mailto:anup@arthavruksha.in" className="hover:text-accent">anup@arthavruksha.in</a>
+              <a href="mailto:anup@arthavriksha.in" className="hover:text-accent">anup@arthavriksha.in</a>
             </p>
             <p className="font-body text-sm text-primary-foreground/75 mt-2">
               Pune: Amanora Park Town, Pune, Maharashtra 411928
@@ -92,13 +100,13 @@ export function SiteFooter() {
 
           <div className="space-y-1">
             <p className="font-body text-xs text-primary-foreground/80">
-              <strong className="text-primary-foreground">Legal Status:</strong> Artha Vruksha Services acts as an intermediary/distributor and does not render
+              <strong className="text-primary-foreground">Legal Status:</strong> Artha Vriksha Services acts as an intermediary/distributor and does not render
               fee-based investment advisory or portfolio management services under SEBI (IA) Regulations.
             </p>
           </div>
 
           <p className="font-body text-xs text-primary-foreground/50 pt-4 border-t border-primary-foreground/10">
-            © {new Date().getFullYear()} Artha Vruksha Services. All rights reserved.
+            © {new Date().getFullYear()} Artha Vriksha Services. All rights reserved.
           </p>
         </div>
       </div>

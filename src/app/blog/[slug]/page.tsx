@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: BlogPostParams) {
   return {
     title: post.title,
     description: post.excerpt,
-    keywords: [post.category, `${post.category} India`, `${post.category} Pune Ahmedabad`, "Artha Vruksha Services"],
+    keywords: [post.category, `${post.category} India`, `${post.category} Pune Ahmedabad`, "Artha Vriksha Services"],
     openGraph: { type: "article", title: post.title, description: post.excerpt },
   };
 }
@@ -52,8 +52,8 @@ export default async function BlogPost({ params }: BlogPostParams) {
     description: post.excerpt,
     datePublished: post.date,
     articleSection: post.category,
-    author: { "@type": "Organization", name: "Artha Vruksha Services" },
-    publisher: { "@type": "Organization", name: "Artha Vruksha Services" },
+    author: { "@type": "Organization", name: "Artha Vriksha Services" },
+    publisher: { "@type": "Organization", name: "Artha Vriksha Services" },
   };
 
   return (

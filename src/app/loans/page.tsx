@@ -60,7 +60,7 @@ export default function Loans() {
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
               <BadgeCheck className="h-4 w-4 text-accent" />
               <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-                Direct Selling Partner (DSA)
+                Individually Empanelled Bank Loan DSA
               </span>
             </div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Get the Right Loan, Faster</h1>

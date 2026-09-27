@@ -269,10 +269,10 @@ export default function AboutUs() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "AMFI-Registered Mutual Fund Distributor",
-              "MahaRERA Certified Intermediary",
-              "GujRERA Certified Intermediary",
-              "Authorized Corporate Agent / POSP",
+              "Anup Vatyani — AMFI-Registered Mutual Fund Distributor",
+              "Pavan Vatyani — MahaRERA Certified Intermediary",
+              "Anup Vatyani — GujRERA Certified Intermediary",
+              "Anup Vatyani — Individual Insurance Agent (IRDAI)",
               "DPDP Act 2023 Compliant",
             ].map((b) => (
               <div key={b} className="inline-flex items-center gap-2 rounded-full border border-green/30 bg-green-soft px-4 py-2">

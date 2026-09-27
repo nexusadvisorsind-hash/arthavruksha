@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils";
 const regions = {
   Maharashtra: {
     desk: "Maharashtra Desk",
-    points: ["MahaRERA Certified Broker", "Commercial & Residential", "Corporate Capital Hub"],
+    points: ["Pavan Vatyani — MahaRERA Certified", "Commercial & Residential", "Corporate Capital Hub"],
   },
   Gujarat: {
     desk: "Gujarat Desk",
-    points: ["GujRERA Certified Broker", "Industrial & Logistics", "Commercial Hub Integration"],
+    points: ["Anup Vatyani — GujRERA Certified", "Industrial & Logistics", "Commercial Hub Integration"],
   },
 };
 

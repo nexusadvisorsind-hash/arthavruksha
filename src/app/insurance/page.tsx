@@ -19,7 +19,7 @@ import { TiltCard } from "@/components/tilt-card";
 export const metadata = {
   title: "Life, Health, Motor & Business Insurance — Compared Across Insurers",
   description:
-    "Authorized Corporate Agent/POSP comparing term life, health, motor and commercial insurance across multiple insurers in Maharashtra & Gujarat. Free life insurance needs calculator.",
+    "Our individually registered insurance agent compares term life, health, motor and commercial insurance across multiple insurers in Maharashtra & Gujarat. Free life insurance needs calculator.",
   keywords: [
     "term insurance plans India",
     "life insurance calculator",
@@ -75,7 +75,7 @@ export default function Insurance() {
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
               <BadgeCheck className="h-4 w-4 text-accent" />
               <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-                Authorized Corporate Agent / POSP
+                Anup Vatyani — Individual Insurance Agent (IRDAI)
               </span>
             </div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Protect What Matters Most</h1>
@@ -158,10 +158,10 @@ export default function Insurance() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex items-start gap-3 bg-green-soft border border-green/20 rounded-xl p-6">
           <ShieldPlus className="h-6 w-6 text-green shrink-0 mt-0.5" />
           <p className="font-body text-sm text-foreground leading-relaxed">
-            <strong className="text-primary">Why compare with us?</strong> As a Corporate
-            Agent/POSP, we work with multiple insurers rather than being tied to just one. That
-            means we recommend the policy that fits you best — not whichever company pays us the
-            most.
+            <strong className="text-primary">Why compare with us?</strong> As an individually
+            registered insurance agent, we work with multiple insurers rather than being tied to
+            just one. That means we recommend the policy that fits you best — not whichever
+            company pays us the most.
           </p>
         </div>
       </section>

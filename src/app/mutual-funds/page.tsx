@@ -44,7 +44,7 @@ const howItWorks = [
 export const metadata = {
   title: "Mutual Fund Distributor & SIP Investment in Pune & Ahmedabad",
   description:
-    "AMFI-registered Mutual Fund Distributor (ARN 106715) helping you start SIPs, ELSS tax-saver funds and liquid funds across Maharashtra & Gujarat. Free SIP calculator and goal-based investment planning.",
+    "Anup Vatyani, AMFI-registered Mutual Fund Distributor (ARN 106715), helping you start SIPs, ELSS tax-saver funds and liquid funds across Maharashtra & Gujarat. Free SIP calculator and goal-based investment planning.",
   keywords: [
     "mutual fund distributor Pune",
     "mutual fund distributor Ahmedabad",
@@ -72,7 +72,7 @@ export default function MutualFunds() {
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
               <BadgeCheck className="h-4 w-4 text-accent" />
               <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-                AMFI-Registered Mutual Fund Distributor
+                Anup Vatyani — AMFI-Registered Mutual Fund Distributor (ARN 106715)
               </span>
             </div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Start Growing Your Money</h1>

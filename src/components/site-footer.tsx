@@ -14,10 +14,13 @@ export function SiteFooter() {
             className="mx-auto mb-4 h-14 w-auto opacity-95"
           />
           <div className="font-heading font-bold text-xl mb-1">
-            ARTHA VRIKSHA SERVICES <span className="text-primary-foreground/60 font-normal">|</span> AMFI-Registered Mutual Fund Distributor
+            ARTHA VRIKSHA SERVICES
           </div>
-          <p className="text-xs font-body text-primary-foreground/70">
-            Operating Territories: Maharashtra &amp; Gujarat, India
+          <p className="text-xs font-body text-primary-foreground/70 tracking-wide">
+            Rooted in Trust, Growing Your Wealth
+          </p>
+          <p className="text-xs font-body text-primary-foreground/60 mt-1">
+            Mutual Funds &middot; Real Estate &middot; Insurance &middot; Loans — Maharashtra &amp; Gujarat, India
           </p>
         </div>
 
@@ -91,7 +94,7 @@ export function SiteFooter() {
 
           <div className="space-y-1">
             <p className="font-body text-xs text-primary-foreground/80">
-              <strong className="text-primary-foreground">Insurance &amp; Credit:</strong> Authorized Corporate Agent/POSP &amp; Banking Direct Selling Agent (DSA).
+              <strong className="text-primary-foreground">Insurance &amp; Credit:</strong> Individual Insurance Agent, IRDAI (Anup Vatyani) &amp; Individually Empanelled Bank Loan DSA.
             </p>
             <p className="font-body text-xs text-primary-foreground/70">
               Insurance is the subject matter of solicitation.
@@ -100,7 +103,9 @@ export function SiteFooter() {
 
           <div className="space-y-1">
             <p className="font-body text-xs text-primary-foreground/80">
-              <strong className="text-primary-foreground">Legal Status:</strong> Artha Vriksha Services acts as an intermediary/distributor and does not render
+              <strong className="text-primary-foreground">Legal Status:</strong> Artha Vriksha Services is a brand under which our individually
+              registered/licensed professionals operate as intermediaries/distributors. All AMFI, MahaRERA, GujRERA and IRDAI
+              registrations referenced above are held in the individual&apos;s name, not the firm&apos;s. We do not render
               fee-based investment advisory or portfolio management services under SEBI (IA) Regulations.
             </p>
           </div>

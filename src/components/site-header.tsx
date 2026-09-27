@@ -34,7 +34,7 @@ export function SiteHeader() {
             <span className="flex flex-col leading-tight">
               <span className="font-heading font-bold text-xl text-primary">Artha Vriksha</span>
               <span className="text-[11px] sm:text-xs font-body font-semibold text-foreground-muted tracking-wide">
-                AMFI-Registered Mutual Fund Distributor
+                Rooted in Trust, Growing Your Wealth
               </span>
             </span>
           </Link>

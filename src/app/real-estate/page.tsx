@@ -19,9 +19,9 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { TiltCard } from "@/components/tilt-card";
 
 export const metadata = {
-  title: "Real Estate Broker in Maharashtra & Gujarat — MahaRERA & GujRERA Certified",
+  title: "Real Estate Broker in Maharashtra & Gujarat — RERA-Registered Team",
   description:
-    "RERA-verified residential, commercial, industrial and agricultural property broking across Pune, Mumbai, Ahmedabad & Surat. Home loan eligibility calculator and 5-point property verification checklist.",
+    "Residential, commercial, industrial and agricultural property broking across Pune, Mumbai, Ahmedabad & Surat, from individually MahaRERA and GujRERA registered professionals. Home loan eligibility calculator and 5-point property verification checklist.",
   keywords: [
     "real estate broker Maharashtra",
     "real estate broker Gujarat",
@@ -81,7 +81,7 @@ export default function RealEstate() {
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
               <BadgeCheck className="h-4 w-4 text-accent" />
               <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-                MahaRERA &amp; GujRERA Certified Intermediary
+                Pavan Vatyani (MahaRERA) &amp; Anup Vatyani (GujRERA) — Certified Intermediaries
               </span>
             </div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Find Property You Can Trust</h1>

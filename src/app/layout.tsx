@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Artha Vriksha Services",
   },
   description:
-    "AMFI-registered Mutual Fund Distributor (ARN 106715), MahaRERA & GujRERA certified Real Estate broker, Insurance facilitation and Loan/DSA services across Pune, Ahmedabad, Maharashtra & Gujarat. SIP, home loan, insurance and loan eligibility calculators.",
+    "Mutual Funds, Real Estate, Insurance and Loan/DSA services across Pune, Ahmedabad, Maharashtra & Gujarat — from a team of individually AMFI, MahaRERA & GujRERA registered professionals. SIP, home loan, insurance and loan eligibility calculators.",
   keywords: [
     "mutual fund distributor Pune",
     "mutual fund distributor Ahmedabad",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "Artha Vriksha Services",
     title: "Artha Vriksha Services — Mutual Funds, Real Estate, Insurance & Loans",
     description:
-      "One licensed team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat — AMFI, MahaRERA & GujRERA registered.",
+      "One team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat — our professionals are individually AMFI, MahaRERA & GujRERA registered.",
     images: [
       {
         url: "/og-image.png",
@@ -81,7 +81,7 @@ const organizationJsonLd = {
   "@type": "FinancialService",
   name: "Artha Vriksha Services",
   description:
-    "AMFI-registered Mutual Fund Distribution, MahaRERA & GujRERA certified Real Estate Broking, Insurance facilitation and Loan/DSA services across Maharashtra & Gujarat, India.",
+    "Mutual Fund Distribution, Real Estate Broking, Insurance facilitation and Loan/DSA services across Maharashtra & Gujarat, India, delivered by individually AMFI, MahaRERA & GujRERA registered professionals.",
   url: siteUrl,
   areaServed: [
     { "@type": "State", name: "Maharashtra" },

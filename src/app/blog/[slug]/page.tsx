@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: BlogPostParams) {
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
+    alternates: { canonical: `/blog/${post.slug}` },
     title: post.title,
     description: post.excerpt,
     keywords: [post.category, `${post.category} India`, `${post.category} Pune Ahmedabad`, "Artha Vriksha Services"],

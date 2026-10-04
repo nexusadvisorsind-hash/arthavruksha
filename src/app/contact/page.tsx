@@ -2,6 +2,7 @@ import { ContactForm } from "@/components/contact-form";
 import { Mail, MapPin, BadgeCheck } from "lucide-react";
 
 export const metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact Us — Pune & Ahmedabad",
   description:
     "Get in touch with Artha Vriksha Services for mutual funds, real estate, insurance or loans in Pune, Maharashtra and Ahmedabad, Gujarat. We usually reply within 24 hours.",

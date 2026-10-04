@@ -19,6 +19,7 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { TiltCard } from "@/components/tilt-card";
 
 export const metadata = {
+  alternates: { canonical: "/real-estate" },
   title: "Real Estate Broker in Maharashtra & Gujarat — RERA-Registered Team",
   description:
     "Residential, commercial, industrial and agricultural property broking across Pune, Mumbai, Ahmedabad & Surat, from individually MahaRERA and GujRERA registered professionals. Home loan eligibility calculator and 5-point property verification checklist.",

@@ -17,6 +17,7 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { TiltCard } from "@/components/tilt-card";
 
 export const metadata = {
+  alternates: { canonical: "/insurance" },
   title: "Life, Health, Motor & Business Insurance — Compared Across Insurers",
   description:
     "Our individually registered insurance agent compares term life, health, motor and commercial insurance across multiple insurers in Maharashtra & Gujarat. Free life insurance needs calculator.",

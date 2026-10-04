@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
+  alternates: { canonical: "/loans" },
   title: "Home Loans, Business Loans & Personal Loans — DSA in Pune & Ahmedabad",
   description:
     "Direct Selling Partner comparing home loans, loan against property, business working capital, personal and education loans across partner banks & NBFCs. Free EMI and loan eligibility calculators.",

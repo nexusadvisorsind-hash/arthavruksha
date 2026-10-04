@@ -11,6 +11,7 @@ const categoryColors: Record<string, string> = {
 };
 
 export const metadata = {
+  alternates: { canonical: "/blog" },
   title: "Insights & Articles | Artha Vriksha",
   description:
     "Plain-language guides on mutual funds, real estate, insurance and loans — from the Artha Vriksha team.",

@@ -46,6 +46,7 @@ const values = [
 ];
 
 export const metadata = {
+  alternates: { canonical: "/about-us" },
   title: "About Us — Anup Vatyani & Pavan Vatyani, Founders",
   description:
     "Meet the founders of Artha Vriksha Services: Anup Vatyani, AMFI-registered Mutual Fund Distributor (ARN 106715) with 24+ years in banking, and Pavan Vatyani, MahaRERA-registered real estate professional (A52100037796) with 22+ years in real estate and digital transformation.",

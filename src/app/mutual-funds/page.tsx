@@ -42,6 +42,7 @@ const howItWorks = [
 ];
 
 export const metadata = {
+  alternates: { canonical: "/mutual-funds" },
   title: "Mutual Fund Distributor & SIP Investment in Pune & Ahmedabad",
   description:
     "Anup Vatyani, AMFI-registered Mutual Fund Distributor (ARN 106715), helping you start SIPs, ELSS tax-saver funds and liquid funds across Maharashtra & Gujarat. Free SIP calculator and goal-based investment planning.",

@@ -4,6 +4,7 @@ import { EmiCalculator } from "@/components/emi-calculator";
 import { LoanEligibilityCalculator } from "@/components/loan-eligibility-calculator";
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { TiltCard } from "@/components/tilt-card";
+import { getPostBySlug } from "@/lib/blog-posts";
 import {
   ArrowRight,
   BadgeCheck,
@@ -187,6 +188,20 @@ export default function Loans() {
           </p>
         </div>
       </section>
+
+      {getPostBySlug("improve-loan-approval-chances") && (
+        <section className="py-12 bg-surface border-t border-border">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="font-body text-sm text-foreground-muted mb-2">Related reading</p>
+            <Link
+              href="/blog/improve-loan-approval-chances"
+              className="font-heading font-semibold text-primary hover:text-secondary transition-colors"
+            >
+              {getPostBySlug("improve-loan-approval-chances")!.title} →
+            </Link>
+          </div>
+        </section>
+      )}
 
       <section className="py-20 hero-navy text-primary-foreground">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

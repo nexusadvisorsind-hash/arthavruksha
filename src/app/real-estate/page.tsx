@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { RegionToggle } from "@/components/region-toggle";
+import { getPostBySlug } from "@/lib/blog-posts";
 import {
   ArrowRight,
   BadgeCheck,
@@ -214,6 +215,20 @@ export default function RealEstate() {
           </p>
         </div>
       </section>
+
+      {getPostBySlug("rera-explained-property-buyers-guide") && (
+        <section className="py-12 bg-surface border-t border-border">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="font-body text-sm text-foreground-muted mb-2">Related reading</p>
+            <Link
+              href="/blog/rera-explained-property-buyers-guide"
+              className="font-heading font-semibold text-primary hover:text-secondary transition-colors"
+            >
+              {getPostBySlug("rera-explained-property-buyers-guide")!.title} →
+            </Link>
+          </div>
+        </section>
+      )}
 
       <section className="py-20 hero-navy text-primary-foreground">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

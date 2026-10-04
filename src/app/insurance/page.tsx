@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { getPostBySlug } from "@/lib/blog-posts";
 import {
   ArrowRight,
   BadgeCheck,
@@ -184,6 +185,20 @@ export default function Insurance() {
           </p>
         </div>
       </section>
+
+      {getPostBySlug("term-vs-whole-life-insurance") && (
+        <section className="py-12 bg-surface border-t border-border">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="font-body text-sm text-foreground-muted mb-2">Related reading</p>
+            <Link
+              href="/blog/term-vs-whole-life-insurance"
+              className="font-heading font-semibold text-primary hover:text-secondary transition-colors"
+            >
+              {getPostBySlug("term-vs-whole-life-insurance")!.title} →
+            </Link>
+          </div>
+        </section>
+      )}
 
       <section className="py-20 hero-navy text-primary-foreground">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

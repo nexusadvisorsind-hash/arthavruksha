@@ -52,9 +52,27 @@ const howItWorks = [
   { icon: ThumbsUp, title: "We help with the paperwork", body: "Loan applications get rejected or delayed over small documentation errors. We help you get it right the first time." },
 ];
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Loan DSA Services",
+  name: "Home, Business & Personal Loan DSA Services",
+  description:
+    "Direct Selling Partner comparing home loans, loan against property, business working capital, personal and education loans across partner banks & NBFCs.",
+  provider: { "@type": "FinancialService", name: "Artha Vriksha Services" },
+  areaServed: [
+    { "@type": "State", name: "Maharashtra" },
+    { "@type": "State", name: "Gujarat" },
+  ],
+};
+
 export default function Loans() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
           <Reveal>

@@ -67,9 +67,27 @@ const howItWorks = [
   { icon: FileSignature, title: "We explain the fine print", body: "Exclusions, waiting periods, claim process — we walk you through it in plain language before you sign anything." },
 ];
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Insurance Advisory",
+  name: "Life, Health, Motor & Business Insurance Advisory",
+  description:
+    "Individually registered insurance agent comparing term life, health, motor and commercial insurance across multiple insurers in Maharashtra & Gujarat.",
+  provider: { "@type": "FinancialService", name: "Artha Vriksha Services" },
+  areaServed: [
+    { "@type": "State", name: "Maharashtra" },
+    { "@type": "State", name: "Gujarat" },
+  ],
+};
+
 export default function Insurance() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
           <Reveal>

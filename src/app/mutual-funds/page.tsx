@@ -64,9 +64,41 @@ const faqs = [
   { q: "Do you charge me a fee for this?", a: "No advisory fee is charged to you. We earn a distribution commission from the fund house, which is disclosed transparently — you never pay us directly." },
 ];
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Mutual Fund Distribution",
+  name: "Mutual Fund Distributor & SIP Investment Services",
+  description:
+    "AMFI-registered Mutual Fund Distributor (ARN 106715) helping clients start SIPs, ELSS tax-saver funds and liquid funds across Maharashtra & Gujarat.",
+  provider: { "@type": "FinancialService", name: "Artha Vriksha Services" },
+  areaServed: [
+    { "@type": "State", name: "Maharashtra" },
+    { "@type": "State", name: "Gujarat" },
+  ],
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function MutualFunds() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
           <Reveal>

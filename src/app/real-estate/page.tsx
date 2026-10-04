@@ -73,9 +73,27 @@ const checklist = [
   "Zoning and land-use classification confirmed for the intended purpose",
 ];
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Real Estate Broking",
+  name: "Real Estate Broking Services",
+  description:
+    "Residential, commercial, industrial and agricultural property broking across Pune, Mumbai, Ahmedabad & Surat, from individually MahaRERA and GujRERA registered professionals.",
+  provider: { "@type": "FinancialService", name: "Artha Vriksha Services" },
+  areaServed: [
+    { "@type": "State", name: "Maharashtra" },
+    { "@type": "State", name: "Gujarat" },
+  ],
+};
+
 export default function RealEstate() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
           <Reveal>

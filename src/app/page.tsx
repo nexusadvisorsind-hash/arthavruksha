@@ -25,6 +25,10 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { TiltCard } from "@/components/tilt-card";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 const categoryColors: Record<string, string> = {
   "Mutual Funds": "bg-secondary/10 text-secondary",
   "Real Estate": "bg-green-soft text-green",

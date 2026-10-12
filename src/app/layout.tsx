@@ -8,14 +8,14 @@ import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 // NOTE: This points at the live Vercel deployment (project name "arthavruksha" was
 // kept as-is on GitHub/Vercel — only the on-page brand name/emails changed to "Vriksha").
-// Once you register arthavriksha.in and connect it as a custom domain in Vercel,
-// update this to "https://arthavriksha.in".
-const siteUrl = "https://arthavruksha.vercel.app";
+// Production domain (custom domain connected in Vercel).
+const siteUrl = "https://arthavriksha.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -83,6 +83,8 @@ const organizationJsonLd = {
   description:
     "Mutual Fund Distribution, Real Estate Broking, Insurance facilitation and Loan/DSA services across Maharashtra & Gujarat, India, delivered by individually AMFI, MahaRERA & GujRERA registered professionals.",
   url: siteUrl,
+  logo: `${siteUrl}/brand/logo-icon-192.png`,
+  image: `${siteUrl}/og-image.png`,
   areaServed: [
     { "@type": "State", name: "Maharashtra" },
     { "@type": "State", name: "Gujarat" },
@@ -133,6 +135,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <ScrollProgress />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

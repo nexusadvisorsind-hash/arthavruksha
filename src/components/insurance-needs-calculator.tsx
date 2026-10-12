@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { CalcLeadLink } from "@/components/calc-lead-link";
 
 function formatINR(n: number) {
   return new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(Math.round(n));
@@ -101,6 +102,7 @@ export function InsuranceNeedsCalculator() {
         Illustrative only, based on a standard income-replacement thumb rule. Not a substitute for
         personalised advice.
       </p>
+      <CalcLeadLink vertical="Insurance" summary={`Income ₹${formatINR(income)} a year, liabilities ₹${formatINR(liabilities)}, existing cover ₹${formatINR(existingCover)}; the calculator showed about ₹${formatINR(recommendedCover)} of term cover.`} />
     </div>
   );
 }

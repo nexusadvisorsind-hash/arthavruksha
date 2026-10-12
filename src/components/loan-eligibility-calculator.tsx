@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { CalcLeadLink } from "@/components/calc-lead-link";
 
 function formatINR(n: number) {
   return new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(Math.round(n));
@@ -102,6 +103,7 @@ export function LoanEligibilityCalculator() {
         Illustrative only, assuming lenders cap your total EMIs at roughly 50% of monthly income.
         Actual loan eligibility varies by lender, loan type, credit score and documentation.
       </p>
+      <CalcLeadLink vertical="Loans" summary={`Monthly income ₹${formatINR(income)}, existing EMIs ₹${formatINR(existingEmi)}; eligibility shown about ₹${formatINR(eligibleLoan)}.`} />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { CalcLeadLink } from "@/components/calc-lead-link";
 
 function formatINR(n: number) {
   return new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(Math.round(n));
@@ -119,6 +120,7 @@ export function HomeLoanEligibilityCalculator() {
         lenders commonly use. Actual home loan eligibility varies by bank/NBFC, credit score and
         property valuation.
       </p>
+      <CalcLeadLink vertical="Real Estate" summary={`Monthly income ₹${formatINR(income)}, existing EMIs ₹${formatINR(existingEmi)}; home loan eligibility shown about ₹${formatINR(eligibleLoan)}.`} />
     </div>
   );
 }

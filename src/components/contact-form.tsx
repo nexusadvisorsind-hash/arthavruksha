@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -22,8 +22,20 @@ export function ContactForm() {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
+
+  // Prefill from a calculator link: /contact?vertical=Loans&note=...
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const v = q.get("vertical");
+    const note = q.get("note");
+    if (v && ["Mutual Funds", "Real Estate", "Insurance", "Loans"].includes(v)) {
+      setValue("vertical", v as FormData["vertical"]);
+    }
+    if (note) setValue("message", note.slice(0, 500));
+  }, [setValue]);
 
   const onSubmit = async (data: FormData) => {
     setStatus("submitting");
@@ -53,7 +65,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-surface border border-border rounded-2xl p-6 md:p-8 space-y-5">
+    <form id="enquiry" onSubmit={handleSubmit(onSubmit)} className="bg-surface border border-border rounded-2xl p-6 md:p-8 space-y-5">
       <div>
         <label className="font-body text-sm font-semibold text-primary block mb-1.5">Full Name</label>
         <input

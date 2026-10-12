@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
+import { pageMeta, isoDate, SITE_URL } from "@/lib/seo";
 import { ArrowRight, ArrowLeft, Clock, Calendar } from "lucide-react";
 
 const categoryColors: Record<string, string> = {
@@ -30,13 +31,7 @@ export async function generateMetadata({ params }: BlogPostParams) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  return {
-    alternates: { canonical: `/blog/${post.slug}` },
-    title: post.title,
-    description: post.excerpt,
-    keywords: [post.category, `${post.category} India`, `${post.category} Pune Ahmedabad`, "Artha Vriksha Services"],
-    openGraph: { type: "article", title: post.title, description: post.excerpt },
-  };
+  return pageMeta({ title: post.title.length > 62 ? "RERA Explained: A Property Buyer's Guide" : post.title, description: post.excerpt, path: `/blog/${post.slug}`, type: "article" });
 }
 
 export default async function BlogPost({ params }: BlogPostParams) {
@@ -51,10 +46,17 @@ export default async function BlogPost({ params }: BlogPostParams) {
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
-    datePublished: post.date,
+    datePublished: isoDate(post.date),
+    dateModified: isoDate(post.date),
     articleSection: post.category,
-    author: { "@type": "Organization", name: "Artha Vriksha Services" },
-    publisher: { "@type": "Organization", name: "Artha Vriksha Services" },
+    image: `${SITE_URL}/og-image.png`,
+    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+    author: { "@type": "Organization", name: "Artha Vriksha Services", url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: "Artha Vriksha Services",
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/brand/logo-icon-192.png` },
+    },
   };
 
   return (
@@ -85,7 +87,20 @@ export default async function BlogPost({ params }: BlogPostParams) {
       </section>
 
       <article className="py-16 bg-background">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-14">
+          <aside className="hidden lg:block">
+            <nav aria-label="In this article" className="sticky top-24">
+              <p className="font-body text-sm font-semibold text-primary mb-3">In this article</p>
+              <ul className="space-y-2 border-l border-border">
+                {post.sections.map((s, i) => s.heading && (
+                  <li key={i}>
+                    <a href={`#s${i}`} className="block -ml-px border-l-2 border-transparent pl-3 font-body text-sm text-foreground-muted hover:text-primary hover:border-accent transition-colors">{s.heading}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
+        <div className="max-w-3xl">
           <p className="font-body text-lg text-foreground-muted leading-relaxed mb-8 border-l-4 border-l-accent pl-5">
             {post.excerpt}
           </p>
@@ -93,7 +108,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
             {post.sections.map((s, i) => (
               <div key={i}>
                 {s.heading && (
-                  <h2 className="font-heading font-semibold text-xl md:text-2xl text-primary mb-3">{s.heading}</h2>
+                  <h2 id={`s${i}`} className="font-heading font-semibold text-xl md:text-2xl text-primary mb-3">{s.heading}</h2>
                 )}
                 {s.body.map((p, j) => (
                   <p key={j} className="font-body text-base text-foreground-muted leading-relaxed mb-4">
@@ -113,6 +128,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
               <Link href="/contact">Contact Our Team <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
+        </div>
         </div>
       </article>
 

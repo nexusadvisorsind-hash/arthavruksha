@@ -1,9 +1,8 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog-posts";
 
-// Same note as layout.tsx: switch to "https://arthavriksha.in" once the
-// custom domain is registered and connected in Vercel.
-const siteUrl = "https://arthavruksha.vercel.app";
+// Production domain.
+const siteUrl = "https://arthavriksha.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { CalcLeadLink } from "@/components/calc-lead-link";
 
 function formatINR(n: number) {
   return new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(Math.round(n));
@@ -109,6 +110,7 @@ export function SipCalculator() {
         Illustrative only. Assumes constant monthly contribution and a flat annual return; actual
         mutual fund returns fluctuate and are not guaranteed.
       </p>
+      <CalcLeadLink vertical="Mutual Funds" summary={`SIP of ₹${formatINR(monthly)} a month for ${years} years at an assumed ${rate}%.`} />
     </div>
   );
 }

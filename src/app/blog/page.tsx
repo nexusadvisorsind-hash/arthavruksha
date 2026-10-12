@@ -1,6 +1,7 @@
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { blogPosts } from "@/lib/blog-posts";
-import { ArrowRight, Clock, BookOpen } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 
 const categoryColors: Record<string, string> = {
   "Mutual Funds": "bg-secondary/10 text-secondary",
@@ -10,60 +11,50 @@ const categoryColors: Record<string, string> = {
   "Personal Finance": "bg-secondary/10 text-secondary",
 };
 
-export const metadata = {
-  alternates: { canonical: "/blog" },
-  title: "Insights & Articles | Artha Vriksha",
-  description:
-    "Plain-language guides on mutual funds, real estate, insurance and loans — from the Artha Vriksha team.",
-};
+export const metadata = pageMeta({
+  title: 'Money, Property & Insurance Guides | Artha Vriksha',
+  description: 'Plain-language guides on mutual funds, real estate, insurance and loans from the Artha Vriksha team in Pune and Ahmedabad.',
+  path: '/blog',
+});
 
 export default function Blog() {
+  const [lead, ...rest] = blogPosts;
   return (
     <>
-      <section className="hero-navy text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
-            <BookOpen className="h-4 w-4 text-accent" />
-            <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-              Insights &amp; Guides
-            </span>
-          </div>
-          <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Learn Before You Decide</h1>
-          <p className="font-body text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            Honest, plain-language articles on mutual funds, real estate, insurance and loans —
-            written by our team to help you make better decisions, not to sell you anything.
+      <section className="bg-forest text-primary-foreground">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
+          <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Read before you decide</h1>
+          <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">
+            Honest, plain-language articles on mutual funds, real estate, insurance and loans, written to help you decide, not to sell you anything.
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-background">
+      <section className="py-16 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogPosts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="card-lift bg-surface border border-border rounded-2xl p-7 flex flex-col group"
-              >
-                <span
-                  className={`inline-flex self-start items-center rounded-full px-3 py-1 text-xs font-semibold font-body mb-4 ${categoryColors[post.category]}`}
-                >
-                  {post.category}
+          <Link href={`/blog/${lead.slug}`} className="group grid md:grid-cols-[1fr_1.2fr] gap-6 md:gap-12 border-b border-border pb-12 mb-12">
+            <div>
+              <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold font-body mb-4 ${categoryColors[lead.category]}`}>{lead.category}</span>
+              <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary leading-tight group-hover:text-secondary transition-colors">{lead.title}</h2>
+            </div>
+            <div className="flex flex-col justify-center">
+              <p className="font-body text-lg text-foreground-muted leading-relaxed mb-4 measure">{lead.excerpt}</p>
+              <span className="flex items-center gap-4 font-body text-sm text-foreground-muted">
+                <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" /> {lead.readTime}</span>
+                <span className="flex items-center gap-1 text-secondary font-semibold">Read <ArrowRight className="h-4 w-4" /></span>
+              </span>
+            </div>
+          </Link>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+            {rest.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
+                <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold font-body mb-3 ${categoryColors[post.category]}`}>{post.category}</span>
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-2 leading-snug group-hover:text-secondary transition-colors">{post.title}</h2>
+                <p className="font-body text-foreground-muted leading-relaxed mb-3">{post.excerpt}</p>
+                <span className="flex items-center gap-4 font-body text-sm text-foreground-muted">
+                  <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" /> {post.readTime}</span>
+                  <span className="flex items-center gap-1 text-secondary font-semibold">Read <ArrowRight className="h-4 w-4" /></span>
                 </span>
-                <h2 className="font-heading font-semibold text-lg text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
-                  {post.title}
-                </h2>
-                <p className="font-body text-sm text-foreground-muted leading-relaxed mb-6 flex-1">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center justify-between font-body text-xs text-foreground-muted">
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5" /> {post.readTime}
-                  </span>
-                  <span className="flex items-center gap-1 text-secondary font-semibold group-hover:gap-2 transition-all">
-                    Read <ArrowRight className="h-3.5 w-3.5" />
-                  </span>
-                </div>
               </Link>
             ))}
           </div>

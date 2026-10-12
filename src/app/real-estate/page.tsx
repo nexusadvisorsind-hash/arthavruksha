@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { RegionToggle } from "@/components/region-toggle";
@@ -16,26 +17,16 @@ import {
 } from "lucide-react";
 import { PropertyLifecycleChart } from "@/components/property-lifecycle-chart";
 import { HomeLoanEligibilityCalculator } from "@/components/home-loan-eligibility-calculator";
-import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
-import { TiltCard } from "@/components/tilt-card";
+import { Reveal } from "@/components/reveal";
+import { InPageNav } from "@/components/in-page-nav";
+import { ReraStepper } from "@/components/rera-stepper";
+import { ScrollTimeline } from "@/components/scroll-timeline";
 
-export const metadata = {
-  alternates: { canonical: "/real-estate" },
-  title: "Real Estate Broker in Maharashtra & Gujarat — RERA-Registered Team",
-  description:
-    "Residential, commercial, industrial and agricultural property broking across Pune, Mumbai, Ahmedabad & Surat, from individually MahaRERA and GujRERA registered professionals. Home loan eligibility calculator and 5-point property verification checklist.",
-  keywords: [
-    "real estate broker Maharashtra",
-    "real estate broker Gujarat",
-    "MahaRERA certified property broker",
-    "GujRERA certified property broker",
-    "property for sale Pune",
-    "property for sale Ahmedabad",
-    "home loan eligibility calculator",
-    "RERA verified properties",
-    "commercial property broker",
-  ],
-};
+export const metadata = pageMeta({
+  title: 'Real Estate Consultant in Pune & Ahmedabad | Artha Vriksha',
+  description: 'MahaRERA and GujRERA registered property consultants. Verify a project with our 5-step RERA check and estimate your home loan eligibility.',
+  path: '/real-estate',
+});
 
 const categories = [
   {
@@ -80,7 +71,7 @@ const serviceJsonLd = {
   serviceType: "Real Estate Broking",
   name: "Real Estate Broking Services",
   description:
-    "Residential, commercial, industrial and agricultural property broking across Pune, Mumbai, Ahmedabad & Surat, from individually MahaRERA and GujRERA registered professionals.",
+    "Residential, commercial, industrial and agricultural property broking in Maharashtra and Gujarat, from individually MahaRERA and GujRERA registered professionals.",
   provider: { "@type": "FinancialService", name: "Artha Vriksha Services" },
   areaServed: [
     { "@type": "State", name: "Maharashtra" },
@@ -88,159 +79,115 @@ const serviceJsonLd = {
   ],
 };
 
+const navItems = [
+  { id: "rera-check", label: "RERA check" },
+  { id: "property-types", label: "Property types" },
+  { id: "lifecycle", label: "Lifecycle" },
+  { id: "home-loan-check", label: "Home loan check" },
+  { id: "how-it-works", label: "How we work" },
+  { id: "desks", label: "Our desks" },
+];
+
 export default function RealEstate() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <section className="hero-navy text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+
+      <section className="hero-re text-primary-foreground">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
-              <BadgeCheck className="h-4 w-4 text-accent" />
-              <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-                Pavan Vatyani (MahaRERA) &amp; Anup Vatyani (GujRERA) — Certified Intermediaries
-              </span>
-            </div>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Find Property You Can Trust</h1>
-            <p className="font-body text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-              Buying, selling, or leasing residential, commercial, industrial or agricultural
-              property in Maharashtra and Gujarat — with every listing checked before it reaches you.
+            <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
+              <BadgeCheck className="h-4 w-4 text-accent" /> Pavan Vatyani (MahaRERA) and Anup Vatyani (GujRERA), registered real estate agents
+            </p>
+            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Find property you can trust, checked before you visit</h1>
+            <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">
+              Buying, selling or leasing residential, commercial, industrial or agricultural property in Maharashtra and Gujarat, with every listing verified before it reaches you.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="py-16 bg-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RegionToggle />
+      <InPageNav items={navItems} />
+
+      <section id="rera-check" className="py-16 md:py-24 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
+          <div>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Five checks before you pay a booking amount</h2>
+            <p className="font-body text-foreground-muted measure mb-4">Tick them off as you go. These are the checks that protect you from unregistered projects, title disputes and delays.</p>
+            <p className="font-body text-xs text-foreground-muted measure">Projects we present are restricted to registered entities under the respective state authorities.</p>
+          </div>
+          <ReraStepper />
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="pb-20 bg-background">
+      <section id="property-types" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-14 text-center">
-            How We Help You Buy, Sell or Lease
-          </h2>
-          <RevealGroup className="grid md:grid-cols-3 gap-6">
-            {howItWorks.map((h, i) => (
-              <RevealItem key={h.title}>
-                <TiltCard className="relative card-lift bg-surface border border-border rounded-2xl p-7 h-full">
-                  <span className="absolute -top-4 -left-2 w-9 h-9 rounded-full bg-green text-green-foreground font-heading font-bold flex items-center justify-center text-sm">
-                    {i + 1}
-                  </span>
-                  <h.icon className="h-8 w-8 text-secondary mb-4 mt-2" />
-                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{h.title}</h3>
-                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{h.body}</p>
-                </TiltCard>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-        </div>
-      </section>
-
-      <section className="pb-20 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4 text-center">
-            Property Categories
-          </h2>
-          <p className="font-body text-foreground-muted text-center max-w-2xl mx-auto mb-14">
-            Whatever kind of property you&apos;re after, we can help.
-          </p>
-          <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-10">What kind of property are you after?</h2>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
             {categories.map((c) => (
-              <RevealItem key={c.title}>
-                <TiltCard className="card-lift bg-surface border border-border rounded-2xl p-7 border-t-4 border-t-secondary h-full">
-                  <c.icon className="h-8 w-8 text-secondary mb-4" />
-                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{c.title}</h3>
-                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{c.body}</p>
-                </TiltCard>
-              </RevealItem>
+              <div key={c.title} className="flex gap-4">
+                <c.icon className="h-8 w-8 text-secondary shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-heading font-semibold text-xl text-primary mb-2">{c.title}</h3>
+                  <p className="font-body text-foreground-muted leading-relaxed">{c.body}</p>
+                </div>
+              </div>
             ))}
-          </RevealGroup>
+          </div>
         </div>
       </section>
 
-      {/* Property lifecycle chart */}
-      <section className="pb-20 bg-background">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
-            Understanding the Property Investment Lifecycle
-          </h2>
-          <p className="font-body text-foreground-muted leading-relaxed">
-            Every property moves through predictable stages from launch to maturity. Knowing where
-            a project sits on this curve helps you time a purchase, a rental strategy, or an exit.
-          </p>
+      <section id="lifecycle" className="py-16 md:py-24 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Where a project sits in its lifecycle</h2>
+          <p className="font-body text-foreground-muted measure">Every project moves through stages from launch to maturity. Knowing the stage helps you time a purchase, a rental plan or an exit.</p>
         </div>
         <PropertyLifecycleChart />
       </section>
 
-      {/* Home loan eligibility calculator */}
-      <section className="py-20 bg-surface">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
-            Check Your Home Loan Eligibility
-          </h2>
-          <p className="font-body text-foreground-muted leading-relaxed">
-            Get a quick estimate of how much home loan you could qualify for, based on your
-            income and existing obligations.
-          </p>
+      <section id="home-loan-check" className="py-16 md:py-24 bg-surface">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Know your home budget first</h2>
+          <p className="font-body text-foreground-muted measure">A quick estimate of the home loan you could qualify for, based on income and existing obligations. Lenders decide the final amount.</p>
         </div>
         <HomeLoanEligibilityCalculator />
       </section>
 
-      <section className="py-20 bg-background">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4 text-center">
-            Our 5-Point Verification Checklist
-          </h2>
-          <p className="font-body text-foreground-muted text-center mb-10">
-            Before any property reaches a client, it has to clear every one of these checks.
-            This is what protects you from title disputes, unregistered projects, and builder
-            delays down the line.
-          </p>
-          <ul className="space-y-3">
-            {checklist.map((c) => (
-              <li key={c} className="flex gap-3 bg-background border border-border rounded-xl p-4">
-                <CheckCircle2 className="h-5 w-5 text-green shrink-0 mt-0.5" />
-                <span className="font-body text-sm text-foreground">{c}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="font-body text-xs text-foreground-muted text-center mt-6">
-            Projects presented are restricted to registered entities under respective state authorities.
-          </p>
+      <section id="how-it-works" className="py-16 md:py-24 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
+          <div>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How we help you buy, sell or lease</h2>
+            <p className="font-body text-foreground-muted measure">From first brief to the day you get the keys.</p>
+          </div>
+          <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#0F8A5F" />
+        </div>
+      </section>
+
+      <section id="desks" className="py-16 md:py-24 bg-surface">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8">Two desks, one standard</h2>
+          <RegionToggle />
         </div>
       </section>
 
       {getPostBySlug("rera-explained-property-buyers-guide") && (
-        <section className="py-12 bg-surface border-t border-border">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="font-body text-sm text-foreground-muted mb-2">Related reading</p>
-            <Link
-              href="/blog/rera-explained-property-buyers-guide"
-              className="font-heading font-semibold text-primary hover:text-secondary transition-colors"
-            >
+        <section className="py-10 bg-background border-t border-border">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="font-body text-sm text-foreground-muted mb-1">Related reading</p>
+            <Link href="/blog/rera-explained-property-buyers-guide" className="font-heading font-semibold text-xl text-primary hover:text-secondary transition-colors">
               {getPostBySlug("rera-explained-property-buyers-guide")!.title} →
             </Link>
           </div>
         </section>
       )}
 
-      <section className="py-20 hero-navy text-primary-foreground">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
-            Looking to Buy, Sell or Lease?
-          </h2>
-          <p className="font-body text-primary-foreground/90 mb-8 max-w-xl mx-auto">
-            Tell us what you&apos;re looking for and we&apos;ll get back to you with verified options.
-          </p>
-          <Button asChild variant="gold" size="lg" className="mt-4">
-            <Link href="/contact">Contact Our Team <ArrowRight className="ml-2 h-5 w-5" /></Link>
-          </Button>
+      <section className="py-16 md:py-20 hero-re text-primary-foreground">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
+          <div>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Looking to buy, sell or lease?</h2>
+            <p className="font-body text-primary-foreground/85 measure">Tell us what you need and we will come back with verified options.</p>
+          </div>
+          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact our team <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
         </div>
       </section>
     </>

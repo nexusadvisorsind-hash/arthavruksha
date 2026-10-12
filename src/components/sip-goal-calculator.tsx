@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { CalcLeadLink } from "@/components/calc-lead-link";
 
 function formatINR(n: number) {
   return new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(Math.round(n));
@@ -95,6 +96,7 @@ export function SipGoalCalculator() {
         Illustrative only. Assumes a flat annual return compounded monthly; actual mutual fund
         returns fluctuate and are not guaranteed.
       </p>
+      <CalcLeadLink vertical="Mutual Funds" summary={`Goal of ₹${formatINR(target)} in ${years} years; the calculator showed about ₹${formatINR(requiredMonthly)} a month at an assumed ${rate}%.`} />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getPostBySlug } from "@/lib/blog-posts";
@@ -12,27 +13,18 @@ import {
   MessageSquare,
   Scale as ScaleIcon,
   FileSignature,
+  ChevronDown,
 } from "lucide-react";
 import { InsuranceNeedsCalculator } from "@/components/insurance-needs-calculator";
-import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
-import { TiltCard } from "@/components/tilt-card";
+import { Reveal } from "@/components/reveal";
+import { InPageNav } from "@/components/in-page-nav";
+import { ScrollTimeline } from "@/components/scroll-timeline";
 
-export const metadata = {
-  alternates: { canonical: "/insurance" },
-  title: "Life, Health, Motor & Business Insurance — Compared Across Insurers",
-  description:
-    "Our individually registered insurance agent compares term life, health, motor and commercial insurance across multiple insurers in Maharashtra & Gujarat. Free life insurance needs calculator.",
-  keywords: [
-    "term insurance plans India",
-    "life insurance calculator",
-    "health insurance advisor Pune",
-    "health insurance advisor Ahmedabad",
-    "motor insurance comparison",
-    "business insurance India",
-    "insurance needs calculator",
-    "how much life insurance do I need",
-  ],
-};
+export const metadata = pageMeta({
+  title: 'Life & Health Insurance in Pune & Ahmedabad | Artha Vriksha',
+  description: 'IRDAI-licensed agent comparing term, health, motor and business insurance across insurers. Estimate the term cover your family needs.',
+  path: '/insurance',
+});
 
 const products = [
   {
@@ -82,135 +74,98 @@ const serviceJsonLd = {
   ],
 };
 
+const navItems = [
+  { id: "cover-calculator", label: "How much cover" },
+  { id: "policy-types", label: "Policy types" },
+  { id: "how-it-works", label: "How we work" },
+  { id: "why-compare", label: "Why compare" },
+];
+
 export default function Insurance() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <section className="hero-navy text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+
+      <section className="hero-ins text-primary-foreground">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
-              <BadgeCheck className="h-4 w-4 text-accent" />
-              <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-                Anup Vatyani — Individual Insurance Agent (IRDAI)
-              </span>
-            </div>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Protect What Matters Most</h1>
-            <p className="font-body text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-              Life, health, motor and business insurance — compared across insurers and explained in
-              plain language, so you know exactly what you&apos;re covered for.
+            <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
+              <BadgeCheck className="h-4 w-4 text-accent" /> Anup Vatyani, individual insurance agent (IRDAI)
             </p>
+            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Protect what matters most, in plain language</h1>
+            <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure mb-6">
+              Life, health, motor and business insurance, compared across insurers, so you know exactly what you are covered for before you sign.
+            </p>
+            <p className="font-body text-xs text-primary-foreground/65">Insurance is the subject matter of solicitation.</p>
           </Reveal>
         </div>
       </section>
 
-      <section className="py-16 bg-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 bg-surface border border-border rounded-xl p-4">
-          <p className="font-body text-xs text-foreground-muted text-center">
-            Insurance is the subject matter of solicitation.
-          </p>
-        </div>
-      </section>
+      <InPageNav items={navItems} />
 
-      {/* How it works */}
-      <section className="pb-20 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-14 text-center">
-            How We Help You Choose
-          </h2>
-          <RevealGroup className="grid md:grid-cols-3 gap-6">
-            {howItWorks.map((h, i) => (
-              <RevealItem key={h.title}>
-                <TiltCard className="relative card-lift bg-surface border border-border rounded-2xl p-7 h-full">
-                  <span className="absolute -top-4 -left-2 w-9 h-9 rounded-full bg-green text-green-foreground font-heading font-bold flex items-center justify-center text-sm">
-                    {i + 1}
-                  </span>
-                  <h.icon className="h-8 w-8 text-secondary mb-4 mt-2" />
-                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{h.title}</h3>
-                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{h.body}</p>
-                </TiltCard>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-        </div>
-      </section>
-
-      <section className="pb-20 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4 text-center">
-            Products We Facilitate
-          </h2>
-          <p className="font-body text-foreground-muted text-center max-w-2xl mx-auto mb-14">
-            A look at the types of cover we help clients get, and why each one matters.
-          </p>
-          <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((p) => (
-              <RevealItem key={p.title}>
-                <TiltCard className="card-lift bg-surface border border-border rounded-2xl p-7 border-t-4 border-t-accent h-full">
-                  <p.icon className="h-8 w-8 text-secondary mb-4" />
-                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{p.title}</h3>
-                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{p.body}</p>
-                </TiltCard>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-        </div>
-      </section>
-
-      {/* Insurance needs calculator */}
-      <section className="py-20 bg-surface">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
-            How Much Life Insurance Do You Need?
-          </h2>
-          <p className="font-body text-foreground-muted leading-relaxed">
-            Most people guess a round number. This calculator uses a standard income-replacement
-            method to give you a realistic starting point.
-          </p>
+      <section id="cover-calculator" className="py-16 md:py-24 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How much term cover does your family need?</h2>
+          <p className="font-body text-foreground-muted measure">Enter your income, loans and existing cover. The estimate is a starting point for a conversation, not a recommendation.</p>
         </div>
         <InsuranceNeedsCalculator />
       </section>
 
-      <section className="py-16 bg-background">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex items-start gap-3 bg-green-soft border border-green/20 rounded-xl p-6">
-          <ShieldPlus className="h-6 w-6 text-green shrink-0 mt-0.5" />
-          <p className="font-body text-sm text-foreground leading-relaxed">
-            <strong className="text-primary">Why compare with us?</strong> As an individually
-            registered insurance agent, we work with multiple insurers rather than being tied to
-            just one. That means we recommend the policy that fits you best — not whichever
-            company pays us the most.
+      <section id="policy-types" className="py-16 md:py-24 bg-surface">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8">Pick a cover to read about</h2>
+          <div className="divide-y divide-border border-y border-border">
+            {products.map((p, i) => (
+              <details key={p.title} className="group py-5" open={i === 0}>
+                <summary className="flex cursor-pointer list-none items-center gap-4 font-heading font-semibold text-xl text-primary">
+                  <p.icon className="h-6 w-6 text-secondary shrink-0" />
+                  <span className="flex-1">{p.title}</span>
+                  <ChevronDown className="h-5 w-5 shrink-0 text-secondary transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="font-body text-foreground-muted leading-relaxed mt-3 pl-10 measure">{p.body}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" className="py-16 md:py-24 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
+          <div>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How we help you choose</h2>
+            <p className="font-body text-foreground-muted measure">We compare first and explain the fine print before you decide.</p>
+          </div>
+          <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#D4AF37" />
+        </div>
+      </section>
+
+      <section id="why-compare" className="py-16 md:py-20 bg-surface">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 border-l-4 border-accent pl-6">
+          <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-3">Why compare with us?</h2>
+          <p className="font-body text-lg text-foreground-muted leading-relaxed measure">
+            As an individually registered insurance agent, we work with multiple insurers rather than being tied to one. We recommend the policy that fits you, not the company that pays us most.
           </p>
         </div>
       </section>
 
       {getPostBySlug("term-vs-whole-life-insurance") && (
-        <section className="py-12 bg-surface border-t border-border">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="font-body text-sm text-foreground-muted mb-2">Related reading</p>
-            <Link
-              href="/blog/term-vs-whole-life-insurance"
-              className="font-heading font-semibold text-primary hover:text-secondary transition-colors"
-            >
+        <section className="py-10 bg-background border-t border-border">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="font-body text-sm text-foreground-muted mb-1">Related reading</p>
+            <Link href="/blog/term-vs-whole-life-insurance" className="font-heading font-semibold text-xl text-primary hover:text-secondary transition-colors">
               {getPostBySlug("term-vs-whole-life-insurance")!.title} →
             </Link>
           </div>
         </section>
       )}
 
-      <section className="py-20 hero-navy text-primary-foreground">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
-            Get a Coverage Recommendation
-          </h2>
-          <p className="font-body text-primary-foreground/90 mb-8 max-w-xl mx-auto">
-            Tell us about your family or business and we&apos;ll suggest the right cover — no pressure, no obligation.
-          </p>
-          <Button asChild variant="gold" size="lg" className="mt-4">
-            <Link href="/contact">Contact Our Team <ArrowRight className="ml-2 h-5 w-5" /></Link>
-          </Button>
+      <section className="py-16 md:py-20 hero-ins text-primary-foreground">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
+          <div>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Not sure what you need?</h2>
+            <p className="font-body text-primary-foreground/85 measure">Tell us about your family and your work. We will show what is worth covering first.</p>
+          </div>
+          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact our team <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
         </div>
       </section>
     </>

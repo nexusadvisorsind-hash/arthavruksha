@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { CalcLeadLink } from "@/components/calc-lead-link";
 
 function formatINR(n: number) {
   return new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(Math.round(n));
@@ -104,6 +105,7 @@ export function EmiCalculator() {
       <p className="font-body text-xs text-foreground-muted text-center mt-4">
         Illustrative only. Actual rates, tenure and eligibility are determined by the partner bank/NBFC.
       </p>
+      <CalcLeadLink vertical="Loans" summary={`Loan of ₹${formatINR(principal)} for ${tenure} years at ${rate}%; EMI shown about ₹${formatINR(emi)}.`} />
     </div>
   );
 }

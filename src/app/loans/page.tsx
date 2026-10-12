@@ -1,9 +1,11 @@
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { EmiCalculator } from "@/components/emi-calculator";
 import { LoanEligibilityCalculator } from "@/components/loan-eligibility-calculator";
-import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
-import { TiltCard } from "@/components/tilt-card";
+import { Reveal } from "@/components/reveal";
+import { InPageNav } from "@/components/in-page-nav";
+import { ScrollTimeline } from "@/components/scroll-timeline";
 import { getPostBySlug } from "@/lib/blog-posts";
 import {
   ArrowRight,
@@ -19,22 +21,11 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-export const metadata = {
-  alternates: { canonical: "/loans" },
-  title: "Home Loans, Business Loans & Personal Loans — DSA in Pune & Ahmedabad",
-  description:
-    "Direct Selling Partner comparing home loans, loan against property, business working capital, personal and education loans across partner banks & NBFCs. Free EMI and loan eligibility calculators.",
-  keywords: [
-    "home loan DSA Pune",
-    "home loan DSA Ahmedabad",
-    "loan against property",
-    "business loan India",
-    "personal loan eligibility calculator",
-    "EMI calculator online",
-    "loan eligibility calculator",
-    "education loan India",
-  ],
-};
+export const metadata = pageMeta({
+  title: 'Home Loan & LAP Consultant, Pune & Ahmedabad | Artha Vriksha',
+  description: 'Empanelled loan DSA comparing home loan, loan against property and business loan offers across banks and NBFCs. Free EMI and eligibility calculators.',
+  path: '/loans',
+});
 
 const secured = [
   { icon: Home, title: "Home Loans", body: "Financing to buy or build a residential property, with tenures up to 30 years and competitive interest rates from our partner banks." },
@@ -67,153 +58,114 @@ const serviceJsonLd = {
   ],
 };
 
+const navItems = [
+  { id: "emi-calculator", label: "EMI calculator" },
+  { id: "eligibility", label: "Eligibility" },
+  { id: "loan-types", label: "Loan types" },
+  { id: "how-it-works", label: "How we work" },
+];
+
 export default function Loans() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <section className="hero-navy text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20 text-center">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+
+      <section className="hero-loan text-primary-foreground">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 mb-6">
-              <BadgeCheck className="h-4 w-4 text-accent" />
-              <span className="font-body text-xs md:text-sm font-semibold tracking-wide">
-                Individually Empanelled Bank Loan DSA
-              </span>
-            </div>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Get the Right Loan, Faster</h1>
-            <p className="font-body text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-              We work with a panel of banks and NBFCs to find you competitive interest rates for
-              home loans, business capital, personal needs and more — and help you avoid the
-              paperwork mistakes that slow approvals down.
+            <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
+              <BadgeCheck className="h-4 w-4 text-accent" /> Individually empanelled bank loan DSA
+            </p>
+            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Get the right loan, faster</h1>
+            <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">
+              We work with a panel of banks and NBFCs to compare rates for home loans, loan against property, business capital and more, and help you avoid the paperwork mistakes that slow approvals.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="pb-20 pt-16 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-14 text-center">
-            How We Help You Borrow Smart
-          </h2>
-          <RevealGroup className="grid md:grid-cols-3 gap-6">
-            {howItWorks.map((h, i) => (
-              <RevealItem key={h.title}>
-                <TiltCard className="relative card-lift bg-surface border border-border rounded-2xl p-7 h-full">
-                  <span className="absolute -top-4 -left-2 w-9 h-9 rounded-full bg-green text-green-foreground font-heading font-bold flex items-center justify-center text-sm">
-                    {i + 1}
-                  </span>
-                  <h.icon className="h-8 w-8 text-secondary mb-4 mt-2" />
-                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{h.title}</h3>
-                  <p className="font-body text-sm text-foreground-muted leading-relaxed">{h.body}</p>
-                </TiltCard>
-              </RevealItem>
-            ))}
-          </RevealGroup>
+      <InPageNav items={navItems} />
+
+      <section id="emi-calculator" className="py-16 md:py-24 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">What will your EMI be?</h2>
+          <p className="font-body text-foreground-muted measure">Illustrative only. Actual rates and eligibility are decided by the lending bank or NBFC.</p>
         </div>
+        <EmiCalculator />
       </section>
 
-      <section className="pb-20 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-10">
-            <div>
-              <h2 className="font-heading font-bold text-2xl text-primary mb-2">Secured Loans</h2>
-              <p className="font-body text-sm text-foreground-muted mb-6">Backed by collateral — usually lower interest rates and higher loan amounts.</p>
-              <div className="space-y-4">
-                {secured.map((s) => (
-                  <div key={s.title} className="flex gap-4 bg-surface border border-border rounded-xl p-5 border-l-4 border-l-secondary">
-                    <s.icon className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-heading font-semibold text-primary mb-1">{s.title}</h3>
-                      <p className="font-body text-sm text-foreground-muted leading-relaxed">{s.body}</p>
-                    </div>
+      <section id="eligibility" className="py-16 md:py-24 bg-surface">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How much could you borrow?</h2>
+          <p className="font-body text-foreground-muted measure">Enter your income and existing EMIs for a quick estimate of loan eligibility.</p>
+        </div>
+        <LoanEligibilityCalculator />
+      </section>
+
+      <section id="loan-types" className="py-16 md:py-24 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-14">
+          <div>
+            <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-2">Secured loans</h2>
+            <p className="font-body text-sm text-foreground-muted mb-6">Backed by collateral, usually with lower rates and higher amounts.</p>
+            <div className="space-y-6">
+              {secured.map((s) => (
+                <div key={s.title} className="flex gap-4 border-l-4 border-secondary pl-4">
+                  <s.icon className="h-6 w-6 text-secondary shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-heading font-semibold text-lg text-primary mb-1">{s.title}</h3>
+                    <p className="font-body text-sm text-foreground-muted leading-relaxed">{s.body}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-            <div>
-              <h2 className="font-heading font-bold text-2xl text-primary mb-2">Unsecured Loans</h2>
-              <p className="font-body text-sm text-foreground-muted mb-6">No collateral needed — approval based on income and credit history.</p>
-              <div className="space-y-4">
-                {unsecured.map((s) => (
-                  <div key={s.title} className="flex gap-4 bg-surface border border-border rounded-xl p-5 border-l-4 border-l-green">
-                    <s.icon className="h-6 w-6 text-green shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-heading font-semibold text-primary mb-1">{s.title}</h3>
-                      <p className="font-body text-sm text-foreground-muted leading-relaxed">{s.body}</p>
-                    </div>
+          </div>
+          <div>
+            <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-2">Unsecured loans</h2>
+            <p className="font-body text-sm text-foreground-muted mb-6">No collateral. Approval depends on income and credit history.</p>
+            <div className="space-y-6">
+              {unsecured.map((s) => (
+                <div key={s.title} className="flex gap-4 border-l-4 border-green pl-4">
+                  <s.icon className="h-6 w-6 text-green shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-heading font-semibold text-lg text-primary mb-1">{s.title}</h3>
+                    <p className="font-body text-sm text-foreground-muted leading-relaxed">{s.body}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-surface">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">EMI Calculator</h2>
-          <p className="font-body text-foreground-muted leading-relaxed">
-            Get a quick sense of your monthly payment. This is illustrative only — actual rates
-            and eligibility are determined by the lending bank or NBFC.
-          </p>
-        </div>
-        <EmiCalculator />
-      </section>
-
-      {/* Loan eligibility calculator */}
-      <section className="py-20 bg-background">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
-            Check Your Loan Eligibility
-          </h2>
-          <p className="font-body text-foreground-muted leading-relaxed">
-            Not sure how much you could borrow? Enter your income and existing EMIs to get a
-            quick estimate of your loan eligibility.
-          </p>
-        </div>
-        <LoanEligibilityCalculator />
-      </section>
-
-      <section className="py-16 bg-surface">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex items-start gap-3 bg-green-soft border border-green/20 rounded-xl p-6">
-          <ShieldCheck className="h-6 w-6 text-green shrink-0 mt-0.5" />
-          <p className="font-body text-sm text-foreground leading-relaxed">
-            <strong className="text-primary">No hidden charges:</strong> We disclose our
-            partnership commission upfront. You never pay us a fee directly — our earnings come
-            from the lending bank or NBFC once your loan is disbursed.
-          </p>
+      <section id="how-it-works" className="py-16 md:py-24 bg-surface">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
+          <div>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How we help you borrow smart</h2>
+            <p className="font-body text-foreground-muted measure mb-6">You never pay us directly. We disclose our partnership commission upfront, and our earnings come from the lender once your loan is disbursed.</p>
+            <p className="font-body text-sm text-foreground-muted flex gap-2 measure"><ShieldCheck className="h-5 w-5 text-green shrink-0" /> No hidden charges.</p>
+          </div>
+          <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#1E5FD9" />
         </div>
       </section>
 
       {getPostBySlug("improve-loan-approval-chances") && (
-        <section className="py-12 bg-surface border-t border-border">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="font-body text-sm text-foreground-muted mb-2">Related reading</p>
-            <Link
-              href="/blog/improve-loan-approval-chances"
-              className="font-heading font-semibold text-primary hover:text-secondary transition-colors"
-            >
+        <section className="py-10 bg-background border-t border-border">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="font-body text-sm text-foreground-muted mb-1">Related reading</p>
+            <Link href="/blog/improve-loan-approval-chances" className="font-heading font-semibold text-xl text-primary hover:text-secondary transition-colors">
               {getPostBySlug("improve-loan-approval-chances")!.title} →
             </Link>
           </div>
         </section>
       )}
 
-      <section className="py-20 hero-navy text-primary-foreground">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
-            Ready to Apply?
-          </h2>
-          <p className="font-body text-primary-foreground/90 mb-8 max-w-xl mx-auto">
-            Tell us what you need financed and we&apos;ll match you with the right lender.
-          </p>
-          <Button asChild variant="gold" size="lg" className="mt-4">
-            <Link href="/contact">Contact Our Team <ArrowRight className="ml-2 h-5 w-5" /></Link>
-          </Button>
+      <section className="py-16 md:py-20 hero-loan text-primary-foreground">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
+          <div>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Ready to apply?</h2>
+            <p className="font-body text-primary-foreground/85 measure">Tell us what you need financed and we will match you with the right lender.</p>
+          </div>
+          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact our team <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
         </div>
       </section>
     </>

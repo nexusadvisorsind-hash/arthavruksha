@@ -40,9 +40,9 @@ const fundCategories = [
 ];
 
 const howItWorks = [
-  { icon: Target, title: "Tell us your goal", body: "A house down payment, your child's college fund, retirement — we start by understanding what you're actually saving for and when you'll need the money." },
-  { icon: Calendar, title: "We match you to funds", body: "Based on your goal, timeline and comfort with risk, we shortlist funds that fit — never a one-size-fits-all recommendation." },
-  { icon: Repeat, title: "You invest, we monitor", body: "Start a SIP or lump-sum investment. We check in periodically to make sure your funds are still on track for your goal." },
+  { icon: Target, title: "You share your goal", body: "A house down payment, your child's college fund, retirement. Anup Vatyani starts by understanding what you are saving for and when you will need the money." },
+  { icon: Calendar, title: "Funds are matched to your goal", body: "Based on your goal, timeline and comfort with risk, Anup shortlists funds that fit, never a one-size-fits-all choice." },
+  { icon: Repeat, title: "You invest, Anup checks in", body: "Start a SIP or lump-sum investment. Anup checks in periodically to see whether your funds are still on track for your goal." },
 ];
 
 export const metadata = pageMeta({
@@ -54,7 +54,7 @@ export const metadata = pageMeta({
 const faqs = [
   { q: "How much money do I need to start?", a: "Most SIPs can be started with as little as ₹500 per month. There's no need for a large lump sum to get going." },
   { q: "Can I stop or change my SIP anytime?", a: "Yes. SIPs have no lock-in (except ELSS, which has a 3-year lock-in). You can pause, stop, or increase your monthly amount whenever you like." },
-  { q: "Do you charge me a fee for this?", a: "No advisory fee is charged to you. We earn a distribution commission from the fund house, which is disclosed transparently — you never pay us directly." },
+  { q: "Do you charge me a fee for this?", a: "No fee is charged to you. Anup Vatyani earns a distribution commission from the fund house, which is disclosed transparently, so you never pay him directly." },
 ];
 
 const serviceJsonLd = {
@@ -64,7 +64,7 @@ const serviceJsonLd = {
   name: "Mutual Fund Distributor & SIP Investment Services",
   description:
     "AMFI-registered Mutual Fund Distributor (ARN 106715) helping clients start SIPs, ELSS tax-saver funds and liquid funds across Maharashtra & Gujarat.",
-  provider: { "@type": "FinancialService", name: "Artha Vriksha Services" },
+  provider: { "@type": "Person", name: "Anup Vatyani", jobTitle: "AMFI-registered Mutual Fund Distributor", identifier: "ARN 106715", worksFor: { "@type": "FinancialService", name: "Artha Vriksha Services" } },
   areaServed: [
     { "@type": "State", name: "Maharashtra" },
     { "@type": "State", name: "Gujarat" },
@@ -85,7 +85,7 @@ const navItems = [
   { id: "fund-types", label: "Fund types" },
   { id: "sip-calculator", label: "SIP calculator" },
   { id: "goal-calculator", label: "Plan a goal" },
-  { id: "how-it-works", label: "How we work" },
+  { id: "how-it-works", label: "How it works" },
   { id: "faq", label: "Questions" },
 ];
 
@@ -99,11 +99,11 @@ export default function MutualFunds() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
           <Reveal>
             <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
-              <BadgeCheck className="h-4 w-4 text-accent" /> Anup Vatyani, AMFI-registered Mutual Fund Distributor, ARN 106715
+              <BadgeCheck className="h-4 w-4 text-accent" /> Anup Vatyani, AMFI-registered Mutual Fund Distributor, <strong className="font-semibold text-white">ARN 106715</strong>
             </p>
             <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Start growing your money, one SIP at a time</h1>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure mb-6">
-              We help you choose and start mutual fund investments that match your goals, from SIPs to ELSS tax savers, in plain language and without pressure.
+              Anup Vatyani, an AMFI-registered Mutual Fund Distributor (ARN 106715), helps you choose and start mutual fund investments that match your goals, from SIPs to ELSS tax savers, in plain language and without pressure.
             </p>
             <p className="font-body text-xs text-primary-foreground/65 measure">Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</p>
           </Reveal>
@@ -137,16 +137,16 @@ export default function MutualFunds() {
         <SipCalculator />
       </section>
 
-      <section aria-label="How we are paid" className="bg-surface">
+      <section aria-label="How the distributor is paid" className="bg-surface">
         <p className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 font-body text-xs text-foreground-muted measure">
-          We earn distribution (trail) commission from the asset management companies. We do not charge fee-based advisory under SEBI (IA) Regulations. Mutual fund investments are subject to market risks, read all scheme related documents carefully.
+          Anup Vatyani (AMFI ARN 106715) earns distribution (trail) commission from the asset management companies. He does not charge fee-based advisory under SEBI (IA) Regulations. Mutual fund investments are subject to market risks, read all scheme related documents carefully.
         </p>
       </section>
 
       <section id="goal-calculator" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Work backwards from your goal</h2>
-          <p className="font-body text-foreground-muted measure">Enter the amount you want to reach and by when. We estimate the monthly SIP that could get you there.</p>
+          <p className="font-body text-foreground-muted measure">Enter the amount you want to reach and by when. The calculator estimates the monthly SIP that could get you there.</p>
         </div>
         <SipGoalCalculator />
       </section>
@@ -154,7 +154,7 @@ export default function MutualFunds() {
       <section id="how-it-works" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How we work with you</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How it works with Anup</h2>
             <p className="font-body text-foreground-muted measure">Three steps, no pressure. You decide at every stage.</p>
           </div>
           <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#1E5FD9" />
@@ -175,7 +175,7 @@ export default function MutualFunds() {
               </details>
             ))}
           </div>
-          <p className="font-body text-sm text-foreground-muted mt-8 measure flex gap-2"><ShieldCheck className="h-5 w-5 text-green shrink-0" /> We are licensed distributors, not fee-charging investment advisers. We do not provide portfolio management or fee-based advisory services under SEBI (IA) Regulations.</p>
+          <p className="font-body text-sm text-foreground-muted mt-8 measure flex gap-2"><ShieldCheck className="h-5 w-5 text-green shrink-0" /> Anup Vatyani is an AMFI-registered Mutual Fund Distributor (ARN 106715), not a fee-charging investment adviser. He does not provide portfolio management or fee-based advisory services under SEBI (IA) Regulations.</p>
         </div>
       </section>
 
@@ -194,9 +194,9 @@ export default function MutualFunds() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Ready to start your first SIP?</h2>
-            <p className="font-body text-primary-foreground/85 measure">Talk to our team for a free, no-obligation conversation about your goals.</p>
+            <p className="font-body text-primary-foreground/85 measure">Talk to Anup Vatyani for a free, no-obligation conversation about your goals.</p>
           </div>
-          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact our team <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
+          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact Anup <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
         </div>
       </section>
     </>

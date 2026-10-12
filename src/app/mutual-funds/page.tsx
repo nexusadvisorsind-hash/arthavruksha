@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SipCalculator } from "@/components/sip-calculator";
@@ -44,22 +45,11 @@ const howItWorks = [
   { icon: Repeat, title: "You invest, we monitor", body: "Start a SIP or lump-sum investment. We check in periodically to make sure your funds are still on track for your goal." },
 ];
 
-export const metadata = {
-  alternates: { canonical: "/mutual-funds" },
-  title: { absolute: "Mutual Fund Distributor in Pune & Ahmedabad | Artha Vriksha" },
-  description:
-    "Anup Vatyani, AMFI-registered Mutual Fund Distributor (ARN 106715), helping you start SIPs, ELSS tax-saver funds and liquid funds across Maharashtra & Gujarat. Free SIP calculator and goal-based investment planning.",
-  keywords: [
-    "mutual fund distributor Pune",
-    "mutual fund distributor Ahmedabad",
-    "AMFI registered mutual fund distributor",
-    "SIP calculator",
-    "best SIP plans",
-    "ELSS tax saving mutual funds",
-    "liquid funds India",
-    "goal based SIP calculator",
-  ],
-};
+export const metadata = pageMeta({
+  title: 'Mutual Fund Distributor in Pune & Ahmedabad | Artha Vriksha',
+  description: 'AMFI-registered mutual fund distributor (ARN 106715). Start a SIP, plan a goal and see what it could grow to with free calculators. Pune and Ahmedabad.',
+  path: '/mutual-funds',
+});
 
 const faqs = [
   { q: "How much money do I need to start?", a: "Most SIPs can be started with as little as ₹500 per month. There's no need for a large lump sum to get going." },

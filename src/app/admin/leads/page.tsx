@@ -1,6 +1,10 @@
 import { getPool } from "@/lib/db";
+import { isLoggedIn, logout } from "./actions";
+import { AdminLoginForm } from "@/components/admin-login-form";
 
 export const metadata = { robots: { index: false, follow: false } };
+// Always check the sign-in cookie on every visit; never serve a saved copy.
+export const dynamic = "force-dynamic";
 
 type Submission = {
   id: number;
@@ -27,36 +31,13 @@ async function getSubmissions(): Promise<{ rows: Submission[]; error?: string }>
   }
 }
 
-export default async function AdminLeads({
-  searchParams,
-}: {
-  searchParams: Promise<{ key?: string }>;
-}) {
-  const { key } = await searchParams;
-  const adminKey = process.env.ADMIN_LEADS_KEY;
-
-  if (!adminKey) {
+export default async function AdminLeads() {
+  if (!(await isLoggedIn())) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-20">
-        <h1 className="font-heading font-bold text-2xl text-primary mb-4">Leads — Not Configured</h1>
-        <p className="font-body text-sm text-foreground-muted">
-          Set an <code className="bg-surface px-1.5 py-0.5 rounded">ADMIN_LEADS_KEY</code> environment
-          variable in your Vercel project settings, then visit this page as{" "}
-          <code className="bg-surface px-1.5 py-0.5 rounded">/admin/leads?key=YOUR_KEY</code>.
-        </p>
-      </div>
-    );
-  }
-
-  if (key !== adminKey) {
-    return (
-      <div className="max-w-2xl mx-auto px-4 py-20">
-        <h1 className="font-heading font-bold text-2xl text-primary mb-4">Leads</h1>
-        <p className="font-body text-sm text-foreground-muted">
-          Enter the page as <code className="bg-surface px-1.5 py-0.5 rounded">/admin/leads?key=YOUR_KEY</code> with
-          the key you set in Vercel. This page is not indexed by search engines and is only accessible to
-          whoever has that key — keep it private.
-        </p>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h1 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-2">Leads</h1>
+        <p className="font-body text-sm text-foreground-muted mb-8">Sign in to see contact form enquiries.</p>
+        <AdminLoginForm />
       </div>
     );
   }
@@ -65,7 +46,10 @@ export default async function AdminLeads({
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-2">Contact Form Leads</h1>
+      <div className="flex items-start justify-between gap-4">
+        <h1 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-2">Contact Form Leads</h1>
+        <form action={logout}><button className="font-body text-sm font-semibold text-secondary hover:underline">Sign out</button></form>
+      </div>
       <p className="font-body text-sm text-foreground-muted mb-8">
         {rows.length} submission{rows.length === 1 ? "" : "s"} — most recent first.
       </p>

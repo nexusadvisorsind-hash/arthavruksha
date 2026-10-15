@@ -24,7 +24,7 @@ import { ScrollTimeline } from "@/components/scroll-timeline";
 
 export const metadata = pageMeta({
   title: 'Real Estate Consultant in Pune & Ahmedabad | Artha Vriksha',
-  description: 'MahaRERA and GujRERA registered property consultants. Verify a project with our 5-step RERA check and estimate your home loan eligibility.',
+  description: 'MahaRERA and GujRERA registered property consultants. Verify a project with a 5-step RERA check and estimate your home loan eligibility.',
   path: '/real-estate',
 });
 
@@ -32,29 +32,29 @@ const categories = [
   {
     icon: Home,
     title: "Residential",
-    body: "Flats, villas, and plotted developments across Maharashtra and Gujarat — whether you're buying your first home, upgrading, or investing in a second property. We check builder credentials and RERA status before we ever show you a listing.",
+    body: "Flats, villas, and plotted developments across Maharashtra and Gujarat — whether you're buying your first home, upgrading, or investing in a second property. Pavan Vatyani (Maharashtra) or Anup Vatyani (Gujarat) checks builder credentials and RERA status before any listing is shown.",
   },
   {
     icon: Building2,
     title: "Commercial",
-    body: "Office spaces, retail shops, and mixed-use commercial units for businesses looking to set up, expand, or relocate. We help you evaluate footfall, connectivity, and lease terms so the space actually works for your business.",
+    body: "Office spaces, retail shops, and mixed-use commercial units for businesses looking to set up, expand, or relocate. Pavan Vatyani (Maharashtra) or Anup Vatyani (Gujarat) evaluates footfall, connectivity and lease terms so the space actually works for your business.",
   },
   {
     icon: Factory,
     title: "Industrial & Logistics",
-    body: "Warehouses, industrial sheds, and manufacturing plots — especially useful if you're setting up operations in Gujarat's industrial corridors. We understand zoning rules and utility access requirements for these properties.",
+    body: "Warehouses, industrial sheds, and manufacturing plots — especially useful if you're setting up operations in Gujarat's industrial corridors. Anup Vatyani checks zoning rules and utility access requirements for these properties.",
   },
   {
     icon: Wheat,
     title: "Agricultural",
-    body: "Farmhouses and agricultural land, with full title and land-use verification. Agricultural land has its own set of legal complications — we make sure yours is clear before you commit.",
+    body: "Farmhouses and agricultural land, with full title and land-use verification. Agricultural land has its own set of legal complications — Pavan Vatyani (Maharashtra) or Anup Vatyani (Gujarat) checks that yours is clear before you commit.",
   },
 ];
 
 const howItWorks = [
-  { icon: Search, title: "Tell us what you need", body: "Budget, location, type of property, and timeline — we shortlist options that actually match, instead of flooding you with irrelevant listings." },
-  { icon: FileCheck, title: "We verify before you visit", body: "RERA registration, title deed, encumbrance certificate, and builder track record are checked upfront, so your time isn't wasted on properties with hidden problems." },
-  { icon: Handshake, title: "We support the deal to closing", body: "From price negotiation to loan coordination (if needed) to final registration, we stay involved until the keys are actually in your hand." },
+  { icon: Search, title: "Share what you need", body: "Budget, location, type of property, and timeline — a shortlist of options that actually match is prepared by Pavan Vatyani (Maharashtra) or Anup Vatyani (Gujarat), instead of flooding you with irrelevant listings." },
+  { icon: FileCheck, title: "Verified before you visit", body: "RERA registration, title deed, encumbrance certificate, and builder track record are checked upfront, so your time isn't wasted on properties with hidden problems." },
+  { icon: Handshake, title: "Support through to closing", body: "From price negotiation to loan coordination (if needed) to final registration, support continues until the keys are actually in your hand." },
 ];
 
 const checklist = [
@@ -84,8 +84,8 @@ const navItems = [
   { id: "property-types", label: "Property types" },
   { id: "lifecycle", label: "Lifecycle" },
   { id: "home-loan-check", label: "Home loan check" },
-  { id: "how-it-works", label: "How we work" },
-  { id: "desks", label: "Our desks" },
+  { id: "how-it-works", label: "How it works" },
+  { id: "desks", label: "Desks" },
 ];
 
 export default function RealEstate() {
@@ -114,7 +114,7 @@ export default function RealEstate() {
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Five checks before you pay a booking amount</h2>
             <p className="font-body text-foreground-muted measure mb-4">Tick them off as you go. These are the checks that protect you from unregistered projects, title disputes and delays.</p>
-            <p className="font-body text-xs text-foreground-muted measure">Projects we present are restricted to registered entities under the respective state authorities.</p>
+            <p className="font-body text-xs text-foreground-muted measure">Projects presented are restricted to registered entities under the respective state authorities.</p>
           </div>
           <ReraStepper />
         </div>
@@ -156,7 +156,7 @@ export default function RealEstate() {
       <section id="how-it-works" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How we help you buy, sell or lease</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How buying, selling or leasing works</h2>
             <p className="font-body text-foreground-muted measure">From first brief to the day you get the keys.</p>
           </div>
           <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#0F8A5F" />
@@ -185,9 +185,9 @@ export default function RealEstate() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Looking to buy, sell or lease?</h2>
-            <p className="font-body text-primary-foreground/85 measure">Tell us what you need and we will come back with verified options.</p>
+            <p className="font-body text-primary-foreground/85 measure">Share what you need, and Pavan Vatyani (Maharashtra) or Anup Vatyani (Gujarat) will come back with verified options.</p>
           </div>
-          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact our team <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
+          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
         </div>
       </section>
     </>

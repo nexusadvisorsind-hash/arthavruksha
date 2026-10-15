@@ -37,7 +37,7 @@ export function SiteFooter() {
           <div>
             <div className="font-heading font-semibold mb-3">Company</div>
             <ul className="space-y-2 font-body text-sm text-primary-foreground/75">
-              <li><Link href="/about-us" className="hover:text-accent">About Us</Link></li>
+              <li><Link href="/about-us" className="hover:text-accent">About</Link></li>
               <li><Link href="/blog" className="hover:text-accent">Blog</Link></li>
               <li><Link href="/contact" className="hover:text-accent">Contact</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-accent">Privacy Policy</Link></li>
@@ -103,10 +103,10 @@ export function SiteFooter() {
 
           <div className="space-y-1">
             <p className="font-body text-xs text-primary-foreground/80">
-              <strong className="text-primary-foreground">Legal Status:</strong> Artha Vriksha Services is a brand under which our individually
+              <strong className="text-primary-foreground">Legal Status:</strong> Artha Vriksha Services is a brand under which individually
               registered/licensed professionals operate as intermediaries/distributors. All AMFI, MahaRERA, GujRERA and IRDAI
-              registrations referenced above are held in the individual&apos;s name, not the firm&apos;s. We do not render
-              fee-based investment advisory or portfolio management services under SEBI (IA) Regulations.
+              registrations referenced above are held in the individual&apos;s name, not the firm&apos;s. No
+              fee-based investment advisory or portfolio management services are rendered under SEBI (IA) Regulations.
             </p>
           </div>
 

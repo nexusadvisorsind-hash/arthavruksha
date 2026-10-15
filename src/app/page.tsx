@@ -39,11 +39,11 @@ export default function Home() {
               Mutual funds, real estate, insurance and loans, under one registered team.
             </h1>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed mb-8 measure">
-              We are a family-run firm in Pune and Ahmedabad. We explain every product in plain language, show our registrations openly, and look at your money, property, cover and credit together.
+              Artha Vriksha Services is a family-run firm in Pune and Ahmedabad. Every product is explained in plain language, the registrations are shown openly, and your money, property, cover and credit are looked at together.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <Button asChild size="lg" variant="gold">
-                <Link href="/contact">Talk to our team <Phone className="ml-2 h-4 w-4" /></Link>
+                <Link href="/contact">Contact <Phone className="ml-2 h-4 w-4" /></Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white/70 text-white hover:bg-white hover:text-primary">
                 <a href="#life-moments">Find where to start</a>
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-background border-b border-border" aria-label="Our registrations">
+      <section className="bg-background border-b border-border" aria-label="Registrations">
         <dl className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
           {credentials.map((c) => (
             <div key={c.k} className="border-l-2 border-accent pl-3">
@@ -72,7 +72,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3 measure">Where are you in life right now?</h2>
-            <p className="font-body text-foreground-muted mb-8 measure">Pick the moment closest to yours. We will show the three things that usually matter first, in the order they usually matter.</p>
+            <p className="font-body text-foreground-muted mb-8 measure">Pick the moment closest to yours. The three things that usually matter first appear below, in the order they usually matter.</p>
           </Reveal>
           <LifeMomentPicker />
         </div>
@@ -89,9 +89,9 @@ export default function Home() {
           <Reveal delay={0.1}>
             <ul className="space-y-6">
               {[
-                ["A loan decision changes your investing.", "A lower EMI frees monthly money for a SIP. We look at both together."],
+                ["A loan decision changes your investing.", "A lower EMI frees monthly money for a SIP. Both are looked at together."],
                 ["A property decision changes your cover.", "A home loan needs term cover behind it, so the family keeps the home."],
-                ["An uninsured risk undoes years of saving.", "We check what is protected before suggesting where to invest more."],
+                ["An uninsured risk undoes years of saving.", "What is already protected is checked before any suggestion on where to invest more."],
               ].map(([h, b]) => (
                 <li key={h} className="border-l-4 border-green pl-5">
                   <p className="font-heading font-semibold text-xl text-primary mb-1">{h}</p>
@@ -118,7 +118,7 @@ export default function Home() {
           <Reveal>
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-5">Two offices, local knowledge</h2>
             <p className="font-body text-primary-foreground/80 leading-relaxed measure">
-              Good property and loan advice depends on the local market: which builders deliver, which lenders approve quickly, and how each state&rsquo;s rules work. That is why we work from both Pune and Ahmedabad.
+              Good property and loan advice depends on the local market: which builders deliver, which lenders approve quickly, and how each state&rsquo;s rules work. That is why Artha Vriksha Services works from both Pune and Ahmedabad.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -138,16 +138,16 @@ export default function Home() {
 
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How we earn, and how we protect your data</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How the firm earns, and how your data is protected</h2>
           <p className="font-body text-foreground-muted mb-10 measure">Two things people should know before they trust anyone with their finances.</p>
           <div className="grid md:grid-cols-2 gap-10">
             <div className="border-t-2 border-primary pt-5">
-              <h3 className="font-heading font-semibold text-xl text-primary mb-2">We are distributors, not fee-charging advisers</h3>
-              <p className="font-body text-foreground-muted leading-relaxed measure">We earn commission from the fund house, insurer or lender, never a hidden fee from you. We tell you the risks and the costs before you decide, and we never promise returns.</p>
+              <h3 className="font-heading font-semibold text-xl text-primary mb-2">Distributors and registered agents, not fee-charging advisers</h3>
+              <p className="font-body text-foreground-muted leading-relaxed measure">Earnings come as commission from the fund house, insurer or lender, never as a hidden fee from you. Risks and costs are explained before you decide, and returns are never promised.</p>
             </div>
             <div className="border-t-2 border-primary pt-5">
-              <h3 className="font-heading font-semibold text-xl text-primary mb-2">Your details stay with us</h3>
-              <p className="font-body text-foreground-muted leading-relaxed measure">We collect only what we need, follow the DPDP Act 2023, and never sell or share your information.</p>
+              <h3 className="font-heading font-semibold text-xl text-primary mb-2">Your details are handled with care</h3>
+              <p className="font-body text-foreground-muted leading-relaxed measure">Only the details needed to reply are collected, with your consent, under the DPDP Act 2023. Your information is never sold. Read the Privacy Policy for the full details.</p>
             </div>
           </div>
         </div>
@@ -175,10 +175,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-10 items-end">
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">Let&rsquo;s talk about your goals</h2>
-            <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">A no-pressure conversation. Tell us what you want to achieve, and we will lay out the options with the costs and risks first.</p>
+            <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">A no-pressure conversation. Share what you want to achieve, and the options follow, with the costs and risks first.</p>
           </div>
           <div>
-            <Button asChild variant="gold" size="lg" className="mb-4"><Link href="/contact">Contact us <ArrowRight className="ml-2 h-5 w-5" /></Link></Button>
+            <Button asChild variant="gold" size="lg" className="mb-4"><Link href="/contact">Contact <ArrowRight className="ml-2 h-5 w-5" /></Link></Button>
             <p className="font-body text-sm text-primary-foreground/70">info@arthavriksha.in · Offices in Pune and Ahmedabad</p>
           </div>
         </div>

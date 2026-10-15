@@ -45,7 +45,7 @@ const products = [
   {
     icon: Car,
     title: "Motor Insurance",
-    body: "Comprehensive and third-party cover for your car or two-wheeler — both personal and commercial vehicles. We help you compare add-ons like zero-depreciation cover so you're not underinsured after an accident.",
+    body: "Comprehensive and third-party cover for your car or two-wheeler — both personal and commercial vehicles. Anup Vatyani explains add-ons like zero-depreciation cover so you are not underinsured after an accident.",
   },
   {
     icon: Building2,
@@ -55,16 +55,16 @@ const products = [
 ];
 
 const howItWorks = [
-  { icon: MessageSquare, title: "We understand your risks", body: "Every family and business has a different risk profile. We ask the right questions to figure out what actually needs protecting." },
-  { icon: ScaleIcon, title: "We compare policies for you", body: "Instead of pushing one insurer, we compare coverage, exclusions, and premiums across multiple companies so you get the best fit." },
-  { icon: FileSignature, title: "We explain the fine print", body: "Exclusions, waiting periods, claim process — we walk you through it in plain language before you sign anything." },
+  { icon: MessageSquare, title: "Your risks come first", body: "Every family and business has a different risk profile. Anup Vatyani asks the right questions to work out what actually needs protecting." },
+  { icon: ScaleIcon, title: "Policies are compared for you", body: "Anup Vatyani compares coverage, exclusions and premiums across the insurers he is appointed with, so the choice rests on facts, not on a single brochure." },
+  { icon: FileSignature, title: "The fine print is explained", body: "Anup Vatyani explains exclusions, waiting periods and the claim process in plain language before you sign anything." },
 ];
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: "Insurance Advisory",
-  name: "Life, Health, Motor & Business Insurance Advisory",
+  serviceType: "Insurance Distribution",
+  name: "Life, Health, Motor & Business Insurance",
   description:
     "Individually registered insurance agent comparing term life, health, motor and commercial insurance across multiple insurers in Maharashtra & Gujarat.",
   provider: { "@type": "FinancialService", name: "Artha Vriksha Services" },
@@ -77,7 +77,7 @@ const serviceJsonLd = {
 const navItems = [
   { id: "cover-calculator", label: "How much cover" },
   { id: "policy-types", label: "Policy types" },
-  { id: "how-it-works", label: "How we work" },
+  { id: "how-it-works", label: "How it works" },
   { id: "why-compare", label: "Why compare" },
 ];
 
@@ -132,8 +132,8 @@ export default function Insurance() {
       <section id="how-it-works" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How we help you choose</h2>
-            <p className="font-body text-foreground-muted measure">We compare first and explain the fine print before you decide.</p>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How the choice is made</h2>
+            <p className="font-body text-foreground-muted measure">Compare first, and understand the fine print before you decide.</p>
           </div>
           <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#D4AF37" />
         </div>
@@ -141,9 +141,9 @@ export default function Insurance() {
 
       <section id="why-compare" className="py-16 md:py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 border-l-4 border-accent pl-6">
-          <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-3">Why compare with us?</h2>
+          <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-3">Why compare before you buy?</h2>
           <p className="font-body text-lg text-foreground-muted leading-relaxed measure">
-            As an individually registered insurance agent, we work with multiple insurers rather than being tied to one. We recommend the policy that fits you, not the company that pays us most.
+            Anup Vatyani is an individually registered insurance agent (IRDAI). Plans are offered only from the insurers he is appointed with, and the policy suggested is the one that fits your needs, not the one that pays the most commission.
           </p>
         </div>
       </section>
@@ -163,9 +163,9 @@ export default function Insurance() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Not sure what you need?</h2>
-            <p className="font-body text-primary-foreground/85 measure">Tell us about your family and your work. We will show what is worth covering first.</p>
+            <p className="font-body text-primary-foreground/85 measure">Share a little about your family and your work, and Anup Vatyani will show what is worth covering first.</p>
           </div>
-          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact our team <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
+          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact Anup <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
         </div>
       </section>
     </>

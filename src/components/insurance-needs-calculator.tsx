@@ -93,8 +93,8 @@ export function InsuranceNeedsCalculator() {
             This is a quick income-replacement estimate: your annual income multiplied by the
             number of years your family would need support, plus outstanding loans, minus cover
             you already have. Your actual ideal cover also depends on dependents, future goals
-            like children&apos;s education, and your family&apos;s living expenses — our Insurance
-            desk can help refine this number for your situation.
+            like children&apos;s education, and your family&apos;s living expenses — Anup Vatyani
+            can help refine this number for your situation.
           </p>
         </div>
       </div>

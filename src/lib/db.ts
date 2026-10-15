@@ -35,4 +35,8 @@ export async function ensureContactTable() {
       created_at TIMESTAMPTZ NOT NULL DEFAULT now()
     );
   `);
+  // DPDP Act 2023: keep a record of the consent given with each enquiry.
+  await p.query(`ALTER TABLE contact_submissions ADD COLUMN IF NOT EXISTS consent_given BOOLEAN NOT NULL DEFAULT false`);
+  await p.query(`ALTER TABLE contact_submissions ADD COLUMN IF NOT EXISTS consent_at TIMESTAMPTZ`);
+  await p.query(`ALTER TABLE contact_submissions ADD COLUMN IF NOT EXISTS consent_notice_version TEXT`);
 }

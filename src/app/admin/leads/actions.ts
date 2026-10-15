@@ -3,6 +3,8 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { createHash, timingSafeEqual } from "crypto";
+import { revalidatePath } from "next/cache";
+import { getPool } from "@/lib/db";
 
 const COOKIE = "av_admin";
 
@@ -57,4 +59,15 @@ export async function isLoggedIn() {
   if (!expectedPassword()) return false;
   const c = jar.get(COOKIE)?.value;
   return !!c && same(c, await sessionToken());
+}
+
+/** Permanently deletes one enquiry (for example, after a person asks for erasure under the DPDP Act). */
+export async function deleteLead(form: FormData) {
+  if (!(await isLoggedIn())) return;
+  const id = Number(form.get("id"));
+  if (!Number.isInteger(id)) return;
+  const pool = getPool();
+  if (!pool) return;
+  await pool.query("DELETE FROM contact_submissions WHERE id = $1", [id]);
+  revalidatePath("/admin/leads");
 }

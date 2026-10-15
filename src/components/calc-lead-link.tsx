@@ -7,7 +7,7 @@ type Props = { vertical: "Mutual Funds" | "Real Estate" | "Insurance" | "Loans";
  * Link shown under a calculator. Sends the visitor to the contact form with the
  * topic selected and their numbers written into the message box, so they do not retype them.
  */
-export function CalcLeadLink({ vertical, summary, cta = "Talk to us about these numbers" }: Props) {
+export function CalcLeadLink({ vertical, summary, cta = "Discuss these numbers" }: Props) {
   const params = new URLSearchParams({ vertical, note: `I used your calculator. ${summary}` });
   return (
     <div className="mt-6 flex justify-center">

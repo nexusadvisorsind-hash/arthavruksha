@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     template: "%s | Artha Vriksha Services",
   },
   description:
-    "Mutual Funds, Real Estate, Insurance and Loan/DSA services across Pune, Ahmedabad, Maharashtra & Gujarat — from a team of individually AMFI, MahaRERA & GujRERA registered professionals. SIP, home loan, insurance and loan eligibility calculators.",
+    "Mutual Funds, Real Estate, Insurance and Loan/DSA services across Pune, Ahmedabad, Maharashtra & Gujarat — through individually AMFI, MahaRERA & GujRERA registered professionals. SIP, home loan, insurance and loan eligibility calculators.",
   keywords: [
     "mutual fund distributor Pune",
     "mutual fund distributor Ahmedabad",
     "AMFI registered mutual fund distributor",
-    "best SIP plans India",
+    "SIP plans India",
     "SIP calculator online",
     "real estate broker Maharashtra",
     "real estate broker Gujarat",
@@ -38,12 +38,11 @@ export const metadata: Metadata = {
     "RERA registered real estate agent",
     "term insurance plans India",
     "life insurance calculator",
-    "health insurance advisor",
+    "health insurance agent",
     "home loan eligibility calculator",
     "loan against property",
     "personal loan DSA",
     "financial services Pune Ahmedabad",
-    "investment advisor Gujarat",
     "GIFT City IFSC mutual funds",
     "Anup Vatyani AMFI",
     "Pavan Vatyani real estate",
@@ -57,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Artha Vriksha Services",
     title: "Artha Vriksha Services — Mutual Funds, Real Estate, Insurance & Loans",
     description:
-      "One team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat — our professionals are individually AMFI, MahaRERA & GujRERA registered.",
+      "One team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat — professionals individually AMFI, MahaRERA & GujRERA registered.",
     images: [
       {
         url: "/og-image.png",

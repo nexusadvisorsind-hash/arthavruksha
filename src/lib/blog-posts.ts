@@ -22,13 +22,13 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         body: [
-          "Starting a Systematic Investment Plan is one of the best financial decisions a young earner can make. But we see the same handful of mistakes again and again with first-time investors — and they're easy to avoid once you know what to look for.",
+          "Starting a Systematic Investment Plan is one of the best financial decisions a young earner can make. But the same handful of mistakes appear again and again with first-time investors — and they're easy to avoid once you know what to look for.",
         ],
       },
       {
         heading: "1. Stopping the SIP the moment the market dips",
         body: [
-          "This is the single biggest wealth-destroyer we see. Markets go up and down — that's normal, not a warning sign. When you stop your SIP during a dip, you miss out on buying units at a lower price, which is exactly when a SIP works hardest for you. Unless your goal or income situation has genuinely changed, staying invested through the dip is usually the better move.",
+          "This is among the most common costly mistakes. Markets go up and down — that's normal, not a warning sign. When you stop your SIP during a dip, you miss out on buying units at a lower price, which is exactly when a SIP works hardest for you. Unless your goal or income situation has genuinely changed, staying invested through the dip is usually the better move.",
         ],
       },
       {
@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "The bottom line",
         body: [
-          "None of these mistakes are complicated to avoid — they just require a plan and someone to periodically sanity-check it with you. That's exactly the kind of ongoing support our Mutual Funds desk provides to every client, at no extra cost beyond the standard distribution commission.",
+          "None of these mistakes are complicated to avoid — they just require a plan and someone to periodically sanity-check it with you. That is the kind of ongoing support Anup Vatyani, as Mutual Fund Distributor, provides, with no extra cost beyond the standard distribution commission paid by the fund house.",
         ],
       },
     ],
@@ -102,9 +102,9 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "How we help",
+        heading: "How the property check works",
         body: [
-          "Every property our Real Estate desk presents to a client has already cleared RERA verification, title and encumbrance checks, and a developer track-record review — so you're not doing this homework alone. If you're evaluating a property from another source, we're also happy to run this verification for you before you commit.",
+          "Every property presented by Pavan Vatyani (Maharashtra) or Anup Vatyani (Gujarat) is first checked for RERA registration, title and encumbrance, and the developer's track record — so you're not doing this homework alone. A property found from another source can also be run through the same verification before you commit.",
         ],
       },
     ],
@@ -120,7 +120,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         body: [
-          "This is the question we get asked more than any other on the Insurance desk. Both policy types protect your family financially if something happens to you — but they work very differently, and the right choice depends on your goals, not on which one earns an agent a bigger commission.",
+          "This is one of the questions asked most often about insurance. Both policy types protect your family financially if something happens to you — but they work very differently, and the right choice depends on your goals, not on which one earns an agent a bigger commission.",
         ],
       },
       {
@@ -148,9 +148,9 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "Our approach",
+        heading: "How the choice is made",
         body: [
-          "Because we're not tied to a single insurer, we don't have a reason to steer you toward the policy that pays the biggest commission. We'll walk through your actual numbers and recommend whichever structure genuinely fits your family's needs.",
+          "The policy that fits the family's needs matters more than the commission it pays. Walking through your actual numbers shows which structure genuinely fits, among the plans Anup Vatyani is appointed to offer.",
         ],
       },
     ],
@@ -194,9 +194,9 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "How we help",
+        heading: "How Pavan Vatyani helps",
         body: [
-          "This comparison and documentation check is exactly what our Loans desk does before we submit an application on your behalf — we only take applications to lenders where you have a strong chance of approval, and we check your paperwork is complete before it ever reaches the bank.",
+          "This comparison and documentation check is what Pavan Vatyani does before an application is submitted on your behalf. Paperwork is checked for completeness before it reaches the bank, and approval is always the lender's decision.",
         ],
       },
     ],
@@ -212,7 +212,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         body: [
-          "It's completely normal to have a different person handling your investments, your property search, your insurance, and your loans. It's also, we'd argue, the reason a lot of people end up with financial decisions that don't actually work well together.",
+          "It's completely normal to have a different person handling your investments, your property search, your insurance, and your loans. It is also one reason why many people end up with financial decisions that do not work well together.",
         ],
       },
       {
@@ -230,13 +230,13 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What changes when it's one team",
         body: [
-          "When your mutual fund advisor, property broker, insurance agent and loan specialist are all part of the same team with visibility into your full picture, recommendations start accounting for each other. Your loan structuring considers your investment lock-ins. Your insurance cover gets sized against your actual property and loan exposure. Your investment timeline gets planned around any property purchase you're saving for.",
+          "When your mutual fund distributor, property broker, insurance agent and loan specialist are all part of the same team with visibility into your full picture, recommendations start accounting for each other. Your loan structuring considers your investment lock-ins. Your insurance cover gets sized against your actual property and loan exposure. Your investment timeline gets planned around any property purchase you're saving for.",
         ],
       },
       {
         heading: "That's the whole idea behind Artha Vriksha",
         body: [
-          "We built Artha Vriksha Services specifically to close this gap — one licensed, accountable team across all four services, so the advice you get on one actually reflects what's happening in the other three.",
+          "Artha Vriksha Services was built to close this gap: one team of licensed professionals across all four services, so what you hear on one reflects what is happening in the other three.",
         ],
       },
     ],

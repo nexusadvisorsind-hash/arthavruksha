@@ -28,7 +28,7 @@ export const metadata = pageMeta({
 });
 
 const secured = [
-  { icon: Home, title: "Home Loans", body: "Financing to buy or build a residential property, with tenures up to 30 years and competitive interest rates from our partner banks." },
+  { icon: Home, title: "Home Loans", body: "Financing to buy or build a residential property, with tenures up to 30 years and interest rates from partner banks." },
   { icon: Landmark, title: "Loan Against Property (LAP)", body: "Already own a property? Unlock cash against it without selling — useful for business expansion, a child's education, or any large expense." },
   { icon: Briefcase, title: "Working Capital", body: "Secured credit lines that help businesses manage day-to-day expenses like inventory, payroll and supplier payments without cash-flow stress." },
 ];
@@ -39,9 +39,9 @@ const unsecured = [
 ];
 
 const howItWorks = [
-  { icon: ClipboardList, title: "Tell us what you need", body: "Loan amount, purpose, and timeline — we figure out which loan type actually fits your situation." },
-  { icon: SearchIcon, title: "We compare lenders for you", body: "Instead of applying at one bank and hoping, we check rates and eligibility across our partner banks and NBFCs to find you the best deal." },
-  { icon: ThumbsUp, title: "We help with the paperwork", body: "Loan applications get rejected or delayed over small documentation errors. We help you get it right the first time." },
+  { icon: ClipboardList, title: "Share what you need", body: "Loan amount, purpose, and timeline — the loan type that fits your situation is worked out from there." },
+  { icon: SearchIcon, title: "Lenders are compared for you", body: "Instead of applying at one bank and hoping, Pavan Vatyani checks rates and eligibility across partner banks and NBFCs so the options are clear before you apply." },
+  { icon: ThumbsUp, title: "Paperwork is checked", body: "Loan applications get rejected or delayed over small documentation errors. Pavan Vatyani checks each document so it is right the first time." },
 ];
 
 const serviceJsonLd = {
@@ -62,7 +62,7 @@ const navItems = [
   { id: "emi-calculator", label: "EMI calculator" },
   { id: "eligibility", label: "Eligibility" },
   { id: "loan-types", label: "Loan types" },
-  { id: "how-it-works", label: "How we work" },
+  { id: "how-it-works", label: "How it works" },
 ];
 
 export default function Loans() {
@@ -78,7 +78,7 @@ export default function Loans() {
             </p>
             <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Get the right loan, faster</h1>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">
-              We work with a panel of banks and NBFCs to compare rates for home loans, loan against property, business capital and more, and help you avoid the paperwork mistakes that slow approvals.
+              Pavan Vatyani works with a panel of banks and NBFCs to compare rates for home loans, loan against property, business capital and more, and helps avoid the paperwork mistakes that slow approvals.
             </p>
           </Reveal>
         </div>
@@ -140,8 +140,8 @@ export default function Loans() {
       <section id="how-it-works" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How we help you borrow smart</h2>
-            <p className="font-body text-foreground-muted measure mb-6">You never pay us directly. We disclose our partnership commission upfront, and our earnings come from the lender once your loan is disbursed.</p>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How to borrow smart</h2>
+            <p className="font-body text-foreground-muted measure mb-6">You never pay Pavan Vatyani directly. The commission is disclosed upfront, and it is paid by the lender once your loan is disbursed. Loan approval and interest rates are decided by the lender.</p>
             <p className="font-body text-sm text-foreground-muted flex gap-2 measure"><ShieldCheck className="h-5 w-5 text-green shrink-0" /> No hidden charges.</p>
           </div>
           <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#1E5FD9" />
@@ -163,9 +163,9 @@ export default function Loans() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Ready to apply?</h2>
-            <p className="font-body text-primary-foreground/85 measure">Tell us what you need financed and we will match you with the right lender.</p>
+            <p className="font-body text-primary-foreground/85 measure">Share what you need financed, and Pavan Vatyani will match suitable lenders to it.</p>
           </div>
-          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact our team <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
+          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact Pavan <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
         </div>
       </section>
     </>

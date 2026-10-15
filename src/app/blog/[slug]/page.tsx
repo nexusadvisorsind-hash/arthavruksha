@@ -122,10 +122,10 @@ export default async function BlogPost({ params }: BlogPostParams) {
           <div className="mt-12 bg-green-soft border border-green/20 rounded-2xl p-7 text-center">
             <p className="font-heading font-semibold text-primary mb-2">Have a question about this?</p>
             <p className="font-body text-sm text-foreground-muted mb-5">
-              Our team is happy to talk through your specific situation — no pressure, no obligation.
+              Write to info@arthavriksha.in to talk through your specific situation — no pressure, no obligation.
             </p>
             <Button asChild variant="green" size="lg">
-              <Link href="/contact">Contact Our Team <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              <Link href="/contact">Contact <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
         </div>
@@ -160,7 +160,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
                 href={categoryLink[post.category]}
                 className="font-body text-sm font-semibold text-secondary hover:underline"
               >
-                Explore our {post.category} services →
+                Explore {post.category} services →
               </Link>
             </div>
           </div>

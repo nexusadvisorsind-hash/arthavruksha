@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/loans`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteUrl}/contact`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${siteUrl}/blog`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${siteUrl}/privacy-policy`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${siteUrl}/terms-of-use`, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({

@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/insurance", label: "Insurance" },
   { href: "/loans", label: "Loans" },
   { href: "/blog", label: "Blog" },
-  { href: "/about-us", label: "About Us" },
+  { href: "/about-us", label: "About" },
 ];
 
 export function SiteHeader() {
@@ -54,7 +54,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-2">
             <a
               href="tel:+919022958266"
-              aria-label="Call us"
+              aria-label="Call"
               className="hidden lg:inline-flex items-center gap-1.5 text-sm font-medium font-body text-foreground hover:text-secondary transition-colors mr-1"
             >
               <Phone className="h-4 w-4" /> +91 90229 58266
@@ -63,7 +63,7 @@ export function SiteHeader() {
               href="/contact"
               className="hidden sm:inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground hover:bg-accent/90 transition-colors font-body"
             >
-              Contact Us
+              Contact
             </Link>
             <button
               type="button"
@@ -93,7 +93,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-md bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground hover:bg-accent/90 transition-colors font-body"
             >
-              Contact Us
+              Contact
             </Link>
           </nav>
         )}

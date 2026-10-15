@@ -1,5 +1,5 @@
 import { getPool } from "@/lib/db";
-import { isLoggedIn, logout } from "./actions";
+import { deleteLead, isLoggedIn, logout } from "./actions";
 import { AdminLoginForm } from "@/components/admin-login-form";
 
 export const metadata = { robots: { index: false, follow: false } };
@@ -14,6 +14,8 @@ type Submission = {
   vertical: string;
   message: string | null;
   created_at: string;
+  consent_given: boolean | null;
+  consent_at: string | null;
 };
 
 async function getSubmissions(): Promise<{ rows: Submission[]; error?: string }> {
@@ -23,7 +25,7 @@ async function getSubmissions(): Promise<{ rows: Submission[]; error?: string }>
   }
   try {
     const result = await pool.query<Submission>(
-      "SELECT id, name, email, phone, vertical, message, created_at FROM contact_submissions ORDER BY created_at DESC LIMIT 200"
+      "SELECT id, name, email, phone, vertical, message, created_at, consent_given, consent_at FROM contact_submissions ORDER BY created_at DESC LIMIT 200"
     );
     return { rows: result.rows };
   } catch {
@@ -51,7 +53,7 @@ export default async function AdminLeads() {
         <form action={logout}><button className="font-body text-sm font-semibold text-secondary hover:underline">Sign out</button></form>
       </div>
       <p className="font-body text-sm text-foreground-muted mb-8">
-        {rows.length} submission{rows.length === 1 ? "" : "s"} — most recent first.
+        {rows.length} submission{rows.length === 1 ? "" : "s"} — most recent first. Delete removes an enquiry permanently, for example when a person asks for erasure.
       </p>
 
       {error && (
@@ -75,6 +77,8 @@ export default async function AdminLeads() {
                 <th className="px-4 py-3 font-heading font-semibold text-primary">Phone</th>
                 <th className="px-4 py-3 font-heading font-semibold text-primary">Interested In</th>
                 <th className="px-4 py-3 font-heading font-semibold text-primary">Message</th>
+                <th className="px-4 py-3 font-heading font-semibold text-primary">Consent</th>
+                <th className="px-4 py-3 font-heading font-semibold text-primary"><span className="sr-only">Delete</span></th>
               </tr>
             </thead>
             <tbody>
@@ -93,6 +97,17 @@ export default async function AdminLeads() {
                   <td className="px-4 py-3 text-foreground-muted">{r.vertical}</td>
                   <td className="px-4 py-3 text-foreground-muted max-w-xs truncate" title={r.message ?? ""}>
                     {r.message || "—"}
+                  </td>
+                  <td className="px-4 py-3 text-foreground-muted whitespace-nowrap">
+                    {r.consent_given && r.consent_at
+                      ? new Date(r.consent_at).toLocaleDateString("en-IN", { dateStyle: "medium" })
+                      : "Not recorded"}
+                  </td>
+                  <td className="px-4 py-3">
+                    <form action={deleteLead}>
+                      <input type="hidden" name="id" value={r.id} />
+                      <button className="font-body text-xs font-semibold text-red-700 hover:underline" aria-label={`Delete enquiry from ${r.name}`}>Delete</button>
+                    </form>
                   </td>
                 </tr>
               ))}

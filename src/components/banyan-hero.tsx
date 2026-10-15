@@ -329,7 +329,7 @@ export function BanyanHero() {
               exit={{ opacity: 0 }}
               className="font-body text-sm text-white/65 border-l-2 border-white/20 pl-4 max-w-sm"
             >
-              Four services grow from one trunk. The gold roots are our registrations. Tap a branch to see what grows from it.
+              Four services grow from one trunk. The gold roots are the registrations. Tap a branch to see what grows from it.
             </motion.p>
           )}
         </AnimatePresence>

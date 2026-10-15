@@ -46,7 +46,7 @@ export function ReraStepper() {
         ))}
       </ul>
       {count === STEPS.length && (
-        <p className="font-body text-sm text-green font-semibold mt-4">All five checks done. Bring the project details to us and we will go through them with you.</p>
+        <p className="font-body text-sm text-green font-semibold mt-4">All five checks done. Share the project details and they will be gone through with you.</p>
       )}
     </div>
   );

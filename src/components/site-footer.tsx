@@ -40,6 +40,7 @@ export function SiteFooter() {
               <li><Link href="/about-us" className="hover:text-accent">About</Link></li>
               <li><Link href="/blog" className="hover:text-accent">Blog</Link></li>
               <li><Link href="/contact" className="hover:text-accent">Contact</Link></li>
+              <li><a href="https://giftcityfunds.in" target="_blank" rel="noopener" className="hover:text-accent">GIFT City Funds</a></li>
               <li><Link href="/privacy-policy" className="hover:text-accent">Privacy Policy</Link></li>
               <li><Link href="/terms-of-use" className="hover:text-accent">Terms of Use</Link></li>
             </ul>

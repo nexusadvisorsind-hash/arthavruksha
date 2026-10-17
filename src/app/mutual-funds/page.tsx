@@ -64,7 +64,7 @@ const serviceJsonLd = {
   name: "Mutual Fund Distributor & SIP Investment Services",
   description:
     "AMFI-registered Mutual Fund Distributor (ARN 106715) helping clients start SIPs, ELSS tax-saver funds and liquid funds across Maharashtra & Gujarat.",
-  provider: { "@type": "Person", name: "Anup Vatyani", jobTitle: "AMFI-registered Mutual Fund Distributor", identifier: "ARN 106715", worksFor: { "@type": "FinancialService", name: "Artha Vriksha Services" } },
+  provider: { "@type": "Person", name: "Anup Vatyani", jobTitle: "AMFI-registered Mutual Fund Distributor", identifier: "ARN 106715", sameAs: ["https://giftcityfunds.in"], worksFor: { "@type": "FinancialService", name: "Artha Vriksha Services" } },
   areaServed: [
     { "@type": "State", name: "Maharashtra" },
     { "@type": "State", name: "Gujarat" },
@@ -87,6 +87,7 @@ const navItems = [
   { id: "goal-calculator", label: "Plan a goal" },
   { id: "how-it-works", label: "How it works" },
   { id: "faq", label: "Questions" },
+  { id: "gift-city", label: "GIFT City" },
 ];
 
 export default function MutualFunds() {
@@ -176,6 +177,25 @@ export default function MutualFunds() {
             ))}
           </div>
           <p className="font-body text-sm text-foreground-muted mt-8 measure flex gap-2"><ShieldCheck className="h-5 w-5 text-green shrink-0" /> Anup Vatyani is an AMFI-registered Mutual Fund Distributor (ARN 106715), not a fee-charging investment adviser. He does not provide portfolio management or fee-based advisory services under SEBI (IA) Regulations.</p>
+        </div>
+      </section>
+
+      <section id="gift-city" className="py-16 md:py-20 bg-surface border-t border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+          <div>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Looking at GIFT City funds?</h2>
+            <p className="font-body text-foreground-muted leading-relaxed measure mb-3">
+              Anup Vatyani also runs <strong className="font-semibold text-primary">giftcityfunds.in</strong>, a separate educational site that explains GIFT City (IFSC) funds in plain language: how they work, who they suit, and how they differ from mutual funds sold in India. It is written for NRIs, OCIs and resident Indians who want to understand the options before talking to anyone.
+            </p>
+            <p className="font-body text-xs text-foreground-muted leading-relaxed measure">
+              The ARN shown on this page covers mutual fund distribution in India. GIFT City (IFSC) funds fall under the International Financial Services Centres Authority (IFSCA). The linked site is educational information only, and it is not an offer, solicitation or advice.
+            </p>
+          </div>
+          <div>
+            <Button asChild variant="gold" size="lg">
+              <a href="https://giftcityfunds.in" target="_blank" rel="noopener">Visit GIFT City Funds <ArrowRight className="ml-2 h-5 w-5" /></a>
+            </Button>
+          </div>
         </div>
       </section>
 

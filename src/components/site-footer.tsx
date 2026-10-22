@@ -95,7 +95,7 @@ export function SiteFooter() {
 
           <div className="space-y-1">
             <p className="font-body text-xs text-primary-foreground/80">
-              <strong className="text-primary-foreground">Insurance &amp; Credit:</strong> Individual Insurance Agent, IRDAI (Anup Vatyani) &amp; Individually Empanelled Bank Loan DSA.
+              <strong className="text-primary-foreground">Insurance &amp; Credit:</strong> Individual Insurance Agent, IRDAI (Menka Motwani, Agency Code BK0222) &amp; Individually Empanelled Bank Loan DSA.
             </p>
             <p className="font-body text-xs text-primary-foreground/70">
               Insurance is the subject matter of solicitation.

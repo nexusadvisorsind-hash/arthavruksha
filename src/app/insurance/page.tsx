@@ -45,7 +45,7 @@ const products = [
   {
     icon: Car,
     title: "Motor Insurance",
-    body: "Comprehensive and third-party cover for your car or two-wheeler — both personal and commercial vehicles. Anup Vatyani explains add-ons like zero-depreciation cover so you are not underinsured after an accident.",
+    body: "Comprehensive and third-party cover for your car or two-wheeler — both personal and commercial vehicles. Menka Motwani explains add-ons like zero-depreciation cover so you are not underinsured after an accident.",
   },
   {
     icon: Building2,
@@ -55,9 +55,9 @@ const products = [
 ];
 
 const howItWorks = [
-  { icon: MessageSquare, title: "Your risks come first", body: "Every family and business has a different risk profile. Anup Vatyani asks the right questions to work out what actually needs protecting." },
-  { icon: ScaleIcon, title: "Policies are compared for you", body: "Anup Vatyani compares coverage, exclusions and premiums across the insurers he is appointed with, so the choice rests on facts, not on a single brochure." },
-  { icon: FileSignature, title: "The fine print is explained", body: "Anup Vatyani explains exclusions, waiting periods and the claim process in plain language before you sign anything." },
+  { icon: MessageSquare, title: "Your risks come first", body: "Every family and business has a different risk profile. Menka Motwani asks the right questions to work out what actually needs protecting." },
+  { icon: ScaleIcon, title: "Policies are compared for you", body: "Menka Motwani compares coverage, exclusions and premiums across the insurers she is appointed with, so the choice rests on facts, not on a single brochure." },
+  { icon: FileSignature, title: "The fine print is explained", body: "Menka Motwani explains exclusions, waiting periods and the claim process in plain language before you sign anything." },
 ];
 
 const serviceJsonLd = {
@@ -90,7 +90,7 @@ export default function Insurance() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
           <Reveal>
             <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
-              <BadgeCheck className="h-4 w-4 text-accent" /> Anup Vatyani, individual insurance agent (IRDAI)
+              <BadgeCheck className="h-4 w-4 text-accent" /> Menka Motwani, individual insurance agent (IRDAI), Aditya Birla Sun Life Insurance (Agency Code BK0222)
             </p>
             <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Protect what matters most, in plain language</h1>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure mb-6">
@@ -143,7 +143,7 @@ export default function Insurance() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 border-l-4 border-accent pl-6">
           <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-3">Why compare before you buy?</h2>
           <p className="font-body text-lg text-foreground-muted leading-relaxed measure">
-            Anup Vatyani is an individually registered insurance agent (IRDAI). Plans are offered only from the insurers he is appointed with, and the policy suggested is the one that fits your needs, not the one that pays the most commission.
+            Menka Motwani is an individually registered insurance agent (IRDAI), appointed with Aditya Birla Sun Life Insurance (Agency Code BK0222) for life insurance. Plans are offered only from the insurers she is appointed with, and the policy suggested is the one that fits your needs, not the one that pays the most commission.
           </p>
         </div>
       </section>
@@ -163,9 +163,9 @@ export default function Insurance() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Not sure what you need?</h2>
-            <p className="font-body text-primary-foreground/85 measure">Share a little about your family and your work, and Anup Vatyani will show what is worth covering first.</p>
+            <p className="font-body text-primary-foreground/85 measure">Share a little about your family and your work, and Menka Motwani will show what is worth covering first.</p>
           </div>
-          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact Anup <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
+          <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
         </div>
       </section>
     </>

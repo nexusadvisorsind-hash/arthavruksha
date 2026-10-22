@@ -109,7 +109,7 @@ const otherDesks = [
   {
     icon: ShieldCheck,
     role: "Insurance Desk",
-    note: "Anup Vatyani, a licensed insurance agent (IRDAI), explains life, health, motor and business policies from the insurers he is appointed with.",
+    note: "Menka Motwani, a licensed insurance agent (IRDAI), explains life, health, motor and business policies from the insurers she is appointed with.",
   },
   {
     icon: Landmark,
@@ -233,7 +233,6 @@ export default function AboutUs() {
               "Anup Vatyani: AMFI-registered Mutual Fund Distributor",
               "Pavan Vatyani: MahaRERA registered real estate agent",
               "Anup Vatyani: GujRERA registered real estate agent",
-              "Anup Vatyani: individual insurance agent (IRDAI)",
               "Personal data handled under the DPDP Act 2023",
             ].map((b) => (
               <li key={b} className="flex items-center gap-2 font-body text-sm text-foreground">

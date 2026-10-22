@@ -56,7 +56,7 @@ export function SiteFooter() {
             </p>
             <p className="font-body text-sm text-primary-foreground/75">
               Anup Vatyani (Mutual Funds &amp; Regulatory):{" "}
-              <a href="tel:+919537433533" className="hover:text-accent">+91 95374 33533</a>
+              <a href="tel:+919537533533" className="hover:text-accent">+91 95375 33533</a>
               {" "}·{" "}
               <a href="mailto:anup@arthavriksha.in" className="hover:text-accent">anup@arthavriksha.in</a>
             </p>

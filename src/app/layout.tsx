@@ -107,12 +107,12 @@ const organizationJsonLd = {
   ],
   email: "info@arthavriksha.in",
   founder: [
-    { "@type": "Person", name: "Anup Vatyani", jobTitle: "Founder — Mutual Funds & Regulatory Affairs", telephone: "+91-9537433533" },
+    { "@type": "Person", name: "Anup Vatyani", jobTitle: "Founder — Mutual Funds & Regulatory Affairs", telephone: "+91-9537533533" },
     { "@type": "Person", name: "Pavan Vatyani", jobTitle: "Founder — Real Estate & Digital Strategy", telephone: "+91-9022958266" },
   ],
   contactPoint: [
     { "@type": "ContactPoint", telephone: "+91-9022958266", contactType: "customer service", areaServed: "IN", name: "Pavan Vatyani" },
-    { "@type": "ContactPoint", telephone: "+91-9537433533", contactType: "customer service", areaServed: "IN", name: "Anup Vatyani" },
+    { "@type": "ContactPoint", telephone: "+91-9537533533", contactType: "customer service", areaServed: "IN", name: "Anup Vatyani" },
   ],
   knowsAbout: [
     "Mutual Funds",

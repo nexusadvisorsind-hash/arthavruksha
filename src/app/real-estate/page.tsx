@@ -1,4 +1,10 @@
 import { pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import { ShortAnswer } from "@/components/seo/short-answer";
+import { FaqSection } from "@/components/seo/faq-section";
+import { OfficialSources } from "@/components/seo/official-sources";
+import { RelatedGuides } from "@/components/seo/related-guides";
+import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES } from "@/lib/seo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { RegionToggle } from "@/components/region-toggle";
@@ -88,10 +94,53 @@ const navItems = [
   { id: "desks", label: "Desks" },
 ];
 
+const faqs = [
+  {
+    "q": "How do I check whether a project is RERA registered?",
+    "a": "Search the project name, promoter or registration number on the state RERA website: MahaRERA for Maharashtra and GujRERA for Gujarat. Confirm the registration is valid, note the stated completion date, and match the registration number in the brochure with the one on the portal."
+  },
+  {
+    "q": "Do real estate agents need RERA registration too?",
+    "a": "Yes. Under the RERA Act, agents who help buyers and sellers in registered projects must register with the state authority and quote their registration number. Pavan Vatyani's MahaRERA number is A52100037796. Anup Vatyani's GujRERA number is AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529."
+  },
+  {
+    "q": "Which documents should be checked before buying a flat?",
+    "a": "The RERA registration, the title deed, the encumbrance certificate, the approved plan and, for a ready flat, the occupancy certificate. The builder's record on past projects is worth checking too."
+  },
+  {
+    "q": "Can a home loan be arranged along with the property?",
+    "a": "Home loan options are compared by Pavan Vatyani on the Loans page. The eligibility calculator on this page gives an estimate only; the lender decides the final amount."
+  },
+  {
+    "q": "Which areas of Pune and Ahmedabad are covered?",
+    "a": "Enquiries come from across both cities and nearby areas. The Pune and Ahmedabad pages list the areas and the office details."
+  }
+];
+
+const related = [
+  {
+    "href": "/blog/how-to-check-rera-registration-maharashtra-gujarat",
+    "title": "How to check RERA registration",
+    "note": "A step-by-step check on the MahaRERA and GujRERA portals."
+  },
+  {
+    "href": "/blog/home-loan-documents-checklist",
+    "title": "Home loan documents checklist",
+    "note": "What lenders usually ask for, grouped by type."
+  },
+  {
+    "href": "/ahmedabad",
+    "title": "Real estate in Ahmedabad",
+    "note": "Gujarat desk, GujRERA registration and areas served."
+  }
+];
+
 export default function RealEstate() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <JsonLd data={breadcrumbLd([{ name: "Real Estate Consultant in Pune & Ahmedabad", path: "/real-estate" }])} />
+      <JsonLd data={webPageLd({ path: "/real-estate", name: "Real Estate Consultant in Pune & Ahmedabad", description: "Pavan Vatyani is a MahaRERA-registered real estate agent for Maharashtra and Anup Vatyani is a GujRERA-registered agent for Gujarat. Both quote their registration numbers, and every project is checked against the state RERA register before you visit. Home loan eligibility can be estimated on this page." })} />
 
       <section className="hero-re text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
@@ -99,13 +148,16 @@ export default function RealEstate() {
             <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
               <BadgeCheck className="h-4 w-4 text-accent" /> Pavan Vatyani (MahaRERA) and Anup Vatyani (GujRERA), registered real estate agents
             </p>
-            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Find property you can trust, checked before you visit</h1>
+            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Real estate consultant in Pune and Ahmedabad</h1>
+            <p className="font-heading text-xl md:text-2xl text-primary-foreground/90 mb-5 max-w-3xl">Find property you can trust, checked before you visit</p>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">
               Buying, selling or leasing residential, commercial, industrial or agricultural property in Maharashtra and Gujarat, with every listing verified before it reaches you.
             </p>
           </Reveal>
         </div>
       </section>
+
+      <ShortAnswer updated={formatDate(PAGE_DATES["/real-estate"])}>Pavan Vatyani is a MahaRERA-registered real estate agent for Maharashtra and Anup Vatyani is a GujRERA-registered agent for Gujarat. Both quote their registration numbers, and every project is checked against the state RERA register before you visit. Home loan eligibility can be estimated on this page.</ShortAnswer>
 
       <InPageNav items={navItems} />
 
@@ -180,6 +232,12 @@ export default function RealEstate() {
           </div>
         </section>
       )}
+
+      <FaqSection faqs={faqs} />
+
+      <OfficialSources keys={["maharera", "gujrera", "rbi"]} />
+
+      <RelatedGuides items={related} />
 
       <section className="py-16 md:py-20 hero-re text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">

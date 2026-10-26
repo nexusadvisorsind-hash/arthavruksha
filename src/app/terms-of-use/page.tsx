@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 
 export const metadata = pageMeta({
   title: "Terms of Use | Artha Vriksha Services",
@@ -12,6 +13,8 @@ const P = "font-body text-foreground-muted leading-relaxed mb-3 measure";
 
 export default function Terms() {
   return (
+    <>
+      <JsonLd data={breadcrumbLd([{ name: "Terms of Use", path: "/terms-of-use" }])} />
     <section className="py-16 md:py-24 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary mb-8">Terms of Use</h1>
@@ -64,5 +67,6 @@ export default function Terms() {
         </p>
       </div>
     </section>
+    </>
   );
 }

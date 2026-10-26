@@ -1,4 +1,7 @@
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, webPageLd, formatDate, PAGE_DATES } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import { ShortAnswer } from "@/components/seo/short-answer";
+import { FaqSection } from "@/components/seo/faq-section";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
@@ -29,14 +32,36 @@ const categoryColors: Record<string, string> = {
   "Personal Finance": "bg-secondary/10 text-secondary",
 };
 
+const homeFaqs = [
+  {
+    "q": "Who holds the registrations shown on this site?",
+    "a": "The registrations are held by individuals, not by the firm name. Anup Vatyani holds AMFI ARN 106715 and a GujRERA registration. Pavan Vatyani holds a MahaRERA registration. Menka Motwani is an IRDAI-registered individual insurance agent. Artha Vriksha Services is the name they work under."
+  },
+  {
+    "q": "Which cities does Artha Vriksha Services cover?",
+    "a": "There are offices in Pune, Maharashtra and Ahmedabad, Gujarat, and enquiries are taken from across both states. See the Pune and Ahmedabad pages for areas and office details."
+  },
+  {
+    "q": "Is there a fee for a first conversation?",
+    "a": "No fee is charged for a first conversation or for using the calculators. How each service is paid for is explained on its own page before anything is started."
+  },
+  {
+    "q": "Are returns or loan approvals promised?",
+    "a": "No. Mutual Fund investments are subject to market risks, read all scheme related documents carefully. Insurance is the subject matter of solicitation. Loan approval and rates are decided by the lender."
+  }
+];
+
+const homeShort = "Artha Vriksha Services brings mutual funds, real estate, insurance and loans under one team with offices in Pune and Ahmedabad. Each service is handled by an individually registered professional whose registration number is shown on the site. Calculators, guides and plain-language explanations come before any sales conversation.";
+
 export default function Home() {
   return (
     <>
+      <JsonLd data={webPageLd({ path: "/", name: "Mutual Funds, Real Estate, Insurance & Loans in Pune and Ahmedabad", description: homeShort })} />
       <section className="hero-home text-primary-foreground overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-12 md:pt-20 md:pb-16 grid md:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
           <div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.08] mb-6">
-              Mutual funds, real estate, insurance and loans, under one registered team.
+              Mutual funds, real estate, insurance and loans in Pune and Ahmedabad, under one registered team.
             </h1>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed mb-8 measure">
               Artha Vriksha Services is a family-run firm in Pune and Ahmedabad. Every product is explained in plain language, the registrations are shown openly, and your money, property, cover and credit are looked at together.
@@ -56,6 +81,8 @@ export default function Home() {
           <BanyanHero />
         </div>
       </section>
+
+      <ShortAnswer updated={formatDate(PAGE_DATES["/"])}>{homeShort}</ShortAnswer>
 
       <section className="bg-background border-b border-border" aria-label="Registrations">
         <dl className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
@@ -170,6 +197,25 @@ export default function Home() {
           <Button asChild variant="outline" size="lg"><Link href="/blog">All articles</Link></Button>
         </div>
       </section>
+
+      <section className="py-12 bg-surface border-t border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+          <div>
+            <h2 className="font-heading font-semibold text-xl text-primary mb-2"><Link href="/pune" className="hover:text-secondary">Pune office</Link></h2>
+            <p className="font-body text-sm text-foreground-muted leading-relaxed">Amanora Park Town. Property, loans, mutual funds and insurance enquiries from Pune and Pimpri-Chinchwad.</p>
+          </div>
+          <div>
+            <h2 className="font-heading font-semibold text-xl text-primary mb-2"><Link href="/ahmedabad" className="hover:text-secondary">Ahmedabad office</Link></h2>
+            <p className="font-body text-sm text-foreground-muted leading-relaxed">Chandlodia. Gujarat property, mutual funds, loans and insurance enquiries from Ahmedabad and Gandhinagar.</p>
+          </div>
+          <div>
+            <h2 className="font-heading font-semibold text-xl text-primary mb-2"><Link href="/calculators" className="hover:text-secondary">Free calculators</Link></h2>
+            <p className="font-body text-sm text-foreground-muted leading-relaxed">SIP, goal SIP, EMI, loan eligibility, home loan eligibility and insurance cover estimates.</p>
+          </div>
+        </div>
+      </section>
+
+      <FaqSection faqs={homeFaqs} />
 
       <section className="py-16 md:py-24 hero-navy text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-10 items-end">

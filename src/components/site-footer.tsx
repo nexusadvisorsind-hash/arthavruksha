@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookieSettingsLink } from "@/components/consent-banner";
 import Image from "next/image";
 
 export function SiteFooter() {
@@ -32,6 +33,9 @@ export function SiteFooter() {
               <li><Link href="/real-estate" className="hover:text-accent">Real Estate Broking</Link></li>
               <li><Link href="/insurance" className="hover:text-accent">Insurance Solutions</Link></li>
               <li><Link href="/loans" className="hover:text-accent">Loans &amp; Capital</Link></li>
+              <li><Link href="/calculators" className="hover:text-accent">Calculators</Link></li>
+              <li><Link href="/pune" className="hover:text-accent">Pune Office</Link></li>
+              <li><Link href="/ahmedabad" className="hover:text-accent">Ahmedabad Office</Link></li>
             </ul>
           </div>
           <div>
@@ -43,6 +47,7 @@ export function SiteFooter() {
               <li><a href="https://giftcityfunds.in" target="_blank" rel="noopener" className="hover:text-accent">GIFT City Funds</a></li>
               <li><Link href="/privacy-policy" className="hover:text-accent">Privacy Policy</Link></li>
               <li><Link href="/terms-of-use" className="hover:text-accent">Terms of Use</Link></li>
+              <li><CookieSettingsLink /></li>
             </ul>
           </div>
           <div className="md:col-span-2">

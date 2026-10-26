@@ -1,4 +1,5 @@
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { ContactForm } from "@/components/contact-form";
 import { Mail, MapPin, BadgeCheck } from "lucide-react";
 
@@ -11,6 +12,7 @@ export const metadata = pageMeta({
 export default function Contact() {
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: "Contact", path: "/contact" }])} />
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
           <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Share what you need</h1>

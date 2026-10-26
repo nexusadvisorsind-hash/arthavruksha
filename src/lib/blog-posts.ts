@@ -4,6 +4,7 @@ export type BlogPost = {
   slug: string;
   category: "Mutual Funds" | "Real Estate" | "Insurance" | "Loans" | "Personal Finance";
   title: string;
+  seoTitle?: string;
   excerpt: string;
   readTime: string;
   date: string;
@@ -11,6 +12,83 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "how-to-check-rera-registration-maharashtra-gujarat",
+    category: "Real Estate",
+    title: "How to Check RERA Registration in Maharashtra and Gujarat",
+    excerpt: "A project's RERA number can be checked online in a few minutes. Here is what to look up, what to compare and what should make you pause.",
+    readTime: "4 min read",
+    date: "October 2026",
+    sections: [
+      { body: ["The short answer: search the project on the state RERA website, which is MahaRERA for Maharashtra and GujRERA for Gujarat, and compare the registration number in the brochure with the portal record. If the numbers do not match, or no record is found, stop and ask the seller to explain before paying anything."] },
+      { heading: "Step 1: Get the registration number", body: ["Ask for the RERA registration number of the project. It should appear on the brochure, the website and the advertisements. Maharashtra numbers usually begin with the letter P followed by digits. The format differs in Gujarat, so copy the number exactly as given."] },
+      { heading: "Step 2: Search the state portal", body: ["Open the official MahaRERA or GujRERA website and use the registered projects search. You can search by project name, promoter name, location or registration number. Use only the official government sites, not a listing portal's copy of the data."] },
+      { heading: "Step 3: Compare what the portal shows", body: ["Check that the promoter and project name match the brochure, that the registration is still valid, and what completion date is stated. Look at the approved layout, the number of units and the progress updates the promoter has filed. A large gap between the promised and registered completion date is worth a question."] },
+      { heading: "Step 4: Check the agent too", body: ["Agents who help with sales in registered projects must also be registered with the state authority and should quote their registration number. Pavan Vatyani's MahaRERA number is A52100037796. Anup Vatyani's GujRERA number is AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529. Both can be looked up on the respective portal."] },
+      { heading: "What a RERA check does not cover", body: ["RERA registration is not a guarantee of quality or a replacement for legal checks. The title deed, the encumbrance certificate, the approved plan and, for a ready flat, the occupancy certificate still need to be reviewed. Rules and portal layouts change, so use the official site for the current position."] },
+    ],
+  },
+  {
+    slug: "sip-vs-lumpsum-how-to-choose",
+    category: "Mutual Funds",
+    title: "SIP vs Lumpsum: How to Choose Between the Two",
+    excerpt: "A SIP spreads money over months, a lumpsum goes in at once. Which one fits depends on how the money arrives and how long it can stay invested.",
+    readTime: "4 min read",
+    date: "October 2026",
+    sections: [
+      { body: ["The short answer: a SIP suits money that arrives monthly, such as a salary, and a lumpsum suits money that arrives all at once, such as a bonus or a sale of property. Neither guarantees a better result, because mutual fund returns are market-linked. Mutual Fund investments are subject to market risks, read all scheme related documents carefully."] },
+      { heading: "What a SIP does", body: ["A Systematic Investment Plan invests a fixed amount at a set interval, usually monthly. Because the amount is fixed, more units are bought when the price is low and fewer when it is high. This averages the purchase cost over time, but it does not protect against a falling market or promise a profit."] },
+      { heading: "What a lumpsum does", body: ["A lumpsum puts the whole amount in on one day. All of it starts working immediately, but all of it is also exposed to the price on that day. Some investors split a large amount into a few instalments to reduce the effect of timing."] },
+      { heading: "How to decide", body: ["Start with where the money comes from. A monthly surplus naturally fits a SIP. A one-time amount can go in as a lumpsum or in stages. Then look at the goal: money needed in under three years should be in lower-risk funds whichever method is used, while longer goals can take more market risk."] },
+      { heading: "Try the numbers", body: ["The SIP calculator and the goal calculator on this site show how an assumed rate changes a monthly amount or a target. The rate is an assumption, not a forecast, so try more than one."] },
+    ],
+  },
+  {
+    slug: "how-much-term-insurance-cover-do-you-need",
+    category: "Insurance",
+    title: "How Much Term Insurance Cover Do You Need?",
+    excerpt: "There is no single right figure. Three simple methods give a starting range that you can refine with your own loans, dependants and goals.",
+    readTime: "4 min read",
+    date: "October 2026",
+    sections: [
+      { body: ["The short answer: add up what your family would need if your income stopped, then subtract the cover and savings they already have. A common rule of thumb is a multiple of annual income, but it is only a starting point. Insurance is the subject matter of solicitation."] },
+      { heading: "Method 1: Income replacement", body: ["Estimate how many years your family would need support, multiply by the annual amount they would need, and adjust for expected rises in costs. A younger person with young children generally needs more years of support than someone close to retirement."] },
+      { heading: "Method 2: Needs-based", body: ["List the loans to be cleared, such as a home loan, the cost of future goals such as a child's education, and the living costs of the family for a set period. Add these up and subtract existing cover and liquid savings. This method is more work but uses your actual numbers."] },
+      { heading: "Method 3: Rule of thumb", body: ["Some people use a multiple of annual income as a quick check. Treat it as a sanity check only, because it ignores loans, dependants and savings."] },
+      { heading: "Review it when life changes", body: ["A new loan, a child, a marriage or a change in income each changes the figure. Cover that was enough five years ago may not be today. The insurance needs calculator on this site works from your own numbers, and Menka Motwani can go through the result with you."] },
+    ],
+  },
+  {
+    slug: "home-loan-documents-checklist",
+    category: "Loans",
+    title: "Home Loan Documents Checklist: What Lenders Usually Ask For",
+    excerpt: "Missing papers are one of the commonest reasons a home loan is delayed. Here is a checklist grouped by what each document proves.",
+    readTime: "3 min read",
+    date: "October 2026",
+    sections: [
+      { body: ["The short answer: lenders usually ask for proof of identity and address, proof of income, recent bank statements and the property papers. The exact list differs by lender and by whether you are salaried or self-employed, so confirm it with the lender before applying."] },
+      { heading: "Identity and address", body: ["PAN card, Aadhaar or another government ID, passport-size photographs and a recent address proof such as a utility bill or rental agreement."] },
+      { heading: "Income proof: salaried", body: ["Recent salary slips, Form 16 and the last six months of bank statements for the salary account. Some lenders ask for an employment letter."] },
+      { heading: "Income proof: self-employed", body: ["Income tax returns with computation for the last two to three years, balance sheet and profit and loss statements, business proof and bank statements for the business and personal accounts."] },
+      { heading: "Property documents", body: ["The sale agreement or allotment letter, title documents, the RERA registration number for an under-construction project, the approved plan and, for a resale, the previous chain of ownership papers. The lender's legal and valuation team reviews these."] },
+      { heading: "Before you submit", body: ["Check that names and addresses match across documents, and that statements are recent. Small mismatches cause delay. Pavan Vatyani checks each paper against the lender's list before it is submitted."] },
+    ],
+  },
+  {
+    slug: "loan-against-property-vs-personal-loan",
+    category: "Loans",
+    title: "Loan Against Property vs Personal Loan: Which Fits When",
+    excerpt: "Both put money in your account, but one is backed by a property and the other is not. The difference changes the risk, the cost and the tenure.",
+    readTime: "4 min read",
+    date: "October 2026",
+    sections: [
+      { body: ["The short answer: a loan against property is secured by a property you own, so lenders can often offer larger amounts and longer tenures, but the property is at risk if repayments stop. A personal loan is unsecured and usually smaller and shorter. Rates and limits vary by lender, so compare actual offers."] },
+      { heading: "Loan against property (LAP)", body: ["You mortgage a residential or commercial property you own and receive a loan against its value. Lenders commonly lend only a portion of the property's assessed value. The loan is useful for large needs such as business expansion or a child's education, and it needs property papers and a valuation."] },
+      { heading: "Personal loan", body: ["There is no collateral. Approval depends on income, existing obligations and credit history. The process is faster, but amounts are usually smaller and the interest rate is often higher than on a secured loan."] },
+      { heading: "What to compare", body: ["Look at the interest rate, processing fees, prepayment charges, tenure and the total amount repaid, not only the monthly instalment. The EMI calculator on this site shows how rate and tenure change the instalment."] },
+      { heading: "Which fits when", body: ["For a smaller, short-term need, a personal loan avoids putting a property at risk. For a large amount over a long period, a LAP may cost less per year, but only if the repayment is comfortably affordable."] },
+    ],
+  },
   {
     slug: "sip-mistakes-first-time-investors",
     category: "Mutual Funds",
@@ -66,6 +144,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "rera-explained-property-buyers-guide",
     category: "Real Estate",
+    seoTitle: "RERA Explained: A Property Buyer's Guide | Artha Vriksha",
     title: "RERA Explained: What Every Property Buyer in Maharashtra & Gujarat Should Know",
     excerpt:
       "RERA registration numbers are everywhere in property listings — but what do they actually protect you from? Here's the plain-language guide.",

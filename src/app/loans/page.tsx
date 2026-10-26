@@ -1,4 +1,10 @@
 import { pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import { ShortAnswer } from "@/components/seo/short-answer";
+import { FaqSection } from "@/components/seo/faq-section";
+import { OfficialSources } from "@/components/seo/official-sources";
+import { RelatedGuides } from "@/components/seo/related-guides";
+import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES } from "@/lib/seo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { EmiCalculator } from "@/components/emi-calculator";
@@ -65,10 +71,53 @@ const navItems = [
   { id: "how-it-works", label: "How it works" },
 ];
 
+const faqs = [
+  {
+    "q": "What documents are needed for a home loan?",
+    "a": "Usually identity and address proof, PAN, income proof such as salary slips and Form 16 or income tax returns for the self-employed, recent bank statements, and the property papers. Lenders differ, so the exact list is confirmed with the lender."
+  },
+  {
+    "q": "How does a CIBIL score affect a loan?",
+    "a": "Lenders look at a credit report to see repayment history. A stronger history generally helps approval and terms. A free full credit report is available once a year from each credit bureau."
+  },
+  {
+    "q": "What is the difference between a loan against property and a personal loan?",
+    "a": "A loan against property is secured by a property you own, so the property is at risk if repayments stop. A personal loan is unsecured. Rates, amounts and tenures differ by lender, so both are compared before choosing."
+  },
+  {
+    "q": "Is a fee charged for loan guidance?",
+    "a": "No fee is charged to the applicant for comparing options. A lender may pay a DSA a commission when a loan is disbursed, and the loan terms come from the lender. Any processing fee is the lender's and is shown in its sanction letter."
+  },
+  {
+    "q": "How is an EMI worked out?",
+    "a": "The EMI depends on the loan amount, the interest rate and the tenure. The EMI calculator on this page shows how changing any one of them changes the monthly amount."
+  }
+];
+
+const related = [
+  {
+    "href": "/blog/home-loan-documents-checklist",
+    "title": "Home loan documents checklist",
+    "note": "What lenders usually ask for."
+  },
+  {
+    "href": "/blog/loan-against-property-vs-personal-loan",
+    "title": "Loan against property vs personal loan",
+    "note": "Secured and unsecured loans compared."
+  },
+  {
+    "href": "/blog/improve-loan-approval-chances",
+    "title": "Improve your loan approval chances",
+    "note": "Habits that help before you apply."
+  }
+];
+
 export default function Loans() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <JsonLd data={breadcrumbLd([{ name: "Home Loan & LAP Consultant, Pune & Ahmedabad", path: "/loans" }])} />
+      <JsonLd data={webPageLd({ path: "/loans", name: "Home Loan & LAP Consultant, Pune & Ahmedabad", description: "Pavan Vatyani is an individually empanelled bank loan DSA who compares home loan, loan against property, business and personal loan offers from partner banks and NBFCs. The EMI and eligibility calculators on this page give an estimate; the lender decides the final amount and rate." })} />
 
       <section className="hero-loan text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
@@ -76,13 +125,16 @@ export default function Loans() {
             <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
               <BadgeCheck className="h-4 w-4 text-accent" /> Individually empanelled bank loan DSA
             </p>
-            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Get the right loan, faster</h1>
+            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Home loan and loan against property consultant in Pune and Ahmedabad</h1>
+            <p className="font-heading text-xl md:text-2xl text-primary-foreground/90 mb-5 max-w-3xl">Get the right loan, faster</p>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">
               Pavan Vatyani works with a panel of banks and NBFCs to compare rates for home loans, loan against property, business capital and more, and helps avoid the paperwork mistakes that slow approvals.
             </p>
           </Reveal>
         </div>
       </section>
+
+      <ShortAnswer updated={formatDate(PAGE_DATES["/loans"])}>Pavan Vatyani is an individually empanelled bank loan DSA who compares home loan, loan against property, business and personal loan offers from partner banks and NBFCs. The EMI and eligibility calculators on this page give an estimate; the lender decides the final amount and rate.</ShortAnswer>
 
       <InPageNav items={navItems} />
 
@@ -158,6 +210,12 @@ export default function Loans() {
           </div>
         </section>
       )}
+
+      <FaqSection faqs={faqs} />
+
+      <OfficialSources keys={["rbi", "cibil"]} />
+
+      <RelatedGuides items={related} />
 
       <section className="py-16 md:py-20 hero-loan text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">

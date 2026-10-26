@@ -1,4 +1,5 @@
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
 import { blogPosts } from "@/lib/blog-posts";
 import { ArrowRight, Clock } from "lucide-react";
@@ -21,6 +22,7 @@ export default function Blog() {
   const [lead, ...rest] = blogPosts;
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: "Blog", path: "/blog" }])} />
       <section className="bg-forest text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
           <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Read before you decide</h1>

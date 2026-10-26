@@ -11,6 +11,8 @@ import { SiteHeader } from "@/components/site-header";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { ConsentBanner } from "@/components/consent-banner";
+import { JsonLd } from "@/components/seo/json-ld";
 
 // NOTE: This points at the live Vercel deployment (project name "arthavruksha" was
 // kept as-is on GitHub/Vercel — only the on-page brand name/emails changed to "Vriksha").
@@ -75,9 +77,20 @@ export const metadata: Metadata = {
   },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  url: siteUrl,
+  name: "Artha Vriksha Services",
+  inLanguage: "en-IN",
+  publisher: { "@id": `${siteUrl}/#organization` },
+};
+
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
+  "@id": `${siteUrl}/#organization`,
   name: "Artha Vriksha Services",
   description:
     "Mutual Fund Distribution, Real Estate Broking, Insurance facilitation and Loan/DSA services across Maharashtra & Gujarat, India, delivered by individually AMFI, MahaRERA & GujRERA registered professionals.",
@@ -130,15 +143,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={websiteJsonLd} />
         <ScrollProgress />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
         <WhatsAppFloat />
+        <ConsentBanner />
       </body>
     </html>
   );

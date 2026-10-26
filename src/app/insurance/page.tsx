@@ -1,4 +1,10 @@
 import { pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import { ShortAnswer } from "@/components/seo/short-answer";
+import { FaqSection } from "@/components/seo/faq-section";
+import { OfficialSources } from "@/components/seo/official-sources";
+import { RelatedGuides } from "@/components/seo/related-guides";
+import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES } from "@/lib/seo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getPostBySlug } from "@/lib/blog-posts";
@@ -81,10 +87,53 @@ const navItems = [
   { id: "why-compare", label: "Why compare" },
 ];
 
+const faqs = [
+  {
+    "q": "What is the difference between term and whole life insurance?",
+    "a": "Term insurance pays a sum to the family if the policyholder dies during the term, and pays nothing if the policyholder outlives it. Whole life insurance covers the person for life and usually costs more for the same cover. Which suits a family depends on the goal."
+  },
+  {
+    "q": "How much term cover is enough?",
+    "a": "It depends on income, loans, dependents and future goals such as a child's education. A common rule of thumb is a multiple of annual income, but it is only a starting point. The insurance needs calculator on this page works from your own numbers."
+  },
+  {
+    "q": "Is the health cover from an employer enough?",
+    "a": "Employer cover usually ends when the job does, and the amount may be small for a family. Many people keep a separate personal or family floater policy. Waiting periods and exclusions in each policy should be read before buying."
+  },
+  {
+    "q": "Who explains the policy and the claim process?",
+    "a": "Menka Motwani, an individually registered insurance agent (IRDAI), explains exclusions, waiting periods and the claim process before a policy is bought. Plans are offered only from the insurers she is appointed with."
+  },
+  {
+    "q": "What can be done if a claim is rejected?",
+    "a": "First write to the insurer's grievance team. If the reply is unsatisfactory, a complaint can be filed through Bima Bharosa, the IRDAI complaint portal, or with the Insurance Ombudsman."
+  }
+];
+
+const related = [
+  {
+    "href": "/blog/how-much-term-insurance-cover-do-you-need",
+    "title": "How much term cover do you need",
+    "note": "Three ways to work out a starting figure."
+  },
+  {
+    "href": "/blog/term-vs-whole-life-insurance",
+    "title": "Term vs whole life insurance",
+    "note": "Which type fits which goal."
+  },
+  {
+    "href": "/calculators",
+    "title": "Calculators hub",
+    "note": "The insurance needs calculator and five more tools."
+  }
+];
+
 export default function Insurance() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <JsonLd data={breadcrumbLd([{ name: "Life & Health Insurance in Pune & Ahmedabad", path: "/insurance" }])} />
+      <JsonLd data={webPageLd({ path: "/insurance", name: "Life & Health Insurance in Pune & Ahmedabad", description: "Menka Motwani is an IRDAI-registered individual insurance agent, appointed with Aditya Birla Sun Life Insurance (Agency Code BK0222) for life insurance. She explains term, whole life, health, motor and business cover in plain language, and the cover calculator on this page gives a starting estimate. Insurance is the subject matter of solicitation." })} />
 
       <section className="hero-ins text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
@@ -92,7 +141,8 @@ export default function Insurance() {
             <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
               <BadgeCheck className="h-4 w-4 text-accent" /> Menka Motwani, individual insurance agent (IRDAI), Aditya Birla Sun Life Insurance (Agency Code BK0222)
             </p>
-            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Protect what matters most, in plain language</h1>
+            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Life and health insurance in Pune and Ahmedabad</h1>
+            <p className="font-heading text-xl md:text-2xl text-primary-foreground/90 mb-5 max-w-3xl">Protect what matters most, in plain language</p>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure mb-6">
               Life, health, motor and business insurance, compared across insurers, so you know exactly what you are covered for before you sign.
             </p>
@@ -100,6 +150,8 @@ export default function Insurance() {
           </Reveal>
         </div>
       </section>
+
+      <ShortAnswer updated={formatDate(PAGE_DATES["/insurance"])}>Menka Motwani is an IRDAI-registered individual insurance agent, appointed with Aditya Birla Sun Life Insurance (Agency Code BK0222) for life insurance. She explains term, whole life, health, motor and business cover in plain language, and the cover calculator on this page gives a starting estimate. Insurance is the subject matter of solicitation.</ShortAnswer>
 
       <InPageNav items={navItems} />
 
@@ -158,6 +210,12 @@ export default function Insurance() {
           </div>
         </section>
       )}
+
+      <FaqSection faqs={faqs} />
+
+      <OfficialSources keys={["irdai", "bima"]} />
+
+      <RelatedGuides items={related} />
 
       <section className="py-16 md:py-20 hero-ins text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">

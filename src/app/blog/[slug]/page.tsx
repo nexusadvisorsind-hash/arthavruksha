@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
-import { pageMeta, isoDate, SITE_URL } from "@/lib/seo";
+import { pageMeta, isoDate, SITE_URL, breadcrumbLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, ArrowLeft, Clock, Calendar } from "lucide-react";
 
 const categoryColors: Record<string, string> = {
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: BlogPostParams) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  return pageMeta({ title: post.title.length > 62 ? "RERA Explained: A Property Buyer's Guide" : post.title, description: post.excerpt, path: `/blog/${post.slug}`, type: "article" });
+  return pageMeta({ title: post.seoTitle ?? (post.title.length + 16 <= 62 ? `${post.title} | Artha Vriksha` : post.title), description: post.excerpt, path: `/blog/${post.slug}`, type: "article" });
 }
 
 export default async function BlogPost({ params }: BlogPostParams) {
@@ -39,7 +40,9 @@ export default async function BlogPost({ params }: BlogPostParams) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const others = blogPosts.filter((p) => p.slug !== post.slug);
+  const related = [...others.filter((p) => p.category === post.category), ...others.filter((p) => p.category !== post.category)].slice(0, 2);
+  const wordCount = post.sections.reduce((n, sec) => n + sec.body.join(" ").split(/\s+/).length, 0);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -49,6 +52,8 @@ export default async function BlogPost({ params }: BlogPostParams) {
     datePublished: isoDate(post.date),
     dateModified: isoDate(post.date),
     articleSection: post.category,
+    wordCount,
+    inLanguage: "en-IN",
     image: `${SITE_URL}/og-image.png`,
     mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
     author: { "@type": "Organization", name: "Artha Vriksha Services", url: SITE_URL },
@@ -61,10 +66,8 @@ export default async function BlogPost({ params }: BlogPostParams) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-      />
+      <JsonLd data={articleJsonLd} />
+      <JsonLd data={breadcrumbLd([{ name: "Blog", path: "/blog" }, { name: post.title, path: `/blog/${post.slug}` }])} />
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-20 md:pb-16">
           <Link
@@ -118,6 +121,15 @@ export default async function BlogPost({ params }: BlogPostParams) {
               </div>
             ))}
           </div>
+
+          <p className="font-body text-xs text-foreground-muted mt-8 measure">
+            {post.category === "Mutual Funds" && "Mutual Fund investments are subject to market risks, read all scheme related documents carefully. "}
+            {post.category === "Insurance" && "Insurance is the subject matter of solicitation. "}
+            This article is general information, not a recommendation. Rules and rates change, so check the current position with the regulator or lender.
+          </p>
+          <p className="font-body text-sm text-foreground-muted mt-3">
+            Related service: <Link href={categoryLink[post.category]} className="text-secondary underline underline-offset-2 hover:text-primary">{post.category === "Personal Finance" ? "About the team" : post.category}</Link>
+          </p>
 
           <div className="mt-12 bg-green-soft border border-green/20 rounded-2xl p-7 text-center">
             <p className="font-heading font-semibold text-primary mb-2">Have a question about this?</p>

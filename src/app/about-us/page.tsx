@@ -1,4 +1,5 @@
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -64,6 +65,12 @@ const personJsonLd = {
       description:
         "AMFI-registered Mutual Fund Distributor (ARN 106715) with 24+ years in banking and financial services.",
       knowsAbout: ["Mutual Funds", "GIFT City IFSC", "Regulatory Compliance", "Investor Education"],
+      worksFor: { "@id": "https://arthavriksha.in/#organization" },
+      sameAs: ["https://giftcityfunds.in"],
+      hasCredential: [
+        { "@type": "EducationalOccupationalCredential", credentialCategory: "AMFI registration", name: "AMFI-Registered Mutual Fund Distributor, ARN 106715", recognizedBy: { "@type": "Organization", name: "Association of Mutual Funds in India" } },
+        { "@type": "EducationalOccupationalCredential", credentialCategory: "RERA registration", name: "GujRERA real estate agent, AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529", recognizedBy: { "@type": "Organization", name: "Gujarat Real Estate Regulatory Authority" } },
+      ],
     },
     {
       "@type": "Person",
@@ -72,6 +79,10 @@ const personJsonLd = {
       description:
         "MahaRERA-registered real estate professional (A52100037796) with 22+ years in real estate, finance and digital transformation.",
       knowsAbout: ["Real Estate", "RERA Compliance", "Digital Transformation"],
+      worksFor: { "@id": "https://arthavriksha.in/#organization" },
+      hasCredential: [
+        { "@type": "EducationalOccupationalCredential", credentialCategory: "RERA registration", name: "MahaRERA real estate agent, A52100037796", recognizedBy: { "@type": "Organization", name: "Maharashtra Real Estate Regulatory Authority" } },
+      ],
     },
   ],
 };
@@ -121,6 +132,7 @@ const otherDesks = [
 export default function AboutUs() {
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: "About", path: "/about-us" }])} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
 
       <section className="hero-home text-primary-foreground">

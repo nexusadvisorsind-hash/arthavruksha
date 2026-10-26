@@ -1,4 +1,5 @@
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { PRIVACY_CONTACT, PRIVACY_NOTICE_VERSION, RETENTION_MONTHS } from "@/lib/privacy";
 
 export const metadata = pageMeta({
@@ -13,6 +14,8 @@ const LI = "font-body text-foreground-muted leading-relaxed measure";
 
 export default function PrivacyPolicy() {
   return (
+    <>
+      <JsonLd data={breadcrumbLd([{ name: "Privacy Policy", path: "/privacy-policy" }])} />
     <section className="py-16 md:py-24 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary mb-3">Privacy Policy</h1>
@@ -51,6 +54,7 @@ export default function PrivacyPolicy() {
         <ul className="list-disc pl-6 space-y-1 mb-3">
           <li className={LI}>Vercel Inc., for website hosting.</li>
           <li className={LI}>Neon, for the database where enquiries are stored. Servers of these providers may be located outside India. Transfers outside India are made only to countries not restricted by the Central Government under the DPDP Act.</li>
+          <li className={LI}>Google LLC (Google Analytics) and Microsoft Corporation (Microsoft Clarity), only where optional analytics is switched on and only after you accept it. See &ldquo;Cookies and tracking&rdquo; below.</li>
         </ul>
         <p className={P}>
           Data is disclosed to authorities only where the law requires it. If you tap the WhatsApp button, you are using WhatsApp&rsquo;s service,
@@ -88,7 +92,13 @@ export default function PrivacyPolicy() {
 
         <h2 className={H2}>Cookies and tracking</h2>
         <p className={P}>
-          The website does not use advertising or analytics cookies. A sign-in cookie is set only for authorised staff in the leads area.
+          The website does not use advertising cookies. A sign-in cookie is set only for authorised staff in the leads area.
+        </p>
+        <p className={P}>
+          Where optional analytics is switched on, a banner asks for a choice. Nothing is loaded until you press &ldquo;Accept analytics&rdquo;. If you
+          accept, Google Analytics records anonymised visit statistics (pages viewed, enquiry and call-button clicks) and Microsoft Clarity records
+          anonymised page interactions such as clicks and scrolling. Form fields are masked. Declining has no effect on how the site works, and the
+          &ldquo;Cookie settings&rdquo; link in the footer lets you change the choice at any time. The legal basis is your consent, which you can withdraw.
         </p>
 
         <h2 className={H2}>Contact for privacy requests and complaints</h2>
@@ -103,5 +113,6 @@ export default function PrivacyPolicy() {
         </p>
       </div>
     </section>
+    </>
   );
 }

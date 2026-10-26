@@ -1,4 +1,10 @@
 import { pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import { ShortAnswer } from "@/components/seo/short-answer";
+import { FaqSection } from "@/components/seo/faq-section";
+import { OfficialSources } from "@/components/seo/official-sources";
+import { RelatedGuides } from "@/components/seo/related-guides";
+import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES } from "@/lib/seo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SipCalculator } from "@/components/sip-calculator";
@@ -90,10 +96,30 @@ const navItems = [
   { id: "gift-city", label: "GIFT City" },
 ];
 
+const related = [
+  {
+    "href": "/calculators",
+    "title": "Calculators hub",
+    "note": "Six free tools: SIP, goal SIP, EMI, loan and home loan eligibility, insurance cover."
+  },
+  {
+    "href": "/blog/sip-vs-lumpsum-how-to-choose",
+    "title": "SIP vs lumpsum: how to choose",
+    "note": "How the two ways of investing differ and what decides between them."
+  },
+  {
+    "href": "/pune",
+    "title": "Mutual fund distributor in Pune",
+    "note": "Pune office, areas served and how an enquiry is handled."
+  }
+];
+
 export default function MutualFunds() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <JsonLd data={breadcrumbLd([{ name: "Mutual Fund Distributor in Pune & Ahmedabad", path: "/mutual-funds" }])} />
+      <JsonLd data={webPageLd({ path: "/mutual-funds", name: "Mutual Fund Distributor in Pune & Ahmedabad", description: "Anup Vatyani is an AMFI-registered Mutual Fund Distributor (ARN 106715) serving Pune, Ahmedabad and the rest of India. He helps you pick funds to match a goal and start a SIP, which can begin from a small monthly amount. No fee is charged to you; distribution commission comes from the fund house. Mutual Fund investments are subject to market risks, read all scheme related documents carefully." })} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <section className="hero-mf text-primary-foreground">
@@ -102,7 +128,8 @@ export default function MutualFunds() {
             <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
               <BadgeCheck className="h-4 w-4 text-accent" /> Anup Vatyani, AMFI-registered Mutual Fund Distributor, <strong className="font-semibold text-white">ARN 106715</strong>
             </p>
-            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Start growing your money, one SIP at a time</h1>
+            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Mutual fund distributor in Pune and Ahmedabad</h1>
+            <p className="font-heading text-xl md:text-2xl text-primary-foreground/90 mb-5 max-w-3xl">Start growing your money, one SIP at a time</p>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure mb-6">
               Anup Vatyani, an AMFI-registered Mutual Fund Distributor (ARN 106715), helps you choose and start mutual fund investments that match your goals, from SIPs to ELSS tax savers, in plain language and without pressure.
             </p>
@@ -110,6 +137,8 @@ export default function MutualFunds() {
           </Reveal>
         </div>
       </section>
+
+      <ShortAnswer updated={formatDate(PAGE_DATES["/mutual-funds"])}>Anup Vatyani is an AMFI-registered Mutual Fund Distributor (ARN 106715) serving Pune, Ahmedabad and the rest of India. He helps you pick funds to match a goal and start a SIP, which can begin from a small monthly amount. No fee is charged to you; distribution commission comes from the fund house. Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</ShortAnswer>
 
       <InPageNav items={navItems} />
 
@@ -209,6 +238,10 @@ export default function MutualFunds() {
           </div>
         </section>
       )}
+
+      <OfficialSources keys={["amfi", "sebi", "scores", "it"]} />
+
+      <RelatedGuides items={related} />
 
       <section className="py-16 md:py-20 hero-mf text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">

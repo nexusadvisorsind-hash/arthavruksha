@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { ensureContactTable, getPool } from "@/lib/db";
 import { PRIVACY_NOTICE_VERSION } from "@/lib/privacy";
+import { notifyNewLead } from "@/lib/notify";
 
 const VERTICALS = ["Mutual Funds", "Real Estate", "Insurance", "Loans", "General"];
 
@@ -42,6 +43,9 @@ export async function POST(req: Request) {
     } else {
       console.warn("No database configured: a contact submission was received but not stored.");
     }
+
+    // Alert the team (email / WhatsApp, if configured). Never blocks the visitor.
+    await notifyNewLead({ name, email, phone, vertical, message });
 
     return NextResponse.json({ success: true });
   } catch {

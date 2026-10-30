@@ -53,6 +53,7 @@ export default function PrivacyPolicy() {
         </p>
         <ul className="list-disc pl-6 space-y-1 mb-3">
           <li className={LI}>Vercel Inc., for website hosting.</li>
+          <li className={LI}>Resend, for emailing the Assetzpro Services team a notice of each new enquiry, and Meta (WhatsApp Business), for sending the team a short alert.</li>
           <li className={LI}>Neon, for the database where enquiries are stored. Servers of these providers may be located outside India. Transfers outside India are made only to countries not restricted by the Central Government under the DPDP Act.</li>
           <li className={LI}>Google LLC (Google Analytics) and Microsoft Corporation (Microsoft Clarity), only where optional analytics is switched on and only after you accept it. See &ldquo;Cookies and tracking&rdquo; below.</li>
         </ul>

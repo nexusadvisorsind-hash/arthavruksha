@@ -12,18 +12,18 @@ export function ScrollTimeline({ items, accent = "#1E5FD9" }: { items: Item[]; a
   const scaleY = useSpring(scrollYProgress, { stiffness: 110, damping: 26 });
 
   return (
-    <ol ref={ref} className="relative pl-10 md:pl-14 space-y-10">
-      <span aria-hidden className="absolute left-[15px] md:left-[19px] top-2 bottom-2 w-[2px] bg-border" />
+    <ol ref={ref} className="relative pl-12 md:pl-[3.75rem] space-y-6">
+      <span aria-hidden className="absolute left-[19px] md:left-[23px] top-2 bottom-2 w-[2px] bg-border" />
       <motion.span
         aria-hidden
         style={{ scaleY, backgroundColor: accent }}
-        className="absolute left-[15px] md:left-[19px] top-2 bottom-2 w-[2px] origin-top"
+        className="absolute left-[19px] md:left-[23px] top-2 bottom-2 w-[2px] origin-top"
       />
       {items.map((it, i) => (
-        <li key={it.title} className="relative">
+        <li key={it.title} className="step-card relative p-5 md:p-6">
           <span
             aria-hidden
-            className="absolute -left-10 md:-left-14 top-0 flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-background border-2 font-heading font-semibold text-sm md:text-base"
+            className="absolute -left-12 md:-left-[3.75rem] top-4 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-white border-2 ring-4 ring-background font-body font-bold text-xl md:text-2xl leading-none"
             style={{ borderColor: accent, color: accent }}
           >
             {i + 1}

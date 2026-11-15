@@ -114,20 +114,31 @@ export function LifeMomentPicker() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.22 }}
           >
-            <p className="font-heading text-xl md:text-2xl text-primary mb-8 measure">{moment.intro}</p>
-            <ol className="grid md:grid-cols-3 gap-x-8 gap-y-8 border-t border-border pt-8">
+            <p className="font-heading text-xl md:text-2xl text-primary mb-6 measure">{moment.intro}</p>
+            <ol className="grid md:grid-cols-3 gap-5 items-stretch">
               {moment.steps.map((s, i) => (
-                <li key={s.title} className="relative">
-                  <span className="font-heading text-4xl text-accent/80 leading-none block mb-3" aria-hidden>
-                    {i + 1}
-                  </span>
-                  <span className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold font-body mb-3 ${PILLAR_STYLE[s.pillar]}`}>
-                    {s.pillar}
-                  </span>
-                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">{s.title}</h3>
-                  <p className="font-body text-sm text-foreground-muted leading-relaxed mb-3">{s.why}</p>
-                  <Link href={s.href} className="inline-flex items-center gap-1.5 font-body text-sm font-semibold text-secondary hover:underline">
-                    {s.cta} <ArrowRight className="h-4 w-4" />
+                <li
+                  key={s.title}
+                  className="step-card group flex flex-col p-6"
+                >
+                  <div className="flex items-center justify-between gap-3 mb-5">
+                    <span
+                      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary font-body text-3xl font-bold leading-none text-accent ring-4 ring-green/15"
+                      aria-hidden
+                    >
+                      {i + 1}
+                    </span>
+                    <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold font-body ${PILLAR_STYLE[s.pillar]}`}>
+                      {s.pillar}
+                    </span>
+                  </div>
+                  <h3 className="font-heading font-semibold text-lg leading-snug text-primary mb-2">{s.title}</h3>
+                  <p className="font-body text-sm text-foreground-muted leading-relaxed mb-5">{s.why}</p>
+                  <Link
+                    href={s.href}
+                    className="mt-auto inline-flex items-center gap-1.5 border-t border-border pt-4 font-body text-sm font-semibold text-secondary hover:text-primary"
+                  >
+                    {s.cta} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </li>
               ))}

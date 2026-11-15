@@ -4,7 +4,7 @@ import { ShortAnswer } from "@/components/seo/short-answer";
 import { FaqSection } from "@/components/seo/faq-section";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, TrendingUp, Building2, ShieldCheck, Landmark } from "lucide-react";
+import { ArrowRight, MessageCircle, TrendingUp, Building2, ShieldCheck, Landmark } from "lucide-react";
 import { blogPosts } from "@/lib/blog-posts";
 import { Reveal } from "@/components/reveal";
 import { BanyanHero } from "@/components/banyan-hero";
@@ -12,6 +12,7 @@ import { LifeMomentPicker } from "@/components/life-moment-picker";
 import { CostOfWaiting } from "@/components/cost-of-waiting";
 import { RequirementBar } from "@/components/requirement-bar";
 import { PLACES, PLACE_ORDER } from "@/lib/re-locations";
+import { whatsappLink } from "@/lib/contact";
 
 export const metadata = pageMeta({
   title: 'Property, Mutual Funds, Insurance & Loans in Pune | Assetzpro',
@@ -69,20 +70,30 @@ export default function Home() {
       <section className="hero-home text-primary-foreground overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-12 md:pt-20 md:pb-16 grid md:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
           <div>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.08] mb-6">
-              Mutual funds, property, insurance and loans, under one registered team in Pune and Ahmedabad.
+            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.1] mb-6">
+              Build with confidence. Protect with care. Grow with clarity.
             </h1>
-            <p className="font-body text-lg text-primary-foreground/85 leading-relaxed mb-8 measure">
-              Plan investments, rent, lease, buy or sell property, protect your family and compare loans. Everything is explained in plain language, with every registration shown openly and no returns promised.
+            <p className="font-body text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-2 max-w-xl text-balance">
+              Property, mutual funds, insurance and loans, in one place.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+            <p className="font-body text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-xl text-balance">
+              Serving families and businesses in Pune and Ahmedabad.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <Button asChild size="lg" variant="gold">
-                <a href="tel:+919022958266">Call +91 90229 58266 <Phone className="ml-2 h-4 w-4" /></a>
+                <a href={whatsappLink("Hello, I would like to know more about your property, mutual fund, insurance or loan services.")} target="_blank" rel="noopener noreferrer">
+                  Chat on WhatsApp <MessageCircle className="ml-2 h-4 w-4" aria-hidden="true" />
+                </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white/70 text-white hover:bg-white hover:text-primary">
                 <a href="#services">See all services</a>
               </Button>
             </div>
+            <ul className="flex flex-wrap gap-2 mb-6" aria-label="Registrations">
+              {["AMFI ARN 106715", "MahaRERA", "GujRERA", "IRDAI agent"].map((b) => (
+                <li key={b} className="rounded-full border border-white/25 px-3 py-1 font-body text-xs text-primary-foreground/85">{b}</li>
+              ))}
+            </ul>
             <p className="font-body text-xs text-primary-foreground/65 measure">
               Mutual Fund investments are subject to market risks, read all scheme related documents carefully. Insurance is the subject matter of solicitation.
             </p>

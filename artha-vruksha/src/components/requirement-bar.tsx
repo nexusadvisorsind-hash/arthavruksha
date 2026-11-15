@@ -55,7 +55,7 @@ export function RequirementBar({
             aria-selected={intent === i}
             onClick={() => setIntent(i)}
             className={cn(
-              "rounded-full px-5 py-1.5 font-body text-sm font-semibold transition-colors",
+              "rounded-full px-5 py-2.5 font-body text-sm font-semibold transition-colors",
               intent === i ? "bg-accent text-accent-foreground" : "bg-white/10 text-white hover:bg-white/20"
             )}
           >

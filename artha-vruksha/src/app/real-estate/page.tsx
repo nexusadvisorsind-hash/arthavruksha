@@ -204,7 +204,7 @@ export default function RealEstate() {
                     ))}
                     {names.length > 8 && <li className="font-body text-xs text-foreground-muted self-center">and {names.length - 8} more</li>}
                   </ul>
-                  <Link href={`/real-estate/${slug}`} className="mt-auto inline-flex items-center gap-1.5 font-body text-sm font-semibold text-secondary hover:text-primary">
+                  <Link href={`/real-estate/${slug}`} className="mt-auto inline-flex min-h-11 items-center gap-1.5 font-body text-sm font-semibold text-secondary hover:text-primary">
                     See {pl.name} areas <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </li>

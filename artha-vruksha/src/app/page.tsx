@@ -118,11 +118,11 @@ export default function Home() {
                 </span>
                 <h3 className="font-heading font-semibold text-xl text-primary mb-2">{sv.title}</h3>
                 <p className="font-body text-sm text-foreground-muted leading-relaxed mb-5">{sv.text}</p>
-                <div className="mt-auto border-t border-border pt-4 space-y-2">
-                  <Link href={sv.href} className="inline-flex items-center gap-1.5 font-body text-sm font-semibold text-primary hover:text-secondary">
+                <div className="mt-auto border-t border-border pt-2">
+                  <Link href={sv.href} className="inline-flex min-h-11 items-center gap-1.5 font-body text-sm font-semibold text-primary hover:text-secondary">
                     {sv.cta} <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <Link href={sv.toolHref} className="block font-body text-sm text-secondary hover:underline">{sv.tool}</Link>
+                  <Link href={sv.toolHref} className="flex min-h-11 items-center font-body text-sm text-secondary hover:underline">{sv.tool}</Link>
                 </div>
               </li>
             ))}

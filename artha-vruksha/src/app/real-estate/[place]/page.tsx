@@ -57,14 +57,14 @@ export default async function PlacePage({ params }: { params: Promise<Params> })
       <section className="hero-re text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-14 md:pt-20 md:pb-20">
           <nav aria-label="Breadcrumb" className="font-body text-sm text-primary-foreground/70 mb-5">
-            <Link href="/real-estate" className="hover:text-accent">Real estate</Link> / <span className="text-primary-foreground/90">{p.name}</span>
+            <Link href="/real-estate" className="inline-block py-3 hover:text-accent">Real estate</Link> / <span className="text-primary-foreground/90">{p.name}</span>
           </nav>
           <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-5 max-w-4xl">{p.h1}</h1>
           <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure mb-8">{p.lead}</p>
           <RequirementBar areas={p.barAreas} />
           <p className="font-body text-sm text-primary-foreground/80 mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
             <span className="inline-flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-accent" /> Registered agents, numbers shown in the footer</span>
-            <a href={`tel:${PHONE_TEL}`} className="hover:text-accent">Call {PHONE_DISPLAY}</a>
+            <a href={`tel:${PHONE_TEL}`} className="inline-flex min-h-11 items-center hover:text-accent">Call {PHONE_DISPLAY}</a>
             <span>Meetings by appointment</span>
           </p>
         </div>
@@ -112,7 +112,7 @@ export default async function PlacePage({ params }: { params: Promise<Params> })
                         href={whatsappLink(`Hello, I am looking for property in ${a.name}, ${p.name}. Please share options.`)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-4 inline-flex items-center gap-1.5 font-body text-sm font-semibold text-secondary hover:text-primary"
+                        className="mt-2 inline-flex min-h-11 items-center gap-1.5 font-body text-sm font-semibold text-secondary hover:text-primary"
                       >
                         <MessageCircle className="h-4 w-4" aria-hidden="true" /> Ask about {a.name}
                       </a>

@@ -66,8 +66,8 @@ body {
 }
 .hero-re {
   background-image:
-    radial-gradient(55% 80% at 90% 30%, rgba(63, 211, 154, 0.22), transparent 70%),
-    linear-gradient(160deg, #0A241D 0%, #0F3B2E 100%);
+    radial-gradient(55% 80% at 90% 20%, rgba(30, 95, 217, 0.60), transparent 70%),
+    linear-gradient(160deg, #0A1B3D 0%, #0F2F6E 100%);
 }
 .hero-ins {
   background-image:
@@ -208,3 +208,16 @@ main section h2.text-center::before { margin-left: auto; margin-right: auto; }
 @media (prefers-reduced-motion: reduce) {
   .step-card, .step-card:hover { transition: none; transform: none; }
 }
+
+/* Phones zoom the page when a field smaller than 16px gets focus. Keep fields at 16px. */
+@media (max-width: 767px) {
+  input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Comfortable touch targets for footer links and question rows. */
+footer li > a, footer li > button { display: inline-block; padding-block: 0.4rem; }
+details > summary { min-height: 2.75rem; }

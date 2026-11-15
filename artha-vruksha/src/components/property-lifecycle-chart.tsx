@@ -117,7 +117,7 @@ export function PropertyLifecycleChart() {
           </p>
           <Link
             href="/mutual-funds"
-            className="shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold text-secondary hover:underline whitespace-nowrap"
+            className="shrink-0 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-secondary hover:underline sm:whitespace-nowrap"
           >
             Read about systematic withdrawals <ArrowRight className="h-4 w-4" />
           </Link>

@@ -21,7 +21,7 @@ const siteUrl = "https://assetzpro.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Assetzpro Services: Property for Rent, Lease, Buy & Sell, Mutual Funds, Insurance & Loans in Pune & Ahmedabad",
+    default: "Assetzpro Services: Property, Mutual Funds, Insurance & Loans",
     template: "%s | Assetzpro Services",
   },
   description:

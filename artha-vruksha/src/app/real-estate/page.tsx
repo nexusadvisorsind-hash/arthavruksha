@@ -81,7 +81,7 @@ const serviceJsonLd = {
   name: "Real Estate Broking Services",
   description:
     "Rent, lease, buy and sell of residential, commercial, industrial and agricultural property in Pune, Ahmedabad, GIFT City and Dholera, from individually MahaRERA and GujRERA registered professionals.",
-  provider: { "@type": "FinancialService", name: "Assetzpro Services" },
+  provider: { "@type": "RealEstateAgent", name: "Assetzpro Services" },
   areaServed: [
     { "@type": "State", name: "Maharashtra" },
     { "@type": "State", name: "Gujarat" },

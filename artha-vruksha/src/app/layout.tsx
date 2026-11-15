@@ -99,7 +99,7 @@ const websiteJsonLd = {
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "FinancialService",
+  "@type": ["FinancialService", "RealEstateAgent"],
   "@id": `${siteUrl}/#organization`,
   name: "Assetzpro Services",
   description:

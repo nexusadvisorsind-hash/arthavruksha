@@ -14,6 +14,7 @@ export type City = {
   services: { href: string; title: string; who: string; body: string }[];
   areas: { group: string; list: string[] }[];
   local: { heading: string; paras: string[] };
+  howItWorks: { heading: string; paras: string[] };
   faqs: Faq[];
   sources: SourceKey[];
   related: { href: string; title: string; note: string }[];
@@ -49,6 +50,14 @@ export const CITIES: Record<City["slug"], City> = {
         "Property projects in Maharashtra are registered with MahaRERA. A buyer can search the project name, promoter or registration number on the MahaRERA website, then compare the number in the brochure with the portal record, the stated completion date and the quarterly updates.",
         "Pune and Pimpri-Chinchwad are governed by different municipal bodies, so approvals and documents can differ between a project in Kharadi and one in Chinchwad. Documents are read against the actual project location, not assumed from the city name.",
         "Many buyers in Pune are moving for work. A home loan eligibility estimate and an EMI check before shortlisting keep the budget realistic.",
+      ],
+    },
+    howItWorks: {
+      heading: "Areas and how a property enquiry works in Pune",
+      paras: [
+        "Most enquiries in Pune start with an area and a budget. East Pune (Amanora, Magarpatta, Kharadi, Viman Nagar, Koregaon Park, Kalyani Nagar, Mundhwa and Hadapsar) is the main focus, with west Pune and Pimpri-Chinchwad covered as well. Flats for rent, shops and offices on lease, and homes to buy or sell are all handled.",
+        "Share the area, budget, type of property and move-in date on WhatsApp or the enquiry form. Matching options are shortlisted, RERA status and paperwork are checked before a visit is fixed, and visits are arranged at a time that suits you. Meetings are by appointment, so a time and place are agreed first.",
+        "The brokerage, if any, is agreed in writing before work starts, and payments go directly to the owner, builder or authority named in the agreement. See the property pages for Pune areas, or the contact page to start.",
       ],
     },
     faqs: [
@@ -93,6 +102,14 @@ export const CITIES: Record<City["slug"], City> = {
         "Property projects in Gujarat are registered with GujRERA. A buyer can search the GujRERA website by project or promoter, then compare the registration number in the brochure with the portal record and the stated completion date.",
         "Industrial and logistics land is a large part of Gujarat enquiries, especially around Sanand and the corridors outside Ahmedabad. Zoning and land-use classification are confirmed before any price is discussed, because the same plot can be restricted to farming or to industry.",
         "GIFT City sits in Gandhinagar next to Ahmedabad. Anup Vatyani also runs giftcityfunds.in, an educational site on GIFT City (IFSC) funds. Those funds fall under IFSCA, not the AMFI registration shown on this site.",
+      ],
+    },
+    howItWorks: {
+      heading: "Areas and how a property enquiry works in Ahmedabad",
+      paras: [
+        "Enquiries in Ahmedabad usually name a locality: SG Highway, Bodakdev, Thaltej, Vastrapur, Satellite, Prahlad Nagar, Bopal, Shela, CG Road, Gota and nearby areas. GIFT City in Gandhinagar and Dholera are covered too. Flats for rent, shops and offices on lease, and homes to buy or sell are all handled.",
+        "Share the locality, budget, type of property and move-in date on WhatsApp or the enquiry form. Matching options are shortlisted, GujRERA status and paperwork are checked before a visit is fixed, and visits are arranged at a time that suits you. Meetings are by appointment, so a time and place are agreed first.",
+        "The brokerage, if any, is agreed in writing before work starts, and payments go directly to the owner, builder or authority named in the agreement. See the property pages for Ahmedabad, GIFT City and Dholera, or the contact page to start.",
       ],
     },
     faqs: [

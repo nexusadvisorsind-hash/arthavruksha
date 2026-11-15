@@ -13,7 +13,7 @@ export function CityPage({ city }: { city: City }) {
   const path = `/${city.slug}`;
   const officeLd = {
     "@context": "https://schema.org",
-    "@type": "FinancialService",
+    "@type": ["FinancialService", "RealEstateAgent"],
     "@id": `${SITE_URL}${path}#office`,
     name: `Assetzpro Services, ${city.name}`,
     url: `${SITE_URL}${path}`,
@@ -104,6 +104,18 @@ export function CityPage({ city }: { city: City }) {
       <FaqSection faqs={city.faqs} />
       <OfficialSources keys={city.sources} />
       <RelatedGuides items={city.related} />
+
+      <section className="py-16 md:py-20 bg-surface border-y border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-6 max-w-3xl">{city.howItWorks.heading}</h2>
+          {city.howItWorks.paras.map((p, i) => (
+            <p key={i} className="font-body text-foreground-muted leading-relaxed mb-4 measure">{p}</p>
+          ))}
+          <p className="font-body text-foreground-muted mt-6">
+            <Link href={`/real-estate/${city.slug}`} className="text-secondary underline underline-offset-2">Property for rent, lease, buy and sell in {city.name}</Link>
+          </p>
+        </div>
+      </section>
 
       <section className="py-16 md:py-20 hero-navy text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { pageMeta, breadcrumbLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactForm } from "@/components/contact-form";
@@ -51,6 +52,25 @@ export default function Contact() {
               Assetzpro Services works through individually licensed distributors and registered real estate agents, not fee-charging investment advisers. Enquiries here do not constitute investment advice.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="py-14 md:py-16 bg-surface border-t border-border">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Areas and how an enquiry works</h2>
+          <p className="font-body text-foreground-muted leading-relaxed mb-4 measure">
+            Property enquiries are taken for Pune (Amanora, Magarpatta, Kharadi, Koregaon Park, Kalyani Nagar, Viman Nagar, Mundhwa, Hadapsar, Baner, Hinjewadi and nearby),
+            Ahmedabad (SG Highway, Bodakdev, Bopal, Shela, Prahlad Nagar, CG Road and nearby), GIFT City and Dholera. Mutual fund, insurance and loan enquiries are taken from both cities.
+          </p>
+          <p className="font-body text-foreground-muted leading-relaxed mb-4 measure">
+            Send the area, budget and what you need on WhatsApp or the form, and a reply follows on the same number. For property, matching options are shortlisted
+            and RERA status and paperwork are checked before a visit is fixed. Meetings are by appointment at a place and time agreed with you.
+          </p>
+          <p className="font-body text-foreground-muted leading-relaxed measure">
+            Your details are used only to reply, as set out in the <Link href="/privacy-policy" className="text-secondary underline underline-offset-2">Privacy Policy</Link>.
+            See also <Link href="/real-estate/pune" className="text-secondary underline underline-offset-2">property in Pune</Link> and{" "}
+            <Link href="/real-estate/ahmedabad" className="text-secondary underline underline-offset-2">property in Ahmedabad</Link>.
+          </p>
         </div>
       </section>
     </>

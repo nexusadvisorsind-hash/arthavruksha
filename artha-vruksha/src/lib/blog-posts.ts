@@ -9,9 +9,90 @@ export type BlogPost = {
   readTime: string;
   date: string;
   sections: BlogSection[];
+  links?: { href: string; label: string }[];
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "rent-in-kharadi-vs-magarpatta-pune",
+    category: "Real Estate",
+    title: "Rent in Kharadi vs Magarpatta, Pune",
+    excerpt: "Kharadi and Magarpatta are two of east Pune's most asked-about areas for rent. Here is how to compare them for a flat, without relying on rumours about prices.",
+    readTime: "4 min read",
+    date: "November 2026",
+    links: [
+      { href: "/real-estate/pune", label: "Flats for rent, lease, buy and sell in Pune" },
+      { href: "/blog/renting-a-flat-pune-ahmedabad-checklist", label: "Renting a flat: documents and agreement checklist" },
+    ],
+    sections: [
+      { body: ["The short answer: both areas suit people who work in east Pune, and the better fit depends on your workplace, your budget and whether you prefer a planned township or a larger mix of societies. Rents change often, so ask for current figures for the exact society and flat size instead of trusting a general number."] },
+      { heading: "Start with the commute", body: ["Kharadi is known as an IT and office area, so people who work there often want to live close by. Magarpatta City is a large integrated township near Hadapsar, with homes, offices and shops inside the same campus. Check the real travel time at your usual hour, because traffic on the roads around both areas varies a lot through the day."] },
+      { heading: "Compare the type of home", body: ["Magarpatta has a smaller set of well-known societies inside the township. Kharadi has many more projects of different ages and sizes, so there is more variety, and also more to check. For any flat, ask about the floor, the age of the building, the parking, the lift and generator backup, and what the monthly maintenance covers."] },
+      { heading: "Budget and deposit", body: ["Rent depends on the society, the size, the floor and whether the flat is furnished. The security deposit and notice period are agreed between you and the owner, so ask for both before you visit. Keep a written record of what was agreed."] },
+      { heading: "Check before you commit", body: ["Visit at different times of day, speak to a current tenant if possible, and read the rent agreement closely. Tenants usually need ID, address proof and income or employment proof. The renting checklist on this site lists what both sides usually provide."] },
+      { heading: "Next step", body: ["If you want options in either area, share your budget, the number of bedrooms and your move-in date on WhatsApp, and matching flats can be shortlisted for a visit. Meetings are by appointment."] },
+    ],
+  },
+  {
+    slug: "rent-in-bopal-vs-shela-ahmedabad",
+    category: "Real Estate",
+    title: "Rent in Bopal vs Shela, Ahmedabad",
+    excerpt: "Bopal and Shela are both on the western side of Ahmedabad and are often compared by people looking for a flat on rent. Here is what to compare.",
+    readTime: "4 min read",
+    date: "November 2026",
+    links: [
+      { href: "/real-estate/ahmedabad", label: "Flats for rent, lease, buy and sell in Ahmedabad" },
+      { href: "/blog/renting-a-flat-pune-ahmedabad-checklist", label: "Renting a flat: documents and agreement checklist" },
+    ],
+    sections: [
+      { body: ["The short answer: Bopal and Shela are neighbouring residential areas on the western edge of Ahmedabad, and the better choice depends on where you work, the type of society you want and the amenities nearby. Compare actual flats rather than the area name, because societies within the same area can differ a lot."] },
+      { heading: "Start with where you travel", body: ["Many people looking in these areas work along SG Highway or in nearby business districts, and some travel to GIFT City in Gandhinagar. Test the journey at your usual hour before you decide, because road conditions and travel time vary through the day."] },
+      { heading: "Look at the society, not only the area", body: ["Ask about the age of the building, the parking, the lift and power backup, the security arrangements and the monthly maintenance. Newer societies often have more shared facilities. Older ones may be closer to schools, markets and hospitals. Neither is better for everyone."] },
+      { heading: "Rent, deposit and agreement", body: ["Rent depends on the size, the floor and whether the flat is furnished. The deposit, the notice period and any lock-in are agreed with the owner. In Gujarat a written rent agreement is normal. Check the current registration and stamp duty requirements with the local authority before you sign."] },
+      { heading: "Check before you commit", body: ["See the flat in daylight, ask who the owner is and to see ownership papers, and pay only by bank transfer against a receipt. Tenants usually need ID, address proof and income or employment proof."] },
+      { heading: "Next step", body: ["Share your budget, the bedrooms you need and your move-in date on WhatsApp, and matching flats in Bopal, Shela, SG Highway, Prahlad Nagar and nearby areas can be shortlisted. Meetings are by appointment."] },
+    ],
+  },
+  {
+    slug: "office-space-lease-gift-city-checklist",
+    category: "Real Estate",
+    title: "Office Space on Lease in GIFT City: Checklist",
+    excerpt: "Taking office space on lease in GIFT City needs more than a rent figure. Here are the terms and approvals to look at before you sign.",
+    readTime: "5 min read",
+    date: "November 2026",
+    links: [
+      { href: "/real-estate/gift-city", label: "GIFT City office space for lease and flats for rent" },
+      { href: "/real-estate/ahmedabad", label: "Property in Ahmedabad" },
+    ],
+    sections: [
+      { body: ["The short answer: before you take office space on lease in GIFT City, check the building and its approvals, the lease terms (lock-in, escalation, deposit and maintenance), and whether the approvals that apply to your business type are in place. GIFT City is India's first International Financial Services Centre, in Gandhinagar, and some rules there differ from the rest of Gujarat. Check the current position with the relevant authority."] },
+      { heading: "Know which approvals apply to your business", body: ["The approvals a firm needs depend on what it does. Some activities need approval from the IFSC authority, and others do not. The right authority, or a qualified professional, can tell you what applies. Property help does not replace that step."] },
+      { heading: "Check the building and the space", body: ["Ask for the building's registration and approvals, the exact carpet and built-up area, and what is included in the quoted area. Check parking, power backup, internet options, security and access hours."] },
+      { heading: "Read the lease terms", body: ["Look at the length of the term, the lock-in period, the yearly rent increase, the security deposit and how it is returned, the maintenance and tax charges, who pays for fit-out, and what happens at the end. Ask for the draft agreement early and have a lawyer read it."] },
+      { heading: "Compare nearby options", body: ["Some firms compare GIFT City with offices on SG Highway or in Ahmedabad's business districts. Compare the full cost, including maintenance, travel for staff and the approvals your business needs, not only the rent."] },
+      { heading: "Next step", body: ["Share the size you need, your budget and your move date on WhatsApp, and options can be shortlisted and the lease terms read with you. Meetings are by appointment."] },
+    ],
+  },
+  {
+    slug: "dholera-plot-allotment-explained",
+    category: "Real Estate",
+    title: "Dholera: Plot Allotment Explained",
+    excerpt: "Dholera is a planned city in Gujarat that many people ask about. Here is how land allotment is described, and what to check before any payment.",
+    readTime: "5 min read",
+    date: "November 2026",
+    links: [
+      { href: "/real-estate/dholera", label: "Dholera plots and property: what to check" },
+      { href: "/blog/rera-explained-property-buyers-guide", label: "RERA explained: a property buyer's guide" },
+    ],
+    sections: [
+      { body: ["The short answer: land in the Dholera area can be held by private owners or allotted by the authority, and the two are very different. Before you pay for any plot, check who the seller is, who owns the land, how the land is zoned under the Dholera plan, and which approvals apply. No returns or price rises can be promised."] },
+      { heading: "What Dholera is", body: ["Dholera is a planned Special Investment Region in Gujarat, south of Ahmedabad. The authority describes the planning, zoning and allotment process on its official portals. Plans, timelines and rules can change, so use the official sources for the current position."] },
+      { heading: "Allotment by the authority", body: ["The authority describes allotment of land by auction or tender for residential and commercial plots in the activation area. Terms, documents and timelines are set by the authority. Read the notice itself rather than a summary from a seller."] },
+      { heading: "Buying from a private owner or a developer", body: ["Ask for the title documents, the land's zoning and permitted use, any approvals for the layout, and proof that the person selling has the right to sell. A plot can look attractive and still be restricted to a different use. Have a lawyer check the papers before you pay a booking amount."] },
+      { heading: "Warning signs", body: ["Be careful with promises of fixed returns, pressure to pay quickly, unclear ownership, and sellers who cannot show approvals. Pay only by bank transfer to the named seller or authority, against a receipt."] },
+      { heading: "Next step", body: ["Share what you are looking for and your budget on WhatsApp. Approvals and ownership are checked with you first, and ready property in Ahmedabad or GIFT City can be compared alongside. Meetings are by appointment."] },
+    ],
+  },
   {
     slug: "renting-a-flat-pune-ahmedabad-checklist",
     category: "Real Estate",

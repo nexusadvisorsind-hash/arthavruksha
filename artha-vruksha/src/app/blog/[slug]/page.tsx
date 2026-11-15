@@ -127,6 +127,13 @@ export default async function BlogPost({ params }: BlogPostParams) {
             {post.category === "Insurance" && "Insurance is the subject matter of solicitation. "}
             This article is general information, not a recommendation. Rules and rates change, so check the current position with the regulator or lender.
           </p>
+          {post.links && (
+            <ul className="font-body text-sm text-foreground-muted mt-3 space-y-1">
+              {post.links.map((l) => (
+                <li key={l.href}><Link href={l.href} className="text-secondary underline underline-offset-2 hover:text-primary">{l.label}</Link></li>
+              ))}
+            </ul>
+          )}
           <p className="font-body text-sm text-foreground-muted mt-3">
             Related service: <Link href={categoryLink[post.category]} className="text-secondary underline underline-offset-2 hover:text-primary">{post.category === "Personal Finance" ? "About the team" : post.category}</Link>
           </p>

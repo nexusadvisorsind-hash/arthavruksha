@@ -31,17 +31,17 @@ const fundCategories = [
   {
     icon: TrendingUp,
     title: "Equity SIPs",
-    body: "Small, regular monthly investments into equity-oriented mutual fund schemes. Instead of trying to time the market, you invest a fixed amount every month — some months the market is up, some months it's down, and over the years this averages out and builds wealth steadily. Great for long-term goals like retirement or your child's education, typically 7+ years away.",
+    body: "Small, regular monthly investments into equity-oriented schemes. A fixed amount goes in every month, so there is no need to time the market. Some months prices are up and some are down, and the average cost evens out over time. SIPs suit long goals such as retirement or a child's education, usually 7 or more years away. Returns are not assured and can be negative.",
   },
   {
     icon: PiggyBank,
     title: "ELSS Tax Savers",
-    body: "Equity Linked Savings Schemes let you save tax under Section 80C (up to ₹1.5 lakh per year) while your money stays invested in equity markets. The lock-in is just 3 years — the shortest of any 80C option like PPF or fixed deposits — so your money isn't tied up for as long.",
+    body: "Equity Linked Savings Schemes qualify for a deduction under Section 80C (up to ₹1.5 lakh a year, under the old tax regime). The lock-in is 3 years, shorter than PPF or a tax-saving fixed deposit. The money stays in equity markets, so its value can rise or fall.",
   },
   {
     icon: Droplets,
     title: "Liquid & Overnight Funds",
-    body: "If you have surplus cash sitting idle in a savings account, these low-risk debt funds are a better home for it short-term. They're highly liquid (you can usually withdraw within a day) and historically offer better returns than a regular savings account for money you might need soon.",
+    body: "Liquid and overnight funds are low-risk debt funds for surplus cash that may be needed soon. Withdrawals usually reach the bank within a day. Returns are not fixed, so read the scheme documents before investing.",
   },
 ];
 

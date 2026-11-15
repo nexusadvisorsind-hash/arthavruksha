@@ -37,7 +37,7 @@ export function SipCalculator() {
               <span className="font-heading font-semibold text-secondary">₹{formatINR(monthly)}</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Monthly SIP Amount"
               min={1000}
               max={100000}
               step={1000}
@@ -52,7 +52,7 @@ export function SipCalculator() {
               <span className="font-heading font-semibold text-secondary">{years} yrs</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Investment Period"
               min={1}
               max={30}
               step={1}
@@ -67,7 +67,7 @@ export function SipCalculator() {
               <span className="font-heading font-semibold text-secondary">{rate}%</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Expected Annual Return"
               min={4}
               max={18}
               step={0.5}
@@ -90,7 +90,7 @@ export function SipCalculator() {
             </div>
             <div className="flex justify-between items-baseline">
               <span className="font-body text-sm font-semibold text-primary">Estimated Maturity Value</span>
-              <span className="font-heading font-bold text-accent text-2xl">₹{formatINR(maturity)}</span>
+              <span className="font-heading font-bold text-[#8A6A00] text-2xl">₹{formatINR(maturity)}</span>
             </div>
           </div>
 

@@ -35,7 +35,7 @@ export const metadata = pageMeta({
 
 const secured = [
   { icon: Home, title: "Home Loans", body: "Financing to buy or build a residential property, with tenures up to 30 years and interest rates from partner banks." },
-  { icon: Landmark, title: "Loan Against Property (LAP)", body: "Already own a property? Unlock cash against it without selling — useful for business expansion, a child's education, or any large expense." },
+  { icon: Landmark, title: "Loan Against Property (LAP)", body: "Already own a property? Borrow against it without selling it, for business expansion, a child's education or another large expense." },
   { icon: Briefcase, title: "Working Capital", body: "Secured credit lines that help businesses manage day-to-day expenses like inventory, payroll and supplier payments without cash-flow stress." },
 ];
 

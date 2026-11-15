@@ -33,7 +33,7 @@ export function EmiCalculator() {
               <span className="font-heading font-semibold text-secondary">₹{formatINR(principal)}</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Loan Amount"
               min={100000}
               max={20000000}
               step={100000}
@@ -48,7 +48,7 @@ export function EmiCalculator() {
               <span className="font-heading font-semibold text-secondary">{rate}%</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Interest Rate"
               min={6}
               max={18}
               step={0.1}
@@ -63,7 +63,7 @@ export function EmiCalculator() {
               <span className="font-heading font-semibold text-secondary">{tenure} yrs</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Tenure"
               min={1}
               max={30}
               step={1}
@@ -78,7 +78,7 @@ export function EmiCalculator() {
           <div className="space-y-4 mb-8">
             <div className="text-center border-b border-border pb-4">
               <span className="font-body text-sm text-foreground-muted block mb-1">Monthly EMI</span>
-              <span className="font-heading font-bold text-accent text-3xl">₹{formatINR(emi)}</span>
+              <span className="font-heading font-bold text-[#8A6A00] text-3xl">₹{formatINR(emi)}</span>
             </div>
             <div className="flex justify-between items-baseline">
               <span className="font-body text-sm text-foreground-muted">Total Interest</span>

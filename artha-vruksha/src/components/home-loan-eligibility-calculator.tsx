@@ -33,7 +33,7 @@ export function HomeLoanEligibilityCalculator() {
               <span className="font-heading font-semibold text-secondary">₹{formatINR(income)}</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Monthly Household Income"
               min={20000}
               max={1000000}
               step={5000}
@@ -48,7 +48,7 @@ export function HomeLoanEligibilityCalculator() {
               <span className="font-heading font-semibold text-secondary">₹{formatINR(existingEmi)}</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Existing Monthly EMIs"
               min={0}
               max={200000}
               step={1000}
@@ -63,7 +63,7 @@ export function HomeLoanEligibilityCalculator() {
               <span className="font-heading font-semibold text-secondary">{rate}%</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Expected Interest Rate"
               min={6}
               max={14}
               step={0.1}
@@ -78,7 +78,7 @@ export function HomeLoanEligibilityCalculator() {
               <span className="font-heading font-semibold text-secondary">{tenure} yrs</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Loan Tenure"
               min={5}
               max={30}
               step={1}
@@ -92,7 +92,7 @@ export function HomeLoanEligibilityCalculator() {
         <div className="flex flex-col justify-center">
           <div className="text-center border-b border-border pb-5 mb-5">
             <span className="font-body text-sm text-foreground-muted block mb-1">Estimated Home Loan Eligibility</span>
-            <span className="font-heading font-bold text-accent text-3xl">₹{formatINR(eligibleLoan)}</span>
+            <span className="font-heading font-bold text-[#8A6A00] text-3xl">₹{formatINR(eligibleLoan)}</span>
           </div>
           <div className="flex justify-between items-baseline mb-2">
             <span className="font-body text-sm text-foreground-muted">Eligible Monthly EMI</span>
@@ -104,7 +104,7 @@ export function HomeLoanEligibilityCalculator() {
               <span className="font-heading font-semibold text-secondary text-xs">{foir}%</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Bank&apos;s Assumed FOIR (obligation-to-income limit)"
               min={30}
               max={65}
               step={5}

@@ -72,37 +72,38 @@ export function ContactForm() {
   return (
     <form id="enquiry" onSubmit={handleSubmit(onSubmit)} className="bg-surface border border-border rounded-2xl p-6 md:p-8 space-y-5">
       <div>
-        <label className="font-body text-sm font-semibold text-primary block mb-1.5">Full Name</label>
+        <label htmlFor="cf-name" className="font-body text-sm font-semibold text-primary block mb-1.5">Full Name</label>
         <input
-          {...register("name")}
+          id="cf-name" autoComplete="name" {...register("name")}
           className="w-full rounded-md border border-border bg-background px-4 py-2.5 font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
         />
-        {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name.message}</p>}
+        {errors.name && <p role="alert" className="text-xs text-red-700 mt-1">{errors.name.message}</p>}
       </div>
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label className="font-body text-sm font-semibold text-primary block mb-1.5">Email</label>
+          <label htmlFor="cf-email" className="font-body text-sm font-semibold text-primary block mb-1.5">Email</label>
           <input
             type="email"
+            id="cf-email" autoComplete="email" inputMode="email"
             {...register("email")}
             className="w-full rounded-md border border-border bg-background px-4 py-2.5 font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
           />
-          {errors.email && <p className="text-xs text-red-600 mt-1">{errors.email.message}</p>}
+          {errors.email && <p role="alert" className="text-xs text-red-700 mt-1">{errors.email.message}</p>}
         </div>
         <div>
-          <label className="font-body text-sm font-semibold text-primary block mb-1.5">Phone</label>
+          <label htmlFor="cf-phone" className="font-body text-sm font-semibold text-primary block mb-1.5">Phone</label>
           <input
-            {...register("phone")}
+            id="cf-phone" autoComplete="tel-national" inputMode="tel" {...register("phone")}
             placeholder="10-digit mobile number"
             className="w-full rounded-md border border-border bg-background px-4 py-2.5 font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
           />
-          {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone.message}</p>}
+          {errors.phone && <p role="alert" className="text-xs text-red-700 mt-1">{errors.phone.message}</p>}
         </div>
       </div>
       <div>
-        <label className="font-body text-sm font-semibold text-primary block mb-1.5">Service of interest</label>
+        <label htmlFor="cf-service" className="font-body text-sm font-semibold text-primary block mb-1.5">Service of interest</label>
         <select
-          {...register("vertical")}
+          id="cf-service" {...register("vertical")}
           className="w-full rounded-md border border-border bg-background px-4 py-2.5 font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
           defaultValue="General"
         >
@@ -114,10 +115,10 @@ export function ContactForm() {
         </select>
       </div>
       <div>
-        <label className="font-body text-sm font-semibold text-primary block mb-1.5">Message (optional)</label>
+        <label htmlFor="cf-message" className="font-body text-sm font-semibold text-primary block mb-1.5">Message (optional)</label>
         <p className="font-body text-xs text-foreground-muted mb-1.5">For property, mention the area, budget and whether you want to rent, lease, buy or sell. Please do not enter PAN, Aadhaar, bank or card numbers.</p>
         <textarea
-          {...register("message")}
+          id="cf-message" {...register("message")}
           rows={4}
           className="w-full rounded-md border border-border bg-background px-4 py-2.5 font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
         />
@@ -136,7 +137,7 @@ export function ContactForm() {
             I can withdraw this consent at any time by writing to info@assetzpro.com or calling +91 90229 58266.
           </span>
         </label>
-        {errors.consent && <p className="text-xs text-red-600 mt-1">{errors.consent.message}</p>}
+        {errors.consent && <p role="alert" className="text-xs text-red-700 mt-1">{errors.consent.message}</p>}
       </div>
       {status === "error" && (
         <p className="text-sm text-red-600">Something went wrong. Please try again, or write to info@assetzpro.com.</p>

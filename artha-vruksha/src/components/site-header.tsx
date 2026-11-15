@@ -54,10 +54,9 @@ export function SiteHeader() {
           <div className="flex items-center gap-2">
             <a
               href="tel:+919022958266"
-              aria-label="Call"
               className="hidden lg:inline-flex items-center gap-1.5 text-sm font-medium font-body text-foreground hover:text-secondary transition-colors mr-1"
             >
-              <Phone className="h-4 w-4" /> +91 90229 58266
+              <Phone className="h-4 w-4" aria-hidden="true" /> +91 90229 58266
             </a>
             <Link
               href="/contact"

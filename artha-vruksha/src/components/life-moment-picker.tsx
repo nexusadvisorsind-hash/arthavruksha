@@ -18,7 +18,7 @@ const MOMENTS: { id: string; label: string; intro: string; steps: Step[] }[] = [
   {
     id: "first-job",
     label: "First job",
-    intro: "Your first salary is the best time to set up habits that are cheap to start.",
+    intro: "A first salary is a good time to set up habits that are cheap to start.",
     steps: [
       { pillar: "Insurance", title: "Get health and term cover while you are young", why: "Premiums depend on your age and health when you buy, so starting early usually costs less.", href: "/insurance#cover-calculator", cta: "Check how much cover" },
       { pillar: "Mutual funds", title: "Start a small SIP and let it run", why: "A fixed monthly amount builds the habit first. The amount can grow with your salary.", href: "/mutual-funds#sip-calculator", cta: "Try the SIP calculator" },

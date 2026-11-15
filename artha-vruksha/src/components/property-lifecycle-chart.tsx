@@ -34,7 +34,7 @@ export function PropertyLifecycleChart() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="bg-background border border-border rounded-2xl p-4 sm:p-8 overflow-x-auto">
-        <svg viewBox="0 0 900 420" className="w-full min-w-[720px]" role="img" aria-label="Property investment lifecycle chart">
+        <svg viewBox="0 0 900 448" className="w-full min-w-[720px]" role="img" aria-label="Property investment lifecycle chart">
           <defs>
             <linearGradient id="lifecycleFill" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#0F8A5F" stopOpacity="0.35" />
@@ -53,7 +53,7 @@ export function PropertyLifecycleChart() {
           <line x1="30" y1="20" x2="30" y2="380" stroke="var(--border)" strokeWidth="2" />
           <text x="10" y="30" className="font-body" fontSize="11" fill="#4B5670">High</text>
           <text x="10" y="385" className="font-body" fontSize="11" fill="#4B5670">Low</text>
-          <text x="440" y="410" textAnchor="middle" className="font-body" fontSize="12" fill="#4B5670">
+          <text x="440" y="440" textAnchor="middle" className="font-body" fontSize="12" fill="#4B5670">
             Property Lifecycle Stage →
           </text>
 
@@ -65,11 +65,11 @@ export function PropertyLifecycleChart() {
           <g>
             <line x1="535" y1="118" x2="535" y2="60" stroke="#0F8A5F" strokeWidth="1.5" strokeDasharray="3 3" />
             <rect x="465" y="20" width="140" height="42" rx="10" fill="#E7F5EF" stroke="#0F8A5F" />
-            <text x="535" y="37" textAnchor="middle" className="font-heading" fontSize="12" fontWeight="700" fill="#0F8A5F">
-              Best Rental Value
+            <text x="535" y="37" textAnchor="middle" className="font-heading" fontSize="12" fontWeight="700" fill="#0B7A54">
+              Rental demand high
             </text>
-            <text x="535" y="53" textAnchor="middle" className="font-body" fontSize="10" fill="#0F8A5F">
-              Demand is high, supply still limited
+            <text x="535" y="53" textAnchor="middle" className="font-body" fontSize="10" fill="#0B7A54">
+              Supply is still limited
             </text>
           </g>
 
@@ -78,10 +78,10 @@ export function PropertyLifecycleChart() {
             <line x1="700" y1="80" x2="700" y2="130" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="3 3" />
             <rect x="630" y="130" width="150" height="48" rx="10" fill="#FBF3DC" stroke="#D4AF37" />
             <text x="705" y="150" textAnchor="middle" className="font-heading" fontSize="12" fontWeight="700" fill="#8A6D1F">
-              Best Time to Exit
+              Review point
             </text>
             <text x="705" y="166" textAnchor="middle" className="font-body" fontSize="10" fill="#8A6D1F">
-              Before nearby supply increases
+              Nearby supply may increase
             </text>
           </g>
 
@@ -89,7 +89,7 @@ export function PropertyLifecycleChart() {
           <g>
             <circle cx="850" cy="72" r="5" fill="#1E5FD9" />
             <text x="820" y="55" textAnchor="end" className="font-heading" fontSize="12" fontWeight="700" fill="#1E5FD9">
-              Exit → Reinvest via SWP
+              Plan what comes next
             </text>
           </g>
 
@@ -119,7 +119,7 @@ export function PropertyLifecycleChart() {
             href="/mutual-funds"
             className="shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold text-secondary hover:underline whitespace-nowrap"
           >
-            Learn about SWPs <ArrowRight className="h-4 w-4" />
+            Read about systematic withdrawals <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

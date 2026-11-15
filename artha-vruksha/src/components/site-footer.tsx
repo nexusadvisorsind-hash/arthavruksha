@@ -4,15 +4,15 @@ import Image from "next/image";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-primary text-primary-foreground mt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="text-center mb-10">
+    <footer className="bg-primary text-primary-foreground">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="mb-10">
           <Image
             src="/brand/logo-icon-192.png"
             alt="Assetzpro Services"
             width={56}
             height={56}
-            className="mx-auto mb-4 h-14 w-auto opacity-95"
+            className="mb-4 h-14 w-auto opacity-95"
           />
           <div className="font-heading font-bold text-xl mb-1">
             ASSETZPRO SERVICES
@@ -30,14 +30,13 @@ export function SiteFooter() {
             <div className="font-heading font-semibold mb-3">Verticals</div>
             <ul className="space-y-2 font-body text-sm text-primary-foreground/75">
               <li><Link href="/mutual-funds" className="hover:text-accent">Mutual Funds</Link></li>
-              <li><Link href="/real-estate" className="hover:text-accent">Real Estate Broking</Link></li>
+              <li><Link href="/real-estate" className="hover:text-accent">Real Estate</Link></li>
               <li><Link href="/insurance" className="hover:text-accent">Insurance Solutions</Link></li>
               <li><Link href="/loans" className="hover:text-accent">Loans &amp; Capital</Link></li>
               <li><Link href="/calculators" className="hover:text-accent">Calculators</Link></li>
-              <li><Link href="/real-estate/pune" className="hover:text-accent">Property in Pune</Link></li>
-              <li><Link href="/real-estate/ahmedabad" className="hover:text-accent">Property in Ahmedabad</Link></li>
-              <li><Link href="/real-estate/gift-city" className="hover:text-accent">GIFT City Property</Link></li>
-              <li><Link href="/real-estate/dholera" className="hover:text-accent">Dholera Plots</Link></li>
+            </ul>
+            <div className="font-heading font-semibold mt-6 mb-3">Cities</div>
+            <ul className="space-y-2 font-body text-sm text-primary-foreground/75">
               <li><Link href="/pune" className="hover:text-accent">Pune: all services</Link></li>
               <li><Link href="/ahmedabad" className="hover:text-accent">Ahmedabad: all services</Link></li>
             </ul>
@@ -52,6 +51,13 @@ export function SiteFooter() {
               <li><Link href="/privacy-policy" className="hover:text-accent">Privacy Policy</Link></li>
               <li><Link href="/terms-of-use" className="hover:text-accent">Terms of Use</Link></li>
               <li><CookieSettingsLink /></li>
+            </ul>
+            <div className="font-heading font-semibold mt-6 mb-3">Property pages</div>
+            <ul className="space-y-2 font-body text-sm text-primary-foreground/75">
+              <li><Link href="/real-estate/pune" className="hover:text-accent">Pune</Link></li>
+              <li><Link href="/real-estate/ahmedabad" className="hover:text-accent">Ahmedabad</Link></li>
+              <li><Link href="/real-estate/gift-city" className="hover:text-accent">GIFT City</Link></li>
+              <li><Link href="/real-estate/dholera" className="hover:text-accent">Dholera</Link></li>
             </ul>
           </div>
           <div className="md:col-span-2">

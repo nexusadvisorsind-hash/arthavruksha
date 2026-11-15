@@ -34,7 +34,7 @@ export function SiteHeader() {
             <span className="flex flex-col leading-tight">
               <span className="font-heading font-bold text-xl text-primary">Assetzpro</span>
               <span className="text-xs font-body font-semibold text-foreground-muted tracking-wide">
-                AMFI-Registered Mutual Fund Distributor
+                Property · Mutual Funds · Insurance · Loans
               </span>
             </span>
           </Link>

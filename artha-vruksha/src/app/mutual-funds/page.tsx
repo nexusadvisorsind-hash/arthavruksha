@@ -110,7 +110,7 @@ const related = [
   {
     "href": "/pune",
     "title": "Mutual fund distributor in Pune",
-    "note": "Pune office, areas served and how an enquiry is handled."
+    "note": "Pune meeting location, areas served and how an enquiry is handled."
   }
 ];
 

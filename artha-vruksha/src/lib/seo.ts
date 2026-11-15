@@ -37,19 +37,23 @@ export function isoDate(label: string) {
 
 /** "2026-10-26": the date the page content last changed. Feeds sitemap lastmod and "Last updated" bylines. */
 export const PAGE_DATES: Record<string, string> = {
-  "/": "2026-10-26",
+  "/": "2026-11-15",
   "/mutual-funds": "2026-10-26",
-  "/real-estate": "2026-10-26",
+  "/real-estate": "2026-11-15",
+  "/real-estate/pune": "2026-11-15",
+  "/real-estate/ahmedabad": "2026-11-15",
+  "/real-estate/gift-city": "2026-11-15",
+  "/real-estate/dholera": "2026-11-15",
   "/insurance": "2026-10-26",
   "/loans": "2026-10-26",
-  "/pune": "2026-10-26",
-  "/ahmedabad": "2026-10-26",
+  "/pune": "2026-11-15",
+  "/ahmedabad": "2026-11-15",
   "/calculators": "2026-10-26",
   "/about-us": "2026-10-26",
-  "/contact": "2026-10-16",
+  "/contact": "2026-11-15",
   "/blog": "2026-10-26",
-  "/privacy-policy": "2026-10-28",
-  "/terms-of-use": "2026-10-16",
+  "/privacy-policy": "2026-11-15",
+  "/terms-of-use": "2026-11-15",
 };
 
 export function formatDate(iso: string) {

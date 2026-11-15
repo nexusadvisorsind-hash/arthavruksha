@@ -26,11 +26,14 @@ import { HomeLoanEligibilityCalculator } from "@/components/home-loan-eligibilit
 import { Reveal } from "@/components/reveal";
 import { InPageNav } from "@/components/in-page-nav";
 import { ReraStepper } from "@/components/rera-stepper";
+import { RequirementBar } from "@/components/requirement-bar";
+import { PLACES, PLACE_ORDER } from "@/lib/re-locations";
+import { MapPin } from "lucide-react";
 import { ScrollTimeline } from "@/components/scroll-timeline";
 
 export const metadata = pageMeta({
-  title: 'Real Estate Consultant in Pune & Ahmedabad | Assetzpro',
-  description: 'MahaRERA and GujRERA registered property consultants. Verify a project with a 5-step RERA check and estimate your home loan eligibility.',
+  title: 'Rent, Lease, Buy & Sell Property in Pune, Ahmedabad',
+  description: 'Flats, shops and offices for rent, lease, buy and sell in Pune, Ahmedabad, GIFT City and Dholera. MahaRERA and GujRERA registered agents.',
   path: '/real-estate',
 });
 
@@ -77,7 +80,7 @@ const serviceJsonLd = {
   serviceType: "Real Estate Broking",
   name: "Real Estate Broking Services",
   description:
-    "Residential, commercial, industrial and agricultural property broking in Maharashtra and Gujarat, from individually MahaRERA and GujRERA registered professionals.",
+    "Rent, lease, buy and sell of residential, commercial, industrial and agricultural property in Pune, Ahmedabad, GIFT City and Dholera, from individually MahaRERA and GujRERA registered professionals.",
   provider: { "@type": "FinancialService", name: "Assetzpro Services" },
   areaServed: [
     { "@type": "State", name: "Maharashtra" },
@@ -86,6 +89,7 @@ const serviceJsonLd = {
 };
 
 const navItems = [
+  { id: "locations", label: "Locations" },
   { id: "rera-check", label: "RERA check" },
   { id: "property-types", label: "Property types" },
   { id: "lifecycle", label: "Lifecycle" },
@@ -113,7 +117,23 @@ const faqs = [
   },
   {
     "q": "Which areas of Pune and Ahmedabad are covered?",
-    "a": "Enquiries come from across both cities and nearby areas. The Pune and Ahmedabad pages list the areas and the office details."
+    "a": "In Pune: Amanora, Magarpatta, Kharadi, Koregaon Park, Kalyani Nagar, Viman Nagar, Mundhwa, Hadapsar, Baner, Wakad and Hinjewadi, among others. In Ahmedabad: SG Highway, Bopal, Shela, Prahlad Nagar, Thaltej, Gota, Navrangpura and CG Road. GIFT City and Dholera enquiries are taken too. See the location pages for each area."
+  },
+  {
+    "q": "Can I find a flat for rent in Pune or Ahmedabad through you?",
+    "a": "Yes. Share the area, your monthly budget, the number of bedrooms and your move-in date. Matching flats are shortlisted and visits are arranged. Rent, deposit, maintenance and the notice period are agreed in writing before any payment."
+  },
+  {
+    "q": "Do you handle shops and offices on lease?",
+    "a": "Yes. Offices, shops and showrooms on lease in Pune (such as Kharadi, Viman Nagar and Koregaon Park) and in Ahmedabad (such as SG Highway, Prahlad Nagar and CG Road). The lease terms, including lock-in, rent increase and maintenance, are read with you before you sign."
+  },
+  {
+    "q": "Is brokerage charged for rent, lease, buy and sell?",
+    "a": "Enquiring is free. Any brokerage is agreed in writing before work starts."
+  },
+  {
+    "q": "Do you take Dholera or GIFT City enquiries?",
+    "a": "Yes, for enquiries. Ownership, approvals and the stage of each project are checked first, and no returns or price rises are promised. See the GIFT City and Dholera pages."
   }
 ];
 
@@ -129,9 +149,9 @@ const related = [
     "note": "What lenders usually ask for, grouped by type."
   },
   {
-    "href": "/ahmedabad",
-    "title": "Real estate in Ahmedabad",
-    "note": "Gujarat desk, GujRERA registration and areas served."
+    "href": "/real-estate/ahmedabad",
+    "title": "Property in Ahmedabad",
+    "note": "Rent, lease, buy and sell across SG Highway, Bopal, Prahlad Nagar and more."
   }
 ];
 
@@ -148,20 +168,53 @@ export default function RealEstate() {
             <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
               <BadgeCheck className="h-4 w-4 text-accent" /> Pavan Vatyani (MahaRERA) and Anup Vatyani (GujRERA), registered real estate agents
             </p>
-            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Real estate consultant in Pune and Ahmedabad</h1>
-            <p className="font-heading text-xl md:text-2xl text-primary-foreground/90 mb-5 max-w-3xl">Find property you can trust, checked before you visit</p>
-            <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">
-              Buying, selling or leasing residential, commercial, industrial or agricultural property in Maharashtra and Gujarat, with every listing verified before it reaches you.
+            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-4xl">Property for rent, lease, buy and sell in Pune and Ahmedabad</h1>
+            <p className="font-heading text-xl md:text-2xl text-primary-foreground/90 mb-5 max-w-3xl">Flats, shops and offices, checked before you visit</p>
+            <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure mb-8">
+              Residential, commercial, industrial and agricultural property in Pune, Ahmedabad, GIFT City and Dholera. Every listing is checked for RERA status and paperwork before it reaches you.
             </p>
+            <RequirementBar areas={["Amanora", "Magarpatta", "Kharadi", "Koregaon Park", "Kalyani Nagar", "Viman Nagar", "Mundhwa", "Other area in Pune", "SG Highway", "Bopal", "Prahlad Nagar", "Other area in Ahmedabad", "GIFT City", "Dholera"]} defaultArea="Kharadi" />
           </Reveal>
         </div>
       </section>
 
-      <ShortAnswer updated={formatDate(PAGE_DATES["/real-estate"])}>Pavan Vatyani is a MahaRERA-registered real estate agent for Maharashtra and Anup Vatyani is a GujRERA-registered agent for Gujarat. Both quote their registration numbers, and every project is checked against the state RERA register before you visit. Home loan eligibility can be estimated on this page.</ShortAnswer>
+      <ShortAnswer updated={formatDate(PAGE_DATES["/real-estate"])}>Assetzpro Services helps with flats, shops and offices to rent, lease, buy or sell in Pune, Ahmedabad, GIFT City and Dholera. Pavan Vatyani is a MahaRERA-registered real estate agent for Maharashtra and Anup Vatyani is a GujRERA-registered agent for Gujarat. Both quote their registration numbers, and every project is checked against the state RERA register before you visit. Meetings are by appointment.</ShortAnswer>
 
       <InPageNav items={navItems} />
 
-      <section id="rera-check" className="py-16 md:py-24 bg-background">
+      <section id="locations" className="py-16 md:py-24 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3 max-w-3xl">Where to rent, lease, buy or sell</h2>
+          <p className="font-body text-foreground-muted measure mb-10">Pune is the main focus. Open a location to see its areas, what to check there, and to send a message about a specific area.</p>
+          <ul className="grid md:grid-cols-2 gap-6">
+            {PLACE_ORDER.map((slug) => {
+              const pl = PLACES[slug];
+              const names = pl.groups.flatMap((g) => g.areas.map((a) => a.name));
+              return (
+                <li key={slug} className="card-lift rounded-2xl border border-border bg-surface p-6 flex flex-col">
+                  <h3 className="font-heading font-semibold text-2xl text-primary mb-2">
+                    <Link href={`/real-estate/${slug}`} className="hover:text-secondary">{pl.name}: rent, lease, buy, sell</Link>
+                  </h3>
+                  <p className="font-body text-sm text-foreground-muted leading-relaxed mb-4">{pl.description}</p>
+                  <ul className="flex flex-wrap gap-2 mb-5">
+                    {names.slice(0, 8).map((n) => (
+                      <li key={n} className="inline-flex items-center gap-1 rounded-full bg-background border border-border px-3 py-1 font-body text-xs text-foreground-muted">
+                        <MapPin className="h-3 w-3 text-secondary" aria-hidden="true" /> {n}
+                      </li>
+                    ))}
+                    {names.length > 8 && <li className="font-body text-xs text-foreground-muted self-center">and {names.length - 8} more</li>}
+                  </ul>
+                  <Link href={`/real-estate/${slug}`} className="mt-auto inline-flex items-center gap-1.5 font-body text-sm font-semibold text-secondary hover:text-primary">
+                    See {pl.name} areas <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      <section id="rera-check" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Five checks before you pay a booking amount</h2>
@@ -172,7 +225,7 @@ export default function RealEstate() {
         </div>
       </section>
 
-      <section id="property-types" className="py-16 md:py-24 bg-surface">
+      <section id="property-types" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-10">What kind of property are you after?</h2>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
@@ -189,7 +242,7 @@ export default function RealEstate() {
         </div>
       </section>
 
-      <section id="lifecycle" className="py-16 md:py-24 bg-background">
+      <section id="lifecycle" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Where a project sits in its lifecycle</h2>
           <p className="font-body text-foreground-muted measure">Every project moves through stages from launch to maturity. Knowing the stage helps you time a purchase, a rental plan or an exit.</p>
@@ -197,7 +250,7 @@ export default function RealEstate() {
         <PropertyLifecycleChart />
       </section>
 
-      <section id="home-loan-check" className="py-16 md:py-24 bg-surface">
+      <section id="home-loan-check" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Know your home budget first</h2>
           <p className="font-body text-foreground-muted measure">A quick estimate of the home loan you could qualify for, based on income and existing obligations. Lenders decide the final amount.</p>
@@ -205,7 +258,7 @@ export default function RealEstate() {
         <HomeLoanEligibilityCalculator />
       </section>
 
-      <section id="how-it-works" className="py-16 md:py-24 bg-background">
+      <section id="how-it-works" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How buying, selling or leasing works</h2>
@@ -215,7 +268,7 @@ export default function RealEstate() {
         </div>
       </section>
 
-      <section id="desks" className="py-16 md:py-24 bg-surface">
+      <section id="desks" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8">Two desks, one standard</h2>
           <RegionToggle />
@@ -243,7 +296,7 @@ export default function RealEstate() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Looking to buy, sell or lease?</h2>
-            <p className="font-body text-primary-foreground/85 measure">Share what you need, and Pavan Vatyani (Maharashtra) or Anup Vatyani (Gujarat) will come back with verified options.</p>
+            <p className="font-body text-primary-foreground/85 measure">Share what you need, and Pavan Vatyani (Maharashtra) or Anup Vatyani (Gujarat) will come back with checked options. Call or WhatsApp +91 90229 58266.</p>
           </div>
           <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact <ArrowRight className="ml-2 h-5 w-5" /></Link></Button></div>
         </div>

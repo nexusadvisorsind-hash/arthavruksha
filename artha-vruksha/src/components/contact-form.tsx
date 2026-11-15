@@ -100,7 +100,7 @@ export function ContactForm() {
         </div>
       </div>
       <div>
-        <label className="font-body text-sm font-semibold text-primary block mb-1.5">Vertical of Interest</label>
+        <label className="font-body text-sm font-semibold text-primary block mb-1.5">Service of interest</label>
         <select
           {...register("vertical")}
           className="w-full rounded-md border border-border bg-background px-4 py-2.5 font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
@@ -115,6 +115,7 @@ export function ContactForm() {
       </div>
       <div>
         <label className="font-body text-sm font-semibold text-primary block mb-1.5">Message (optional)</label>
+        <p className="font-body text-xs text-foreground-muted mb-1.5">For property, mention the area, budget and whether you want to rent, lease, buy or sell. Please do not enter PAN, Aadhaar, bank or card numbers.</p>
         <textarea
           {...register("message")}
           rows={4}
@@ -129,10 +130,10 @@ export function ContactForm() {
         <label className="flex items-start gap-3 font-body text-sm text-foreground leading-relaxed">
           <input type="checkbox" {...register("consent")} className="mt-1 h-4 w-4 shrink-0 accent-[#1E5FD9]" />
           <span>
-            I agree that Assetzpro Services may use my name, phone number, email and message only to reply to this enquiry,
-            as explained in the{" "}
+            I agree that Assetzpro Services may use my name, phone number, email and message only to reply to this enquiry by
+            email, phone call or WhatsApp, as explained in the{" "}
             <Link href="/privacy-policy" target="_blank" className="text-secondary underline">Privacy Policy</Link>.
-            I can withdraw this consent at any time by writing to info@assetzpro.com.
+            I can withdraw this consent at any time by writing to info@assetzpro.com or calling +91 90229 58266.
           </span>
         </label>
         {errors.consent && <p className="text-xs text-red-600 mt-1">{errors.consent.message}</p>}

@@ -13,6 +13,23 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "renting-a-flat-pune-ahmedabad-checklist",
+    category: "Real Estate",
+    title: "Renting a Flat in Pune or Ahmedabad: Checklist",
+    excerpt: "What tenants usually need to show, what owners usually provide, and what a rent agreement should say, before you hand over a deposit.",
+    readTime: "5 min read",
+    date: "November 2026",
+    sections: [
+      { body: ["The short answer: a tenant usually shows ID, address proof and income or employment proof, and an owner usually shows ownership proof and recent bills. Both sides then sign a written agreement that states the rent, deposit, term and notice period. Nothing should be paid before the terms are written down. Exact rules differ by city and change over time, so check the current position with the local authority."] },
+      { heading: "What a tenant usually needs to show", body: ["A government photo ID such as Aadhaar or a passport, PAN card, your current address proof, and proof of income or employment such as a recent salary slip or an employment letter. Owners may also ask for passport-size photographs and, for sharing flats, details of everyone who will live there."] },
+      { heading: "What an owner usually provides", body: ["Proof of ownership such as the sale deed or allotment letter, the latest property tax receipt, a recent electricity bill, and the society's no-objection letter where the society requires one. A tenant is entitled to ask who owns the flat and to see the papers before paying."] },
+      { heading: "What the rent agreement should say", body: ["Names and addresses of both parties, the flat's address and size, the monthly rent and the due date, the security deposit and the conditions for returning it, the length of the term, any lock-in period, the notice period for each side, who pays maintenance and society charges, who handles repairs, how and when rent can increase, and whether subletting is allowed. Record the condition of the flat at handover with photographs."] },
+      { heading: "Registration, stamp duty and police intimation", body: ["In Maharashtra a leave and licence agreement is common for residential rentals, and in Gujarat a rent agreement is used. Registration and stamp duty rules change, so check the current requirements with the state registration department or the sub-registrar office before you sign. Many cities also expect the owner to inform the local police about a new tenant, so ask the local police station or the society what the current process is."] },
+      { heading: "Paying safely", body: ["Pay the deposit and rent by bank transfer to the owner named in the agreement, and keep every receipt. Do not pay cash, and do not pay a large amount before you have seen the flat, the ownership papers and the agreement."] },
+      { heading: "Taking a shop or office on lease", body: ["A commercial lease needs extra care. Read the lock-in period, the rent escalation, maintenance and tax terms, the permitted use of the space and what happens at the end of the term. Have a lawyer read the agreement before you sign."] },
+    ],
+  },
+  {
     slug: "how-to-check-rera-registration-maharashtra-gujarat",
     category: "Real Estate",
     title: "How to Check RERA Registration in Maharashtra and Gujarat",

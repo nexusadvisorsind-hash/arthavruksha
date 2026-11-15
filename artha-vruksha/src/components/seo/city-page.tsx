@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, BadgeCheck } from "lucide-react";
+import { MapPin, Phone, BadgeCheck } from "lucide-react";
 import { JsonLd } from "./json-ld";
 import { ShortAnswer } from "./short-answer";
 import { FaqSection } from "./faq-section";
@@ -19,12 +19,13 @@ export function CityPage({ city }: { city: City }) {
     url: `${SITE_URL}${path}`,
     image: `${SITE_URL}/og-image.png`,
     email: "info@assetzpro.com",
-    telephone: city.slug === "pune" ? "+91-9022958266" : "+91-9537533533",
+    telephone: "+91-9022958266",
     address: {
       "@type": "PostalAddress",
       streetAddress: city.office.line,
       addressLocality: city.office.locality,
       addressRegion: city.office.region,
+      postalCode: city.office.postal,
       addressCountry: "IN",
     },
     areaServed: city.areas.flatMap((a) => a.list).map((n) => ({ "@type": "Place", name: `${n}, ${city.name}` })),
@@ -39,7 +40,11 @@ export function CityPage({ city }: { city: City }) {
       <section className="hero-navy text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
           <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5">
-            <MapPin className="h-4 w-4 text-accent" /> Office: {city.office.line}, {city.office.locality}, {city.office.region}
+            <MapPin className="h-4 w-4 text-accent" /> Meetings by appointment: {city.office.line}, {city.office.locality}, {city.office.region} {city.office.postal}
+          </p>
+          <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85 mb-5 ml-0 sm:ml-6">
+            <Phone className="h-4 w-4 text-accent" /> Call or WhatsApp:{" "}
+            <a href="tel:+919022958266" className="hover:text-accent">+91 90229 58266</a>
           </p>
           <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">{city.h1}</h1>
           <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">
@@ -104,7 +109,7 @@ export function CityPage({ city }: { city: City }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
           <div>
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Start with a conversation</h2>
-            <p className="font-body text-primary-foreground/85 measure">Tell the {city.name} office what you need, and the right person will reply.</p>
+            <p className="font-body text-primary-foreground/85 measure">Share what you need in {city.name}, and the right person will reply.</p>
           </div>
           <div><Button asChild variant="gold" size="lg"><Link href="/contact">Contact</Link></Button></div>
         </div>

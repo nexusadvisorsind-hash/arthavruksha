@@ -36,7 +36,7 @@ const PILLARS: Record<
   },
   re: {
     name: "Real estate",
-    line: "RERA-registered property in Maharashtra and Gujarat, checked before it reaches you.",
+    line: "Flats, shops and offices to rent, lease, buy or sell in Pune and Ahmedabad, checked before they reach you.",
     href: "/real-estate",
     color: "#3FD39A",
     branch: "M303 300 C 350 275, 420 240, 468 160",

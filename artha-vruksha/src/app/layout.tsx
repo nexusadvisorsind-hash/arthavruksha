@@ -21,12 +21,23 @@ const siteUrl = "https://assetzpro.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Assetzpro Services — Mutual Funds, Real Estate, Insurance & Loans in Maharashtra & Gujarat",
+    default: "Assetzpro Services: Property for Rent, Lease, Buy & Sell, Mutual Funds, Insurance & Loans in Pune & Ahmedabad",
     template: "%s | Assetzpro Services",
   },
   description:
-    "Mutual Funds, Real Estate, Insurance and Loan/DSA services across Pune, Ahmedabad, Maharashtra & Gujarat — through individually AMFI, MahaRERA & GujRERA registered professionals. SIP, home loan, insurance and loan eligibility calculators.",
+    "Flats, shops and offices for rent, lease, buy and sell in Pune, Ahmedabad, GIFT City and Dholera, plus mutual funds, insurance and loans, through individually AMFI, MahaRERA & GujRERA registered professionals. Calculators for SIP, EMI, loan eligibility and insurance.",
   keywords: [
+    "flat for rent in Pune",
+    "property for rent in Pune",
+    "office space for lease in Pune",
+    "flats for sale in Pune",
+    "real estate agent in Pune",
+    "flat for rent in Ahmedabad",
+    "property for rent in Ahmedabad",
+    "office space for lease in Ahmedabad",
+    "real estate agent in Ahmedabad",
+    "GIFT City property",
+    "Dholera plots",
     "mutual fund distributor Pune",
     "mutual fund distributor Ahmedabad",
     "AMFI registered mutual fund distributor",
@@ -103,21 +114,23 @@ const organizationJsonLd = {
   address: [
     {
       "@type": "PostalAddress",
-      streetAddress: "Amanora Park Town",
+      streetAddress: "Amanora Park Town, Hadapsar",
       addressLocality: "Pune",
       addressRegion: "Maharashtra",
-      postalCode: "411928",
+      postalCode: "411028",
       addressCountry: "IN",
     },
     {
       "@type": "PostalAddress",
-      streetAddress: "4 Tarang Hills Society, Chandlodia",
+      streetAddress: "CG Road",
       addressLocality: "Ahmedabad",
       addressRegion: "Gujarat",
+      postalCode: "380009",
       addressCountry: "IN",
     },
   ],
   email: "info@assetzpro.com",
+  telephone: "+91-9022958266",
   founder: [
     { "@type": "Person", name: "Anup Vatyani", jobTitle: "Founder — Mutual Funds & Regulatory Affairs", telephone: "+91-9537533533" },
     { "@type": "Person", name: "Pavan Vatyani", jobTitle: "Founder — Real Estate & Digital Strategy", telephone: "+91-9022958266" },

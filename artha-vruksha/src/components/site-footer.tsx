@@ -18,10 +18,10 @@ export function SiteFooter() {
             ASSETZPRO SERVICES
           </div>
           <p className="text-xs font-body text-primary-foreground/70 tracking-wide">
-            AMFI-Registered Mutual Fund Distributor
+            Property · Mutual Funds · Insurance · Loans
           </p>
           <p className="text-xs font-body text-primary-foreground/60 mt-1">
-            Mutual Funds &middot; Real Estate &middot; Insurance &middot; Loans — Maharashtra &amp; Gujarat, India
+            Pune &middot; Ahmedabad &middot; GIFT City &middot; Dholera
           </p>
         </div>
 
@@ -34,8 +34,12 @@ export function SiteFooter() {
               <li><Link href="/insurance" className="hover:text-accent">Insurance Solutions</Link></li>
               <li><Link href="/loans" className="hover:text-accent">Loans &amp; Capital</Link></li>
               <li><Link href="/calculators" className="hover:text-accent">Calculators</Link></li>
-              <li><Link href="/pune" className="hover:text-accent">Pune Office</Link></li>
-              <li><Link href="/ahmedabad" className="hover:text-accent">Ahmedabad Office</Link></li>
+              <li><Link href="/real-estate/pune" className="hover:text-accent">Property in Pune</Link></li>
+              <li><Link href="/real-estate/ahmedabad" className="hover:text-accent">Property in Ahmedabad</Link></li>
+              <li><Link href="/real-estate/gift-city" className="hover:text-accent">GIFT City Property</Link></li>
+              <li><Link href="/real-estate/dholera" className="hover:text-accent">Dholera Plots</Link></li>
+              <li><Link href="/pune" className="hover:text-accent">Pune: all services</Link></li>
+              <li><Link href="/ahmedabad" className="hover:text-accent">Ahmedabad: all services</Link></li>
             </ul>
           </div>
           <div>
@@ -54,6 +58,10 @@ export function SiteFooter() {
             <div className="font-heading font-semibold mb-3">Direct Channels</div>
             <p className="font-body text-sm text-primary-foreground/75">info@assetzpro.com</p>
             <p className="font-body text-sm text-primary-foreground/75">
+              Call or WhatsApp:{" "}
+              <a href="tel:+919022958266" className="hover:text-accent">+91 90229 58266</a>
+            </p>
+            <p className="font-body text-sm text-primary-foreground/75">
               Pavan Vatyani (Real Estate &amp; Digital):{" "}
               <a href="tel:+919022958266" className="hover:text-accent">+91 90229 58266</a>
               {" "}·{" "}
@@ -66,12 +74,12 @@ export function SiteFooter() {
               <a href="mailto:anup@assetzpro.com" className="hover:text-accent">anup@assetzpro.com</a>
             </p>
             <p className="font-body text-sm text-primary-foreground/75 mt-2">
-              Pune: Amanora Park Town, Pune, Maharashtra 411928
+              Pune: Amanora Park Town, Hadapsar, Pune, Maharashtra 411028
             </p>
             <p className="font-body text-sm text-primary-foreground/75">
-              Ahmedabad: 4 Tarang Hills Society, Chandlodia, Ahmedabad, Gujarat
+              Ahmedabad: CG Road, Ahmedabad, Gujarat 380009
             </p>
-            <p className="font-body text-sm text-primary-foreground/75 mt-2">Dedicated Operational Desks: Pune / Ahmedabad</p>
+            <p className="font-body text-sm text-primary-foreground/75 mt-2">Meetings by appointment in Pune and Ahmedabad</p>
           </div>
         </div>
 

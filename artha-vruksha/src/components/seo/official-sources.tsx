@@ -4,6 +4,7 @@ const SOURCES = {
   scores: { name: "SEBI SCORES: lodge an investor complaint", url: "https://scores.sebi.gov.in/" },
   maharera: { name: "MahaRERA: registered projects and agents (Maharashtra)", url: "https://maharera.maharashtra.gov.in/" },
   gujrera: { name: "GujRERA: registered projects and agents (Gujarat)", url: "https://gujrera.gujarat.gov.in/" },
+  dholera: { name: "Dholera SIR: official site (DSIRDA and DICDL)", url: "https://dholera.gujarat.gov.in/" },
   irdai: { name: "IRDAI: insurance regulator", url: "https://irdai.gov.in/" },
   bima: { name: "Bima Bharosa: IRDAI policyholder complaints", url: "https://policyholder.gov.in/" },
   rbi: { name: "RBI: borrower and banking information", url: "https://www.rbi.org.in/" },

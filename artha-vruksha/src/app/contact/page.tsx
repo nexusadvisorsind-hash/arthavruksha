@@ -1,11 +1,11 @@
 import { pageMeta, breadcrumbLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactForm } from "@/components/contact-form";
-import { Mail, MapPin, BadgeCheck } from "lucide-react";
+import { Mail, MapPin, Phone, BadgeCheck } from "lucide-react";
 
 export const metadata = pageMeta({
   title: 'Contact Assetzpro | Pune & Ahmedabad',
-  description: 'Contact the Pune and Ahmedabad offices about mutual funds, property, insurance or loans. A reply is usually sent within one working day.',
+  description: 'Contact Assetzpro Services about property to rent, lease, buy or sell, mutual funds, insurance or loans in Pune and Ahmedabad. A reply is usually sent within one working day.',
   path: '/contact',
 });
 
@@ -30,15 +30,22 @@ export default function Contact() {
           </div>
           <div className="md:col-span-2 space-y-8">
             <div>
+              <Phone className="h-6 w-6 text-secondary mb-2" />
+              <h2 className="font-heading font-semibold text-lg text-primary mb-1">Call or WhatsApp</h2>
+              <p className="font-body text-foreground-muted">
+                <a href="tel:+919022958266" className="hover:text-secondary">+91 90229 58266</a>
+              </p>
+            </div>
+            <div>
               <Mail className="h-6 w-6 text-secondary mb-2" />
               <h2 className="font-heading font-semibold text-lg text-primary mb-1">Email</h2>
               <p className="font-body text-foreground-muted">info@assetzpro.com</p>
             </div>
             <div>
               <MapPin className="h-6 w-6 text-secondary mb-2" />
-              <h2 className="font-heading font-semibold text-lg text-primary mb-1">Offices</h2>
-              <p className="font-body text-foreground-muted">Amanora Park Town, Pune, Maharashtra 411928</p>
-              <p className="font-body text-foreground-muted mt-2">4 Tarang Hills Society, Chandlodia, Ahmedabad, Gujarat</p>
+              <h2 className="font-heading font-semibold text-lg text-primary mb-1">Meeting locations (by appointment)</h2>
+              <p className="font-body text-foreground-muted">Amanora Park Town, Hadapsar, Pune, Maharashtra 411028</p>
+              <p className="font-body text-foreground-muted mt-2">CG Road, Ahmedabad, Gujarat 380009</p>
             </div>
             <p className="font-body text-xs text-foreground-muted leading-relaxed border-l-4 border-green pl-4">
               Assetzpro Services works through individually licensed distributors and registered real estate agents, not fee-charging investment advisers. Enquiries here do not constitute investment advice.

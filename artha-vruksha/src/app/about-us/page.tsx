@@ -51,7 +51,7 @@ const values = [
 
 export const metadata = pageMeta({
   title: 'About Anup & Pavan Vatyani | Assetzpro',
-  description: 'Meet the founders: Anup Vatyani, AMFI-registered distributor (ARN 106715), and Pavan Vatyani, MahaRERA-registered agent. Offices in Pune and Ahmedabad.',
+  description: 'Meet the founders: Anup Vatyani, AMFI-registered distributor (ARN 106715), and Pavan Vatyani, MahaRERA-registered agent. Meetings by appointment in Pune and Ahmedabad.',
   path: '/about-us',
 });
 

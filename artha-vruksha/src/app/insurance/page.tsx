@@ -184,7 +184,7 @@ export default function Insurance() {
       <section id="how-it-works" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How the choice is made</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How is the right cover chosen?</h2>
             <p className="font-body text-foreground-muted measure">Compare first, and understand the fine print before you decide.</p>
           </div>
           <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#D4AF37" />

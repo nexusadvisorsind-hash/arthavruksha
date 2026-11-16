@@ -157,7 +157,7 @@ export default function Loans() {
       <section id="loan-types" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-14">
           <div>
-            <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-2">Secured loans</h2>
+            <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-2">What are secured loans?</h2>
             <p className="font-body text-sm text-foreground-muted mb-6">Backed by collateral, usually with lower rates and higher amounts.</p>
             <div className="space-y-6">
               {secured.map((s) => (
@@ -172,7 +172,7 @@ export default function Loans() {
             </div>
           </div>
           <div>
-            <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-2">Unsecured loans</h2>
+            <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-2">What are unsecured loans?</h2>
             <p className="font-body text-sm text-foreground-muted mb-6">No collateral. Approval depends on income and credit history.</p>
             <div className="space-y-6">
               {unsecured.map((s) => (
@@ -192,7 +192,7 @@ export default function Loans() {
       <section id="how-it-works" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How to borrow smart</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How can you borrow wisely?</h2>
             <p className="font-body text-foreground-muted measure mb-6">You never pay Pavan Vatyani directly. The commission is disclosed upfront, and it is paid by the lender once your loan is disbursed. Loan approval and interest rates are decided by the lender.</p>
             <p className="font-body text-sm text-foreground-muted flex gap-2 measure"><ShieldCheck className="h-5 w-5 text-green shrink-0" /> No hidden charges.</p>
           </div>

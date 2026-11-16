@@ -57,7 +57,7 @@ export function CityPage({ city }: { city: City }) {
 
       <section className="py-16 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8">Who handles what in {city.name}</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8">Who handles what in {city.name}?</h2>
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
             {city.services.map((s) => (
               <div key={s.title} className="border-t border-border pt-5">
@@ -75,7 +75,7 @@ export function CityPage({ city }: { city: City }) {
       <section className="py-16 md:py-20 bg-surface border-y border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.9fr_1.1fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Areas in and around {city.name}</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Which areas in and around {city.name} are covered?</h2>
             <p className="font-body text-foreground-muted measure">Enquiries are taken for clients and properties in these areas, among others.</p>
           </div>
           <div className="space-y-6">

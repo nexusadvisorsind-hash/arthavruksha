@@ -85,7 +85,7 @@ export const PLACES: Record<PlaceSlug, Place> = {
       },
     ],
     checks: {
-      heading: "Before you rent, lease or buy in Pune",
+      heading: "What should you check before you rent, lease or buy in Pune?",
       items: [
         "For a project: look it up on the MahaRERA website and match the registration number with the brochure.",
         "For a resale flat: ask for the sale deed, society NOC, share certificate, latest property tax receipt and details of any loan on it.",
@@ -153,7 +153,7 @@ export const PLACES: Record<PlaceSlug, Place> = {
       },
     ],
     checks: {
-      heading: "Before you rent, lease or buy in Ahmedabad",
+      heading: "What should you check before you rent, lease or buy in Ahmedabad?",
       items: [
         "For a project: look it up on the GujRERA website and match the registration number with the brochure.",
         "For a resale flat: ask for the sale deed, society NOC, latest property tax receipt, electricity bill and details of any loan on it.",
@@ -206,7 +206,7 @@ export const PLACES: Record<PlaceSlug, Place> = {
       },
     ],
     checks: {
-      heading: "Before you lease or buy in GIFT City",
+      heading: "What should you check before you lease or buy in GIFT City?",
       items: [
         "Confirm which approvals your business needs, and with which authority, before choosing a space. Rules for units in the IFSC differ from the rest of Gujarat, so ask the regulator and the building's developer.",
         "For a residential project: look it up on the GujRERA website and match the registration number with the brochure.",
@@ -215,7 +215,7 @@ export const PLACES: Record<PlaceSlug, Place> = {
       ],
     },
     caution: {
-      heading: "A note on GIFT City funds and property",
+      heading: "Do GIFT City funds and property work the same way?",
       paras: [
         "Property in GIFT City is a separate matter from the funds registered in GIFT City (IFSC), which fall under IFSCA, not under the AMFI registration shown on this website. If you want to learn about those funds, giftcityfunds.in is an educational site on them.",
         "Assetzpro Services does not promise rents, prices or returns for any property.",
@@ -262,7 +262,7 @@ export const PLACES: Record<PlaceSlug, Place> = {
       },
     ],
     checks: {
-      heading: "Before you buy or invest in Dholera land",
+      heading: "What should you check before you buy land in Dholera?",
       items: [
         "Ask for the ownership papers and check them with a property lawyer: sale deed, 7/12 extract, mutation entries and any encumbrance.",
         "Confirm the plot is within the Dholera plan and what use it is zoned for.",
@@ -273,7 +273,7 @@ export const PLACES: Record<PlaceSlug, Place> = {
       ],
     },
     caution: {
-      heading: "Read this before you consider Dholera",
+      heading: "Is Dholera right for every buyer?",
       paras: [
         "Dholera plots are widely advertised, and some promotions claim price rises that nobody can guarantee. Assetzpro Services does not promise returns, rents or price rises for any property.",
         "Many of the planned facilities, such as the airport, industrial projects and city services, are still being built, and dates may slip. Land bought today may not give you income or use for years. Only commit money you can leave untouched.",

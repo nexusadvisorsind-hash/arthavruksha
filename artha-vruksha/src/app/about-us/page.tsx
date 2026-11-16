@@ -1,4 +1,5 @@
-import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, formatDate, PAGE_DATES } from "@/lib/seo";
+import { ShortAnswer } from "@/components/seo/short-answer";
 import { JsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
 import Image from "next/image";
@@ -146,11 +147,12 @@ export default function AboutUs() {
           <Image src="/brand/logo-icon-192.png" alt="Assetzpro Services" width={160} height={160} className="hidden md:block h-36 w-auto" />
         </div>
       </section>
+      <ShortAnswer updated={formatDate(PAGE_DATES["/about-us"])}>Assetzpro Services is a family business in Pune and Ahmedabad that helps with mutual funds, property, insurance and loans. The registrations are held by the individuals named on this page: Anup Vatyani (AMFI mutual fund distributor and GujRERA agent), Pavan Vatyani (MahaRERA agent) and Menka Motwani (IRDAI insurance agent). Meetings are by appointment.</ShortAnswer>
 
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_1fr] gap-12">
           <Reveal>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-5">Why Assetzpro started</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-5">Why did Assetzpro start?</h2>
             <p className="font-heading text-xl md:text-2xl text-primary leading-snug measure">
               Too many people get fragmented, sometimes conflicting advice from agents who cannot see the whole picture.
             </p>
@@ -169,7 +171,7 @@ export default function AboutUs() {
       <section className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Three commitments</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">What does Assetzpro commit to?</h2>
             <p className="font-body text-foreground-muted measure">They shape every conversation with a client.</p>
           </div>
           <ScrollTimeline items={goals.map((g) => ({ title: g.title, body: g.body }))} accent="#0F8A5F" />
@@ -179,7 +181,7 @@ export default function AboutUs() {
       <section className="py-16 md:py-24 bg-forest text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_1fr] gap-12">
           <Reveal>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-5">Four services, one picture</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-5">How do the four services fit together?</h2>
             <p className="font-body text-lg text-primary-foreground/80 leading-relaxed measure">
               Physical assets like property sit alongside liquid assets like mutual funds, with insurance and credit to protect and finance them. Looking at all four together gives a steadier base than depending on one thing going right.
             </p>
@@ -239,7 +241,7 @@ export default function AboutUs() {
 
       <section className="py-14 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-semibold text-xl text-primary mb-5">Registrations</h2>
+          <h2 className="font-heading font-semibold text-xl text-primary mb-5">Who holds which registration?</h2>
           <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
             {[
               "Anup Vatyani: AMFI-registered Mutual Fund Distributor",

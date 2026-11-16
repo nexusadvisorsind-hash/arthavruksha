@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, formatDate, PAGE_DATES } from "@/lib/seo";
+import { ShortAnswer } from "@/components/seo/short-answer";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactForm } from "@/components/contact-form";
 import { Mail, MapPin, Phone, BadgeCheck } from "lucide-react";
@@ -23,6 +24,7 @@ export default function Contact() {
           <p className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/85"><BadgeCheck className="h-4 w-4 text-accent" /> Replies are usually sent within one working day</p>
         </div>
       </section>
+      <ShortAnswer updated={formatDate(PAGE_DATES["/contact"])}>To contact Assetzpro Services, call or WhatsApp +91 90229 58266 or email info@assetzpro.com. Meetings are held by appointment in Pune and Ahmedabad, and a reply follows on the same number.</ShortAnswer>
 
       <section className="py-16 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-5 gap-12">
@@ -57,7 +59,7 @@ export default function Contact() {
 
       <section className="py-14 md:py-16 bg-surface border-t border-border">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">Areas and how an enquiry works</h2>
+          <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">How does an enquiry work?</h2>
           <p className="font-body text-foreground-muted leading-relaxed mb-4 measure">
             Property enquiries are taken for Pune (Amanora, Magarpatta, Kharadi, Koregaon Park, Kalyani Nagar, Viman Nagar, Mundhwa, Hadapsar, Baner, Hinjewadi and nearby),
             Ahmedabad (SG Highway, Bodakdev, Bopal, Shela, Prahlad Nagar, CG Road and nearby), GIFT City and Dholera. Mutual fund, insurance and loan enquiries are taken from both cities.

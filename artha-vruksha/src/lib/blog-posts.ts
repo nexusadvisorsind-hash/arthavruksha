@@ -325,7 +325,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: "How the choice is made",
+        heading: "How is the right cover chosen?",
         body: [
           "The policy that fits the family's needs matters more than the commission it pays. Walking through your actual numbers shows which structure genuinely fits, among the plans Anup Vatyani is appointed to offer.",
         ],

@@ -184,7 +184,7 @@ export default function RealEstate() {
 
       <section id="locations" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3 max-w-3xl">Where to rent, lease, buy or sell</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3 max-w-3xl">Where can you rent, lease, buy or sell?</h2>
           <p className="font-body text-foreground-muted measure mb-10">Pune is the main focus. Open a location to see its areas, what to check there, and to send a message about a specific area.</p>
           <ul className="grid md:grid-cols-2 gap-6">
             {PLACE_ORDER.map((slug) => {
@@ -217,7 +217,7 @@ export default function RealEstate() {
       <section id="rera-check" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Five checks before you pay a booking amount</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">What should you check before paying a booking amount?</h2>
             <p className="font-body text-foreground-muted measure mb-4">Tick them off as you go. These are the checks that protect you from unregistered projects, title disputes and delays.</p>
             <p className="font-body text-xs text-foreground-muted measure">Projects presented are restricted to registered entities under the respective state authorities.</p>
           </div>
@@ -244,7 +244,7 @@ export default function RealEstate() {
 
       <section id="lifecycle" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Where a project sits in its lifecycle</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Where does a project sit in its lifecycle?</h2>
           <p className="font-body text-foreground-muted measure">Every project moves through stages from launch to maturity. Knowing the stage helps you time a purchase, a rental plan or an exit.</p>
         </div>
         <PropertyLifecycleChart />
@@ -252,7 +252,7 @@ export default function RealEstate() {
 
       <section id="home-loan-check" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Know your home budget first</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">What home budget can you afford?</h2>
           <p className="font-body text-foreground-muted measure">A quick estimate of the home loan you could qualify for, based on income and existing obligations. Lenders decide the final amount.</p>
         </div>
         <HomeLoanEligibilityCalculator />
@@ -261,7 +261,7 @@ export default function RealEstate() {
       <section id="how-it-works" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How buying, selling or leasing works</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How does buying, selling or leasing work?</h2>
             <p className="font-body text-foreground-muted measure">From first brief to the day you get the keys.</p>
           </div>
           <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#0F8A5F" />
@@ -270,7 +270,7 @@ export default function RealEstate() {
 
       <section id="desks" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8">Two desks, one standard</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8">Who handles property in Maharashtra and Gujarat?</h2>
           <RegionToggle />
         </div>
       </section>

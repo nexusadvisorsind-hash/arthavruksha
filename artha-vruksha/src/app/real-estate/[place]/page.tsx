@@ -94,7 +94,7 @@ export default async function PlacePage({ params }: { params: Promise<Params> })
 
       <section className="py-16 md:py-20 bg-surface border-y border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Areas covered in {p.name}</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Which areas of {p.name} are covered?</h2>
           <p className="font-body text-foreground-muted measure mb-10">Tap an area to send a message about it. Descriptions are general and do not state prices or returns.</p>
           <div className="space-y-12">
             {p.groups.map((g) => (
@@ -158,7 +158,7 @@ export default async function PlacePage({ params }: { params: Promise<Params> })
 
       <section className="py-12 bg-background border-t border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-semibold text-xl text-primary mb-5">Property in other places covered</h2>
+          <h2 className="font-heading font-semibold text-xl text-primary mb-5">Which other places are covered?</h2>
           <ul className="grid sm:grid-cols-3 gap-6">
             {others.map((o) => (
               <li key={o.slug}>

@@ -161,7 +161,7 @@ export default function MutualFunds() {
 
       <section id="sip-calculator" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">See how a monthly SIP could grow</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How could a monthly SIP grow?</h2>
           <p className="font-body text-foreground-muted measure">An illustrative projection only, not a promise of returns. Actual scheme performance varies and is subject to market risk.</p>
         </div>
         <SipCalculator />
@@ -175,7 +175,7 @@ export default function MutualFunds() {
 
       <section id="goal-calculator" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Work backwards from your goal</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How much should you invest for a goal?</h2>
           <p className="font-body text-foreground-muted measure">Enter the amount you want to reach and by when. The calculator estimates the monthly SIP that could get you there.</p>
         </div>
         <SipGoalCalculator />
@@ -184,7 +184,7 @@ export default function MutualFunds() {
       <section id="how-it-works" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How it works with Anup</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How does a mutual fund enquiry work with Anup?</h2>
             <p className="font-body text-foreground-muted measure">Three steps, no pressure. You decide at every stage.</p>
           </div>
           <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#1E5FD9" />

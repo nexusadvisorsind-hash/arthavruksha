@@ -179,7 +179,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_1.1fr] gap-12">
           <Reveal>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-5">Why one team instead of four</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-5">Why choose one team instead of four?</h2>
             <p className="font-body text-lg text-foreground-muted leading-relaxed measure">
               Most families manage money in pieces. The property agent does not know what you can borrow. The fund distributor does not know about your EMIs. The insurance agent does not know what you need to protect.
             </p>
@@ -214,7 +214,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-forest text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12">
           <Reveal>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-5">Two cities, local knowledge</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-5">Why work from two cities?</h2>
             <p className="font-body text-primary-foreground/80 leading-relaxed measure">
               Good guidance depends on the local market: which builders deliver, which lenders approve quickly, how each state&rsquo;s property rules work, and which insurers and funds suit families there. That is why Assetzpro Services works from both Pune and Ahmedabad.
             </p>
@@ -236,7 +236,7 @@ export default function Home() {
 
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How the firm earns, and how your data is protected</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How is the firm paid, and how is your data protected?</h2>
           <p className="font-body text-foreground-muted mb-10 measure">Two things people should know before they trust anyone with their finances.</p>
           <div className="grid md:grid-cols-2 gap-10">
             <div className="border-t-2 border-primary pt-5">
@@ -253,7 +253,7 @@ export default function Home() {
 
       <section className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Read before you decide</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">What should you read before you decide?</h2>
           <p className="font-body text-foreground-muted mb-10 measure">Plain-language guides, written to help you decide, not to sell you anything.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mb-10">
             {homePosts.map((post) => (
@@ -280,7 +280,7 @@ export default function Home() {
             <p className="font-body text-sm text-foreground-muted leading-relaxed">Meetings by appointment on CG Road. Gujarat property, mutual funds, loans and insurance enquiries from Ahmedabad and Gandhinagar.</p>
           </div>
           <div>
-            <h2 className="font-heading font-semibold text-xl text-primary mb-2"><Link href="/calculators" className="hover:text-secondary">Free calculators</Link></h2>
+            <h2 className="font-heading font-semibold text-xl text-primary mb-2"><Link href="/calculators" className="hover:text-secondary">Which free calculators can help you plan?</Link></h2>
             <p className="font-body text-sm text-foreground-muted leading-relaxed">SIP, goal SIP, EMI, loan eligibility, home loan eligibility and insurance cover estimates.</p>
           </div>
         </div>

@@ -1,4 +1,5 @@
-import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, formatDate, PAGE_DATES } from "@/lib/seo";
+import { ShortAnswer } from "@/components/seo/short-answer";
 import { JsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
 import { blogPosts } from "@/lib/blog-posts";
@@ -31,6 +32,7 @@ export default function Blog() {
           </p>
         </div>
       </section>
+      <ShortAnswer updated={formatDate(PAGE_DATES["/blog"])}>The blog has plain-language guides on mutual funds, property, insurance and loans, written for readers in Pune, Ahmedabad and across India. Each guide is general information, not personal advice, and none promises returns.</ShortAnswer>
 
       <section className="py-16 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

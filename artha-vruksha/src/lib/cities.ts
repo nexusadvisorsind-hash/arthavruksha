@@ -53,7 +53,7 @@ export const CITIES: Record<City["slug"], City> = {
       ],
     },
     howItWorks: {
-      heading: "Areas and how a property enquiry works in Pune",
+      heading: "How does a property enquiry work in Pune?",
       paras: [
         "Most enquiries in Pune start with an area and a budget. East Pune (Amanora, Magarpatta, Kharadi, Viman Nagar, Koregaon Park, Kalyani Nagar, Mundhwa and Hadapsar) is the main focus, with west Pune and Pimpri-Chinchwad covered as well. Flats for rent, shops and offices on lease, and homes to buy or sell are all handled.",
         "Share the area, budget, type of property and move-in date on WhatsApp or the enquiry form. Matching options are shortlisted, RERA status and paperwork are checked before a visit is fixed, and visits are arranged at a time that suits you. Meetings are by appointment, so a time and place are agreed first.",
@@ -105,7 +105,7 @@ export const CITIES: Record<City["slug"], City> = {
       ],
     },
     howItWorks: {
-      heading: "Areas and how a property enquiry works in Ahmedabad",
+      heading: "How does a property enquiry work in Ahmedabad?",
       paras: [
         "Enquiries in Ahmedabad usually name a locality: SG Highway, Bodakdev, Thaltej, Vastrapur, Satellite, Prahlad Nagar, Bopal, Shela, CG Road, Gota and nearby areas. GIFT City in Gandhinagar and Dholera are covered too. Flats for rent, shops and offices on lease, and homes to buy or sell are all handled.",
         "Share the locality, budget, type of property and move-in date on WhatsApp or the enquiry form. Matching options are shortlisted, GujRERA status and paperwork are checked before a visit is fixed, and visits are arranged at a time that suits you. Meetings are by appointment, so a time and place are agreed first.",

@@ -12,22 +12,33 @@ import { ScrollProgress } from "@/components/scroll-progress";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { ConsentBanner } from "@/components/consent-banner";
+import { SOCIAL_PROFILES } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 
-// NOTE: This points at the live Vercel deployment (project name "arthavruksha" was
-// kept as-is on GitHub/Vercel — only the on-page brand name/emails changed to "Vriksha").
+// Brand: Assetzpro Services. The GitHub repo and Vercel project keep their old names; only the domain and on-page brand changed.
 // Production domain (custom domain connected in Vercel).
-const siteUrl = "https://arthavriksha.in";
+const siteUrl = "https://assetzpro.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Artha Vriksha Services — Mutual Funds, Real Estate, Insurance & Loans in Maharashtra & Gujarat",
-    template: "%s | Artha Vriksha Services",
+    default: "Assetzpro Services: Property, Mutual Funds, Insurance & Loans",
+    template: "%s | Assetzpro Services",
   },
   description:
-    "Mutual Funds, Real Estate, Insurance and Loan/DSA services across Pune, Ahmedabad, Maharashtra & Gujarat — through individually AMFI, MahaRERA & GujRERA registered professionals. SIP, home loan, insurance and loan eligibility calculators.",
+    "Flats, shops and offices for rent, lease, buy and sell in Pune, Ahmedabad, GIFT City and Dholera, plus mutual funds, insurance and loans, through individually AMFI, MahaRERA & GujRERA registered professionals. Calculators for SIP, EMI, loan eligibility and insurance.",
   keywords: [
+    "flat for rent in Pune",
+    "property for rent in Pune",
+    "office space for lease in Pune",
+    "flats for sale in Pune",
+    "real estate agent in Pune",
+    "flat for rent in Ahmedabad",
+    "property for rent in Ahmedabad",
+    "office space for lease in Ahmedabad",
+    "real estate agent in Ahmedabad",
+    "GIFT City property",
+    "Dholera plots",
     "mutual fund distributor Pune",
     "mutual fund distributor Ahmedabad",
     "AMFI registered mutual fund distributor",
@@ -48,15 +59,15 @@ export const metadata: Metadata = {
     "GIFT City IFSC mutual funds",
     "Anup Vatyani AMFI",
     "Pavan Vatyani real estate",
-    "Artha Vriksha Services",
+    "Assetzpro Services",
   ],
-  authors: [{ name: "Artha Vriksha Services" }],
+  authors: [{ name: "Assetzpro Services" }],
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: siteUrl,
-    siteName: "Artha Vriksha Services",
-    title: "Artha Vriksha Services — Mutual Funds, Real Estate, Insurance & Loans",
+    siteName: "Assetzpro Services",
+    title: "Assetzpro Services — Mutual Funds, Real Estate, Insurance & Loans",
     description:
       "One team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat — professionals individually AMFI, MahaRERA & GujRERA registered.",
     images: [
@@ -64,13 +75,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Artha Vriksha Services — Mutual Funds, Real Estate, Insurance & Loans",
+        alt: "Assetzpro Services — Mutual Funds, Real Estate, Insurance & Loans",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Artha Vriksha Services — Mutual Funds, Real Estate, Insurance & Loans",
+    title: "Assetzpro Services — Mutual Funds, Real Estate, Insurance & Loans",
     description:
       "One licensed team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat.",
     images: ["/og-image.png"],
@@ -82,16 +93,16 @@ const websiteJsonLd = {
   "@type": "WebSite",
   "@id": `${siteUrl}/#website`,
   url: siteUrl,
-  name: "Artha Vriksha Services",
+  name: "Assetzpro Services",
   inLanguage: "en-IN",
   publisher: { "@id": `${siteUrl}/#organization` },
 };
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "FinancialService",
+  "@type": ["FinancialService", "RealEstateAgent"],
   "@id": `${siteUrl}/#organization`,
-  name: "Artha Vriksha Services",
+  name: "Assetzpro Services",
   description:
     "Mutual Fund Distribution, Real Estate Broking, Insurance facilitation and Loan/DSA services across Maharashtra & Gujarat, India, delivered by individually AMFI, MahaRERA & GujRERA registered professionals.",
   url: siteUrl,
@@ -104,21 +115,24 @@ const organizationJsonLd = {
   address: [
     {
       "@type": "PostalAddress",
-      streetAddress: "Amanora Park Town",
+      streetAddress: "Amanora Park Town, Hadapsar",
       addressLocality: "Pune",
       addressRegion: "Maharashtra",
-      postalCode: "411928",
+      postalCode: "411028",
       addressCountry: "IN",
     },
     {
       "@type": "PostalAddress",
-      streetAddress: "4 Tarang Hills Society, Chandlodia",
+      streetAddress: "CG Road",
       addressLocality: "Ahmedabad",
       addressRegion: "Gujarat",
+      postalCode: "380009",
       addressCountry: "IN",
     },
   ],
-  email: "info@arthavriksha.in",
+  email: "info@assetzpro.com",
+  telephone: "+91-9022958266",
+  ...(SOCIAL_PROFILES.length ? { sameAs: SOCIAL_PROFILES } : {}),
   founder: [
     { "@type": "Person", name: "Anup Vatyani", jobTitle: "Founder — Mutual Funds & Regulatory Affairs", telephone: "+91-9537533533" },
     { "@type": "Person", name: "Pavan Vatyani", jobTitle: "Founder — Real Estate & Digital Strategy", telephone: "+91-9022958266" },

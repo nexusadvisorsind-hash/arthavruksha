@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://arthavriksha.in";
-const OG_IMAGE = { url: "/og-image.png", width: 1200, height: 630, alt: "Artha Vriksha Services" };
+export const SITE_URL = "https://assetzpro.com";
+
+/** Public profile pages for the business. Add the full LinkedIn and Instagram page URLs here; they feed the Organization schema so search engines link the profiles to this site. */
+export const SOCIAL_PROFILES: string[] = [];
+const OG_IMAGE = { url: "/og-image.png", width: 1200, height: 630, alt: "Assetzpro Services" };
 
 /** Keeps description under Google's visible length without cutting mid-word. */
 export function clamp(text: string, max = 155) {
@@ -19,7 +22,7 @@ export function pageMeta(opts: { title: string; description: string; path: strin
     openGraph: {
       type: opts.type ?? "website",
       locale: "en_IN",
-      siteName: "Artha Vriksha Services",
+      siteName: "Assetzpro Services",
       url: opts.path,
       title: opts.title,
       description,
@@ -37,19 +40,55 @@ export function isoDate(label: string) {
 
 /** "2026-10-26": the date the page content last changed. Feeds sitemap lastmod and "Last updated" bylines. */
 export const PAGE_DATES: Record<string, string> = {
-  "/": "2026-10-26",
-  "/mutual-funds": "2026-10-26",
-  "/real-estate": "2026-10-26",
-  "/insurance": "2026-10-26",
-  "/loans": "2026-10-26",
-  "/pune": "2026-10-26",
-  "/ahmedabad": "2026-10-26",
-  "/calculators": "2026-10-26",
-  "/about-us": "2026-10-26",
-  "/contact": "2026-10-16",
-  "/blog": "2026-10-26",
-  "/privacy-policy": "2026-10-26",
-  "/terms-of-use": "2026-10-16",
+  "/": "2026-11-16",
+  "/mutual-funds": "2026-11-16",
+  "/real-estate": "2026-11-16",
+  "/real-estate/pune": "2026-11-15",
+  "/real-estate/ahmedabad": "2026-11-15",
+  "/real-estate/pune/amanora": "2026-11-17",
+  "/real-estate/pune/magarpatta": "2026-11-17",
+  "/real-estate/pune/hadapsar": "2026-11-17",
+  "/real-estate/pune/kharadi": "2026-11-17",
+  "/real-estate/pune/koregaon-park": "2026-11-17",
+  "/real-estate/pune/viman-nagar": "2026-11-17",
+  "/real-estate/pune/kalyani-nagar": "2026-11-17",
+  "/real-estate/pune/mundhwa": "2026-11-17",
+  "/real-estate/pune/amanora/flat-for-rent": "2026-11-22",
+  "/real-estate/pune/amanora/flat-for-sale": "2026-11-22",
+  "/real-estate/pune/amanora/office-for-rent": "2026-11-22",
+  "/real-estate/pune/amanora/office-for-sale": "2026-11-22",
+  "/real-estate/pune/amanora/shop-for-rent": "2026-11-22",
+  "/real-estate/pune/amanora/shop-for-sale": "2026-11-22",
+  "/real-estate/pune/magarpatta/flat-for-rent": "2026-11-22",
+  "/real-estate/pune/magarpatta/flat-for-sale": "2026-11-22",
+  "/real-estate/pune/magarpatta/office-for-rent": "2026-11-22",
+  "/real-estate/pune/magarpatta/office-for-sale": "2026-11-22",
+  "/real-estate/pune/magarpatta/shop-for-rent": "2026-11-22",
+  "/real-estate/pune/magarpatta/shop-for-sale": "2026-11-22",
+  "/real-estate/pune/kharadi/flat-for-rent": "2026-11-22",
+  "/real-estate/pune/kharadi/flat-for-sale": "2026-11-22",
+  "/real-estate/pune/kharadi/office-for-rent": "2026-11-22",
+  "/real-estate/pune/kharadi/office-for-sale": "2026-11-22",
+  "/real-estate/pune/kharadi/shop-for-rent": "2026-11-22",
+  "/real-estate/pune/kharadi/shop-for-sale": "2026-11-22",
+  "/real-estate/pune/hadapsar/flat-for-rent": "2026-11-22",
+  "/real-estate/pune/hadapsar/flat-for-sale": "2026-11-22",
+  "/real-estate/pune/hadapsar/office-for-rent": "2026-11-22",
+  "/real-estate/pune/hadapsar/office-for-sale": "2026-11-22",
+  "/real-estate/pune/hadapsar/shop-for-rent": "2026-11-22",
+  "/real-estate/pune/hadapsar/shop-for-sale": "2026-11-22",
+  "/real-estate/gift-city": "2026-11-15",
+  "/real-estate/dholera": "2026-11-15",
+  "/insurance": "2026-11-16",
+  "/loans": "2026-11-16",
+  "/pune": "2026-11-16",
+  "/ahmedabad": "2026-11-16",
+  "/calculators": "2026-11-16",
+  "/about-us": "2026-11-16",
+  "/contact": "2026-11-16",
+  "/blog": "2026-11-16",
+  "/privacy-policy": "2026-11-15",
+  "/terms-of-use": "2026-11-15",
 };
 
 export function formatDate(iso: string) {
@@ -89,7 +128,7 @@ export function webPageLd(opts: { path: string; name: string; description: strin
     description: opts.description,
     inLanguage: "en-IN",
     dateModified: PAGE_DATES[opts.path],
-    isPartOf: { "@type": "WebSite", name: "Artha Vriksha Services", url: SITE_URL },
+    isPartOf: { "@type": "WebSite", name: "Assetzpro Services", url: SITE_URL },
     ...(opts.about ? { about: opts.about } : {}),
     speakable: { "@type": "SpeakableSpecification", cssSelector: ["[data-short-answer]"] },
   };

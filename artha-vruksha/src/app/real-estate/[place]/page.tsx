@@ -10,6 +10,7 @@ import { OfficialSources } from "@/components/seo/official-sources";
 import { RequirementBar } from "@/components/requirement-bar";
 import { Button } from "@/components/ui/button";
 import { PLACES, PLACE_ORDER, type PlaceSlug } from "@/lib/re-locations";
+import { PUNE_AREA_BY_NAME } from "@/lib/pune-areas";
 import { PHONE_DISPLAY, PHONE_TEL, whatsappLink } from "@/lib/contact";
 
 type Params = { place: string };
@@ -108,6 +109,11 @@ export default async function PlacePage({ params }: { params: Promise<Params> })
                         <MapPin className="h-4 w-4 text-secondary shrink-0" aria-hidden="true" /> {a.name}
                       </h4>
                       <p className="font-body text-sm text-foreground-muted leading-relaxed grow">{a.note}</p>
+                      {p.slug === "pune" && PUNE_AREA_BY_NAME[a.name] && (
+                        <Link href={`/real-estate/pune/${PUNE_AREA_BY_NAME[a.name]}`} className="mt-2 inline-flex min-h-11 items-center gap-1.5 font-body text-sm font-semibold text-primary hover:text-secondary">
+                          <ArrowRight className="h-4 w-4" aria-hidden="true" /> Read about {a.name}
+                        </Link>
+                      )}
                       <a
                         href={whatsappLink(`Hello, I am looking for property in ${a.name}, ${p.name}. Please share options.`)}
                         target="_blank"

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CookieSettingsLink } from "@/components/consent-banner";
 import Image from "next/image";
+import { PUNE_AREAS, PUNE_AREA_ORDER } from "@/lib/pune-areas";
 
 export function SiteFooter() {
   return (
@@ -58,6 +59,12 @@ export function SiteFooter() {
               <li><Link href="/real-estate/ahmedabad" className="hover:text-accent">Ahmedabad</Link></li>
               <li><Link href="/real-estate/gift-city" className="hover:text-accent">GIFT City</Link></li>
               <li><Link href="/real-estate/dholera" className="hover:text-accent">Dholera</Link></li>
+            </ul>
+            <div className="font-heading font-semibold mt-6 mb-3">Pune areas</div>
+            <ul className="space-y-2 font-body text-sm text-primary-foreground/75">
+              {PUNE_AREA_ORDER.map((s) => (
+                <li key={s}><Link href={`/real-estate/pune/${s}`} className="hover:text-accent">{PUNE_AREAS[s].name}</Link></li>
+              ))}
             </ul>
           </div>
           <div className="md:col-span-2">

@@ -12,6 +12,7 @@ import { ScrollProgress } from "@/components/scroll-progress";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { ConsentBanner } from "@/components/consent-banner";
+import { SOCIAL_PROFILES } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 
 // Brand: Assetzpro Services. The GitHub repo and Vercel project keep their old names; only the domain and on-page brand changed.
@@ -131,6 +132,7 @@ const organizationJsonLd = {
   ],
   email: "info@assetzpro.com",
   telephone: "+91-9022958266",
+  ...(SOCIAL_PROFILES.length ? { sameAs: SOCIAL_PROFILES } : {}),
   founder: [
     { "@type": "Person", name: "Anup Vatyani", jobTitle: "Founder — Mutual Funds & Regulatory Affairs", telephone: "+91-9537533533" },
     { "@type": "Person", name: "Pavan Vatyani", jobTitle: "Founder — Real Estate & Digital Strategy", telephone: "+91-9022958266" },

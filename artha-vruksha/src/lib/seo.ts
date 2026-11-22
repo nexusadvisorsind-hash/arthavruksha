@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const SITE_URL = "https://assetzpro.com";
+
+/** Public profile pages for the business. Add the full LinkedIn and Instagram page URLs here; they feed the Organization schema so search engines link the profiles to this site. */
+export const SOCIAL_PROFILES: string[] = [];
 const OG_IMAGE = { url: "/og-image.png", width: 1200, height: 630, alt: "Assetzpro Services" };
 
 /** Keeps description under Google's visible length without cutting mid-word. */
@@ -42,6 +45,38 @@ export const PAGE_DATES: Record<string, string> = {
   "/real-estate": "2026-11-16",
   "/real-estate/pune": "2026-11-15",
   "/real-estate/ahmedabad": "2026-11-15",
+  "/real-estate/pune/amanora": "2026-11-17",
+  "/real-estate/pune/magarpatta": "2026-11-17",
+  "/real-estate/pune/hadapsar": "2026-11-17",
+  "/real-estate/pune/kharadi": "2026-11-17",
+  "/real-estate/pune/koregaon-park": "2026-11-17",
+  "/real-estate/pune/viman-nagar": "2026-11-17",
+  "/real-estate/pune/kalyani-nagar": "2026-11-17",
+  "/real-estate/pune/mundhwa": "2026-11-17",
+  "/real-estate/pune/amanora/flat-for-rent": "2026-11-22",
+  "/real-estate/pune/amanora/flat-for-sale": "2026-11-22",
+  "/real-estate/pune/amanora/office-for-rent": "2026-11-22",
+  "/real-estate/pune/amanora/office-for-sale": "2026-11-22",
+  "/real-estate/pune/amanora/shop-for-rent": "2026-11-22",
+  "/real-estate/pune/amanora/shop-for-sale": "2026-11-22",
+  "/real-estate/pune/magarpatta/flat-for-rent": "2026-11-22",
+  "/real-estate/pune/magarpatta/flat-for-sale": "2026-11-22",
+  "/real-estate/pune/magarpatta/office-for-rent": "2026-11-22",
+  "/real-estate/pune/magarpatta/office-for-sale": "2026-11-22",
+  "/real-estate/pune/magarpatta/shop-for-rent": "2026-11-22",
+  "/real-estate/pune/magarpatta/shop-for-sale": "2026-11-22",
+  "/real-estate/pune/kharadi/flat-for-rent": "2026-11-22",
+  "/real-estate/pune/kharadi/flat-for-sale": "2026-11-22",
+  "/real-estate/pune/kharadi/office-for-rent": "2026-11-22",
+  "/real-estate/pune/kharadi/office-for-sale": "2026-11-22",
+  "/real-estate/pune/kharadi/shop-for-rent": "2026-11-22",
+  "/real-estate/pune/kharadi/shop-for-sale": "2026-11-22",
+  "/real-estate/pune/hadapsar/flat-for-rent": "2026-11-22",
+  "/real-estate/pune/hadapsar/flat-for-sale": "2026-11-22",
+  "/real-estate/pune/hadapsar/office-for-rent": "2026-11-22",
+  "/real-estate/pune/hadapsar/office-for-sale": "2026-11-22",
+  "/real-estate/pune/hadapsar/shop-for-rent": "2026-11-22",
+  "/real-estate/pune/hadapsar/shop-for-sale": "2026-11-22",
   "/real-estate/gift-city": "2026-11-15",
   "/real-estate/dholera": "2026-11-15",
   "/insurance": "2026-11-16",

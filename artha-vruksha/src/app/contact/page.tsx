@@ -48,8 +48,8 @@ export default function Contact() {
             <div>
               <MapPin className="h-6 w-6 text-secondary mb-2" />
               <h2 className="font-heading font-semibold text-lg text-primary mb-1">Meeting locations (by appointment)</h2>
-              <p className="font-body text-foreground-muted">Amanora Park Town, Hadapsar, Pune, Maharashtra 411028</p>
-              <p className="font-body text-foreground-muted mt-2">CG Road, Ahmedabad, Gujarat 380009</p>
+              <p className="font-body text-foreground-muted"><strong className="font-semibold text-primary">Pune:</strong> Amanora Park Town, Hadapsar, Pune, Maharashtra 411028</p>
+              <p className="font-body text-foreground-muted mt-3"><strong className="font-semibold text-primary">Ahmedabad:</strong> CG Road, Ahmedabad, Gujarat 380009</p>
             </div>
             <div>
               <h2 className="font-heading font-semibold text-lg text-primary mb-3">Find Assetzpro online</h2>

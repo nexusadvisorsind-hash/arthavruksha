@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { pageMeta, breadcrumbLd, formatDate, PAGE_DATES, GOOGLE_REVIEW_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, formatDate, PAGE_DATES } from "@/lib/seo";
+import { SocialLinks } from "@/components/social-links";
 import { ShortAnswer } from "@/components/seo/short-answer";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactForm } from "@/components/contact-form";
@@ -50,6 +51,11 @@ export default function Contact() {
               <p className="font-body text-foreground-muted">Amanora Park Town, Hadapsar, Pune, Maharashtra 411028</p>
               <p className="font-body text-foreground-muted mt-2">CG Road, Ahmedabad, Gujarat 380009</p>
             </div>
+            <div>
+              <h2 className="font-heading font-semibold text-lg text-primary mb-3">Find Assetzpro online</h2>
+              <SocialLinks />
+              <p className="font-body text-sm text-foreground-muted mt-3">Instagram, LinkedIn, and Google reviews from clients.</p>
+            </div>
             <p className="font-body text-xs text-foreground-muted leading-relaxed border-l-4 border-green pl-4">
               Assetzpro Services works through individually licensed distributors and registered real estate agents, not fee-charging investment advisers. Enquiries here do not constitute investment advice.
             </p>
@@ -72,14 +78,6 @@ export default function Contact() {
             Your details are used only to reply, as set out in the <Link href="/privacy-policy" className="text-secondary underline underline-offset-2">Privacy Policy</Link>.
             See also <Link href="/real-estate/pune" className="text-secondary underline underline-offset-2">property in Pune</Link> and{" "}
             <Link href="/real-estate/ahmedabad" className="text-secondary underline underline-offset-2">property in Ahmedabad</Link>.
-          </p>
-          <p className="font-body text-foreground-muted leading-relaxed mt-4 measure">
-            Worked with Assetzpro? A short{" "}
-            <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="text-secondary underline underline-offset-2">Google review</a>{" "}
-            helps others find honest help. Follow on{" "}
-            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-secondary underline underline-offset-2">Instagram</a>{" "}
-            or{" "}
-            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-secondary underline underline-offset-2">LinkedIn</a>.
           </p>
         </div>
       </section>

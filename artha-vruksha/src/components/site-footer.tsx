@@ -31,8 +31,8 @@ export function SiteFooter() {
           <div>
             <div className="font-heading font-semibold mb-3">Verticals</div>
             <ul className="space-y-2 font-body text-sm text-primary-foreground/75">
-              <li><Link href="/mutual-funds" className="hover:text-accent">Mutual Funds</Link></li>
               <li><Link href="/real-estate" className="hover:text-accent">Real Estate</Link></li>
+              <li><Link href="/mutual-funds" className="hover:text-accent">Mutual Funds</Link></li>
               <li><Link href="/insurance" className="hover:text-accent">Insurance Solutions</Link></li>
               <li><Link href="/loans" className="hover:text-accent">Loans &amp; Capital</Link></li>
               <li><Link href="/calculators" className="hover:text-accent">Calculators</Link></li>
@@ -105,19 +105,19 @@ export function SiteFooter() {
 
           <div className="space-y-1">
             <p className="font-body text-xs text-primary-foreground/80">
-              <strong className="text-primary-foreground">Mutual Funds:</strong> AMFI Registration Number (ARN): 106715 | AMFI-Registered Mutual Fund Distributor (Anup Vatyani).
+              <strong className="text-primary-foreground">Real Estate:</strong> MahaRERA Registration No: A52100037796 (Pavan Vatyani) | Gujarat RERA Registration No: AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529 (Anup Vatyani).
             </p>
             <p className="font-body text-xs text-primary-foreground/70">
-              Mutual Fund investments are subject to market risks, read all scheme related documents carefully.
+              Projects presented are restricted to registered entities under respective state authorities.
             </p>
           </div>
 
           <div className="space-y-1">
             <p className="font-body text-xs text-primary-foreground/80">
-              <strong className="text-primary-foreground">Real Estate:</strong> MahaRERA Registration No: A52100037796 (Pavan Vatyani) | Gujarat RERA Registration No: AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529 (Anup Vatyani).
+              <strong className="text-primary-foreground">Mutual Funds:</strong> AMFI Registration Number (ARN): 106715 | AMFI-Registered Mutual Fund Distributor (Anup Vatyani).
             </p>
             <p className="font-body text-xs text-primary-foreground/70">
-              Projects presented are restricted to registered entities under respective state authorities.
+              Mutual Fund investments are subject to market risks, read all scheme related documents carefully.
             </p>
           </div>
 

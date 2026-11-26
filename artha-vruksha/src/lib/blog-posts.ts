@@ -561,6 +561,9 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
+import { moreBlogPosts } from "@/lib/blog-posts-more";
+blogPosts.push(...moreBlogPosts);
+
 export function getPostBySlug(slug: string) {
   return blogPosts.find((p) => p.slug === slug);
 }

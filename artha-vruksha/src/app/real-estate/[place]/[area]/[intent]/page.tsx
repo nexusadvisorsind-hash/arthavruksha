@@ -44,14 +44,15 @@ export default async function IntentPage({ params }: { params: Promise<Params> }
   const societies = PUNE_SOCIETIES[p.area as PuneAreaSlug] ?? [];
   const sibling = INTENT_ORDER.filter((s) => s !== p.intent);
   const otherAreas = INTENT_AREAS.filter((s) => s !== p.area);
-  const typeWord = page.kind === "flat" ? "flat" : page.kind;
+  const typeWord = page.typeWord;
+  const intentLabel = INTENT_LABEL[p.intent as IntentSlug].toLowerCase();
   const barAreas = [area.name, ...area.near.map((n) => PUNE_AREAS[n].name), "Other area in Pune"];
 
   const serviceLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${SITE_URL}${path}#service`,
-    serviceType: `Real estate brokerage: ${typeWord} for ${page.mode}`,
+    serviceType: `Real estate brokerage: ${intentLabel}`,
     name: page.h1,
     description: page.description,
     url: `${SITE_URL}${path}`,
@@ -197,7 +198,7 @@ export default async function IntentPage({ params }: { params: Promise<Params> }
             <p className="font-body text-primary-foreground/85 measure">Message or call {PHONE_DISPLAY}. Meetings are by appointment.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Button asChild variant="gold" size="lg"><a href={whatsappLink(`Hello, I am looking for a ${typeWord} for ${page.mode} in ${page.areaFull}, Pune. Please contact me.`)} target="_blank" rel="noopener noreferrer">WhatsApp <ArrowRight className="ml-2 h-5 w-5" /></a></Button>
+            <Button asChild variant="gold" size="lg"><a href={whatsappLink(`Hello, I am looking for ${intentLabel} in ${page.areaFull}, Pune. Please contact me.`)} target="_blank" rel="noopener noreferrer">WhatsApp <ArrowRight className="ml-2 h-5 w-5" /></a></Button>
             <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10"><Link href="/contact">Enquiry form</Link></Button>
           </div>
         </div>

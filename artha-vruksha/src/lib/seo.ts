@@ -44,18 +44,18 @@ export function isoDate(label: string) {
 /** "2026-10-26": the date the page content last changed. Feeds sitemap lastmod and "Last updated" bylines. */
 export const PAGE_DATES: Record<string, string> = {
   "/": "2026-11-16",
-  "/mutual-funds": "2026-11-16",
-  "/real-estate": "2026-11-16",
-  "/real-estate/pune": "2026-11-15",
+  "/mutual-funds": "2026-11-27",
+  "/real-estate": "2026-11-27",
+  "/real-estate/pune": "2026-11-27",
   "/real-estate/ahmedabad": "2026-11-15",
-  "/real-estate/pune/amanora": "2026-11-17",
-  "/real-estate/pune/magarpatta": "2026-11-17",
-  "/real-estate/pune/hadapsar": "2026-11-17",
-  "/real-estate/pune/kharadi": "2026-11-17",
-  "/real-estate/pune/koregaon-park": "2026-11-17",
-  "/real-estate/pune/viman-nagar": "2026-11-17",
-  "/real-estate/pune/kalyani-nagar": "2026-11-17",
-  "/real-estate/pune/mundhwa": "2026-11-17",
+  "/real-estate/pune/amanora": "2026-11-27",
+  "/real-estate/pune/magarpatta": "2026-11-27",
+  "/real-estate/pune/hadapsar": "2026-11-27",
+  "/real-estate/pune/kharadi": "2026-11-27",
+  "/real-estate/pune/koregaon-park": "2026-11-27",
+  "/real-estate/pune/viman-nagar": "2026-11-27",
+  "/real-estate/pune/kalyani-nagar": "2026-11-27",
+  "/real-estate/pune/mundhwa": "2026-11-27",
   "/real-estate/pune/amanora/flat-for-rent": "2026-11-22",
   "/real-estate/pune/amanora/flat-for-sale": "2026-11-22",
   "/real-estate/pune/amanora/office-for-rent": "2026-11-22",
@@ -82,17 +82,20 @@ export const PAGE_DATES: Record<string, string> = {
   "/real-estate/pune/hadapsar/shop-for-sale": "2026-11-22",
   "/real-estate/gift-city": "2026-11-15",
   "/real-estate/dholera": "2026-11-15",
-  "/insurance": "2026-11-16",
-  "/loans": "2026-11-16",
-  "/pune": "2026-11-16",
-  "/ahmedabad": "2026-11-16",
+  "/insurance": "2026-11-27",
+  "/loans": "2026-11-27",
+  "/pune": "2026-11-27",
+  "/ahmedabad": "2026-11-27",
   "/calculators": "2026-11-16",
   "/about-us": "2026-11-16",
   "/contact": "2026-11-16",
-  "/blog": "2026-11-16",
+  "/blog": "2026-11-27",
   "/privacy-policy": "2026-11-15",
   "/terms-of-use": "2026-11-15",
 };
+
+import { generatedPaths } from "@/lib/generated-paths";
+for (const gp of generatedPaths()) PAGE_DATES[gp] ??= "2026-11-27";
 
 export function formatDate(iso: string) {
   const d = new Date(`${iso}T00:00:00Z`);

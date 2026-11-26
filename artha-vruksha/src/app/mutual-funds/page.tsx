@@ -1,3 +1,4 @@
+import { NearYou, PUNE_AREA_LINE, AHMEDABAD_AREA_LINE, MEET_LINE } from "@/components/near-you";
 import { pageMeta } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ShortAnswer } from "@/components/seo/short-answer";
@@ -52,8 +53,8 @@ const howItWorks = [
 ];
 
 export const metadata = pageMeta({
-  title: 'Mutual Fund Distributor in Pune & Ahmedabad | Assetzpro',
-  description: 'AMFI-registered mutual fund distributor (ARN 106715). Start a SIP, plan a goal and see what it could grow to with free calculators. Pune and Ahmedabad.',
+  title: 'Mutual Fund Distributor & SIP in Pune and Ahmedabad',
+  description: 'AMFI-registered mutual fund distributor (ARN 106715) in Pune and Ahmedabad. Start a SIP, choose ELSS tax savers and plan a goal with free calculators.',
   path: '/mutual-funds',
 });
 
@@ -238,6 +239,15 @@ export default function MutualFunds() {
           </div>
         </section>
       )}
+
+      <NearYou
+        heading="Mutual fund distributor near you in Pune and Ahmedabad"
+        paragraphs={[
+          `Searching for a mutual fund distributor or SIP agent near you? Anup Vatyani, an AMFI-registered Mutual Fund Distributor (ARN 106715), helps people in Pune and Ahmedabad complete KYC, choose funds for a goal and start a SIP, including ELSS tax-saver funds. He earns a distribution commission from the fund houses, which is disclosed, and does not charge you a fee. Mutual Fund investments are subject to market risks, read all scheme related documents carefully.`,
+          `In Pune this includes ${PUNE_AREA_LINE}. In Ahmedabad it includes ${AHMEDABAD_AREA_LINE}. ${MEET_LINE} Message your goal and your area on WhatsApp to start.`,
+        ]}
+        links={[{ href: "/pune", label: "SIP, insurance, loans and property in Pune" }, { href: "/ahmedabad", label: "SIP, insurance, loans and property in Ahmedabad" }]}
+      />
 
       <OfficialSources keys={["amfi", "sebi", "scores", "it"]} />
 

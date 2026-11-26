@@ -5,6 +5,7 @@ import { FaqSection } from "@/components/seo/faq-section";
 import { OfficialSources } from "@/components/seo/official-sources";
 import { RelatedGuides } from "@/components/seo/related-guides";
 import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES, SITE_URL } from "@/lib/seo";
+import { NearYou, PUNE_AREA_LINE, AHMEDABAD_AREA_LINE, MEET_LINE } from "@/components/near-you";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { EmiCalculator } from "@/components/emi-calculator";
@@ -28,8 +29,8 @@ import {
 } from "lucide-react";
 
 export const metadata = pageMeta({
-  title: 'Home Loan & LAP Consultant, Pune & Ahmedabad | Assetzpro',
-  description: 'Empanelled loan DSA comparing home loan, loan against property and business loan offers across banks and NBFCs. Free EMI and eligibility calculators.',
+  title: 'Home Loan & Loan Against Property Agent in Pune, Ahmedabad',
+  description: 'Empanelled loan DSA in Pune and Ahmedabad comparing home loan, loan against property, business and personal loan offers across banks and NBFCs. Free EMI calculators.',
   path: '/loans',
 });
 
@@ -211,6 +212,14 @@ export default function Loans() {
         </section>
       )}
 
+      <NearYou
+        heading="Loan agent near you in Pune and Ahmedabad"
+        paragraphs={[
+          `Looking for a home loan agent or loan consultant near you? Pavan Vatyani, an individually empanelled loan DSA, compares home loan, loan against property, business loan, MSME loan and personal loan offers from partner banks and NBFCs for applicants in Pune and Ahmedabad, and checks the documents with you before you apply. The decision and the terms rest with the lender.`,
+          `In Pune this includes ${PUNE_AREA_LINE}. In Ahmedabad it includes ${AHMEDABAD_AREA_LINE}. ${MEET_LINE} Message the loan type, the amount and your area on WhatsApp to start.`,
+        ]}
+        links={[{ href: "/pune", label: "Loans, insurance, SIP and property in Pune" }, { href: "/ahmedabad", label: "Loans, insurance, SIP and property in Ahmedabad" }]}
+      />
       <FaqSection faqs={faqs} />
 
       <OfficialSources keys={["rbi", "cibil"]} />

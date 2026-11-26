@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog-posts";
 import { PAGE_DATES, SITE_URL, isoDate } from "@/lib/seo";
+import { PUNE_AREA_ORDER } from "@/lib/pune-areas";
+import { INTENT_AREAS, INTENT_ORDER } from "@/lib/pune-intents";
 
 type Entry = { path: string; changeFrequency: "weekly" | "monthly" | "yearly"; priority: number };
 
@@ -9,39 +11,9 @@ const staticPages: Entry[] = [
   { path: "/mutual-funds", changeFrequency: "monthly", priority: 0.9 },
   { path: "/real-estate", changeFrequency: "monthly", priority: 0.9 },
   { path: "/real-estate/pune", changeFrequency: "monthly", priority: 0.9 },
+  ...PUNE_AREA_ORDER.map((a): Entry => ({ path: `/real-estate/pune/${a}`, changeFrequency: "monthly", priority: 0.7 })),
+  ...INTENT_AREAS.flatMap((a) => INTENT_ORDER.map((i): Entry => ({ path: `/real-estate/pune/${a}/${i}`, changeFrequency: "monthly", priority: 0.8 }))),
   { path: "/real-estate/ahmedabad", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/real-estate/pune/amanora", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/real-estate/pune/magarpatta", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/real-estate/pune/hadapsar", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/real-estate/pune/kharadi", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/real-estate/pune/koregaon-park", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/real-estate/pune/viman-nagar", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/real-estate/pune/kalyani-nagar", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/real-estate/pune/mundhwa", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/real-estate/pune/amanora/flat-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/amanora/flat-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/amanora/office-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/amanora/office-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/amanora/shop-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/amanora/shop-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/magarpatta/flat-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/magarpatta/flat-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/magarpatta/office-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/magarpatta/office-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/magarpatta/shop-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/magarpatta/shop-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/kharadi/flat-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/kharadi/flat-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/kharadi/office-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/kharadi/office-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/kharadi/shop-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/kharadi/shop-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/hadapsar/flat-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/hadapsar/flat-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/hadapsar/office-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/hadapsar/office-for-sale", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/hadapsar/shop-for-rent", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/real-estate/pune/hadapsar/shop-for-sale", changeFrequency: "monthly", priority: 0.8 },
   { path: "/real-estate/gift-city", changeFrequency: "monthly", priority: 0.8 },
   { path: "/real-estate/dholera", changeFrequency: "monthly", priority: 0.8 },
   { path: "/insurance", changeFrequency: "monthly", priority: 0.9 },

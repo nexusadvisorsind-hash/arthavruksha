@@ -5,6 +5,7 @@ import { FaqSection } from "@/components/seo/faq-section";
 import { OfficialSources } from "@/components/seo/official-sources";
 import { RelatedGuides } from "@/components/seo/related-guides";
 import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES, SITE_URL } from "@/lib/seo";
+import { NearYou, PUNE_AREA_LINE, AHMEDABAD_AREA_LINE, MEET_LINE } from "@/components/near-you";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getPostBySlug } from "@/lib/blog-posts";
@@ -27,8 +28,8 @@ import { InPageNav } from "@/components/in-page-nav";
 import { ScrollTimeline } from "@/components/scroll-timeline";
 
 export const metadata = pageMeta({
-  title: 'Life & Health Insurance in Pune & Ahmedabad | Assetzpro',
-  description: 'IRDAI-licensed agent comparing term, health, motor and business insurance across insurers. Estimate the term cover your family needs.',
+  title: 'Insurance Agent in Pune & Ahmedabad: Term, Health, Motor',
+  description: 'IRDAI-registered insurance agent in Pune and Ahmedabad for term, life, health, motor and business insurance. Compare insurers and estimate the cover you need.',
   path: '/insurance',
 });
 
@@ -211,6 +212,14 @@ export default function Insurance() {
         </section>
       )}
 
+      <NearYou
+        heading="Insurance agent near you in Pune and Ahmedabad"
+        paragraphs={[
+          `Searching for an insurance agent near you? Menka Motwani, an individually registered insurance agent (IRDAI), helps people in Pune and Ahmedabad with term insurance, life insurance, health insurance (individual, family floater and senior citizen plans), motor and two-wheeler insurance, home insurance, travel insurance and business insurance. Plans are offered only from the insurers she is appointed with.`,
+          `In Pune this includes ${PUNE_AREA_LINE}. In Ahmedabad it includes ${AHMEDABAD_AREA_LINE}. ${MEET_LINE} Message the type of policy and your area on WhatsApp to start.`,
+        ]}
+        links={[{ href: "/pune", label: "Insurance, loans, SIP and property in Pune" }, { href: "/ahmedabad", label: "Insurance, loans, SIP and property in Ahmedabad" }]}
+      />
       <FaqSection faqs={faqs} />
 
       <OfficialSources keys={["irdai", "bima"]} />

@@ -21,8 +21,8 @@ export const metadata = pageMeta({
 });
 
 const credentials = [
-  { k: "Mutual funds", v: "AMFI ARN 106715" },
   { k: "Real estate", v: "MahaRERA and GujRERA registered" },
+  { k: "Mutual funds", v: "AMFI ARN 106715" },
   { k: "Insurance", v: "IRDAI licensed agent" },
   { k: "Loans", v: "Empanelled bank loan DSA" },
 ];
@@ -51,17 +51,17 @@ const homeFaqs = [
 ];
 
 const services = [
-  { title: "Mutual funds", text: "SIPs and goal planning with an AMFI-registered Mutual Fund Distributor. Risks and costs are explained first.", href: "/mutual-funds", cta: "Explore mutual funds", tool: "Try the SIP calculator", toolHref: "/mutual-funds#sip-calculator", icon: TrendingUp, color: "#1E5FD9" },
   { title: "Real estate", text: "Rent, lease, buy or sell flats, shops and offices in Pune, Ahmedabad, GIFT City and Dholera, checked for RERA status.", href: "/real-estate", cta: "Explore real estate", tool: "Find property in Pune", toolHref: "/real-estate/pune", icon: Building2, color: "#0F8A5F" },
+  { title: "Mutual funds", text: "SIPs and goal planning with an AMFI-registered Mutual Fund Distributor. Risks and costs are explained first.", href: "/mutual-funds", cta: "Explore mutual funds", tool: "Try the SIP calculator", toolHref: "/mutual-funds#sip-calculator", icon: TrendingUp, color: "#1E5FD9" },
   { title: "Insurance", text: "Term, health and motor cover explained in plain language by an IRDAI-registered individual agent.", href: "/insurance", cta: "Explore insurance", tool: "Estimate cover needed", toolHref: "/insurance#cover-calculator", icon: ShieldCheck, color: "#B8921F" },
   { title: "Loans", text: "Home loans, loan against property and business loans compared across banks and lenders.", href: "/loans", cta: "Explore loans", tool: "Open the EMI calculator", toolHref: "/loans#emi-calculator", icon: Landmark, color: "#0B1E42" },
 ];
 
-const homePosts = (["Mutual Funds", "Real Estate", "Insurance", "Loans"] as const)
+const homePosts = (["Real Estate", "Mutual Funds", "Insurance", "Loans"] as const)
   .map((c) => blogPosts.find((p) => p.category === c))
   .filter((p): p is (typeof blogPosts)[number] => Boolean(p));
 
-const homeShort = "Assetzpro Services brings mutual funds, real estate, insurance and loans under one team in Pune and Ahmedabad, with meetings by appointment. Each service is handled by an individually registered professional whose registration number is shown on the site. Calculators, guides and plain-language explanations come before any sales conversation.";
+const homeShort = "Assetzpro Services brings real estate, mutual funds, insurance and loans under one team in Pune and Ahmedabad, with meetings by appointment. Each service is handled by an individually registered professional whose registration number is shown on the site. Calculators, guides and plain-language explanations come before any sales conversation.";
 
 export default function Home() {
   return (
@@ -223,11 +223,11 @@ export default function Home() {
             <dl className="space-y-6">
               <div>
                 <dt className="font-heading text-xl font-semibold">Maharashtra</dt>
-                <dd className="font-body text-primary-foreground/80 mt-1">Pune. Mutual funds, insurance and loans, with MahaRERA registered property for residential and commercial buyers.</dd>
+                <dd className="font-body text-primary-foreground/80 mt-1">Pune. MahaRERA registered property for residential and commercial buyers, with mutual funds, insurance and loans.</dd>
               </div>
               <div>
                 <dt className="font-heading text-xl font-semibold">Gujarat</dt>
-                <dd className="font-body text-primary-foreground/80 mt-1">Ahmedabad. Mutual funds, insurance and loans, with GujRERA registered property including industrial and logistics space.</dd>
+                <dd className="font-body text-primary-foreground/80 mt-1">Ahmedabad. GujRERA registered property including industrial and logistics space, with mutual funds, insurance and loans.</dd>
               </div>
             </dl>
           </Reveal>
@@ -273,11 +273,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
           <div>
             <h2 className="font-heading font-semibold text-xl text-primary mb-2"><Link href="/pune" className="hover:text-secondary">Pune</Link></h2>
-            <p className="font-body text-sm text-foreground-muted leading-relaxed">Meetings by appointment at Amanora Park Town, Hadapsar. Property, loans, mutual funds and insurance enquiries from Pune and Pimpri-Chinchwad.</p>
+            <p className="font-body text-sm text-foreground-muted leading-relaxed">Meetings by appointment at Amanora Park Town, Hadapsar. Property, mutual funds, insurance and loans enquiries from Pune and Pimpri-Chinchwad.</p>
           </div>
           <div>
             <h2 className="font-heading font-semibold text-xl text-primary mb-2"><Link href="/ahmedabad" className="hover:text-secondary">Ahmedabad</Link></h2>
-            <p className="font-body text-sm text-foreground-muted leading-relaxed">Meetings by appointment on CG Road. Gujarat property, mutual funds, loans and insurance enquiries from Ahmedabad and Gandhinagar.</p>
+            <p className="font-body text-sm text-foreground-muted leading-relaxed">Meetings by appointment on CG Road. Gujarat property, mutual funds, insurance and loans enquiries from Ahmedabad and Gandhinagar.</p>
           </div>
           <div>
             <h2 className="font-heading font-semibold text-xl text-primary mb-2"><Link href="/calculators" className="hover:text-secondary">Which free calculators can help you plan?</Link></h2>

@@ -11,6 +11,7 @@ import { RequirementBar } from "@/components/requirement-bar";
 import { Button } from "@/components/ui/button";
 import { PUNE_AREAS, PUNE_AREA_ORDER, type PuneAreaSlug } from "@/lib/pune-areas";
 import { PUNE_SOCIETIES } from "@/lib/pune-societies";
+import { BHK_COPY } from "@/lib/pune-bhk";
 import { INTENT_AREAS, INTENT_ORDER, INTENT_LABEL } from "@/lib/pune-intents";
 import { PHONE_DISPLAY, PHONE_TEL, whatsappLink } from "@/lib/contact";
 
@@ -107,6 +108,23 @@ export default async function PuneAreaPage({ params }: { params: Promise<Params>
               <p className="font-body text-foreground-muted leading-relaxed">{a.commercial.body}</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-20 bg-background">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-6">1 BHK, 2 BHK and 3 BHK flats in {a.name}</h2>
+          <p className="font-body text-foreground-muted leading-relaxed mb-5">
+            Whether you want a 1 BHK, 2 BHK or 3 BHK flat in {a.name} for rent or for sale, the size label is only the start. Compare the actual carpet area, the floor, parking and maintenance. No rent or price is listed here, because availability changes daily.
+          </p>
+          <dl className="space-y-4">
+            {([["1 BHK flat in " + a.name, BHK_COPY[a.slug].one], ["2 BHK flat in " + a.name, BHK_COPY[a.slug].two], ["3 BHK flat in " + a.name, BHK_COPY[a.slug].three]] as const).map(([t, d]) => (
+              <div key={t}>
+                <dt className="font-heading font-semibold text-xl text-primary">{t}</dt>
+                <dd className="font-body text-foreground-muted leading-relaxed">{d}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

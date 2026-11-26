@@ -97,10 +97,10 @@ const founders = [
     credentials: [
       "24+ years in banking & financial services",
       "Ex-banker",
+      "Gujarat RERA Registered — AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529",
       "AMFI-Registered Mutual Fund Distributor — ARN 106715",
       "A decade of dedicated Mutual Fund Distribution (MFD) experience",
       "Focus area: GIFT City / IFSC fund structures, regulatory frameworks, investor education",
-      "Gujarat RERA Registered — AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529",
     ],
   },
   {
@@ -141,13 +141,13 @@ export default function AboutUs() {
           <Reveal>
             <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Steady, plain-spoken, by the book</h1>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">
-              Assetzpro Services brings mutual funds, real estate, insurance and loans under one team. Each is handled by an individually registered professional, explained in plain language, with no quick wins promised.
+              Assetzpro Services brings real estate, mutual funds, insurance and loans under one team. Each is handled by an individually registered professional, explained in plain language, with no quick wins promised.
             </p>
           </Reveal>
           <Image src="/brand/logo-icon-192.png" alt="Assetzpro Services" width={160} height={160} className="hidden md:block h-36 w-auto" />
         </div>
       </section>
-      <ShortAnswer updated={formatDate(PAGE_DATES["/about-us"])}>Assetzpro Services is a family business in Pune and Ahmedabad that helps with mutual funds, property, insurance and loans. The registrations are held by the individuals named on this page: Anup Vatyani (AMFI mutual fund distributor and GujRERA agent), Pavan Vatyani (MahaRERA agent) and Menka Motwani (IRDAI insurance agent). Meetings are by appointment.</ShortAnswer>
+      <ShortAnswer updated={formatDate(PAGE_DATES["/about-us"])}>Assetzpro Services is a family business in Pune and Ahmedabad that helps with property, mutual funds, insurance and loans. The registrations are held by the individuals named on this page: Anup Vatyani (AMFI mutual fund distributor and GujRERA agent), Pavan Vatyani (MahaRERA agent) and Menka Motwani (IRDAI insurance agent). Meetings are by appointment.</ShortAnswer>
 
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_1fr] gap-12">

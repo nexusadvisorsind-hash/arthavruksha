@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Assetzpro Services",
   },
   description:
-    "Flats, shops and offices for rent, lease, buy and sell in Pune, Ahmedabad, GIFT City and Dholera, plus mutual funds, insurance and loans, through individually AMFI, MahaRERA & GujRERA registered professionals. Calculators for SIP, EMI, loan eligibility and insurance.",
+    "Flats, shops and offices for rent, lease, buy and sell in Pune, Ahmedabad, GIFT City and Dholera, plus mutual funds, insurance and loans, through individually MahaRERA, GujRERA & AMFI registered professionals. Calculators for SIP, EMI, loan eligibility and insurance.",
   keywords: [
     "flat for rent in Pune",
     "property for rent in Pune",
@@ -67,23 +67,23 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteUrl,
     siteName: "Assetzpro Services",
-    title: "Assetzpro Services — Mutual Funds, Real Estate, Insurance & Loans",
+    title: "Assetzpro Services — Real Estate, Mutual Funds, Insurance & Loans",
     description:
-      "One team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat — professionals individually AMFI, MahaRERA & GujRERA registered.",
+      "One team for Real Estate, Mutual Funds, Insurance and Loans across Maharashtra & Gujarat — professionals individually AMFI, MahaRERA & GujRERA registered.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Assetzpro Services — Mutual Funds, Real Estate, Insurance & Loans",
+        alt: "Assetzpro Services — Real Estate, Mutual Funds, Insurance & Loans",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Assetzpro Services — Mutual Funds, Real Estate, Insurance & Loans",
+    title: "Assetzpro Services — Real Estate, Mutual Funds, Insurance & Loans",
     description:
-      "One licensed team for Mutual Funds, Real Estate, Insurance and Loans across Maharashtra & Gujarat.",
+      "One licensed team for Real Estate, Mutual Funds, Insurance and Loans across Maharashtra & Gujarat.",
     images: ["/og-image.png"],
   },
 };

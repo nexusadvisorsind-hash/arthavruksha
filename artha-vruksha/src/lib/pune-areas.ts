@@ -8,7 +8,8 @@ export type PuneAreaSlug =
   | "koregaon-park"
   | "viman-nagar"
   | "kalyani-nagar"
-  | "mundhwa";
+  | "mundhwa"
+  | "keshav-nagar";
 
 export type PuneArea = {
   slug: PuneAreaSlug;
@@ -50,7 +51,7 @@ export const PUNE_AREAS: Record<PuneAreaSlug, PuneArea> = {
       body: "Families, working couples and professionals who work in Magarpatta, Hadapsar and Kharadi often ask for 2 and 3 BHK flats here, furnished or unfurnished. For a rental you are shortlisted flats that match your budget and floor preference, and for a purchase the society documents and the loan position are checked before you pay a booking amount. Owners who want to rent out or sell can share the tower, size and expected rent or price.",
     },
     commercial: {
-      heading: "Shops and offices on lease near Amanora",
+      heading: "Commercial space for lease and sale in Amanora: offices and shops",
       body: "Retail units, small offices and consulting rooms are asked for by clinics, service businesses and start-ups that want customers or staff nearby. Before you commit, ask for the carpet area, the permitted use of the unit, the maintenance charges, whether GST applies to the rent, the lock-in and the yearly increase.",
     },
     checks: {
@@ -92,7 +93,7 @@ export const PUNE_AREAS: Record<PuneAreaSlug, PuneArea> = {
       body: "Tenants who work in Cybercity or nearby offices usually look for 1, 2 and 3 BHK flats close to work. Ask about the floor, the age of the building, parking, power backup and the monthly maintenance. Some societies ask for a copy of the agreement and identity papers before a tenant moves in, so check that early. Owners can share the society, size and expected rent or price to get started.",
     },
     commercial: {
-      heading: "Offices and shops on lease in Magarpatta",
+      heading: "Commercial space for lease and sale in Magarpatta: offices and shops",
       body: "Small and mid-sized businesses look for offices near the township's workforce, and shops serve the residents inside it. Compare the carpet and built-up areas, parking, internet options, access hours, the lock-in, the yearly rent increase and the maintenance charges, and agree who pays for fit-out and what happens to it when the lease ends.",
     },
     checks: {
@@ -134,7 +135,7 @@ export const PUNE_AREAS: Record<PuneAreaSlug, PuneArea> = {
       body: "Budgets range widely, from older societies to new projects and township flats. Tenants often want a short commute to Magarpatta, Kharadi or the industrial estate, and buyers compare projects on possession date and RERA status. Share the size, budget and the work location, and options are shortlisted accordingly.",
     },
     commercial: {
-      heading: "Shops and small offices on lease in Hadapsar",
+      heading: "Commercial space for lease and sale in Hadapsar: offices and shops",
       body: "Shops along the main roads, small offices and showrooms are common in Hadapsar. Footfall, frontage, parking and the permitted use matter most for a shop, while access for staff and customers matters for an office. Check the lock-in, the yearly increase, the deposit and the maintenance before you sign.",
     },
     checks: {
@@ -176,7 +177,7 @@ export const PUNE_AREAS: Record<PuneAreaSlug, PuneArea> = {
       body: "1, 2 and 3 BHK flats for rent are a steady search here because many tenants work in the nearby IT parks. For a purchase, compare projects on possession date, RERA status and the quality of the surroundings. Share your budget, the size and the move-in date for a shortlist.",
     },
     commercial: {
-      heading: "Offices and shops on lease in Kharadi",
+      heading: "Commercial space for lease and sale in Kharadi: offices and shops",
       body: "Offices in business parks and commercial buildings, and shops serving the residential projects, are the main commercial options. Ask for the carpet area, parking, power backup, internet options and the lock-in period, and agree the yearly increase and fit-out terms in writing.",
     },
     checks: {
@@ -218,7 +219,7 @@ export const PUNE_AREAS: Record<PuneAreaSlug, PuneArea> = {
       body: "Tenants and buyers look for apartments in older and newer buildings and, in some cases, bungalows and independent houses. Ask about the age of the building, the lift, parking, the society's rules and the monthly maintenance. Owners can share the building, size and expected rent or price to start.",
     },
     commercial: {
-      heading: "Offices and shops on lease in Koregaon Park",
+      heading: "Commercial space for lease and sale in Koregaon Park: offices and shops",
       body: "Boutique offices, studios, cafes and retail units are common. The permitted use of the unit and any extra approvals matter a lot for cafes, clinics and similar businesses, so confirm them before you sign and agree the lock-in, the deposit and the yearly increase in writing.",
     },
     checks: {
@@ -260,7 +261,7 @@ export const PUNE_AREAS: Record<PuneAreaSlug, PuneArea> = {
       body: "Apartments range from older buildings to newer projects. Check the floor, the building's age, parking, the lift and the monthly maintenance, and ask the society about tenant rules. If you travel often, check the real route to the airport and to your workplace.",
     },
     commercial: {
-      heading: "Offices and shops on lease in Viman Nagar",
+      heading: "Commercial space for lease and sale in Viman Nagar: offices and shops",
       body: "Offices and shops here suit businesses that want a central east Pune address with good road access. Confirm the permitted use, the carpet and built-up areas, parking, the lock-in and the yearly increase, and agree fit-out and exit terms in writing.",
     },
     checks: {
@@ -302,7 +303,7 @@ export const PUNE_AREAS: Record<PuneAreaSlug, PuneArea> = {
       body: "Tenants and buyers look for apartments in established buildings and newer projects. Ask about the age of the building, parking, the lift and the monthly maintenance, check the society's rules for tenants, and share your budget and size for a shortlist.",
     },
     commercial: {
-      heading: "Offices and shops on lease in Kalyani Nagar",
+      heading: "Commercial space for lease and sale in Kalyani Nagar: offices and shops",
       body: "Offices, showrooms and retail units serve businesses that want a central east Pune address. Confirm the permitted use, the carpet area, parking and access, and agree the lock-in, the deposit and the yearly increase in writing before you sign.",
     },
     checks: {
@@ -344,7 +345,7 @@ export const PUNE_AREAS: Record<PuneAreaSlug, PuneArea> = {
       body: "Newer projects and older buildings both exist. Tenants often choose Mundhwa for the access to Magarpatta, Kharadi and Koregaon Park, and buyers compare projects on possession date, RERA status and the surroundings. Share your budget, the size and your move-in date for a shortlist.",
     },
     commercial: {
-      heading: "Shops and offices on lease in Mundhwa",
+      heading: "Commercial space for lease and sale in Mundhwa: offices and shops",
       body: "Shops along the main roads and small offices suit local businesses. Check frontage, parking and the approved use for a shop, and access for staff and customers for an office. Agree the lock-in, the deposit, the maintenance and the yearly increase in writing.",
     },
     checks: {
@@ -365,6 +366,48 @@ export const PUNE_AREAS: Record<PuneAreaSlug, PuneArea> = {
     ],
     near: ["magarpatta", "kharadi", "koregaon-park", "amanora"],
   },
+
+  "keshav-nagar": {
+    slug: "keshav-nagar",
+    name: "Keshav Nagar",
+    seoTitle: "Flats and Shops in Keshav Nagar, Pune: Rent, Lease, Buy",
+    description:
+      "Flats for rent and sale, shops and offices on lease in Keshav Nagar, Mundhwa, Pune. MahaRERA registered channel partner. Meetings by appointment.",
+    h1: "Flats and commercial space for rent, lease, buy and sell in Keshav Nagar",
+    lead:
+      "Keshav Nagar is a residential locality in the Mundhwa part of east Pune, close to Magarpatta, Hadapsar and Kharadi. Share your requirement and matching options are shortlisted for a visit.",
+    short:
+      "Assetzpro Services helps with flats, shops and offices to rent, lease, buy or sell in Keshav Nagar, Pune. Pavan Vatyani is MahaRERA registered (A52100037796). Meetings are by appointment.",
+    about: [
+      "Keshav Nagar is a residential locality in the Mundhwa part of east Pune. Magarpatta City, Hadapsar and Kharadi are all nearby, which is why tenants who work in those areas often look here.",
+      "Buildings and streets vary, so judge the exact address, the approach road and the building rather than the locality name alone.",
+    ],
+    residential: {
+      heading: "Flats for rent and sale in Keshav Nagar",
+      body: "Tenants and buyers look for apartments in newer projects and older buildings. Ask about the age of the building, parking, the lift, the monthly maintenance and the society's rules for tenants, and test the real travel time to your workplace at your usual hour.",
+    },
+    commercial: {
+      heading: "Commercial space for lease and sale in Keshav Nagar: offices and shops",
+      body: "Shops and small offices here mostly serve the surrounding neighbourhoods. Check frontage, parking and the approved use for a shop, and access for staff and visitors for an office, and agree the lock-in, the deposit and the yearly increase in writing.",
+    },
+    checks: {
+      heading: "What to check in Keshav Nagar",
+      items: [
+        "Visit the exact address at different times, as road conditions vary.",
+        "For a new project, check the MahaRERA registration and possession date.",
+        "Confirm parking and lift access for the specific building.",
+        "Ask what maintenance covers and who pays it.",
+        "Put every agreed term in writing before paying.",
+      ],
+    },
+    faqs: [
+      { q: "Can I find a flat for rent in Keshav Nagar through Assetzpro?", a: "Yes. Share your budget, size and move-in date and matching flats in Keshav Nagar and nearby Mundhwa, Magarpatta and Kharadi are shortlisted, subject to availability." },
+      { q: "Is commercial space available on lease in Keshav Nagar?", a: "Availability changes. Share the type of business, size and budget and matching shops and offices are shortlisted for a visit." },
+      { q: "Is Keshav Nagar close to Magarpatta and Kharadi?", a: "Both are nearby, but test the real travel time at your usual hour, as it depends on the exact address and traffic." },
+      { q: "Do I pay to enquire?", a: "No. Enquiring is free, and any brokerage is agreed in writing before work starts." },
+    ],
+    near: ["mundhwa", "magarpatta", "kharadi", "hadapsar"],
+  },
 };
 
 export const PUNE_AREA_ORDER: PuneAreaSlug[] = [
@@ -376,6 +419,7 @@ export const PUNE_AREA_ORDER: PuneAreaSlug[] = [
   "viman-nagar",
   "kalyani-nagar",
   "mundhwa",
+  "keshav-nagar",
 ];
 
 /** Matches the area names listed on the main Pune page, so each card can link to its own page. */
@@ -388,4 +432,5 @@ export const PUNE_AREA_BY_NAME: Record<string, PuneAreaSlug> = {
   "Viman Nagar": "viman-nagar",
   "Kalyani Nagar": "kalyani-nagar",
   Mundhwa: "mundhwa",
+  "Keshav Nagar": "keshav-nagar",
 };

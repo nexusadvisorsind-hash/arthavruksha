@@ -1,3 +1,4 @@
+import { NearYou, PUNE_AREA_LINE, AHMEDABAD_AREA_LINE, MEET_LINE } from "@/components/near-you";
 import { pageMeta } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ShortAnswer } from "@/components/seo/short-answer";
@@ -32,8 +33,8 @@ import { MapPin } from "lucide-react";
 import { ScrollTimeline } from "@/components/scroll-timeline";
 
 export const metadata = pageMeta({
-  title: 'Rent, Lease, Buy & Sell Property in Pune, Ahmedabad',
-  description: 'Flats, shops and offices for rent, lease, buy and sell in Pune, Ahmedabad, GIFT City and Dholera. MahaRERA and GujRERA registered agents.',
+  title: 'Property Dealer in Pune and Ahmedabad: Flats, Shops, Offices',
+  description: 'MahaRERA and GujRERA registered real estate agents. Flats, shops, offices and commercial space for rent, lease, buy and sell in Pune, Ahmedabad, GIFT City and Dholera.',
   path: '/real-estate',
 });
 
@@ -285,6 +286,15 @@ export default function RealEstate() {
           </div>
         </section>
       )}
+
+      <NearYou
+        heading="Property dealer and real estate agent near you in Pune and Ahmedabad"
+        paragraphs={[
+          `Looking for a property dealer or real estate agent near you? Pavan Vatyani is MahaRERA registered (A52100037796) for Pune, and Anup Vatyani is GujRERA registered (AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529) for Ahmedabad. Flats for rent and sale, offices, shops and commercial space for lease and sale are handled, and the registration is checked on the official RERA website before a visit is fixed.`,
+          `In Pune this includes ${PUNE_AREA_LINE}. In Ahmedabad it includes ${AHMEDABAD_AREA_LINE}. ${MEET_LINE} Message the type of property, the area, your budget and your date on WhatsApp to start.`,
+        ]}
+        links={[{ href: "/real-estate/pune", label: "Property in Pune areas" }, { href: "/real-estate/ahmedabad", label: "Property in Ahmedabad" }]}
+      />
 
       <FaqSection faqs={faqs} />
 

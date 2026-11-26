@@ -72,7 +72,7 @@ const PILLARS: Record<
   },
 };
 
-const ORDER: PillarKey[] = ["mf", "re", "ins", "loan"];
+const ORDER: PillarKey[] = ["re", "mf", "ins", "loan"];
 
 // Small leaf dots around each branch tip, fixed so server and client render the same.
 const LEAVES: [number, number, number][] = [
@@ -102,7 +102,7 @@ export function BanyanHero() {
       <svg
         viewBox="0 0 600 640"
         role="group"
-        aria-label="A banyan tree. Its four branches are Mutual funds, Real estate, Insurance and Loans."
+        aria-label="A banyan tree. Its four branches are Real estate, Mutual funds, Insurance and Loans."
         className="w-full h-auto max-h-[560px] overflow-visible"
       >
         {/* ground line */}

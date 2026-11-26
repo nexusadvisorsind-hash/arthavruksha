@@ -8,6 +8,7 @@ import { RelatedGuides } from "./related-guides";
 import { Button } from "@/components/ui/button";
 import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES, SITE_URL } from "@/lib/seo";
 import type { City } from "@/lib/cities";
+import { NearYou, PUNE_AREA_LINE, AHMEDABAD_AREA_LINE } from "@/components/near-you";
 
 export function CityPage({ city }: { city: City }) {
   const path = `/${city.slug}`;
@@ -116,6 +117,15 @@ export function CityPage({ city }: { city: City }) {
           </p>
         </div>
       </section>
+
+      <NearYou
+        heading={`Property, SIP, insurance agent and home loan near you in ${city.name}`}
+        paragraphs={[
+          `Searching for a property dealer, a mutual fund distributor, an insurance agent or a loan agent near you in ${city.name}? Each service has its own registered person: ${city.slug === "pune" ? "Pavan Vatyani (MahaRERA A52100037796)" : "Anup Vatyani (GujRERA AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529)"} for property, Anup Vatyani for mutual funds and SIPs (AMFI ARN 106715), Menka Motwani for insurance (IRDAI individual agent) and Pavan Vatyani for loans (empanelled loan DSA).`,
+          `Areas covered in ${city.name} include ${city.slug === "pune" ? PUNE_AREA_LINE : AHMEDABAD_AREA_LINE}. Meetings are by appointment at ${city.office.line}, ${city.office.locality} ${city.office.postal}. Message the service and your area on WhatsApp to start.`,
+        ]}
+        links={[{ href: city.slug === "pune" ? "/real-estate/pune" : "/real-estate/ahmedabad", label: `Property in ${city.name}` }, { href: "/mutual-funds", label: "SIP and mutual funds" }, { href: "/insurance", label: "Insurance agent" }, { href: "/loans", label: "Home loan and LAP" }]}
+      />
 
       <section className="py-16 md:py-20 hero-navy text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">

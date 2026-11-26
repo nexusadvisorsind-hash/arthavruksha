@@ -4,7 +4,7 @@ import { ShortAnswer } from "@/components/seo/short-answer";
 import { FaqSection } from "@/components/seo/faq-section";
 import { OfficialSources } from "@/components/seo/official-sources";
 import { RelatedGuides } from "@/components/seo/related-guides";
-import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES } from "@/lib/seo";
+import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES, SITE_URL } from "@/lib/seo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SipCalculator } from "@/components/sip-calculator";
@@ -31,17 +31,17 @@ const fundCategories = [
   {
     icon: TrendingUp,
     title: "Equity SIPs",
-    body: "Small, regular monthly investments into equity-oriented mutual fund schemes. Instead of trying to time the market, you invest a fixed amount every month — some months the market is up, some months it's down, and over the years this averages out and builds wealth steadily. Great for long-term goals like retirement or your child's education, typically 7+ years away.",
+    body: "Small, regular monthly investments into equity-oriented schemes. A fixed amount goes in every month, so there is no need to time the market. Some months prices are up and some are down, and the average cost evens out over time. SIPs suit long goals such as retirement or a child's education, usually 7 or more years away. Returns are not assured and can be negative.",
   },
   {
     icon: PiggyBank,
     title: "ELSS Tax Savers",
-    body: "Equity Linked Savings Schemes let you save tax under Section 80C (up to ₹1.5 lakh per year) while your money stays invested in equity markets. The lock-in is just 3 years — the shortest of any 80C option like PPF or fixed deposits — so your money isn't tied up for as long.",
+    body: "Equity Linked Savings Schemes qualify for a deduction under Section 80C (up to ₹1.5 lakh a year, under the old tax regime). The lock-in is 3 years, shorter than PPF or a tax-saving fixed deposit. The money stays in equity markets, so its value can rise or fall.",
   },
   {
     icon: Droplets,
     title: "Liquid & Overnight Funds",
-    body: "If you have surplus cash sitting idle in a savings account, these low-risk debt funds are a better home for it short-term. They're highly liquid (you can usually withdraw within a day) and historically offer better returns than a regular savings account for money you might need soon.",
+    body: "Liquid and overnight funds are low-risk debt funds for surplus cash that may be needed soon. Withdrawals usually reach the bank within a day. Returns are not fixed, so read the scheme documents before investing.",
   },
 ];
 
@@ -52,7 +52,7 @@ const howItWorks = [
 ];
 
 export const metadata = pageMeta({
-  title: 'Mutual Fund Distributor in Pune & Ahmedabad | Artha Vriksha',
+  title: 'Mutual Fund Distributor in Pune & Ahmedabad | Assetzpro',
   description: 'AMFI-registered mutual fund distributor (ARN 106715). Start a SIP, plan a goal and see what it could grow to with free calculators. Pune and Ahmedabad.',
   path: '/mutual-funds',
 });
@@ -70,7 +70,7 @@ const serviceJsonLd = {
   name: "Mutual Fund Distributor & SIP Investment Services",
   description:
     "AMFI-registered Mutual Fund Distributor (ARN 106715) helping clients start SIPs, ELSS tax-saver funds and liquid funds across Maharashtra & Gujarat.",
-  provider: { "@type": "Person", name: "Anup Vatyani", jobTitle: "AMFI-registered Mutual Fund Distributor", identifier: "ARN 106715", sameAs: ["https://giftcityfunds.in"], worksFor: { "@type": "FinancialService", name: "Artha Vriksha Services" } },
+  provider: { "@type": "Person", name: "Anup Vatyani", jobTitle: "AMFI-registered Mutual Fund Distributor", identifier: "ARN 106715", sameAs: ["https://giftcityfunds.in"], worksFor: { "@id": `${SITE_URL}/#organization` } },
   areaServed: [
     { "@type": "State", name: "Maharashtra" },
     { "@type": "State", name: "Gujarat" },
@@ -110,7 +110,7 @@ const related = [
   {
     "href": "/pune",
     "title": "Mutual fund distributor in Pune",
-    "note": "Pune office, areas served and how an enquiry is handled."
+    "note": "Pune meeting location, areas served and how an enquiry is handled."
   }
 ];
 
@@ -161,7 +161,7 @@ export default function MutualFunds() {
 
       <section id="sip-calculator" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">See how a monthly SIP could grow</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How could a monthly SIP grow?</h2>
           <p className="font-body text-foreground-muted measure">An illustrative projection only, not a promise of returns. Actual scheme performance varies and is subject to market risk.</p>
         </div>
         <SipCalculator />
@@ -175,7 +175,7 @@ export default function MutualFunds() {
 
       <section id="goal-calculator" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Work backwards from your goal</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How much should you invest for a goal?</h2>
           <p className="font-body text-foreground-muted measure">Enter the amount you want to reach and by when. The calculator estimates the monthly SIP that could get you there.</p>
         </div>
         <SipGoalCalculator />
@@ -184,7 +184,7 @@ export default function MutualFunds() {
       <section id="how-it-works" className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How it works with Anup</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How does a mutual fund enquiry work with Anup?</h2>
             <p className="font-body text-foreground-muted measure">Three steps, no pressure. You decide at every stage.</p>
           </div>
           <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#1E5FD9" />

@@ -28,7 +28,7 @@ export function InsuranceNeedsCalculator() {
               <span className="font-heading font-semibold text-secondary">₹{formatINR(income)}</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Your Annual Income"
               min={200000}
               max={10000000}
               step={50000}
@@ -43,7 +43,7 @@ export function InsuranceNeedsCalculator() {
               <span className="font-heading font-semibold text-secondary">{multiplier}x</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Income Replacement Years"
               min={10}
               max={25}
               step={1}
@@ -58,7 +58,7 @@ export function InsuranceNeedsCalculator() {
               <span className="font-heading font-semibold text-secondary">₹{formatINR(liabilities)}</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Outstanding Loans (Home, Car, etc.)"
               min={0}
               max={20000000}
               step={100000}
@@ -73,7 +73,7 @@ export function InsuranceNeedsCalculator() {
               <span className="font-heading font-semibold text-secondary">₹{formatINR(existingCover)}</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Existing Life Cover"
               min={0}
               max={10000000}
               step={50000}
@@ -87,7 +87,7 @@ export function InsuranceNeedsCalculator() {
         <div className="flex flex-col justify-center">
           <div className="text-center border-b border-border pb-5 mb-5">
             <span className="font-body text-sm text-foreground-muted block mb-1">Recommended Term Life Cover</span>
-            <span className="font-heading font-bold text-accent text-3xl">₹{formatINR(recommendedCover)}</span>
+            <span className="font-heading font-bold text-[#8A6A00] text-3xl">₹{formatINR(recommendedCover)}</span>
           </div>
           <p className="font-body text-sm text-foreground-muted leading-relaxed">
             This is a quick income-replacement estimate: your annual income multiplied by the

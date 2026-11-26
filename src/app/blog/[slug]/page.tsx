@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: BlogPostParams) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  return pageMeta({ title: post.seoTitle ?? (post.title.length + 16 <= 62 ? `${post.title} | Artha Vriksha` : post.title), description: post.excerpt, path: `/blog/${post.slug}`, type: "article" });
+  return pageMeta({ title: post.seoTitle ?? (post.title.length + 16 <= 62 ? `${post.title} | Assetzpro` : post.title), description: post.excerpt, path: `/blog/${post.slug}`, type: "article" });
 }
 
 export default async function BlogPost({ params }: BlogPostParams) {
@@ -56,10 +56,10 @@ export default async function BlogPost({ params }: BlogPostParams) {
     inLanguage: "en-IN",
     image: `${SITE_URL}/og-image.png`,
     mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
-    author: { "@type": "Organization", name: "Artha Vriksha Services", url: SITE_URL },
+    author: { "@type": "Organization", name: "Assetzpro Services", url: SITE_URL },
     publisher: {
       "@type": "Organization",
-      name: "Artha Vriksha Services",
+      name: "Assetzpro Services",
       logo: { "@type": "ImageObject", url: `${SITE_URL}/brand/logo-icon-192.png` },
     },
   };
@@ -127,6 +127,13 @@ export default async function BlogPost({ params }: BlogPostParams) {
             {post.category === "Insurance" && "Insurance is the subject matter of solicitation. "}
             This article is general information, not a recommendation. Rules and rates change, so check the current position with the regulator or lender.
           </p>
+          {post.links && (
+            <ul className="font-body text-sm text-foreground-muted mt-3 space-y-1">
+              {post.links.map((l) => (
+                <li key={l.href}><Link href={l.href} className="text-secondary underline underline-offset-2 hover:text-primary">{l.label}</Link></li>
+              ))}
+            </ul>
+          )}
           <p className="font-body text-sm text-foreground-muted mt-3">
             Related service: <Link href={categoryLink[post.category]} className="text-secondary underline underline-offset-2 hover:text-primary">{post.category === "Personal Finance" ? "About the team" : post.category}</Link>
           </p>
@@ -134,7 +141,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
           <div className="mt-12 bg-green-soft border border-green/20 rounded-2xl p-7 text-center">
             <p className="font-heading font-semibold text-primary mb-2">Have a question about this?</p>
             <p className="font-body text-sm text-foreground-muted mb-5">
-              Write to info@arthavriksha.in to talk through your specific situation — no pressure, no obligation.
+              Write to info@assetzpro.com to talk through your specific situation — no pressure, no obligation.
             </p>
             <Button asChild variant="green" size="lg">
               <Link href="/contact">Contact <ArrowRight className="ml-2 h-4 w-4" /></Link>

@@ -1,4 +1,5 @@
-import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, formatDate, PAGE_DATES } from "@/lib/seo";
+import { ShortAnswer } from "@/components/seo/short-answer";
 import { JsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
 import Image from "next/image";
@@ -50,8 +51,8 @@ const values = [
 ];
 
 export const metadata = pageMeta({
-  title: 'About Anup & Pavan Vatyani | Artha Vriksha',
-  description: 'Meet the founders: Anup Vatyani, AMFI-registered distributor (ARN 106715), and Pavan Vatyani, MahaRERA-registered agent. Offices in Pune and Ahmedabad.',
+  title: 'About Anup & Pavan Vatyani | Assetzpro',
+  description: 'Meet the founders: Anup Vatyani, AMFI-registered distributor (ARN 106715), and Pavan Vatyani, MahaRERA-registered agent. Meetings by appointment in Pune and Ahmedabad.',
   path: '/about-us',
 });
 
@@ -61,11 +62,11 @@ const personJsonLd = {
     {
       "@type": "Person",
       name: "Anup Vatyani",
-      jobTitle: "Founder — Mutual Funds & Regulatory Affairs, Artha Vriksha Services",
+      jobTitle: "Founder — Mutual Funds & Regulatory Affairs, Assetzpro Services",
       description:
         "AMFI-registered Mutual Fund Distributor (ARN 106715) with 24+ years in banking and financial services.",
       knowsAbout: ["Mutual Funds", "GIFT City IFSC", "Regulatory Compliance", "Investor Education"],
-      worksFor: { "@id": "https://arthavriksha.in/#organization" },
+      worksFor: { "@id": "https://assetzpro.com/#organization" },
       sameAs: ["https://giftcityfunds.in"],
       hasCredential: [
         { "@type": "EducationalOccupationalCredential", credentialCategory: "AMFI registration", name: "AMFI-Registered Mutual Fund Distributor, ARN 106715", recognizedBy: { "@type": "Organization", name: "Association of Mutual Funds in India" } },
@@ -75,11 +76,11 @@ const personJsonLd = {
     {
       "@type": "Person",
       name: "Pavan Vatyani",
-      jobTitle: "Founder — Real Estate & Digital Strategy, Artha Vriksha Services",
+      jobTitle: "Founder — Real Estate & Digital Strategy, Assetzpro Services",
       description:
         "MahaRERA-registered real estate professional (A52100037796) with 22+ years in real estate, finance and digital transformation.",
       knowsAbout: ["Real Estate", "RERA Compliance", "Digital Transformation"],
-      worksFor: { "@id": "https://arthavriksha.in/#organization" },
+      worksFor: { "@id": "https://assetzpro.com/#organization" },
       hasCredential: [
         { "@type": "EducationalOccupationalCredential", credentialCategory: "RERA registration", name: "MahaRERA real estate agent, A52100037796", recognizedBy: { "@type": "Organization", name: "Maharashtra Real Estate Regulatory Authority" } },
       ],
@@ -138,19 +139,20 @@ export default function AboutUs() {
       <section className="hero-home text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20 grid md:grid-cols-[1fr_auto] gap-10 items-center">
           <Reveal>
-            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Deep roots, steady growth</h1>
+            <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.08] mb-6 max-w-3xl">Steady, plain-spoken, by the book</h1>
             <p className="font-body text-lg text-primary-foreground/85 leading-relaxed measure">
-              Artha means money and purpose. Vriksha means tree. Like a banyan, good financial guidance should have deep roots and grow over many years, not chase quick wins.
+              Assetzpro Services brings mutual funds, real estate, insurance and loans under one team. Each is handled by an individually registered professional, explained in plain language, with no quick wins promised.
             </p>
           </Reveal>
-          <Image src="/brand/logo-icon-192.png" alt="Artha Vriksha Services" width={160} height={160} className="hidden md:block h-36 w-auto" />
+          <Image src="/brand/logo-icon-192.png" alt="Assetzpro Services" width={160} height={160} className="hidden md:block h-36 w-auto" />
         </div>
       </section>
+      <ShortAnswer updated={formatDate(PAGE_DATES["/about-us"])}>Assetzpro Services is a family business in Pune and Ahmedabad that helps with mutual funds, property, insurance and loans. The registrations are held by the individuals named on this page: Anup Vatyani (AMFI mutual fund distributor and GujRERA agent), Pavan Vatyani (MahaRERA agent) and Menka Motwani (IRDAI insurance agent). Meetings are by appointment.</ShortAnswer>
 
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_1fr] gap-12">
           <Reveal>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-5">Why Artha Vriksha started</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-5">Why did Assetzpro start?</h2>
             <p className="font-heading text-xl md:text-2xl text-primary leading-snug measure">
               Too many people get fragmented, sometimes conflicting advice from agents who cannot see the whole picture.
             </p>
@@ -169,7 +171,7 @@ export default function AboutUs() {
       <section className="py-16 md:py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">Three commitments</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">What does Assetzpro commit to?</h2>
             <p className="font-body text-foreground-muted measure">They shape every conversation with a client.</p>
           </div>
           <ScrollTimeline items={goals.map((g) => ({ title: g.title, body: g.body }))} accent="#0F8A5F" />
@@ -179,9 +181,9 @@ export default function AboutUs() {
       <section className="py-16 md:py-24 bg-forest text-primary-foreground">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_1fr] gap-12">
           <Reveal>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-5">The tree of wealth</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-5">How do the four services fit together?</h2>
             <p className="font-body text-lg text-primary-foreground/80 leading-relaxed measure">
-              A tree draws strength from many roots to grow one strong trunk. Physical assets like property are bridged with liquid assets like mutual funds, insurance and credit, so your wealth grows from a stable base instead of depending on one thing going right.
+              Physical assets like property sit alongside liquid assets like mutual funds, with insurance and credit to protect and finance them. Looking at all four together gives a steadier base than depending on one thing going right.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -239,7 +241,7 @@ export default function AboutUs() {
 
       <section className="py-14 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-semibold text-xl text-primary mb-5">Registrations</h2>
+          <h2 className="font-heading font-semibold text-xl text-primary mb-5">Who holds which registration?</h2>
           <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
             {[
               "Anup Vatyani: AMFI-registered Mutual Fund Distributor",

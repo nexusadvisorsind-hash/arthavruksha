@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CookieSettingsLink } from "@/components/consent-banner";
 import Image from "next/image";
 import { PUNE_AREAS, PUNE_AREA_ORDER } from "@/lib/pune-areas";
+import { GOOGLE_REVIEW_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/seo";
 
 export function SiteFooter() {
   return (
@@ -93,6 +94,14 @@ export function SiteFooter() {
               Ahmedabad: CG Road, Ahmedabad, Gujarat 380009
             </p>
             <p className="font-body text-sm text-primary-foreground/75 mt-2">Meetings by appointment in Pune and Ahmedabad</p>
+            <p className="font-body text-sm text-primary-foreground/75 mt-3">
+              Profiles:{" "}
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-accent underline">Instagram</a>
+              {" "}·{" "}
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-accent underline">LinkedIn</a>
+              {" "}·{" "}
+              <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="hover:text-accent underline">Google reviews</a>
+            </p>
           </div>
         </div>
 

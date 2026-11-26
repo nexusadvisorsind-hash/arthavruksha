@@ -32,7 +32,7 @@ export function LoanEligibilityCalculator() {
               <span className="font-heading font-semibold text-secondary">₹{formatINR(income)}</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Monthly Income"
               min={15000}
               max={500000}
               step={5000}
@@ -47,7 +47,7 @@ export function LoanEligibilityCalculator() {
               <span className="font-heading font-semibold text-secondary">₹{formatINR(existingEmi)}</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Existing Monthly EMIs"
               min={0}
               max={100000}
               step={1000}
@@ -62,7 +62,7 @@ export function LoanEligibilityCalculator() {
               <span className="font-heading font-semibold text-secondary">{rate}%</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Expected Interest Rate"
               min={8}
               max={24}
               step={0.5}
@@ -77,7 +77,7 @@ export function LoanEligibilityCalculator() {
               <span className="font-heading font-semibold text-secondary">{tenure} yrs</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Loan Tenure"
               min={1}
               max={20}
               step={1}
@@ -91,7 +91,7 @@ export function LoanEligibilityCalculator() {
         <div className="flex flex-col justify-center">
           <div className="text-center border-b border-border pb-5 mb-5">
             <span className="font-body text-sm text-foreground-muted block mb-1">Estimated Loan Eligibility</span>
-            <span className="font-heading font-bold text-accent text-3xl">₹{formatINR(eligibleLoan)}</span>
+            <span className="font-heading font-bold text-[#8A6A00] text-3xl">₹{formatINR(eligibleLoan)}</span>
           </div>
           <div className="flex justify-between items-baseline">
             <span className="font-body text-sm text-foreground-muted">Eligible Monthly EMI</span>

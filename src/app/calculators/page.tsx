@@ -7,7 +7,7 @@ import { RelatedGuides } from "@/components/seo/related-guides";
 import { breadcrumbLd, webPageLd } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "Free SIP, EMI, Loan & Insurance Calculators | Artha Vriksha",
+  title: "Free SIP, EMI, Loan & Insurance Calculators | Assetzpro",
   description: "Six free calculators: SIP, goal SIP, EMI, loan eligibility, home loan eligibility and term insurance cover. Estimates only, no sign-up needed.",
   path: "/calculators",
 });

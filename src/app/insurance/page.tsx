@@ -4,7 +4,7 @@ import { ShortAnswer } from "@/components/seo/short-answer";
 import { FaqSection } from "@/components/seo/faq-section";
 import { OfficialSources } from "@/components/seo/official-sources";
 import { RelatedGuides } from "@/components/seo/related-guides";
-import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES } from "@/lib/seo";
+import { breadcrumbLd, webPageLd, formatDate, PAGE_DATES, SITE_URL } from "@/lib/seo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getPostBySlug } from "@/lib/blog-posts";
@@ -27,7 +27,7 @@ import { InPageNav } from "@/components/in-page-nav";
 import { ScrollTimeline } from "@/components/scroll-timeline";
 
 export const metadata = pageMeta({
-  title: 'Life & Health Insurance in Pune & Ahmedabad | Artha Vriksha',
+  title: 'Life & Health Insurance in Pune & Ahmedabad | Assetzpro',
   description: 'IRDAI-licensed agent comparing term, health, motor and business insurance across insurers. Estimate the term cover your family needs.',
   path: '/insurance',
 });
@@ -73,7 +73,7 @@ const serviceJsonLd = {
   name: "Life, Health, Motor & Business Insurance",
   description:
     "Individually registered insurance agent comparing term life, health, motor and commercial insurance across multiple insurers in Maharashtra & Gujarat.",
-  provider: { "@type": "FinancialService", name: "Artha Vriksha Services" },
+  provider: { "@id": `${SITE_URL}/#organization` },
   areaServed: [
     { "@type": "State", name: "Maharashtra" },
     { "@type": "State", name: "Gujarat" },
@@ -184,7 +184,7 @@ export default function Insurance() {
       <section id="how-it-works" className="py-16 md:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How the choice is made</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">How is the right cover chosen?</h2>
             <p className="font-body text-foreground-muted measure">Compare first, and understand the fine print before you decide.</p>
           </div>
           <ScrollTimeline items={howItWorks.map(({ title, body }) => ({ title, body }))} accent="#D4AF37" />

@@ -16,7 +16,7 @@ const get = async (path) => {
 const strip = (h) => h.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/&#x27;|&apos;|&rsquo;/g, "'").replace(/\s+/g, " ");
 
 const sitemap = (await get("/sitemap.xml")).body;
-const paths = [...sitemap.matchAll(/<loc>https:\/\/arthavriksha\.in([^<]*)<\/loc>/g)].map((m) => m[1] || "/");
+const paths = [...sitemap.matchAll(/<loc>https:\/\/assetzpro\.com([^<]*)<\/loc>/g)].map((m) => m[1] || "/");
 if (paths.length < 10) err("/sitemap.xml", `only ${paths.length} URLs`);
 const known = new Set(paths);
 const titles = new Map();
@@ -35,7 +35,7 @@ for (const path of paths) {
   if (titles.has(title)) err(path, `duplicate title with ${titles.get(title)}`); titles.set(title, path);
   if (desc.length < 80 || desc.length > 160) warn(path, `description ${desc.length} chars`);
   if (descs.has(desc)) err(path, `duplicate description with ${descs.get(desc)}`); descs.set(desc, path);
-  const want = `https://arthavriksha.in${path === "/" ? "" : path}`;
+  const want = `https://assetzpro.com${path === "/" ? "" : path}`;
   if (canon.replace(/\/$/, "") !== want.replace(/\/$/, "")) err(path, `canonical is ${canon}, expected ${want}`);
   if (h1s.length !== 1) err(path, `${h1s.length} h1 tags`);
 

@@ -9,9 +9,12 @@ export function FaqSection({ faqs, heading = "Common questions", id = "faq", sch
   return (
     <section id={id} className="py-16 md:py-24 bg-background">
       {schema && <JsonLd data={faqLd(faqs)} />}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-8">{heading}</h2>
-        <div className="divide-y divide-border border-y border-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-14">
+        <div>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">{heading}</h2>
+          <p className="font-body text-sm text-foreground-muted leading-relaxed measure">Short answers. For anything else, call or message and a reply follows.</p>
+        </div>
+        <div className="divide-y divide-border rounded-2xl border border-border bg-white px-5 md:px-7">
           {faqs.map((f) => (
             <details key={f.q} className="group py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading font-semibold text-lg text-primary">

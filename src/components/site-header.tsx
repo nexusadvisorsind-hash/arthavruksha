@@ -25,16 +25,16 @@ export function SiteHeader() {
           <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
             <Image
               src="/brand/logo-icon-192.png"
-              alt="Artha Vriksha Services logo"
+              alt="Assetzpro Services logo"
               width={40}
               height={40}
               className="shrink-0 h-10 w-auto"
               priority
             />
             <span className="flex flex-col leading-tight">
-              <span className="font-heading font-bold text-xl text-primary">Artha Vriksha</span>
-              <span className="text-[11px] sm:text-xs font-body font-semibold text-foreground-muted tracking-wide">
-                Rooted in Trust, Growing Your Wealth
+              <span className="font-heading font-bold text-xl text-primary">Assetzpro</span>
+              <span className="text-xs font-body font-semibold text-foreground-muted tracking-wide">
+                Property · Mutual Funds · Insurance · Loans
               </span>
             </span>
           </Link>
@@ -54,10 +54,9 @@ export function SiteHeader() {
           <div className="flex items-center gap-2">
             <a
               href="tel:+919022958266"
-              aria-label="Call"
               className="hidden lg:inline-flex items-center gap-1.5 text-sm font-medium font-body text-foreground hover:text-secondary transition-colors mr-1"
             >
-              <Phone className="h-4 w-4" /> +91 90229 58266
+              <Phone className="h-4 w-4" aria-hidden="true" /> +91 90229 58266
             </a>
             <Link
               href="/contact"

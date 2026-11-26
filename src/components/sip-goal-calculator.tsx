@@ -33,7 +33,7 @@ export function SipGoalCalculator() {
               <span className="font-heading font-semibold text-secondary">₹{formatINR(target)}</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Goal Amount (Target Corpus)"
               min={100000}
               max={20000000}
               step={50000}
@@ -48,7 +48,7 @@ export function SipGoalCalculator() {
               <span className="font-heading font-semibold text-secondary">{years} yrs</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Years to Reach Goal"
               min={1}
               max={30}
               step={1}
@@ -63,7 +63,7 @@ export function SipGoalCalculator() {
               <span className="font-heading font-semibold text-secondary">{rate}%</span>
             </div>
             <input
-              type="range"
+              type="range" aria-label="Expected Annual Return"
               min={4}
               max={18}
               step={0.5}
@@ -77,7 +77,7 @@ export function SipGoalCalculator() {
         <div className="flex flex-col justify-center">
           <div className="text-center border-b border-border pb-5 mb-5">
             <span className="font-body text-sm text-foreground-muted block mb-1">You Need to Invest Monthly</span>
-            <span className="font-heading font-bold text-accent text-3xl">₹{formatINR(requiredMonthly)}</span>
+            <span className="font-heading font-bold text-[#8A6A00] text-3xl">₹{formatINR(requiredMonthly)}</span>
             <span className="font-body text-xs text-foreground-muted block mt-1">per month via SIP</span>
           </div>
           <div className="space-y-3">

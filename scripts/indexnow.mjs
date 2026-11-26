@@ -1,6 +1,6 @@
 // Tells Bing, Yandex and other IndexNow engines which URLs exist, right after a production deploy.
 // Never fails the build: if the ping is refused, the sitemap still does the job more slowly.
-const HOST = "arthavriksha.in";
+const HOST = "assetzpro.com";
 const KEY = "aa8860b30a777bbab281c64ef68a348b";
 
 if (process.env.VERCEL_ENV !== "production" && !process.env.INDEXNOW_FORCE) {

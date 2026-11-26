@@ -3,7 +3,10 @@ import type { Metadata } from "next";
 export const SITE_URL = "https://assetzpro.com";
 
 /** Public profile pages for the business. Add the full LinkedIn and Instagram page URLs here; they feed the Organization schema so search engines link the profiles to this site. */
-export const SOCIAL_PROFILES: string[] = [];
+export const GOOGLE_REVIEW_URL = "https://g.page/r/CZf-0REHxazCEBM/review";
+export const INSTAGRAM_URL = "https://www.instagram.com/assetzpro";
+export const LINKEDIN_URL = "https://www.linkedin.com/company/145467333/";
+export const SOCIAL_PROFILES: string[] = [INSTAGRAM_URL, LINKEDIN_URL];
 const OG_IMAGE = { url: "/og-image.png", width: 1200, height: 630, alt: "Assetzpro Services" };
 
 /** Keeps description under Google's visible length without cutting mid-word. */

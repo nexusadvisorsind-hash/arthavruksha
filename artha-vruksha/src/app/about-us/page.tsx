@@ -67,7 +67,7 @@ const personJsonLd = {
         "AMFI-registered Mutual Fund Distributor (ARN 106715) with 24+ years in banking and financial services.",
       knowsAbout: ["Mutual Funds", "GIFT City IFSC", "Regulatory Compliance", "Investor Education"],
       worksFor: { "@id": "https://assetzpro.com/#organization" },
-      sameAs: ["https://giftcityfunds.in"],
+      sameAs: ["https://giftcityfunds.in/"],
       hasCredential: [
         { "@type": "EducationalOccupationalCredential", credentialCategory: "AMFI registration", name: "AMFI-Registered Mutual Fund Distributor, ARN 106715", recognizedBy: { "@type": "Organization", name: "Association of Mutual Funds in India" } },
         { "@type": "EducationalOccupationalCredential", credentialCategory: "RERA registration", name: "GujRERA real estate agent, AG/AHMEDABAD/AHMEDABAD CITY/A403336/200529", recognizedBy: { "@type": "Organization", name: "Gujarat Real Estate Regulatory Authority" } },

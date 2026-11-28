@@ -242,4 +242,23 @@ export const moreBlogPosts: BlogPost[] = [
       { heading: "Next step", body: ["Share the size, the area, your budget and the date you need it on WhatsApp, and matching flats are shortlisted, subject to availability. Pavan Vatyani is MahaRERA registered (A52100037796). Meetings are by appointment. This article is general information."] },
     ],
   },
+  {
+    slug: "gift-city-funds-what-they-are-where-to-read-more",
+    category: "Mutual Funds",
+    title: "GIFT City Funds: What They Are and Where to Read More",
+    excerpt: "GIFT City funds are set up in India's International Financial Services Centre and regulated by IFSCA. Here is what they are, who may be able to invest and where to read the details.",
+    readTime: "3 min read",
+    date: "November 2026",
+    links: [
+      { href: "/mutual-funds", label: "Mutual funds in Pune and Ahmedabad" },
+      { href: "/contact", label: "Share your question" },
+    ],
+    sections: [
+      { body: ["The short answer: GIFT City funds are investment funds set up in the International Financial Services Centre (IFSC) in Gandhinagar and regulated by IFSCA, not by SEBI. They are a different category from the mutual funds sold across India, with their own rules, minimum amounts and tax treatment."] },
+      { heading: "Who may be able to invest", body: ["Depending on the fund, resident Indians may be able to invest abroad through these funds under the Liberalised Remittance Scheme (LRS), and NRIs or foreign investors may be able to invest in India. Eligibility, limits and taxes differ from fund to fund and can change, so read each fund's official documents before deciding."] },
+      { heading: "Where to read more", body: ["Anup Vatyani, an AMFI-registered mutual fund distributor (ARN 106715), runs [GiftCityFunds.in](https://giftcityfunds.in/), a separate educational guide that lists 50 GIFT City funds from 26 fund houses. It explains minimum amounts, who can invest, the types of fund, tax and how to invest, in plain language. The list is not a ranking or a recommendation of any fund, and it shows no returns."] },
+      { heading: "How this differs from the AMFI registration shown here", body: ["GIFT City funds fall under IFSCA. The AMFI registration shown on this website covers mutual funds distributed in India, and it does not cover GIFT City funds. Read the scheme documents, and ask any question about a specific fund before you invest."] },
+      { heading: "Next step", body: ["If you want to talk through whether any of this applies to your situation, share your question on WhatsApp or through the contact page. Meetings are by appointment in Pune or Ahmedabad. This article is general information."] },
+    ],
+  },
 ];

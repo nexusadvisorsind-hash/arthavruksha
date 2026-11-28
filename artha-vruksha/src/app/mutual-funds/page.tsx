@@ -71,7 +71,7 @@ const serviceJsonLd = {
   name: "Mutual Fund Distributor & SIP Investment Services",
   description:
     "AMFI-registered Mutual Fund Distributor (ARN 106715) helping clients start SIPs, ELSS tax-saver funds and liquid funds across Maharashtra & Gujarat.",
-  provider: { "@type": "Person", name: "Anup Vatyani", jobTitle: "AMFI-registered Mutual Fund Distributor", identifier: "ARN 106715", sameAs: ["https://giftcityfunds.in"], worksFor: { "@id": `${SITE_URL}/#organization` } },
+  provider: { "@type": "Person", name: "Anup Vatyani", jobTitle: "AMFI-registered Mutual Fund Distributor", identifier: "ARN 106715", sameAs: ["https://giftcityfunds.in/"], worksFor: { "@id": `${SITE_URL}/#organization` } },
   areaServed: [
     { "@type": "State", name: "Maharashtra" },
     { "@type": "State", name: "Gujarat" },
@@ -223,7 +223,7 @@ export default function MutualFunds() {
           </div>
           <div>
             <Button asChild variant="gold" size="lg">
-              <a href="https://giftcityfunds.in" target="_blank" rel="noopener">Visit GIFT City Funds <ArrowRight className="ml-2 h-5 w-5" /></a>
+              <a href="https://giftcityfunds.in/" target="_blank" rel="noopener">Visit GiftCityFunds.in <ArrowRight className="ml-2 h-5 w-5" /></a>
             </Button>
           </div>
         </div>

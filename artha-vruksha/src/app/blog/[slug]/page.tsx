@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -23,6 +24,29 @@ const categoryLink: Record<string, string> = {
 };
 
 type BlogPostParams = { params: Promise<{ slug: string }> };
+
+
+/** Renders [text](url) inside a paragraph as a plain, followed link. External links open in a new tab with rel="noopener" only. */
+function renderInline(text: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  const re = /\[([^\]]+)\]\((https?:\/\/[^)\s]+|\/[^)\s]*)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let k = 0;
+  const cls = "text-secondary underline underline-offset-2 hover:text-primary";
+  while ((m = re.exec(text))) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    const [, label, href] = m;
+    parts.push(
+      href.startsWith("/")
+        ? <Link key={k++} href={href} className={cls}>{label}</Link>
+        : <a key={k++} href={href} target="_blank" rel="noopener" className={cls}>{label}</a>,
+    );
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
+}
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
@@ -115,7 +139,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
                 )}
                 {s.body.map((p, j) => (
                   <p key={j} className="font-body text-base text-foreground-muted leading-relaxed mb-4">
-                    {p}
+                    {renderInline(p)}
                   </p>
                 ))}
               </div>
